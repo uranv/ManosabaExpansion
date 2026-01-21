@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <AssemblyName>UranvManosaba</AssemblyName>
+        <RootNamespace>UranvManosaba</RootNamespace>
+        <LangVersion>10</LangVersion>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <OutputPath>./debug/</OutputPath>
+        <DebugSymbols>false</DebugSymbols>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <OutputPath>./Releases</OutputPath>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>.reference\0Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>.reference\Assembly-CSharp.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>.reference\UnityEngine.CoreModule.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include=".reference\UnityEngine.IMGUIModule.dll" />
+        <Reference Include=".reference\UnityEngine.TextRenderingModule.dll" />
+        <None Include="..\About\**" />
+        <None Include="..\Common\Defs\**" />
+        <None Include="..\Common\Languages\**" />
+        <None Include="..\Common\Patches\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Compile Include="Contents\**" />
+        <Compile Remove=".DS_Store" />
+        <Compile Remove="**\.DS_Store" />
+        <Compile Remove="**\**\.DS_Store" />
+    </ItemGroup>
+    
+</Project>
