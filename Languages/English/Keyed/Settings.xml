@@ -165,6 +165,12 @@
     <ManosabaSettings_inverseTemperature_Desc_3>• The random selector uses a Boltzmann distribution, normalizing the "sum of relations with others" as energy; this parameter is the inverse temperature.</ManosabaSettings_inverseTemperature_Desc_3>
     <!-- <ManosabaSettings_inverseTemperature_Desc_4>• 设定上，魔女因子的传播和"心情"相关，那么这里通过关系总和来量化传播概率似乎很合理 :D</ManosabaSettings_inverseTemperature_Desc_4> -->
     <ManosabaSettings_inverseTemperature_Desc_4>• Lore-wise, since the spread of the witch factor relates to "spirit", quantifying spread probability via the sum of relations seems reasonable :D</ManosabaSettings_inverseTemperature_Desc_4>
+    <!-- <ManosabaSettings_allowMutantAssignTab>为魔女残骸启用方案管理</ManosabaSettings_allowMutantAssignTab> -->
+    <ManosabaSettings_allowMutantAssignTab>Allow Assign Tab for Narehate Mutants</ManosabaSettings_allowMutantAssignTab>
+    <!-- <ManosabaSettings_allowMutantAssignTab_Desc_1>• 启用时，魔女残骸的变种人将加入"方案"管理界面。</ManosabaSettings_allowMutantAssignTab_Desc_1> -->
+    <ManosabaSettings_allowMutantAssignTab_Desc_1>• When enabled, Narehate mutants will be added to the "Assign" management tab.</ManosabaSettings_allowMutantAssignTab_Desc_1>
+    <!-- <ManosabaSettings_allowMutantAssignTab_Desc_2>• 改变此选项时，需要重启游戏生效。</ManosabaSettings_allowMutantAssignTab_Desc_2> -->
+    <ManosabaSettings_allowMutantAssignTab_Desc_2>• Disabled by default. Changing this option requires restarting the game to take effect.</ManosabaSettings_allowMutantAssignTab_Desc_2>
     <!-- <ManosabaSettings_disableTale>禁用月代雪对话使用故事</ManosabaSettings_disableTale> -->
     <ManosabaSettings_disableTale>Disable Yuki dialogue using story</ManosabaSettings_disableTale>
     <!-- <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需禁用。</ManosabaSettings_disableTale_Desc> -->

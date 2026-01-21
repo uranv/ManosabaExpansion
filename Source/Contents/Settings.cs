@@ -46,7 +46,8 @@ public class ManosabaModSettings : ModSettings
 
     // 其他设置
     public float inverseTemperature = 5f;  // Manosaba_Utils
-    public bool disableTale = false; // Grammar_Utils
+    public bool allowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
+    public bool disableTale = false;  // Grammar_Utils
 
         
     public override void ExposeData()
@@ -78,6 +79,7 @@ public class ManosabaModSettings : ModSettings
             
 
         Scribe_Values.Look(ref inverseTemperature, "inverseTemperature", 5f);
+        Scribe_Values.Look(ref allowMutantAssignTab, "allowMutantAssignTab", false);
         Scribe_Values.Look(ref disableTale, "disableTale", false);
         // 临时设置
         base.ExposeData();
@@ -97,8 +99,8 @@ public class ManosabaMod : Mod
     public static TaggedString YukiNameDef => YukiNameRaw.Colorize(ColoredText.NameColor);
     private static string EnabledChoiceRaw => "ManosabaSettings_activatedChoice".Translate();
     private static string DisabledChoiceRaw => "ManosabaSettings_deactivatedChoice".Translate();
-    public TaggedString EnabledChoice => EnabledChoiceRaw.Colorize(Color.green);
-    public TaggedString DisabledChoice => DisabledChoiceRaw.Colorize(Color.red);
+    public static TaggedString EnabledChoice => EnabledChoiceRaw.Colorize(Color.green);
+    public static TaggedString DisabledChoice => DisabledChoiceRaw.Colorize(Color.red);
 
     // Mod 名称
     public override string SettingsCategory() => "ManosabaSettings_ModName".Translate();
@@ -709,7 +711,22 @@ public class ManosabaMod : Mod
         list.Gap(listGap);
         list.GapLine();
         list.Gap(listGapline);
-            
+        
+        // 启用魔女残骸的方案管理
+        list.CheckboxLabeled(
+            "ManosabaSettings_allowMutantAssignTab".Translate(),
+            ref Settings.allowMutantAssignTab
+        );
+        list.Indent(20f);
+        GUI.color = _lightGray;
+        list.Label("ManosabaSettings_allowMutantAssignTab_Desc_1".Translate());
+        list.Label("ManosabaSettings_allowMutantAssignTab_Desc_2".Translate());
+        GUI.color = Color.white;
+        list.Outdent(20f);
+        list.Gap(listGap);
+        list.GapLine();
+        list.Gap(listGapline);
+        
         // 禁用调用故事生成
         list.CheckboxLabeled(
             "ManosabaSettings_disableTale".Translate(),

@@ -35,11 +35,16 @@ public static class Patch_MainTabWindow_Work_Pawns
 }
 
 // 2. 方案分配面板 (Assign Tab)
-//[HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
-//public static class Patch_MainTabWindow_Assign_Pawns
-//{
-//public static void Postfix(ref IEnumerable<Pawn> __result)
-//{
-//Patch_MutantMainTabWindow.AddNarehates(ref __result);
-//}
-//}
+[HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
+public static class Patch_MainTabWindow_Assign_Pawns
+{
+    static bool Prepare()
+    {
+        return ManosabaMod.Settings.allowMutantAssignTab;
+    }
+    
+    public static void Postfix(ref IEnumerable<Pawn> __result)
+    {
+        Patch_MutantMainTabWindow.AddNarehates(ref __result);
+    }
+}
