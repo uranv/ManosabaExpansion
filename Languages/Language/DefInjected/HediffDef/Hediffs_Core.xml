@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmHediffHumanDummy.label>都是月代雪干的</UmHediffHumanDummy.label> -->
+    <!-- <UmHediffHumanDummy.label>Yuki Tsukishiro did this</UmHediffHumanDummy.label> -->
+    <!-- <UmHediffHumanDummy.description>管理人类的特殊健康状态，你不应该看到这个</UmHediffHumanDummy.description> -->
+    <!-- <UmHediffHumanDummy.description>Manages special health states for humans. You should not be seeing this.</UmHediffHumanDummy.description> -->
+    
+    <!-- <UmHediffHumanVisible.label>魔女因子</UmHediffHumanVisible.label> -->
+    <!-- <UmHediffHumanVisible.label>Witch factor</UmHediffHumanVisible.label> -->
+    <!-- <UmHediffHumanVisible.description>受到魔女因子的诅咒。随着诅咒加深，身体能力也会发生变化。</UmHediffHumanVisible.description> -->
+    <!-- <UmHediffHumanVisible.description>Cursed by the witch factor. As the curse deepens, physical abilities will change.</UmHediffHumanVisible.description> -->
+    <!-- <UmHediffHumanVisible.stages.0.label>潜伏</UmHediffHumanVisible.stages.0.label> -->
+    <!-- <UmHediffHumanVisible.stages.0.label>Latent</UmHediffHumanVisible.stages.0.label> -->
+    <!-- <UmHediffHumanVisible.stages.1.label>轻度</UmHediffHumanVisible.stages.1.label> -->
+    <!-- <UmHediffHumanVisible.stages.1.label>Mild</UmHediffHumanVisible.stages.1.label> -->
+    <!-- <UmHediffHumanVisible.stages.2.label>轻度</UmHediffHumanVisible.stages.2.label> -->
+    <!-- <UmHediffHumanVisible.stages.2.label>Mild</UmHediffHumanVisible.stages.2.label> -->
+    <!-- <UmHediffHumanVisible.stages.3.label>中度</UmHediffHumanVisible.stages.3.label> -->
+    <!-- <UmHediffHumanVisible.stages.3.label>Moderate</UmHediffHumanVisible.stages.3.label> -->
+    <!-- <UmHediffHumanVisible.stages.4.label>中度</UmHediffHumanVisible.stages.4.label> -->
+    <!-- <UmHediffHumanVisible.stages.4.label>Moderate</UmHediffHumanVisible.stages.4.label> -->
+    <!-- <UmHediffHumanVisible.stages.5.label>重度</UmHediffHumanVisible.stages.5.label> -->
+    <!-- <UmHediffHumanVisible.stages.5.label>Severe</UmHediffHumanVisible.stages.5.label> -->
+    
+    <!-- <UmHediffNarehate.label>魔女的残骸</UmHediffNarehate.label> -->
+    <!-- <UmHediffNarehate.label>Narehate of a witch</UmHediffNarehate.label> -->
+    <!-- <UmHediffNarehate.description>受魔女因子的诅咒之人的终点，沦为一个仅由杀意驱使的魔女的残骸。</UmHediffNarehate.description> -->
+    <!-- <UmHediffNarehate.description>The final destination of one cursed by the witch factor, reduced to a narehate of a witch driven solely by murderous intent.</UmHediffNarehate.description> -->
+    
+    <!-- <UmHediffNarehateHealed.label>部分魔女化</UmHediffNarehateHealed.label> -->
+    <!-- <UmHediffNarehateHealed.label>Partial witch transformation</UmHediffNarehateHealed.label> -->
+    <!-- <UmHediffNarehateHealed.description>曾受魔女因子的诅咒化为残骸。\n\n幸运的是，奇迹拯救了她。</UmHediffNarehateHealed.description> -->
+    <!-- <UmHediffNarehateHealed.description>Once cursed by the witch factor and turned into a narehate.\n\nFortunately, a miracle saved her.</UmHediffNarehateHealed.description> -->
+    
+    <!-- <UmHediffNarehateHidden.label>魔女的残骸</UmHediffNarehateHidden.label> -->
+    <!-- <UmHediffNarehateHidden.label>Narehate of a witch</UmHediffNarehateHidden.label> -->
+    <!-- <UmHediffNarehateHidden.description>受魔女因子的诅咒之人的终点，沦为一个仅由杀意驱使的魔女的残骸。</UmHediffNarehateHidden.description> -->
+    <!-- <UmHediffNarehateHidden.description>The final destination of one cursed by the witch factor, reduced to a narehate of a witch driven solely by murderous intent.</UmHediffNarehateHidden.description> -->
+
+</LanguageData>

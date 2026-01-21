@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ApparelBase">
+        <defName>UmThingApparelYukiDress</defName>
+        <label>Yuki's dress</label>
+        <description>The usual attire of Yuki, the Great Witch.</description>
+        <smeltable>false</smeltable>
+        <useHitPoints Inherit="False">False</useHitPoints>
+        <graphicData>
+            <texPath>things/pawn/humanlike/yuki/dress/dress</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <techLevel>Ultra</techLevel>
+        <thingCategories>
+            <li>ApparelMisc</li>
+        </thingCategories>
+        <statBases>
+            <Mass>2.0</Mass>
+            <MarketValue>146</MarketValue>
+            <Flammability>0</Flammability>
+            <EquipDelay>1</EquipDelay>
+            <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+            <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.0</ArmorRating_Heat>
+            <Insulation_Cold>16</Insulation_Cold>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <equippedStatOffsets>
+            <SocialImpact>0.33</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.99</SlaveSuppressionOffset>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+                <li>Torso</li>
+                <li>Neck</li>
+                <li>Shoulders</li>
+                <li>Waist</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Overhead</li>
+                <li>OnSkin</li>
+                <li>Middle</li>
+                <li>Shell</li>
+            </layers>
+            <wornGraphicPath>things/pawn/humanlike/yuki/dress/dress</wornGraphicPath>
+            <tags>
+                <li MayRequire="Ludeon.RimWorld.Royal">Royal</li>
+                <li MayRequire="Ludeon.RimWorld.Royal">RoyalTier7</li>
+            </tags>
+            <countsAsClothingForNudity>true</countsAsClothingForNudity>
+            <canBeDesiredForIdeo MayRequire="Ludeon.RimWorld.Ideology">false</canBeDesiredForIdeo>
+            <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+            <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+        </apparel>
+        <comps>
+            <li Class="CompProperties_Biocodable"/>
+        </comps>
+    </ThingDef>
+</Defs>

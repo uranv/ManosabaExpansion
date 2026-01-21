@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef>
+        <!-- 制作烤瓶 -->
+        <defName>Make_UmThingAburibin</defName>
+        <label>Make seared vial</label>
+        <description>"Just roast the vial and it becomes a seared vial!"</description>
+        <jobString>Making seared vial.</jobString>
+        <workSkill>Cooking</workSkill>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_CookMeal</soundWorking>
+        <workAmount>39480</workAmount>
+        <targetCountAdjustment>1</targetCountAdjustment>
+        <recipeUsers>
+            <li>Campfire</li>
+            <li>FueledStove</li>
+            <li>ElectricStove</li>
+        </recipeUsers>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>UmThingDrugTredecim</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>UmThingDrugTredecim</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <UmThingAburibin>1</UmThingAburibin>
+        </products>
+        <recipeUsers>
+            <li>Campfire</li>
+            <li>FueledStove</li>
+            <li>ElectricStove</li>
+        </recipeUsers>
+    </RecipeDef>
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmAbilityYukiAdd.label>添加因子</UmAbilityYukiAdd.label> -->
+    <!-- <UmAbilityYukiAdd.label>Add factor</UmAbilityYukiAdd.label> -->
+    <!-- <UmAbilityYukiAdd.description>向目标添加魔女因子。\n\n右键切换为移除魔女因子的能力。</UmAbilityYukiAdd.description> -->
+    <!-- <UmAbilityYukiAdd.description>Implants a witch factor into the target.\n\nRight-click to switch to the remove factor ability.</UmAbilityYukiAdd.description> -->
+    
+    <!-- <UmAbilityYukiRemove.label>移除因子</UmAbilityYukiRemove.label> -->
+    <!-- <UmAbilityYukiRemove.label>Remove factor</UmAbilityYukiRemove.label> -->
+    <!-- <UmAbilityYukiRemove.description>从目标移除魔女因子。\n\n右键切换为添加魔女因子的能力。</UmAbilityYukiRemove.description> -->
+    <!-- <UmAbilityYukiRemove.description>Removes a witch factor from the target.\n\nRight-click to switch to the add factor ability.</UmAbilityYukiRemove.description> -->
+    
+    <!-- <UmAbilityYukiSkip.label>血肉折越</UmAbilityYukiSkip.label> -->
+    <!-- <UmAbilityYukiSkip.label>Fleshskip</UmAbilityYukiSkip.label> -->
+    <!-- <UmAbilityYukiSkip.description>将躯体化为肉块，并在附近的目标地点重组。跃迁后获得短暂的易伤状态。</UmAbilityYukiSkip.description>  -->
+    <!-- <UmAbilityYukiSkip.description>Dissolves the body into chunks of flesh and reconstructs at a nearby target location. The caster enters a brief state of vulnerability after the skip.</UmAbilityYukiSkip.description>  -->
+
+    <!-- <UmAbilityMutantLongjump.label>残骸跳跃</UmAbilityMutantLongjump.label> -->
+    <!-- <UmAbilityMutantLongjump.label>Narehate longjump</UmAbilityMutantLongjump.label> -->
+    <!-- <UmAbilityMutantLongjump.description>命令残骸利用其超凡的身体能力跳跃到远处，消耗微量洗脑控制时间。</UmAbilityMutantLongjump.description> -->
+    <!-- <UmAbilityMutantLongjump.description>Command the narehate to utilize its superhuman physical capabilities to jump to a distant location. Consumes a small amount of brainwashing control duration.</UmAbilityMutantLongjump.description> -->
+    <!-- <UmAbilityMutantLongjump.verbProperties.label>跳跃</UmAbilityMutantLongjump.verbProperties.label> -->
+    <!-- <UmAbilityMutantLongjump.verbProperties.label>Jump</UmAbilityMutantLongjump.verbProperties.label> -->
+
+    <!-- <UmAbilityMutantHealing.label>极速治疗</UmAbilityMutantHealing.label> -->
+    <!-- <UmAbilityMutantHealing.label>Ultrafast healing</UmAbilityMutantHealing.label> -->
+    <!-- <UmAbilityMutantHealing.description>将受控制的残骸体内的魔女因子激发至极限，获得超乎想象的愈合能力，即使失去知觉仍然可以使用，代价是消耗大量洗脑控制时间。</UmAbilityMutantHealing.description> -->
+    <!-- <UmAbilityMutantHealing.description>Stimulates the witch factor within the controlled narehate to its limit, granting unimaginable regenerative capabilities. This can be used even while unconscious, but consumes a significant amount of brainwashing control duration.</UmAbilityMutantHealing.description> -->
+
+</LanguageData>

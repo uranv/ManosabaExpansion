@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 控制dummy -->
+    <HediffDef>
+        <defName>UmHediffHumanDummy</defName>
+        <label>Yuki Tsukishiro did this</label>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <description>Manages special health states for humans. You should not be seeing this.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.000001</initialSeverity>
+        <maxSeverity>1.0</maxSeverity>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_HumanDummy">
+                <visibleHediffDef>UmHediffHumanVisible</visibleHediffDef>
+                <narehateHediffDef>UmHediffNarehate</narehateHediffDef>
+                <narehateHiddenHediffDef>UmHediffNarehateHidden</narehateHiddenHediffDef>
+                <hanmajyoHediffDef>UmHediffNarehateHealed</hanmajyoHediffDef>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Progress"/>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
+                <checkStatus>true</checkStatus>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- 魔女化可见 -->
+    <HediffDef>
+        <defName>UmHediffHumanVisible</defName>
+        <label>witch's factor</label>
+        <description>Cursed by the witch's factor. As the curse deepens, physical abilities will change.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.000001</initialSeverity>
+        <maxSeverity>1.0</maxSeverity>
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>latent</label>
+                <regeneration>15</regeneration>
+            </li>
+            <li>
+                <minSeverity>0.5</minSeverity>
+                <label>mild</label>
+                <statOffsets>
+                    <InjuryHealingFactor>0.2</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.2</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.2</MeleeDamageFactor>
+                </statFactors>
+                <regeneration>20</regeneration>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>mild</label>
+                <statOffsets>
+                    <InjuryHealingFactor>0.4</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.25</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.3</MeleeDamageFactor>
+                </statFactors>
+                <regeneration>40</regeneration>
+            </li>
+            <li>
+                <minSeverity>0.7</minSeverity>
+                <label>moderate</label>
+                <statOffsets>
+                    <InjuryHealingFactor>0.6</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.3</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.4</MeleeDamageFactor>
+                </statFactors>
+                <regeneration>60</regeneration>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>moderate</label>
+                <statOffsets>
+                    <InjuryHealingFactor>0.8</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.35</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.5</MeleeDamageFactor>
+                </statFactors>
+                <regeneration>80</regeneration>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>severe</label>
+                <statOffsets>
+                    <InjuryHealingFactor>1.0</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.4</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.6</MeleeDamageFactor>
+                </statFactors>
+                <regeneration>100</regeneration>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_ShowSeverity"/>
+        </comps>
+    </HediffDef>
+    <!-- 魔女残骸 -->
+    <HediffDef>
+        <defName>UmHediffNarehate</defName>
+        <label>narehate of a witch</label>
+        <description>The final destination of one cursed by the witch's factor, reduced to a narehate of a witch driven solely by murderous intent.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(187,185,202)</defaultLabelColor>
+        <isBad>true</isBad>
+        <displayWound>false</displayWound>
+        <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+        <stages>
+            <li>
+                <painFactor>0</painFactor>
+                <statFactors>
+                    <MeleeDamageFactor>2.0</MeleeDamageFactor>
+                    <MeleeCooldownFactor>2.0</MeleeCooldownFactor>
+                    <StaggerDurationFactor>0</StaggerDurationFactor>
+                </statFactors>
+                <statOffsets>
+                    <InjuryHealingFactor>3.0</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.5</ArmorRating_Heat>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Narehate">
+                <hiddenHediffDef>UmHediffNarehateHidden</hiddenHediffDef>
+                <curedHediffDef>UmHediffNarehateHealed</curedHediffDef>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
+                <applyPostFactor>false</applyPostFactor>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffNarehateHidden</defName>
+        <label>narehate of a witch</label>
+        <description>The final destination of one cursed by the witch's factor, reduced to a narehate of a witch driven solely by murderous intent.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(1,1,1)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+                <capMods>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <postFactor>0</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>0</postFactor>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <MoveSpeed>-1.6</MoveSpeed>
+                    <MinimumContainmentStrength>50</MinimumContainmentStrength>
+                    <PsychicSensitivity>-4.0</PsychicSensitivity>
+                    <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>100</ComfyTemperatureMax>
+                    <ToxicResistance>1</ToxicResistance>
+                </statOffsets>
+                <statFactors>
+                    <Mass>4</Mass>
+                    <MeatAmount>2</MeatAmount>
+                    <LeatherAmount>2</LeatherAmount>
+                </statFactors>
+                <disablesNeeds>
+                    <li>Beauty</li>
+                    <li>Outdoors</li>
+                    <li>Indoors</li>
+                    <li>Rest</li>
+                    <li>Comfort</li>
+                    <li>Joy</li>
+                </disablesNeeds>
+            </li>
+        </stages>
+        <comps></comps>
+    </HediffDef>
+    <!-- 半魔女 -->
+    <HediffDef>
+        <defName>UmHediffNarehateHealed</defName>
+        <label>partial witch transformation</label>
+        <description>Once cursed by the witch's factor and turned into a narehate.\n\nFortunately, a miracle saved her.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <painFactor>0.1</painFactor>
+                <statOffsets>
+                    <InjuryHealingFactor>2.0</InjuryHealingFactor>
+                    <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.4</ArmorRating_Heat>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.6</MeleeDamageFactor>
+                    <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
+                    <StaggerDurationFactor>0</StaggerDurationFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
+                <applyPostFactor>true</applyPostFactor>
+            </li>
+        </comps>
+    </HediffDef>
+</Defs>

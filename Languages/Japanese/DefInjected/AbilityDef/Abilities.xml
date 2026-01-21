@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmAbilityYukiAdd.label>添加因子</UmAbilityYukiAdd.label> -->
+    <UmAbilityYukiAdd.label>因子の付与</UmAbilityYukiAdd.label>
+    <!-- <UmAbilityYukiAdd.description>向目标添加魔女因子。\n\n右键切换为移除魔女因子的能力。</UmAbilityYukiAdd.description> -->
+    <UmAbilityYukiAdd.description>対象に魔女の因子を埋め込む。\n\n右クリックで魔女の因子を除去する能力に切り替える。</UmAbilityYukiAdd.description>
+    
+    <!-- <UmAbilityYukiRemove.label>移除因子</UmAbilityYukiRemove.label> -->
+    <UmAbilityYukiRemove.label>因子の除去</UmAbilityYukiRemove.label>
+    <!-- <UmAbilityYukiRemove.description>从目标移除魔女因子。\n\n右键切换为添加魔女因子的能力。</UmAbilityYukiRemove.description> -->
+    <UmAbilityYukiRemove.description>対象から魔女の因子を取り除く。\n\n右クリックで魔女の因子を付与する能力に切り替える。</UmAbilityYukiRemove.description>
+    
+    <!-- <UmAbilityYukiSkip.label>血肉折越</UmAbilityYukiSkip.label> -->
+    <UmAbilityYukiSkip.label>血肉のスキップ</UmAbilityYukiSkip.label>
+    <!-- <UmAbilityYukiSkip.description>将躯体化为肉块，并在附近的目标地点重组。跃迁后获得短暂的易伤状态。</UmAbilityYukiSkip.description>  -->
+    <UmAbilityYukiSkip.description>肉体を肉塊に変え、近くの目標地点で再構築する。転移後、短い間脆弱状態になる。</UmAbilityYukiSkip.description> 
+
+    <!-- <UmAbilityMutantLongjump.label>残骸跳跃</UmAbilityMutantLongjump.label> -->
+    <UmAbilityMutantLongjump.label>なれはてロングジャンプ</UmAbilityMutantLongjump.label>
+    <!-- <UmAbilityMutantLongjump.description>命令残骸利用其超凡的身体能力跳跃到远处，消耗微量洗脑控制时间。</UmAbilityMutantLongjump.description> -->
+    <UmAbilityMutantLongjump.description>なれはてに命じ、その超常的な身体能力を利用して遠方へ跳躍させる。わずかな洗脳の制御時間を消費する。</UmAbilityMutantLongjump.description>
+    <!-- <UmAbilityMutantLongjump.verbProperties.label>跳跃</UmAbilityMutantLongjump.verbProperties.label> -->
+    <UmAbilityMutantLongjump.verbProperties.label>ジャンプ</UmAbilityMutantLongjump.verbProperties.label>
+    
+    <!-- <UmAbilityMutantHealing.label>极速治疗</UmAbilityMutantHealing.label> -->
+    <UmAbilityMutantHealing.label>急速治癒</UmAbilityMutantHealing.label>
+    <!-- <UmAbilityMutantHealing.description>将受控制的残骸体内的魔女因子激发至极限，获得超乎想象的愈合能力，即使失去知觉仍然可以使用，代价是消耗大量洗脑控制时间。</UmAbilityMutantHealing.description> -->
+    <UmAbilityMutantHealing.description>制御下のなれはての体内にある魔女の因子を極限まで活性化させ、想像を絶する治癒能力を得る。意識を失っていても使用できるが、代償として大量の洗脳の制御時間を消費する。</UmAbilityMutantHealing.description>
+
+</LanguageData>

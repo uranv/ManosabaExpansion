@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 魔女化杀意 -->
+    <ThinkTreeDef>
+        <defName>UmThinkTreeMentalBreakFactor</defName>
+        <insertTag>Humanlike_PostMentalState</insertTag>
+        <insertPriority>100</insertPriority>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_ConditionalMentalState">
+                    <state>UmMentalBreakFactor</state>
+                    <subNodes>
+                        <li Class="UranvManosaba.Contents.MentalStates.JobGiver_MentalBreakFactor" />
+                        <li Class="JobGiver_WanderAnywhere">
+                            <maxDanger>Deadly</maxDanger>
+                        </li>
+                    </subNodes>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+    <!-- 魔女残骸杀意 -->
+    <ThinkTreeDef>
+        <defName>UmThinkTreeMentalBreakNarehate</defName>
+        <insertTag>Humanlike_PostMentalState</insertTag>
+        <insertPriority>100</insertPriority>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_ConditionalMentalState">
+                    <state>UmMentalBreakNarehate</state>
+                    <subNodes>
+                        <li Class="JobGiver_Berserk" />
+                        <li Class="JobGiver_WanderAnywhere">
+                            <maxDanger>Deadly</maxDanger>
+                        </li>
+                    </subNodes>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+</Defs>

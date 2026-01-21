@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 制作B水 -->
+    <RecipeDef>
+        <defName>Make_UmThingDrugTredecim</defName>
+        <label>Make Trēdecim</label>
+        <description>Using dark archotech shards, you are able to restore the witch-killing potion, Trēdecim, from crystallized eyes harvested from the corpse of a narehate.</description>
+        <jobString>Making Trēdecim.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>600</workAmount>
+        <targetCountAdjustment>1</targetCountAdjustment>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+                <count>4</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Shard</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>UmThingCrystallizedEye</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Neutroamine</li>
+                <li>Shard</li>
+                <li>UmThingCrystallizedEye</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <UmThingDrugTredecim>1</UmThingDrugTredecim>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>UmResearchProjectKill</researchPrerequisite>
+    </RecipeDef>
+</Defs>

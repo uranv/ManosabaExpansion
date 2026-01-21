@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <Make_UmThingAburibin.label>制作炙烤药瓶</Make_UmThingAburibin.label> -->
+    <Make_UmThingAburibin.label>炙りビンを作る</Make_UmThingAburibin.label>
+    <!-- <Make_UmThingAburibin.description>"把药瓶烤一下就会变成炙烤药瓶哦!"</Make_UmThingAburibin.description> -->
+    <Make_UmThingAburibin.description>ビンを炙ったら【炙りビン】になるよ！</Make_UmThingAburibin.description>
+    <!-- <Make_UmThingAburibin.jobString>正在制作炙烤药瓶。</Make_UmThingAburibin.jobString> -->
+    <Make_UmThingAburibin.jobString>炙りビンを作っている。</Make_UmThingAburibin.jobString>
+
+    <!-- <Make_UmThingDrugTredecim.label>制作特雷德基姆</Make_UmThingDrugTredecim.label> -->
+    <Make_UmThingDrugTredecim.label>トレデキムを作る</Make_UmThingDrugTredecim.label>
+    <!-- <Make_UmThingDrugTredecim.description>利用黑暗超凡碎片，你得以从魔女残骸尸体中获取的结晶化眼球中还原出杀死魔女的药剂，特雷德基姆。</Make_UmThingDrugTredecim.description> -->
+    <Make_UmThingDrugTredecim.description>暗黒アルコテックの破片を利用し、魔女のなれはての死体から採取した結晶化した眼球から、魔女を殺す薬剤、トレデキムを復元する。</Make_UmThingDrugTredecim.description>
+    <!-- <Make_UmThingDrugTredecim.jobString>正在制作特雷德基姆。</Make_UmThingDrugTredecim.jobString> -->
+    <Make_UmThingDrugTredecim.jobString>トレデキムを作っている。</Make_UmThingDrugTredecim.jobString>
+
+    <!-- <Administer_UmThingDrugTredecim.label>施用特雷德基姆</Administer_UmThingDrugTredecim.label> -->
+    <Administer_UmThingDrugTredecim.label>トレデキムを与える</Administer_UmThingDrugTredecim.label>
+    <!-- <Administer_UmThingDrugTredecim.description>施用特雷德基姆。</Administer_UmThingDrugTredecim.description> -->
+    <Administer_UmThingDrugTredecim.description>トレデキムを与える。</Administer_UmThingDrugTredecim.description>
+    <!-- <Administer_UmThingDrugTredecim.jobString>正在施用特雷德基姆。</Administer_UmThingDrugTredecim.jobString> -->
+    <Administer_UmThingDrugTredecim.jobString>トレデキムを与えている。</Administer_UmThingDrugTredecim.jobString>
+
+</LanguageData>

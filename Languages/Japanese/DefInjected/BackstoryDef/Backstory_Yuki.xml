@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmBackstoryYukiChild.title>魔女の島の大魔女</UmBackstoryYukiChild.title>
+    <UmBackstoryYukiChild.titleFemale>魔女の島の大魔女</UmBackstoryYukiChild.titleFemale>
+    <UmBackstoryYukiChild.titleShort>大魔女</UmBackstoryYukiChild.titleShort>
+    <UmBackstoryYukiChild.titleShortFemale>大魔女</UmBackstoryYukiChild.titleShortFemale>
+    <UmBackstoryYukiChild.description>[PAWN_nameDef]は最年少の大魔女として、幼い頃から魔女の島で暮らしていた。\n\n戦後、彼女は島を離れ、独りで世界を旅して回った。</UmBackstoryYukiChild.description>
+
+    <!-- <UmBackstoryYukiAdult.title>复活的大魔女</UmBackstoryYukiAdult.title> -->
+    <!-- <UmBackstoryYukiAdult.titleFemale>复活的大魔女</UmBackstoryYukiAdult.titleFemale> -->
+    <!-- <UmBackstoryYukiAdult.titleShort>大魔女</UmBackstoryYukiAdult.titleShort> -->
+    <!-- <UmBackstoryYukiAdult.titleShortFemale>大魔女</UmBackstoryYukiAdult.titleShortFemale> -->
+    <!-- <UmBackstoryYukiAdult.description>魔女安息仪式中复活的最后的大魔女。</UmBackstoryYukiAdult.description> -->
+    <UmBackstoryYukiAdult.title>蘇る大魔女</UmBackstoryYukiAdult.title>
+    <UmBackstoryYukiAdult.titleFemale>蘇る大魔女</UmBackstoryYukiAdult.titleFemale>
+    <UmBackstoryYukiAdult.titleShort>大魔女</UmBackstoryYukiAdult.titleShort>
+    <UmBackstoryYukiAdult.titleShortFemale>大魔女</UmBackstoryYukiAdult.titleShortFemale>
+    <UmBackstoryYukiAdult.description>サバトの儀式で復活した最後の大魔女。</UmBackstoryYukiAdult.description>
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmRitualNarehateTrans.label>残骸洗脑仪式</UmRitualNarehateTrans.label> -->
+    <UmRitualNarehateTrans.label>なれはて洗脳の儀式</UmRitualNarehateTrans.label>
+    <!-- <UmRitualNarehateTrans.description>借助黑暗超凡智能，得以暂时地通过洗脑控制魔女的残骸，对于已经受控制的残骸也可以如此延长控制时间。\n\n这样的尝试将会彻底摧毁魔女的心智，沦为本能驱使的残骸。\n\n警告：此过程不可逆。</UmRitualNarehateTrans.description> -->
+    <UmRitualNarehateTrans.description>暗黒アルコテック知性の力を借り、魔女のなれはてを洗脳して一時的に制御可能にする。既に制御下にあるなれはてに対しては、制御時間を延長することができる。\n\nこの試みは魔女の精神を完全に破壊し、本能のままに動くなれはてへと変質させるだろう。\n\n警告：このプロセスは不可逆である。</UmRitualNarehateTrans.description>
+    <!-- <UmRitualNarehateTrans.outcomeDescription>作为目标的魔女的残骸将被单方向转化为受控制的形态。\n\n根据当前的仪式质量，延长对魔女的残骸的洗脑控制 {0} 天。</UmRitualNarehateTrans.outcomeDescription> -->
+    <UmRitualNarehateTrans.outcomeDescription>対象となる魔女のなれはては、一方向的に制御された形態へと変換される。\n\n現在の儀式の質に応じて、魔女のなれはてへの洗脳制御を {0} 日間延長する。</UmRitualNarehateTrans.outcomeDescription>
+
+    <!-- <UmRitualSabbat.label>魔女安息仪式</UmRitualSabbat.label> -->
+    <UmRitualSabbat.label>サバトの儀式</UmRitualSabbat.label>
+    <!-- <UmRitualSabbat.description>传说中找回大魔女的方法，需要由13名魔女聚集起来，使用特定的圣物来执行仪式。</UmRitualSabbat.description> -->
+    <UmRitualSabbat.description>伝説にある大魔女を取り戻す方法であり、13人の魔女が集まり、特定の聖遺物を用いて儀式を執り行う必要がある。</UmRitualSabbat.description>
+    <!-- <UmRitualSabbat.outcomeDescription>根据当前的仪式质量，召唤出月代雪的装备将具有 {0} 等级的品质偏移。</UmRitualSabbat.outcomeDescription> -->
+    <UmRitualSabbat.outcomeDescription>現在の儀式の質に応じて、召喚された月代ユキの装備は {0} 段階の品質補正を得る。</UmRitualSabbat.outcomeDescription>
+    
+</LanguageData>
+
+
+    
+</LanguageData>

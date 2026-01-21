@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+        <defName>UmHediffYukiDummy</defName>
+        <label>Yuki Tsukishiro did this</label>
+        <description>Manages special health states for Yuki Tsukishiro. You should not be seeing this.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_YukiDummy">
+                <visitorHediff>UmHediffYukiVisitor</visitorHediff>
+                <visitorHiddenHediff>UmHediffYukiVisitorHidden</visitorHiddenHediff>
+                <colonistHediff>UmHediffYukiColonist</colonistHediff>
+                <colonistHiddenHediff>UmHediffYukiColonistHidden</colonistHiddenHediff>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
+                <applyPostFactor>true</applyPostFactor>
+            </li>
+            <li Class="HediffCompProperties_GiveAbility">
+                <abilityDefs>
+                    <li>UmAbilityYukiAdd</li>
+                    <li>UmAbilityYukiRemove</li>
+                    <li>UmAbilityYukiSkip</li>
+                </abilityDefs>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiVisitor</defName>
+        <label>protection of the grand witch</label>
+        <description>The grand witch has cast powerful spells to protect herself.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PsychicSensitivity>-10.0</PsychicSensitivity>
+                    <ToxicResistance>1</ToxicResistance>
+                    <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+                    <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+                    <ComfyTemperatureMin>-273</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>2000</ComfyTemperatureMax>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
+                <applyPostFactor>true</applyPostFactor>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiVisitorHidden</defName>
+        <label>protection of the grand witch</label>
+        <description>The grand witch has cast powerful spells to protect herself.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+                <hungerRateFactor>0.01</hungerRateFactor>
+                <painFactor>0</painFactor>
+                <statFactors>
+                    <FilthRate>0</FilthRate>
+                    <Flammability>0</Flammability>
+                    <IncomingDamageFactor>0</IncomingDamageFactor>
+                    <RestFallRateFactor>0.01</RestFallRateFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps/>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiColonist</defName>
+        <label>protection of the grand witch</label>
+        <description>The grand witch has cast powerful spells to protect herself.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.375</IncomingDamageFactor>
+                    <Flammability>0</Flammability>
+                </statFactors>
+                <statOffsets>
+                    <ToxicResistance>1</ToxicResistance>
+                    <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+                    <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+                    <ComfyTemperatureMin>-273</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>2000</ComfyTemperatureMax>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
+                <applyPostFactor>true</applyPostFactor>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiColonistHidden</defName>
+        <label>protection of the grand witch</label>
+        <description>The grand witch has cast powerful spells to protect herself.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+                <statFactors>
+                    <FilthRate>0</FilthRate>
+                    <PsychicSensitivity>2.5</PsychicSensitivity>
+                    <PsychicEntropyMax MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</PsychicEntropyMax>
+                    <PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</PsychicEntropyRecoveryRate>
+                    <MeditationFocusGain MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</MeditationFocusGain>
+                </statFactors>
+                <statOffsets></statOffsets>
+            </li>
+        </stages>
+        <comps/>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiVisitorInvisiblity</defName>
+        <label>invisibility magic</label>
+        <description>The Great Witch has temporarily concealed her presence through magic.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>False</visibleToPlayer>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>30000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>1.333</MoveSpeed>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffYukiSkipDebuff</defName>
+        <label>flesh reconstruction</label>
+        <description>The newly reconstructed flesh is more fragile than usual.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <isBad>true</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>true</showRemainingTime>
+                <disappearsAfterTicks>300</disappearsAfterTicks>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>1.333</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

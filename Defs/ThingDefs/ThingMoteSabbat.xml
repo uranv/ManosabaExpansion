@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MoteBase">
+        <defName>UmThingMoteSabbat</defName>
+        <thingClass>UranvManosaba.Contents.PsychicRituals.MoteThrown_Sabbat</thingClass>
+        <graphicData>
+            <texPath>things/mote/BerserkBit</texPath>
+            <shaderType>MoteGlow</shaderType>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <mote>
+            <fadeInTime>0.4</fadeInTime>
+            <solidTime>5.6</solidTime>
+            <fadeOutTime>3.0</fadeOutTime>
+            <acceleration>(0, 0, 0.03)</acceleration>
+        </mote>
+    </ThingDef>
+</Defs>

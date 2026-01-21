@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 事件发生器: 魔女残骸尸体空投 -->
+    <IncidentDef>
+        <defName>UmIncidentDropDebug</defName>
+        <label>narehate corpse drop</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>UranvManosaba.Contents.Incidents.IncidentWorker_DebugDrop</workerClass>
+        <baseChance>0.0</baseChance>
+        <letterLabel>Dead narehate</letterLabel>
+        <letterText>A corpse of a narehate of a witch has fallen nearby...</letterText>
+        <letterDef>NeutralEvent</letterDef>
+        <baseChance>1.0</baseChance>
+        <minRefireDays>30</minRefireDays>
+    </IncidentDef>
+</Defs>

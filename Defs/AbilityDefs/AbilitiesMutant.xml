@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <AbilityDef>
+        <defName>UmAbilityMutantLongjump</defName>
+        <label>Narehate longjump</label>
+        <description>Command the narehate to utilize its superhuman physical capabilities to jump to a distant location. Consumes a small amount of brainwashing control duration.</description>
+        <iconPath>ui/abilities/longjump</iconPath>
+        <uiOrder>0.011</uiOrder>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <showWhenDrafted>true</showWhenDrafted>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityJump</verbClass>
+            <label>jump</label>
+            <violent>false</violent>
+            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+            <warmupTime>0.2</warmupTime>
+            <range>14.9</range>
+            <requireLineOfSight>true</requireLineOfSight>
+            <soundCast>Longjump_Jump</soundCast>
+            <soundLanding>Longjump_Land</soundLanding>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <jobDef>CastJump</jobDef>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_MutantAbilityCost">
+                <controlTimeCost>0.1</controlTimeCost>
+            </li>
+        </comps>
+    </AbilityDef>
+    <AbilityDef>
+        <defName>UmAbilityMutantHealing</defName>
+        <label>ultrafast healing</label>
+        <description>Stimulates the witch's factor within the controlled narehate to its limit, granting unimaginable regenerative capabilities. This can be used even while unconscious, but consumes a significant amount of brainwashing control duration.</description>
+        <abilityClass>UranvManosaba.Contents.Comps.Ability_MutantAbility</abilityClass>
+        <iconPath>ui/abilities/ultrahealing</iconPath>
+        <uiOrder>0.010</uiOrder>
+        <cooldownTicksRange>10000</cooldownTicksRange>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <showWhenDrafted>true</showWhenDrafted>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>false</ai_IsOffensive>
+        <targetRequired>false</targetRequired>
+        <statBases>
+            <Ability_Duration>16</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <soundCast>Pawn_Ghoul_Frenzy</soundCast>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>UmHediffMutantHealingAbility</hediffDef>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>true</replaceExisting>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_MutantAbilityCost">
+                <controlTimeCost>1.0</controlTimeCost>
+                <allowedWhileDowned>true</allowedWhileDowned>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

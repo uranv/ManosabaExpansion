@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="Human">
+        <defName>UmThingRaceYuki</defName>
+        <label>witch</label>
+        <description>In the distant past, there existed a being different from humanity.</description>
+        <tradeability>Sellable</tradeability>
+        <uiIconPath>ui/codexentries/yuki</uiIconPath>
+        <statBases>
+            <Mass>37.5</Mass>
+            <LeatherAmount>48</LeatherAmount>
+            <MeatAmount>88</MeatAmount>
+            <MaxNutrition>1.5</MaxNutrition>
+        </statBases>
+        <race>
+            <baseBodySize>0.8</baseBodySize>
+            <baseHealthScale>1.25</baseHealthScale>
+            <baseHungerRate>0.625</baseHungerRate>
+            <lifeExpectancy>2500</lifeExpectancy>
+            <linkedCorpseKind>Human</linkedCorpseKind>
+            <useMeatFrom>Human</useMeatFrom>
+            <canBecomeShambler>false</canBecomeShambler>
+            <neverIncludeInQuests>true</neverIncludeInQuests>
+            <hasUnnaturalCorpse>false</hasUnnaturalCorpse>
+            <lifeStageAges Inherit="False">
+                <li>
+                    <def>HumanlikeBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>HumanlikeChild</def>
+                    <minAge>3</minAge>
+                </li>
+                <li MayRequire="Ludeon.RimWorld.Biotech">
+                    <def>HumanlikePreTeenager</def>
+                    <minAge>9</minAge>
+                </li>
+                <li>
+                    <def>HumanlikeTeenager</def>
+                    <minAge>13</minAge>
+                </li>
+                <li>
+                    <def>HumanlikeAdult</def>
+                    <minAge>15</minAge>
+                </li>
+            </lifeStageAges>
+        </race>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_YukiHair">
+                <!-- 前头发 -->
+                <texPathFront>things/pawn/humanlike/yuki/hair_front/hair</texPathFront>
+                <layerFront>100</layerFront>
+                <drawSizeFront>(1.25,1.25)</drawSizeFront>
+                <!-- 后头发 -->
+                <texPathBack>things/pawn/humanlike/yuki/hair_back/hair</texPathBack>
+                <layerBack>1</layerBack>
+                <drawSizeBack>(1.25,1.25)</drawSizeBack>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>

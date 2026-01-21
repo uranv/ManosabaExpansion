@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmHediffYukiDummy.label>都是月代雪干的</UmHediffYukiDummy.label> -->
+    <UmHediffYukiDummy.label>全部ユキの仕業</UmHediffYukiDummy.label>
+    <!-- <UmHediffYukiDummy.description>管理月代雪的特殊健康状态，你不应该看到这个</UmHediffYukiDummy.description> -->
+    <UmHediffYukiDummy.description>月代ユキの特殊な健康状態を管理する。これは表示されるべきではない。</UmHediffYukiDummy.description>
+
+    <!-- <UmHediffYukiVisitor.label>大魔女的加护</UmHediffYukiVisitor.label> -->
+    <UmHediffYukiVisitor.label>大魔女の加護</UmHediffYukiVisitor.label>
+    <!-- <UmHediffYukiVisitor.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiVisitor.description> -->
+    <UmHediffYukiVisitor.description>大魔女は自身を守るために強力な魔法を行使した。</UmHediffYukiVisitor.description>
+
+    <!-- <UmHediffYukiVisitorHidden.label>大魔女的加护</UmHediffYukiVisitorHidden.label> -->
+    <UmHediffYukiVisitorHidden.label>大魔女の加護</UmHediffYukiVisitorHidden.label>
+    <!-- <UmHediffYukiVisitorHidden.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiVisitorHidden.description> -->
+    <UmHediffYukiVisitorHidden.description>大魔女は自身を守るために強力な魔法を行使した。</UmHediffYukiVisitorHidden.description>
+
+    <!-- <UmHediffYukiColonist.label>大魔女的加护</UmHediffYukiColonist.label> -->
+    <UmHediffYukiColonist.label>大魔女の加護</UmHediffYukiColonist.label>
+    <!-- <UmHediffYukiColonist.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiColonist.description> -->
+    <UmHediffYukiColonist.description>大魔女は自身を守るために強力な魔法を行使した。</UmHediffYukiColonist.description>
+    
+    <!-- <UmHediffYukiColonistHidden.label>大魔女的加护</UmHediffYukiColonistHidden.label> -->
+    <UmHediffYukiColonistHidden.label>大魔女の加護</UmHediffYukiColonistHidden.label>
+    <!-- <UmHediffYukiColonistHidden.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiColonistHidden.description> -->
+    <UmHediffYukiColonistHidden.description>大魔女は自身を守るために強力な魔法を行使した。</UmHediffYukiColonistHidden.description>
+
+    <!-- <UmHediffYukiVisitorInvisiblity.label>暂时隐身的魔法</UmHediffYukiVisitorInvisiblity.label> -->
+    <UmHediffYukiVisitorInvisiblity.label>一時的な透明化の魔法</UmHediffYukiVisitorInvisiblity.label>
+    <!-- <UmHediffYukiVisitorInvisiblity.description>大魔女通过魔法暂时隐去了身形。</UmHediffYukiVisitorInvisiblity.description> -->
+    <UmHediffYukiVisitorInvisiblity.description>大魔女は魔法によって一時的に姿を消した。</UmHediffYukiVisitorInvisiblity.description>
+
+    <!-- <UmHediffYukiSkipDebuff.label>血肉重组</UmHediffYukiSkipDebuff.label> -->
+    <UmHediffYukiSkipDebuff.label>血肉の再構築</UmHediffYukiSkipDebuff.label>
+    <!-- <UmHediffYukiSkipDebuff.description>刚刚重组的肉体，比起平常更加脆弱。</UmHediffYukiSkipDebuff.description> -->
+    <UmHediffYukiSkipDebuff.description>再構築されたばかりの肉体は、通常よりも脆弱になっている。</UmHediffYukiSkipDebuff.description>
+
+</LanguageData>

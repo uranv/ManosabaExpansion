@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmIncidentDropDebug.letterLabel>死亡的残骸</UmIncidentDropDebug.letterLabel> -->
+    <!-- <UmIncidentDropDebug.letterLabel>Dead narehate</UmIncidentDropDebug.letterLabel> -->
+    <!-- <UmIncidentDropDebug.letterText>一具魔女的残骸的尸体坠落到了附近...</UmIncidentDropDebug.letterText> -->
+    <!-- <UmIncidentDropDebug.letterText>A corpse of a narehate of a witch has fallen nearby...</UmIncidentDropDebug.letterText> -->
+
+    <!-- <UmIncidentMystCargoCorpse.letterLabel>神秘货物</UmIncidentMystCargoCorpse.letterLabel> -->
+    <!-- <UmIncidentMystCargoCorpse.letterLabel>Mysterious cargo</UmIncidentMystCargoCorpse.letterLabel> -->
+    
+    <!-- <UmIncidentYukiVisitor.label>访客</UmIncidentYukiVisitor.label> -->
+    <!-- <UmIncidentYukiVisitor.label>Visitor</UmIncidentYukiVisitor.label> -->
+    <!-- <UmIncidentYukiVisitor.letterLabel>访客</UmIncidentYukiVisitor.letterLabel> -->
+    <!-- <UmIncidentYukiVisitor.letterLabel>Visitor</UmIncidentYukiVisitor.letterLabel> -->
+    <!-- <UmIncidentYukiVisitor.letterText>一位来历不明的年轻女性来到了你的殖民地。\n\n她自称为"{0}"，她的来访似乎有一些隐藏的目的。\n\n你可以与她交谈，了解更多信息。</UmIncidentYukiVisitor.letterText> -->
+    <!-- <UmIncidentYukiVisitor.letterText>A young woman of unknown origin has arrived at your colony.\n\nShe calls herself "{0}", and her visit seems to have some hidden purpose.\n\nYou can talk to her to learn more.</UmIncidentYukiVisitor.letterText> -->
+
+</LanguageData>

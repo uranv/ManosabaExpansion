@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <IncidentDef ParentName="AnomalyIncidentBase">
+        <defName>UmIncidentMystCargoCorpse</defName>
+        <label>mysterious cargo</label>
+        <questScriptDef>UmQuestScriptMystCargoCorpse</questScriptDef>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>UranvManosaba.Contents.Incidents.IncidentWorker_MystCargoNarehate</workerClass>
+        <baseChance>0.8</baseChance>
+        <earliestDay>5</earliestDay>
+        <minRefireDays>15</minRefireDays>
+        <minPopulation>1</minPopulation>
+        <requireColonistsPresent>True</requireColonistsPresent>
+        <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+    </IncidentDef>
+</Defs>

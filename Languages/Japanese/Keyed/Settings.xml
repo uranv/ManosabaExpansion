@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- Common Strings -->
+    <!-- <ManosabaSettings_yukiNameDef>月代雪</ManosabaSettings_yukiNameDef> -->
+    <ManosabaSettings_yukiNameDef>月代ユキ</ManosabaSettings_yukiNameDef>
+    <!-- <ManosabaSettings_activatedChoice>已启用</ManosabaSettings_activatedChoice> -->
+    <ManosabaSettings_activatedChoice>有効</ManosabaSettings_activatedChoice>
+    <!-- <ManosabaSettings_deactivatedChoice>已禁用</ManosabaSettings_deactivatedChoice> -->
+    <ManosabaSettings_deactivatedChoice>無効</ManosabaSettings_deactivatedChoice>
+    
+
+    <!-- Settings Tabs -->
+    <!-- <ManosabaSettings_ModName>魔女因子设置（魔法少女的魔女审判拓展）</ManosabaSettings_ModName> -->
+    <ManosabaSettings_ModName>魔女因子設定（魔法少女の魔女裁判 Expansion）</ManosabaSettings_ModName>
+    <!-- <ManosabaSettings_GeneralTab>一般设置</ManosabaSettings_GeneralTab> -->
+    <ManosabaSettings_GeneralTab>一般設定</ManosabaSettings_GeneralTab>
+    <!-- <ManosabaSettings_ProgressTab>魔女化设置</ManosabaSettings_ProgressTab> -->
+    <ManosabaSettings_ProgressTab>魔女化設定</ManosabaSettings_ProgressTab>
+    <!-- <ManosabaSettings_HealingTab>疗愈设置</ManosabaSettings_HealingTab> -->
+    <ManosabaSettings_HealingTab>回復設定</ManosabaSettings_HealingTab>
+    <!-- <ManosabaSettings_RitualTab>仪式设置</ManosabaSettings_RitualTab> -->
+    <ManosabaSettings_RitualTab>儀式設定</ManosabaSettings_RitualTab>
+    <!-- <ManosabaSettings_MiscTab>其他设置</ManosabaSettings_MiscTab> -->
+    <ManosabaSettings_MiscTab>その他</ManosabaSettings_MiscTab>
+    
+
+    <!-- General Tab -->
+    <!-- <ManosabaSettings_isShowProgress>显示魔女化数值</ManosabaSettings_isShowProgress> -->
+    <ManosabaSettings_isShowProgress>魔女化の数値を表示</ManosabaSettings_isShowProgress>
+    <!-- <ManosabaSettings_isShowProgress_Desc_1>Hediff 中将显示魔女化具体数值，如"魔女因子(轻度,50%)"</ManosabaSettings_isShowProgress_Desc_1> -->
+    <ManosabaSettings_isShowProgress_Desc_1>Hediffに魔女化の具体的な数値を表示します（例：「魔女の因子(軽度, 50%)」）。</ManosabaSettings_isShowProgress_Desc_1>
+    <!-- <ManosabaSettings_isShowProgress_Desc_1_disable>Hediff 中仅显示魔女化大致进度，如"魔女因子(轻度)" [默认选项]</ManosabaSettings_isShowProgress_Desc_1_disable> -->
+    <ManosabaSettings_isShowProgress_Desc_1_disable>Hediffに魔女化の大まかな進行度のみを表示します（例：「魔女の因子(軽度)」）[デフォルト]。</ManosabaSettings_isShowProgress_Desc_1_disable>
+    <!-- <ManosabaSettings_isShowProgress_Desc_2>• 魔女因子未被发现时，仍不会出现 Hediff 且不显示数值进度</ManosabaSettings_isShowProgress_Desc_2> -->
+    <ManosabaSettings_isShowProgress_Desc_2>• 魔女の因子が未発見の場合、Hediffおよび進行度は表示されません。</ManosabaSettings_isShowProgress_Desc_2>
+
+    <!-- <ManosabaSettings_debugMode>调试模式</ManosabaSettings_debugMode> -->
+    <ManosabaSettings_debugMode>デバッグモード</ManosabaSettings_debugMode>
+    <!-- <ManosabaSettings_debugMode_Desc>• 启用时在控制台输出调试信息</ManosabaSettings_debugMode_Desc> -->
+    <ManosabaSettings_debugMode_Desc>• 有効にすると、デバッグ情報がコンソールに出力されます。</ManosabaSettings_debugMode_Desc>
+
+    <!-- <ManosabaSettings_GeneralPanelTitle>魔女化进度预览面板</ManosabaSettings_GeneralPanelTitle> -->
+    <ManosabaSettings_GeneralPanelTitle>魔女化進行度プレビューパネル</ManosabaSettings_GeneralPanelTitle>
+    <!-- <ManosabaSettings_GeneralPanel_Desc_1>• 预览魔女化进度变化量关于心情的变化曲线，\n调节右侧预览参数获取具体数值\n• 调节曲线形态的细致参数位于"魔女化设置"面板</ManosabaSettings_GeneralPanel_Desc_1> -->
+    <ManosabaSettings_GeneralPanel_Desc_1>• 魔女化進行度の変化量と気分の関係曲線をプレビューします。\n右側のパラメータを調整して具体的な数値を確認できます。\n• 曲線の形状を調整する詳細なパラメータは「魔女化設定」にあります。</ManosabaSettings_GeneralPanel_Desc_1>
+    <!-- <ManosabaSettings_GeneralPreviewSeverity>魔女化进度 {0}%</ManosabaSettings_GeneralPreviewSeverity> -->
+    <ManosabaSettings_GeneralPreviewSeverity>魔女化進行度 {0}%</ManosabaSettings_GeneralPreviewSeverity>
+    <!-- <ManosabaSettings_GeneralPreviewMood>心情 {0}%</ManosabaSettings_GeneralPreviewMood> -->
+    <ManosabaSettings_GeneralPreviewMood>気分 {0}%</ManosabaSettings_GeneralPreviewMood>
+    <!-- <ManosabaSettings_GeneralPreviewMinorThres>轻度崩溃阈值 {0}%</ManosabaSettings_GeneralPreviewMinorThres> -->
+    <ManosabaSettings_GeneralPreviewMinorThres>軽度の精神崩壊しきい値 {0}%</ManosabaSettings_GeneralPreviewMinorThres>
+    
+    <!-- <ManosabaSettings_changePerDayPreview>当前每日魔女化进度变化：{0}%</ManosabaSettings_changePerDayPreview> -->
+    <ManosabaSettings_changePerDayPreview>現在の魔女化進行度の日次変化量：{0}%</ManosabaSettings_changePerDayPreview>
+    <!-- <ManosabaSettings_mtbDaysPreview>当前"魔女因子杀意"精神崩溃期望周期：{0}天</ManosabaSettings_mtbDaysPreview> -->
+    <ManosabaSettings_mtbDaysPreview>現在の「魔女因子の殺意」の基礎発生間隔：{0} 日</ManosabaSettings_mtbDaysPreview>
+    <!-- <ManosabaSettings_drawIncreaseThreshold>增加阈值\n{0}%</ManosabaSettings_drawIncreaseThreshold> -->
+    <ManosabaSettings_drawIncreaseThreshold>増加閾値\n{0}%</ManosabaSettings_drawIncreaseThreshold>
+    <!-- <ManosabaSettings_drawDecreaseThreshold>减少阈值\n{0}%</ManosabaSettings_drawDecreaseThreshold> -->
+    <ManosabaSettings_drawDecreaseThreshold>減少閾値\n{0}%</ManosabaSettings_drawDecreaseThreshold>
+
+
+    <!-- Progress Tab -->
+    <!-- <ManosabaSettings_severityIncreaseFactor>魔女化增加系数：{0}% 每天</ManosabaSettings_severityIncreaseFactor> -->
+    <ManosabaSettings_severityIncreaseFactor>魔女化増加係数：{0}% /日</ManosabaSettings_severityIncreaseFactor>
+    <!-- <ManosabaSettings_severityIncreaseFactor_Desc>• 此系数反应心情为 0% 时，每天魔女化进度增加上限</ManosabaSettings_severityIncreaseFactor_Desc> -->
+    <ManosabaSettings_severityIncreaseFactor_Desc>• 気分が0%の時の、魔女化進行度の一日あたりの増加上限です。</ManosabaSettings_severityIncreaseFactor_Desc>
+
+    <!-- <ManosabaSettings_severityDecreaseFactor>魔女化减少系数：{0}% 每天</ManosabaSettings_severityDecreaseFactor> -->
+    <ManosabaSettings_severityDecreaseFactor>魔女化減少係数：{0}% /日</ManosabaSettings_severityDecreaseFactor>
+    <!-- <ManosabaSettings_severityDecreaseFactor_Desc>• 此系数反应心情为 100% 时，每天魔女化进度减少上限</ManosabaSettings_severityDecreaseFactor_Desc> -->
+    <ManosabaSettings_severityDecreaseFactor_Desc>• 気分が100%の時の、魔女化進行度の一日あたりの減少上限です。</ManosabaSettings_severityDecreaseFactor_Desc>
+
+    <!-- <ManosabaSettings_severityIncreaseBias>魔女化增加的心情偏移：{0}%</ManosabaSettings_severityIncreaseBias> -->
+    <ManosabaSettings_severityIncreaseBias>魔女化増加の気分バイアス：{0}%</ManosabaSettings_severityIncreaseBias>
+    <!-- <ManosabaSettings_severityIncreaseBias_Desc>• 此系数反应魔女化进度增加阈值相对轻度心情崩溃阈值 (默认 35) 的正偏移量</ManosabaSettings_severityIncreaseBias_Desc> -->
+    <ManosabaSettings_severityIncreaseBias_Desc>• 魔女化進行度が増加し始めるしきい値の、軽度の精神崩壊しきい値（デフォルト35）に対する正のオフセットです。</ManosabaSettings_severityIncreaseBias_Desc>
+
+    <!-- <ManosabaSettings_severityFlatBias>魔女化不变的心情区间：{0}%</ManosabaSettings_severityFlatBias> -->
+    <ManosabaSettings_severityFlatBias>魔女化不変の気分区間：{0}%</ManosabaSettings_severityFlatBias>
+    <!-- <ManosabaSettings_severityFlatBias_Desc>• 此系数反应魔女化进度不变的心情区间宽度</ManosabaSettings_severityFlatBias_Desc> -->
+    <ManosabaSettings_severityFlatBias_Desc>• 魔女化進行度が変化しない気分区間の幅です。</ManosabaSettings_severityFlatBias_Desc>
+
+    <!-- <ManosabaSettings_severityIncreaseExponent>魔女化增加指数修正：{0}</ManosabaSettings_severityIncreaseExponent> -->
+    <ManosabaSettings_severityIncreaseExponent>魔女化増加の指数補正：{0}</ManosabaSettings_severityIncreaseExponent>
+    <!-- <ManosabaSettings_severityIncreaseExponent_Desc>• （高级选项）此系数影响魔女化进度增加速率随心情恶化的加速程度</ManosabaSettings_severityIncreaseExponent_Desc> -->
+    <ManosabaSettings_severityIncreaseExponent_Desc>• （上級者向け）気分の悪化に伴う魔女化進行度の増加速度の加速具合に影響します。</ManosabaSettings_severityIncreaseExponent_Desc>
+
+    <!-- <ManosabaSettings_severityDecreaseExponent>魔女化减少指数修正：{0}</ManosabaSettings_severityDecreaseExponent> -->
+    <ManosabaSettings_severityDecreaseExponent>魔女化減少の指数補正：{0}</ManosabaSettings_severityDecreaseExponent>
+    <!-- <ManosabaSettings_severityDecreaseExponent_Desc>• （高级选项）此因子反应魔女化进度减少速率随心情改善的加速程度</ManosabaSettings_severityDecreaseExponent_Desc> -->
+    <ManosabaSettings_severityDecreaseExponent_Desc>• （上級者向け）気分の改善に伴う魔女化進行度の減少速度の加速具合に影響します。</ManosabaSettings_severityDecreaseExponent_Desc>
+
+    <!-- <ManosabaSettings_baseMtbDays>"魔女因子杀意"精神崩溃的基础周期：{0}天</ManosabaSettings_baseMtbDays> -->
+    <ManosabaSettings_baseMtbDays>「魔女因子の殺意」精神崩壊の基本間隔：{0} 日</ManosabaSettings_baseMtbDays>
+    <!-- <ManosabaSettings_baseMtbDays_Desc_1>• 此数值为魔女化进度 50%，心情 50% 时发生"魔女因子杀意"精神崩溃的期望周期</ManosabaSettings_baseMtbDays_Desc_1> -->
+    <ManosabaSettings_baseMtbDays_Desc_1>• 魔女化進行度50%、気分50%の時に発生する「魔女因子の殺意」精神崩壊の期待発生間隔です。</ManosabaSettings_baseMtbDays_Desc_1>
+    <!-- <ManosabaSettings_baseMtbDays_Desc_2>• 实际精神崩溃的期望周期随魔女化进度以及实时心情变化，在此数值的 (1/8,8) 倍率范围波动</ManosabaSettings_baseMtbDays_Desc_2> -->
+    <ManosabaSettings_baseMtbDays_Desc_2>• 実際の期待発生間隔は、魔女化進行度とリアルタイムの気分に応じて、この数値の(1/8～8)倍の範囲で変動します。</ManosabaSettings_baseMtbDays_Desc_2>
+
+    <!-- <ManosabaSettings_ResetProgressTab>重置本页设置为默认值</ManosabaSettings_ResetProgressTab> -->
+    <ManosabaSettings_ResetProgressTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetProgressTab>
+    <!-- <ManosabaSettings_ProgressTabDesc>本页中系数设置的具体作用可在一般设置页的函数图表直观查看</ManosabaSettings_ProgressTabDesc> -->
+    <ManosabaSettings_ProgressTabDesc>このページの係数設定による具体的な影響は、一般設定ページのグラフで視覚的に確認できます。</ManosabaSettings_ProgressTabDesc>
+    
+
+    <!-- Healing Tab -->
+    <!-- <ManosabaSettings_factorHealing>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_factorHealing> -->
+    <ManosabaSettings_factorHealing>魔女の自然回復係数：{0} HP/日</ManosabaSettings_factorHealing>
+    <!-- <ManosabaSettings_factorHealing_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_factorHealing_Desc_1> -->
+    <ManosabaSettings_factorHealing_Desc_1>• 「魔女のなれはて」状態にある時、全ての傷に対して上記の自然回復係数が加算されます。</ManosabaSettings_factorHealing_Desc_1>
+    <!-- <ManosabaSettings_factorHealing_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_factorHealing_Desc_2> -->
+    <ManosabaSettings_factorHealing_Desc_2>• つまり、全ての傷が毎日 {0} HPずつ回復します。</ManosabaSettings_factorHealing_Desc_2>
+    
+    <!-- <ManosabaSettings_factorBloodHealing>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_factorBloodHealing> -->
+    <ManosabaSettings_factorBloodHealing>魔女の失血自然回復係数：{0}% /日</ManosabaSettings_factorBloodHealing>
+    <!-- <ManosabaSettings_factorBloodHealing_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_factorBloodHealing_Desc_1> -->
+    <ManosabaSettings_factorBloodHealing_Desc_1>「魔女のなれはて」状態にある時、「失血」状態が毎日 {0}% 追加で自然回復します。</ManosabaSettings_factorBloodHealing_Desc_1>
+    <!-- <ManosabaSettings_factorBloodHealing_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_factorBloodHealing_Desc_1_Disable> -->
+    <ManosabaSettings_factorBloodHealing_Desc_1_Disable>「失血」状態への回復係数ボーナスはありません。</ManosabaSettings_factorBloodHealing_Desc_1_Disable>
+    <!-- <ManosabaSettings_factorBloodHealing_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_factorBloodHealing_Desc_2> -->
+    <ManosabaSettings_factorBloodHealing_Desc_2>• 参考として、「失血」のデフォルトの回復率は33.3%/日です（才能、特性、遺伝子、人工部位の影響を受けません）。</ManosabaSettings_factorBloodHealing_Desc_2>
+    <!-- <ManosabaSettings_factorBloodHealing_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_factorBloodHealing_Desc_3> -->
+    <ManosabaSettings_factorBloodHealing_Desc_3>• デフォルトの回復は出血中に停止しますが、この係数による回復効果は出血中も有効です。</ManosabaSettings_factorBloodHealing_Desc_3>
+
+    <!-- <ManosabaSettings_postFactorHealing>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postFactorHealing> -->
+    <ManosabaSettings_postFactorHealing>魔女の治癒の後処理係数：{0} 倍</ManosabaSettings_postFactorHealing>
+    <!-- <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 倍率的魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1> -->
+    <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}やその他の「部分的な魔女化」状態の生物は、{0}倍のなれはて自然回復効果を得ます。</ManosabaSettings_postFactorHealing_Desc_1>
+    <!-- <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1_Disable> -->
+    <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}やその他の「部分的な魔女化」状態の生物には、魔女の自然回復効果は適用されません。</ManosabaSettings_postFactorHealing_Desc_1_Disable>
+    <!-- <ManosabaSettings_postFactorHealing_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postFactorHealing_Desc_2> -->
+    <ManosabaSettings_postFactorHealing_Desc_2>• 対象の生物は、毎日 {0} HPの傷自然回復係数と、{1}% の失血自然回復係数を追加で獲得します。</ManosabaSettings_postFactorHealing_Desc_2>
+    <!-- <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postFactorHealing_Desc_2_Disable> -->
+    <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 魔女の自然回復効果は、「魔女のなれはて」状態を持つ生物にのみ適用されます。</ManosabaSettings_postFactorHealing_Desc_2_Disable>
+    
+    <!-- <ManosabaSettings_ResetHealingTab>重置本页设置为默认值</ManosabaSettings_ResetHealingTab> -->
+    <ManosabaSettings_ResetHealingTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetHealingTab>
+
+
+    <!-- Ritual Tab -->
+    <!-- <ManosabaSettings_NBw_title>魔女残骸洗脑仪式相关设置</ManosabaSettings_NBw_title> -->
+    <ManosabaSettings_NBw_title>なれはて洗脳の儀式の設定</ManosabaSettings_NBw_title>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle>• 魔女残骸控制时间上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle> -->
+    <ManosabaSettings_NBw_mutantFullCircle>• 魔女のなれはての制御時間上限：{0} 日</ManosabaSettings_NBw_mutantFullCircle>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 此系数决定了魔女残骸的洗脑控制时间上限</ManosabaSettings_NBw_mutantFullCircle_Desc_1> -->
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 魔女のなれはての洗脳制御時間の上限を決定します。</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 拥有魔女残骸状态的生物可通过仪式"魔女残骸洗脑"在一定时间内转化为可受控的对象</ManosabaSettings_NBw_mutantFullCircle_Desc_2> -->
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 魔女のなれはて状態にある生物は、「なれはて洗脳の儀式」を通じて一定期間制御可能な対象に変換できます。</ManosabaSettings_NBw_mutantFullCircle_Desc_2>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 对于处于控制状态的魔女残骸，其剩余控制时间可通过相同仪式延长至不超过此上限</ManosabaSettings_NBw_mutantFullCircle_Desc_3> -->
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 既に制御状態にあるなれはては、同じ儀式を行うことで、この上限を超えない範囲で制御時間を延長できます。</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
+
+    <!-- <ManosabaSettings_Sabbat_title>魔女安息仪式相关设置</ManosabaSettings_Sabbat_title> -->
+    <ManosabaSettings_Sabbat_title>サバトの儀式の設定</ManosabaSettings_Sabbat_title>
+    <!-- <ManosabaSettings_Sabbat_thresholdMinusOne>• 品质偏移 -1 阈值：{0}%</ManosabaSettings_Sabbat_thresholdMinusOne> -->
+    <ManosabaSettings_Sabbat_thresholdMinusOne>• 品質補正 -1 しきい値：{0}%</ManosabaSettings_Sabbat_thresholdMinusOne>
+    <!-- <ManosabaSettings_Sabbat_thresholdZero>• 品质偏移 0 阈值：{0}%</ManosabaSettings_Sabbat_thresholdZero> -->
+    <ManosabaSettings_Sabbat_thresholdZero>• 品質補正 0 しきい値：{0}%</ManosabaSettings_Sabbat_thresholdZero>
+    <!-- <ManosabaSettings_Sabbat_thresholdPlusOne>• 品质偏移 +1 阈值：{0}%</ManosabaSettings_Sabbat_thresholdPlusOne> -->
+    <ManosabaSettings_Sabbat_thresholdPlusOne>• 品質補正 +1 しきい値：{0}%</ManosabaSettings_Sabbat_thresholdPlusOne>
+    <!-- <ManosabaSettings_Sabbat_thresholds_Desc_1>- 这些阈值决定了魔女安息仪式中召唤出{YUKI}的装备品质偏移效果与仪式品质的对应关系</ManosabaSettings_Sabbat_thresholds_Desc_1> -->
+    <ManosabaSettings_Sabbat_thresholds_Desc_1>- これらのしきい値は、サバトの儀式で召喚される{YUKI}の装備の品質補正と、儀式の質の対応関係を決定します。</ManosabaSettings_Sabbat_thresholds_Desc_1>
+    <!-- <ManosabaSettings_Sabbat_thresholds_Desc_2>- 仪式品质高于对应阈值时，召唤的装备品质相对消耗献祭物品品质应用对应的偏移效果</ManosabaSettings_Sabbat_thresholds_Desc_2> -->
+    <ManosabaSettings_Sabbat_thresholds_Desc_2>- 儀式の質が対応するしきい値を上回った場合、召喚される装備の品質は、捧げられた物品の品質に対して対応する補正を受けます。</ManosabaSettings_Sabbat_thresholds_Desc_2>
+    <!-- <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例如使用 极佳(+4) 品质的仪式剑，以 86% (默认阈值时+1) 的仪式质量，召唤出的{YUKI}会持有 大师(+5) 品质的装备</ManosabaSettings_Sabbat_thresholds_Desc_3> -->
+    <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例：秀品(+4)品質の儀礼剣を使用し、儀式の質が86%（デフォルトの+1しきい値）の場合、召喚される{YUKI}は名品(+5)品質の装備を所持します。</ManosabaSettings_Sabbat_thresholds_Desc_3>
+
+    <!-- <ManosabaSettings_ResetRitualTab>重置本页设置为默认值</ManosabaSettings_ResetRitualTab> -->
+    <ManosabaSettings_ResetRitualTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetRitualTab>
+
+
+    <!-- Misc Tab -->
+    <!-- <ManosabaSettings_inverseTemperature>魔女因子随机参数：{0}</ManosabaSettings_inverseTemperature> -->
+    <ManosabaSettings_inverseTemperature>魔女の因子ランダムパラメータ：{0}</ManosabaSettings_inverseTemperature>
+    <!-- <ManosabaSettings_inverseTemperature_Desc_1>• 此参数影响通过随机分布选择目标时的选择倾向</ManosabaSettings_inverseTemperature_Desc_1> -->
+    <ManosabaSettings_inverseTemperature_Desc_1>• このパラメータは、ランダム分布によるターゲット選択時の傾向に影響します。</ManosabaSettings_inverseTemperature_Desc_1>
+    <!-- <ManosabaSettings_inverseTemperature_Desc_2>• 数值较大时，随机分布倾向于选择"与其他殖民者关系更差"的殖民者；数值较小时，倾向于选择"与其他殖民者关系更好"的殖民者；\n绝对值越小越接近平均分布</ManosabaSettings_inverseTemperature_Desc_2> -->
+    <ManosabaSettings_inverseTemperature_Desc_2>• 値が大きいほど「他の入植者との関係が悪い」入植者が選ばれやすく、小さいほど「関係が良い」入植者が選ばれやすくなります。\n絶対値が小さいほど平均的な分布に近づきます。</ManosabaSettings_inverseTemperature_Desc_2>
+    <!-- <ManosabaSettings_inverseTemperature_Desc_3>• 随机选择器使用玻尔兹曼分布，将"对于其他殖民者关系之和"归一化视为能量，此参数即为逆温度</ManosabaSettings_inverseTemperature_Desc_3> -->
+    <ManosabaSettings_inverseTemperature_Desc_3>• ランダムセレクターはボルツマン分布を使用しており、「他の入植者との関係の総和」を正規化してエネルギーと見なしています。このパラメータは逆温度に相当します。</ManosabaSettings_inverseTemperature_Desc_3>
+    <!-- <ManosabaSettings_inverseTemperature_Desc_4>• 设定上，魔女因子的传播和"心情"相关，那么这里通过关系总和来量化传播概率似乎很合理 :D</ManosabaSettings_inverseTemperature_Desc_4> -->
+    <ManosabaSettings_inverseTemperature_Desc_4>• 設定上、魔女の因子の伝播は「気分」に関連しているため、関係の総和で伝播確率を定量化するのは合理的でしょう :D</ManosabaSettings_inverseTemperature_Desc_4>
+    
+    <!-- <ManosabaSettings_disableTale>禁用月代雪对话使用故事</ManosabaSettings_disableTale> -->
+    <ManosabaSettings_disableTale>月代ユキの会話での物語使用を無効化</ManosabaSettings_disableTale>
+    <!-- <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需禁用。</ManosabaSettings_disableTale_Desc_1> -->
+    <ManosabaSettings_disableTale_Desc_1>• セーブデータの入植者ログに既にエラー記録が存在する場合、会話で物語記録を使用して内容を生成する際にクラッシュする問題を回避するためのものです。通常は無効にする必要はありません。</ManosabaSettings_disableTale_Desc_1>
+    
+    <!-- <ManosabaSettings_ResetMiscTab>重置本页设置为默认值</ManosabaSettings_ResetMiscTab> -->
+    <ManosabaSettings_ResetMiscTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetMiscTab>
+
+</LanguageData>

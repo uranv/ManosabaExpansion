@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmJobTalkToYuki.reportString>正在与 TargetA 交谈。</UmJobTalkToYuki.reportString> -->
+    <!-- <UmJobTalkToYuki.reportString>Talking to TargetA.</UmJobTalkToYuki.reportString> -->
+
+    <!-- <UmJobYukiVisitorCast.reportString>正在前往指定地点。</UmJobYukiVisitorCast.reportString> -->
+    <!-- <UmJobYukiVisitorCast.reportString>Moving to designated location.</UmJobYukiVisitorCast.reportString> -->
+    <!-- <UmJobYukiVisitorCastHidden.reportString>正在前往指定地点。</UmJobYukiVisitorCastHidden.reportString>  -->
+    <!-- <UmJobYukiVisitorCastHidden.reportString>Moving to designated location.</UmJobYukiVisitorCastHidden.reportString> -->
+
+</LanguageData>

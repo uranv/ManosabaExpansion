@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- 魔女残骸变种人受控制时间在 countdown Hediff 显示的单位 -->
+    <HediffComp_Countdown_Mutant_Unit>日</HediffComp_Countdown_Mutant_Unit>
+    <!-- 魔女愈疗提示 -->
+    <!-- <HediffComp_NarehateHealing_TipHeal>  - 魔女愈疗：{0}点耐久/天</HediffComp_NarehateHealing_TipHeal> -->
+    <HediffComp_NarehateHealing_TipHeal>  - 魔女の回復：{0}HP/日</HediffComp_NarehateHealing_TipHeal>
+    <!-- <HediffComp_NarehateHealing_TipBlood>  - 魔女失血愈疗：{0}%/天</HediffComp_NarehateHealing_TipBlood> -->
+    <HediffComp_NarehateHealing_TipBlood>  - 魔女の失血回復：{0}%/日</HediffComp_NarehateHealing_TipBlood>
+    <!-- <HediffComp_NarehateHealingReveal_TipHeal>  - 魔女愈疗：{0}点耐久/天</HediffComp_NarehateHealingReveal_TipHeal> -->
+    <HediffComp_NarehateHealingReveal_TipHeal>  - 魔女の回復：{0}HP/日</HediffComp_NarehateHealingReveal_TipHeal>
+    <!-- <HediffComp_NarehateHealingReveal_TipBlood>  - 魔女失血愈疗：{0}%/天</HediffComp_NarehateHealingReveal_TipBlood> -->
+    <HediffComp_NarehateHealingReveal_TipBlood>  - 魔女の失血回復：{0}%/日</HediffComp_NarehateHealingReveal_TipBlood>
+    <!-- 魔女安息仪式：禁止原因 -->
+    <!-- <Manosaba_SabbatReason_YukiExists>当前殖民地已存在{YUKI}。</Manosaba_SabbatReason_YukiExists> -->
+    <Manosaba_SabbatReason_YukiExists>現在のコロニーに既に{YUKI}が存在する。</Manosaba_SabbatReason_YukiExists>
+    <!-- 变种人技能消耗时间 -->
+    <!-- <Manosaba_MutantAbility_Cost>消耗控制时间：{0}天</Manosaba_MutantAbility_Cost> -->
+    <Manosaba_MutantAbility_Cost>制御時間を消費：{0}日</Manosaba_MutantAbility_Cost>
+    <!-- <Manosaba_MutantAbility_NotMutant>{0_labelShort}不是魔女残骸。</Manosaba_MutantAbility_NotMutant> -->
+    <Manosaba_MutantAbility_NotMutant>{0_labelShort}は魔女のなれはてではない。</Manosaba_MutantAbility_NotMutant>
+    <!-- <Manosaba_MutantAbility_NotEnoughTime>{0_labelShort}剩余的控制时间不足。</Manosaba_MutantAbility_NotEnoughTime> -->
+    <Manosaba_MutantAbility_NotEnoughTime>{0_labelShort}の残り制御時間が不足している。</Manosaba_MutantAbility_NotEnoughTime>
+</LanguageData>

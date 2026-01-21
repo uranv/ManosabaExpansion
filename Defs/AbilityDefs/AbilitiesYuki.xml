@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <AbilityDef>
+        <defName>UmAbilityYukiAdd</defName>
+        <label>add factor</label>
+        <description>Implants a witch's factor into the target.\n\nRight-click to switch to the remove factor ability.</description>
+        <iconPath>ui/abilities/add</iconPath>
+        <groupDef>UmAbilityGroupSwitchableYuki</groupDef>
+        <abilityClass>UranvManosaba.Contents.Comps.Ability_SwitchableAbility</abilityClass>
+        <gizmoClass>UranvManosaba.Contents.Comps.Command_SwitchableAbility</gizmoClass>
+        <!-- 1 day -->
+        <showPsycastEffects>true</showPsycastEffects>
+        <stunTargetWhileCasting>true</stunTargetWhileCasting>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <showWhenDrafted>false</showWhenDrafted>
+        <uiOrder>0.01</uiOrder>
+        <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+        <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+        <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+        <warmupSound>PsycastCastLoop</warmupSound>
+        <writeCombatLog>true</writeCombatLog>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>2</warmupTime>
+            <range>6.6</range>
+            <requireLineOfSight>True</requireLineOfSight>
+            <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+            <targetParams>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_AddMajoyinshi" />
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_AbilityGroup">
+                <groupId>UmAbilityGroupSwitchableYuki</groupId>
+                <isDefault>true</isDefault>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+    <AbilityDef>
+        <defName>UmAbilityYukiRemove</defName>
+        <label>remove factor</label>
+        <description>Removes a witch's factor from the target.\n\nRight-click to switch to the add factor ability.</description>
+        <iconPath>ui/abilities/remove</iconPath>
+        <groupDef>UmAbilityGroupSwitchableYuki</groupDef>
+        <abilityClass>UranvManosaba.Contents.Comps.Ability_SwitchableAbility</abilityClass>
+        <gizmoClass>UranvManosaba.Contents.Comps.Command_SwitchableAbility</gizmoClass>
+        <!-- 1 day -->
+        <showPsycastEffects>true</showPsycastEffects>
+        <stunTargetWhileCasting>true</stunTargetWhileCasting>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <showWhenDrafted>false</showWhenDrafted>
+        <uiOrder>0.01</uiOrder>
+        <moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+        <warmupMote>Mote_HoraxSmallSpellWarmup</warmupMote>
+        <warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+        <warmupSound>PsycastCastLoop</warmupSound>
+        <writeCombatLog>true</writeCombatLog>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>2</warmupTime>
+            <range>6.6</range>
+            <requireLineOfSight>True</requireLineOfSight>
+            <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+            <targetParams>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_RemoveMajoyinshi" />
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_AbilityGroup">
+                <groupId>UmAbilityGroupSwitchableYuki</groupId>
+                <isDefault>false</isDefault>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+    <AbilityGroupDef>
+        <defName>UmAbilityGroupSwitchableYuki</defName>
+        <cooldownTicks>60000</cooldownTicks>
+        <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+    </AbilityGroupDef>
+    <AbilityDef>
+        <defName>UmAbilityYukiSkip</defName>
+        <label>fleshskip</label>
+        <description>Dissolves the body into chunks of flesh and reconstructs at a nearby target location. The caster enters a brief state of vulnerability after the skip.</description>
+        <category>Skip</category>
+        <iconPath>ui/abilities/skip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <showPsycastEffects>false</showPsycastEffects>
+        <uiOrder>0.011</uiOrder>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <showOnCharacterCard>true</showOnCharacterCard>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.1</warmupTime>
+            <range>44.5</range>
+            <requireLineOfSight>False</requireLineOfSight>
+            <drawHighlightWithLineOfSight>false</drawHighlightWithLineOfSight>
+            <drawAimPie>true</drawAimPie>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_SelfTeleport">
+                <destination>Selected</destination>
+                <requiresLineOfSight>false</requiresLineOfSight>
+                <range>44.5</range>
+                <clamorType>Ability</clamorType>
+                <clamorRadius>10</clamorRadius>
+                <destClamorType>Ability</destClamorType>
+                <destClamorRadius>10</destClamorRadius>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

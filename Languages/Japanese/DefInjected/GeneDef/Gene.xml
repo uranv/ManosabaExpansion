@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmGeneFactor.label>魔女因子</UmGeneFactor.label> -->
+    <UmGeneFactor.label>魔女の因子</UmGeneFactor.label>
+    <!-- <UmGeneFactor.labelShortAdj>魔女</UmGeneFactor.labelShortAdj> -->
+    <UmGeneFactor.labelShortAdj>魔女</UmGeneFactor.labelShortAdj>
+    <!-- <UmGeneFactor.description>这种"基因"的携带者受到魔女因子的诅咒。随着诅咒加深，她们的身体能力也会发生变化。</UmGeneFactor.description> -->
+    <UmGeneFactor.description>この「遺伝子」を持つ者は魔女因子の呪いを受けています。呪いが深まるにつれて、彼女らの身体能力も変化していきます。</UmGeneFactor.description>
+    <!-- <UmGeneFactor.customEffectDescriptions.0>主动赋予携带者魔女因子的诅咒</UmGeneFactor.customEffectDescriptions.0> -->
+    <UmGeneFactor.customEffectDescriptions.0>持つ者に魔女因子の呪いを付与する</UmGeneFactor.customEffectDescriptions.0>
+    <!-- <UmGeneFactor.customEffectDescriptions.1>被添加后无法移除，失去时会自动重新\n添加</UmGeneFactor.customEffectDescriptions.1> -->
+    <UmGeneFactor.customEffectDescriptions.1>付与されると除去できず、失っても自\n動的に再付与される</UmGeneFactor.customEffectDescriptions.1>
+    <!-- <UmGeneFactor.customEffectDescriptions.2>解锁科技"魔女因子基因"后，魔女因子\n才能作为"基因"存在</UmGeneFactor.customEffectDescriptions.2> -->
+    <UmGeneFactor.customEffectDescriptions.2>研究「魔女の因子遺伝子」完了後、魔\n女の因子は「遺伝子」として存在できるようになる</UmGeneFactor.customEffectDescriptions.2>
+
+</LanguageData>

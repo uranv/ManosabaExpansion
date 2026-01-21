@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RulePackDef>
+        <defName>UmRulePackStory</defName>
+        <include>
+            <li>UmRulePackUtils</li>
+            <li>UmRulePackUtils</li>
+            <li>UmRulePackSingle_Actions</li>
+            <li>UmRulePackSingle_Bridges</li>
+            <li>UmRulePackSingle_Ends</li>
+            <li>UmRulePackDouble_SingleActions</li>
+            <li>UmRulePackDouble_Actions</li>
+            <li>UmRulePackDouble_Bridges</li>
+            <li>UmRulePackDouble_Ends</li>
+        </include>
+        <rulePack>
+            <rulesStrings>
+                <li>root->[BodyPart], 迟疑了一瞬。[manosaba_story_general]\n\n[manosaba_story_content]</li>
+                <li>manosaba_story_general->随后她讲述了一个发生在[manosaba_story_init], 关于[manosaba_storyRoot_taleNoun]的[manosaba_storyRoot_taleNoun]故事。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事。那是一段发生在[manosaba_story_init]的[manosaba_storyRoot_taleNoun]。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事, 追溯了[manosaba_story_init]的[manosaba_storyRoot_taleNoun]。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事, 记述了[manosaba_story_init]的[manosaba_storyRoot_taleNoun]。</li>
+                <li>manosaba_story_general->随后她以[manosaba_story_init]的[manosaba_storyRoot_taleNoun]为蓝本, 讲述了一个[manosaba_storyRoot_adj]的故事。</li>
+                <li>manosaba_story_content(p=0.25)->[manosaba_double_pawn_action][manosaba_story_conj], [manosaba_double_pawn_action][manosaba_double_story_bridge][manosaba_double_story_ending]</li>
+                <li>manosaba_story_content(p=0.75)->[manosaba_single_pawn_action][manosaba_story_conj], [manosaba_single_pawn_action][manosaba_single_story_bridge][manosaba_single_story_ending]</li>
+                <li>PAWN1_nameDef(p=0.33)->[pawn_adj][manosaba_story_pawnGeneral]</li>
+                <li>PAWN1_nameDef->[manosaba_story_pawnGeneral]</li>
+                <li>PAWN2_nameDef(p=0.33)->[pawn_adj][manosaba_story_pawnGeneral]</li>
+                <li>PAWN2_nameDef->[manosaba_story_pawnGeneral]</li>
+                <li>manosaba_story_pawnGeneral(p=0.1)->[PersonJob]</li>
+                <li>manosaba_story_pawnGeneral(p=0.1)->[PersonFamily]</li>
+                <li>manosaba_story_pawnGeneral(p=0.1)->[PersonAlly]</li>
+                <li>manosaba_story_pawnGeneral(p=0.1)->[PersonBadass]</li>
+                <li>manosaba_story_pawnGeneral(p=0.1)->[Enemy]</li>
+                <li>manosaba_story_pawnGeneral->魔女</li>
+                <li>manosaba_story_pawnGeneral->大魔女</li>
+                <li>Action->试图驯服一只敲击兽</li>
+                <li>Action->吃了一顿糟糕的营养膏</li>
+                <li>Action->在远古遗迹里发现了一台电脑</li>
+                <li>Result->他发财了</li>
+                <li>Result->他失去了左腿</li>
+                <li>Result->他成为了那个星球的王</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackTale</defName>
+        <include>
+            <li>UmRulePackUtils</li>
+            <li>UmRulePackSingle_Actions</li>
+            <li>UmRulePackSingle_Bridges</li>
+            <li>UmRulePackSingle_Ends</li>
+            <li>UmRulePackDouble_SingleActions</li>
+            <li>UmRulePackDouble_Actions</li>
+            <li>UmRulePackDouble_Bridges</li>
+            <li>UmRulePackDouble_Ends</li>
+        </include>
+        <rulePack>
+            <rulesStrings>
+                <li>physical_description_root->[root]</li>
+                <li>context_sentence-></li>
+                <!-- 区分单双人故事 -->
+                <li>root(HasSecondPawn==True)->[root_content_True]</li>
+                <li>root(HasSecondPawn==False)->[root_content_False]</li>
+                <li>root_content_True->[BodyPart], 似乎看到了什么。[manosaba_story_general]\n\n[manosaba_tale_content][manosaba_story_double]</li>
+                <li>root_content_False->[BodyPart], 似乎看到了什么。[manosaba_story_general]\n\n[manosaba_tale_content][manosaba_story_single]</li>
+                <!-- 故事梗概, 不区分单双数 -->
+                <li>manosaba_story_general->随后她讲述了一个发生在[DATE], 关于[tale_noun]的[manosaba_storyRoot_adj]故事。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事。那是一段发生在[DATE], 关于[tale_noun]的往事。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事, 追溯了[DATE]时[tale_noun]的那段经历。</li>
+                <li>manosaba_story_general->随后她讲述了一个[manosaba_storyRoot_adj]的故事, 记述了[DATE]的那一幕, [tale_noun]。</li>
+                <li>manosaba_story_general->随后她以[DATE][tale_noun]的经历为蓝本, 讲述了一个[manosaba_storyRoot_adj]的故事。</li>
+                <!-- 调用原版描述, 不区分单双数 -->
+                <li>manosaba_tale_content->[manosaba_story_init], [image]。[desc_sentence]</li>
+                <!-- 新增内容, 区分单双数 -->
+                <li>manosaba_story_double->[manosaba_story_conj], [manosaba_double_pawn_action][manosaba_double_story_bridge][manosaba_double_story_ending]</li>
+                <li>manosaba_story_single->[manosaba_story_conj], [manosaba_single_pawn_action][manosaba_single_story_bridge][manosaba_single_story_ending]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <!-- 单人故事模板 -->
+    <RulePackDef>
+        <defName>UmRulePackSingle_Actions</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef]独自[idles]在那里, 手里紧紧攥着[manosaba_story_thing], 眼神空洞。</li>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef]试图回忆起[ConceptPositive]的感觉, 但脑海中只有混乱的杂音。</li>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef][manosaba_story_adjPawn]地在墙上刻画着关于[manosaba_story_conceptany]的符号, [BodyPart]渗出了鲜血。</li>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef]对着面前的[manosaba_story_thing]低声耳语, 仿佛是许久未见的[PersonFamily]。</li>
+                <li>manosaba_single_pawn_action->一种[AdjectiveBadass]的、关于[ConceptAny]的预感击中了[PAWN1_nameDef], 使其动弹不得。</li>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef]感到一阵恶寒, 仿佛被某种[ColorBadass]色的[PersonBadass]穿透了[BodyPart]。</li>
+                <li>manosaba_single_pawn_action->为了逃避现实, [PAWN1_nameDef]开始模仿[Animal]的动作, 在大地上爬行。</li>
+                <li>manosaba_single_pawn_action->[PAWN1_nameDef]擦拭着手中的[manosaba_story_thing], 眼中闪烁着一种近乎[ConceptBadass]的狂热。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackSingle_Bridges</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_single_story_bridge->[manosaba_story_direction]的[manosaba_story_largeFeature]在暮色中扭曲变形, 仿佛在嘲笑这份[ConceptAngsty]。</li>
+                <li>manosaba_single_story_bridge->[manosaba_story_direction]的[manosaba_story_largeFeature]一片死寂, 只有风穿过[subimageany]的呼啸声。</li>
+                <li>manosaba_single_story_bridge->[manosaba_story_largeFeature]中弥漫着[Vegetable]腐烂的甜腻气息, 令人作[ConceptAngsty]又令人[ConceptPositive]。</li>
+                <li>manosaba_single_story_bridge->天空中, 一艘属于[Character]的[Shape]飞船[AdjectiveAny]地划过, 留下一道[Color]色的轨迹。</li>
+                <li>manosaba_single_story_bridge->[Quantity_adjphrase][manosaba_story_adjPawn]的[manosaba_story_nonPawn]停下了脚步, [manosaba_story_adjPawn]地注视着这发生的一切。</li>
+                <li>manosaba_single_story_bridge->不知从何处传来了[Mechanoid]运作的低鸣声, 与心跳逐渐重合。</li>
+                <li>manosaba_single_story_bridge->[manosaba_story_direction]的[NaturalObject]投下了巨大的阴影, 将一切吞没。</li>
+                <li>manosaba_single_story_bridge->时间仿佛在这一刻凝固, 世界褪色成了单调的[Color]色。</li>
+                <li>manosaba_single_story_bridge->脚下的土地像腐烂的[Vegetable]一样松软, 散发着[ConceptAny]的味道。</li>
+                <li>manosaba_single_story_bridge->[manosaba_story_direction]传来了[Enemy]的号角声, 催促着命运走向[ConceptAny]。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackSingle_Ends</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_single_story_ending->最终, 这成为了一个关于[ConceptAny]的[AdjectiveAny]注脚。</li>
+                <li>manosaba_single_story_ending->没人知道结局, 唯有那份关于[ConceptPositive]的[ConceptAny]残留了下来。</li>
+                <li>manosaba_single_story_ending->这一切, 不过是[PersonJob]眼中一段微不足道的插曲。</li>
+                <li>manosaba_single_story_ending->或许在另一个世界线里, 这会被称作是[ConceptBadass]。</li>
+                <li>manosaba_single_story_ending->故事戛然而止, 只留下一声叹息。</li>
+                <li>manosaba_single_story_ending->这就是[PAWN1_nameDef]所面临的[AdjectiveBadass]真相: [ConceptAngsty]。</li>
+                <li>manosaba_single_story_ending->直到最后, 也没有人能解开这个谜题。</li>
+                <li>manosaba_single_story_ending->所有的[ConceptBadass]与[ConceptAngsty], 最终都化为了[ConceptAny]。</li>
+                <li>manosaba_single_story_ending->如同[Game]结束一般, 一切[manosaba_story_conceptany]都归于虚无。</li>
+                <li>manosaba_single_story_ending->留下的只有那个关于[manosaba_story_nonPawn]的奇怪隐喻, 以及满地的[Gore]。</li>
+                <li>manosaba_single_story_ending->历史将这一幕记载为"[manosaba_story_conceptany]的开端"。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <!-- 双人故事模板 -->
+    <RulePackDef>
+        <defName>UmRulePackDouble_SingleActions</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef]独自[idles]在那里, 手里紧紧攥着[manosaba_story_thing], 眼神空洞。</li>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef]试图回忆起[ConceptPositive]的感觉, 但脑海中只有混乱的杂音。</li>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef][manosaba_story_adjPawn]地在墙上刻画着关于[manosaba_story_conceptany]的符号, [BodyPart]渗出了鲜血。</li>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef]对着面前的[manosaba_story_thing]低声耳语, 仿佛是许久未见的[PersonFamily]。</li>
+                <li>manosaba_double_pawn_singleAction->一种[AdjectiveBadass]的、关于[ConceptAny]的预感击中了[PAWN2_nameDef], 使其动弹不得。</li>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef]感到一阵恶寒, 仿佛被某种[ColorBadass]色的[PersonBadass]穿透了[BodyPart]。</li>
+                <li>manosaba_double_pawn_singleAction->为了逃避现实, [PAWN2_nameDef]开始模仿[Animal]的动作, 在大地上爬行。</li>
+                <li>manosaba_double_pawn_singleAction->[PAWN2_nameDef]擦拭着手中的[manosaba_story_thing], 眼中闪烁着一种近乎[ConceptBadass]的狂热。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackDouble_Actions</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_double_pawn_action(p=0.10)->[manosaba_single_pawn_action]</li>
+                <li>manosaba_double_pawn_action(p=0.10)->[manosaba_double_pawn_singleAction]</li>
+                <li>manosaba_double_pawn_action->[PAWN1_nameDef]将一件[manosaba_story_adjPawn]的[manosaba_story_thing]递给[PAWN2_nameDef], [BodyPart]微微颤抖。</li>
+                <li>manosaba_double_pawn_action->[PAWN1_nameDef]死死盯着[PAWN2_nameDef], 仿佛对方不再是人类, 而是一个具象化的[ConceptBadass]。</li>
+                <li>manosaba_double_pawn_action->两人之间隔着一段[manosaba_story_adjPawn]的沉默, [PAWN1_nameDef]甚至无法直视[PAWN2_nameDef]的[BodyPart]。</li>
+                <li>manosaba_double_pawn_action->[PAWN1_nameDef]向[PAWN2_nameDef]低声诉说着关于[manosaba_story_conceptany]的理论, 眼中闪烁着[Color]色的光芒。</li>
+                <li>manosaba_double_pawn_action->当[PAWN2_nameDef]转身时, [PAWN1_nameDef]握紧了藏在[Apparel]中的[manosaba_story_thing]。</li>
+                <li>manosaba_double_pawn_action->[PAWN1_nameDef]指着天空中的[manosaba_story_thingAny], 试图向[PAWN2_nameDef]证明某种[ConceptAny]的存在。</li>
+                <li>manosaba_double_pawn_action->在那一刻, [PAWN1_nameDef]在[PAWN2_nameDef]的瞳孔中看到了自己关于[ConceptAny]的倒影。</li>
+                <li>manosaba_double_pawn_action->[PAWN1_nameDef]模仿着[manosaba_story_nonPawn]的姿态恐吓[PAWN2_nameDef], 场面既[manosaba_story_adjPawn]又[manosaba_story_adjPawn]。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackDouble_Bridges</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_double_story_bridge(p=0.67)->[manosaba_single_story_bridge]</li>
+                <li>manosaba_double_story_bridge->他们身后的[manosaba_story_largeFeature]正在崩塌, 扬起的[Color]色尘土遮蔽了[manosaba_story_largeFeature]。</li>
+                <li>manosaba_double_story_bridge->[Quantity_adjphrase][manosaba_story_adjPawn]的[manosaba_story_nonPawn]从两人中间跑过, 打破了这令人[AdjectiveAngsty]的宁静。</li>
+                <li>manosaba_double_story_bridge->周围的[TerrainFeature]在[Color]色的光线下显得格外[AdjectiveBadass], 仿佛在监视他们。</li>
+                <li>manosaba_double_story_bridge->风穿过[manosaba_story_treetype]发出的尖啸声, 掩盖了他们关于[ConceptAny]的争论。</li>
+                <li>manosaba_double_story_bridge->世界仿佛缩小到了只剩下他们两人和[ConceptAny]的[manosaba_story_largeFeature]。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <RulePackDef>
+        <defName>UmRulePackDouble_Ends</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_double_story_ending(p=0.7)->[manosaba_single_story_ending]</li>
+                <li>manosaba_double_story_ending->这段关系最终被定义为一场关于[manosaba_story_conceptany]的[AdjectiveBadass]灾难。</li>
+                <li>manosaba_double_story_ending->[PAWN2_nameDef]永远不会忘记那一刻[PAWN1_nameDef]眼中的[manosaba_story_conceptany]。</li>
+                <li>manosaba_double_story_ending->从此以后, [manosaba_story_conceptany]在他们之间变成了一个[AdjectiveAny]的[ConceptPositive]。</li>
+                <li>manosaba_double_story_ending->这成为了两人心中共同的、无法言说的关于[manosaba_story_thing]的秘密。</li>
+                <li>manosaba_double_story_ending->直到最后, 他们也没能理解对方眼中的[manosaba_story_conceptany]。</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <!-- 通用关键词 -->
+    <RulePackDef>
+        <defName>UmRulePackUtils</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>manosaba_story_adjPawn->[AdjectiveBadass]</li>
+                <li>manosaba_story_adjPawn->[AdjectiveAngsty]</li>
+                <li>manosaba_story_adjPawn->[AdjectiveFriendly]</li>
+                <li>manosaba_story_thingAny->[manosaba_story_thing]</li>
+                <li>manosaba_story_thingAny->[manosaba_story_nonPawn]</li>
+                <li>manosaba_story_thingAny->[manosaba_story_largeFeature]</li>
+                <li>manosaba_story_thing(p=0.15)->被[Gore]覆盖的[manosaba_story_thing]</li>
+                <li>manosaba_story_thing->[Vegetable]</li>
+                <li>manosaba_story_thing->[Game]</li>
+                <li>manosaba_story_thing->[Weapon]</li>
+                <li>manosaba_story_thing->[Apparel]</li>
+                <li>manosaba_story_nonPawn->[Mechanoid]</li>
+                <li>manosaba_story_nonPawn->[Animal]</li>
+                <li>manosaba_story_nonPawn->[AnimalBadass]</li>
+                <li>manosaba_story_nonPawn->[AnimalGroup]</li>
+                <li>manosaba_story_conceptany->[TalkTopicLight]</li>
+                <li>manosaba_story_conceptany->[ConceptAny]</li>
+                <li>manosaba_story_largeFeature->[TerrainFeature]</li>
+                <li>manosaba_story_largeFeature->[NaturalObject]</li>
+                <li>manosaba_story_largeFeature->[Community]</li>
+                <li>manosaba_story_largeFeature->[manosaba_story_treetype]</li>
+                <li>manosaba_story_treetype->[TreeType]林</li>
+                <li>manosaba_story_treetype(p=0.02)->一棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->两棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->三棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->四棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->五棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->六棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->七棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->八棵[TreeType]</li>
+                <li>manosaba_story_treetype(p=0.02)->九棵[TreeType]</li>
+                <li>manosaba_story_treetype->几棵[TreeType]</li>
+                <li>manosaba_story_treetype->数棵[TreeType]</li>
+                <li>manosaba_story_treetype->数十棵[TreeType]</li>
+                <li>manosaba_story_treetype->上百棵[TreeType]</li>
+                <li>manosaba_story_treetype->数不清的[TreeType]</li>
+                <li>manosaba_story_init->很久很久以前</li>
+                <li>manosaba_story_init->在遥远的过去</li>
+                <li>manosaba_story_init->很久以前</li>
+                <li>manosaba_story_init->曾经</li>
+                <li>manosaba_story_init->从前</li>
+                <li>manosaba_story_conj->与此同时</li>
+                <li>manosaba_story_conj->紧接着</li>
+                <li>manosaba_story_conj->随后</li>
+                <li>manosaba_story_conj->不久</li>
+                <li>manosaba_story_conj->不久之后</li>
+                <li>manosaba_story_conj->过了一会儿</li>
+                <li>manosaba_story_conj->说时迟那时快</li>
+                <li>manosaba_story_conj->就在这时</li>
+                <li>manosaba_story_conj->突然</li>
+                <li>manosaba_story_conj->就在那一刻</li>
+                <li>manosaba_story_conj->就在那时</li>
+                <li>manosaba_story_direction->东方</li>
+                <li>manosaba_story_direction->南方</li>
+                <li>manosaba_story_direction->西方</li>
+                <li>manosaba_story_direction->北方</li>
+                <li>manosaba_story_direction->东北方</li>
+                <li>manosaba_story_direction->东南方</li>
+                <li>manosaba_story_direction->西北方</li>
+                <li>manosaba_story_direction->西南方</li>
+                <li>manosaba_story_direction->东边</li>
+                <li>manosaba_story_direction->南边</li>
+                <li>manosaba_story_direction->西边</li>
+                <li>manosaba_story_direction->北边</li>
+                <li>manosaba_story_direction->东北边</li>
+                <li>manosaba_story_direction->东南边</li>
+                <li>manosaba_story_direction->西北边</li>
+                <li>manosaba_story_direction->西南边</li>
+                <li>manosaba_story_direction->临近</li>
+                <li>manosaba_story_direction->旁边</li>
+                <li>manosaba_story_direction->附近</li>
+                <li>manosaba_story_direction->远方</li>
+                <li>manosaba_story_direction->远处</li>
+                <li>manosaba_story_direction->遥远</li>
+                <li>manosaba_storyRoot_adj->奇怪</li>
+                <li>manosaba_storyRoot_adj->诡异</li>
+                <li>manosaba_storyRoot_adj->紊乱</li>
+                <li>manosaba_storyRoot_adj->恐惧</li>
+                <li>manosaba_storyRoot_adj->扭曲</li>
+                <li>manosaba_storyRoot_adj->残缺</li>
+                <li>manosaba_storyRoot_adj->非人类</li>
+                <li>manosaba_storyRoot_adj->离奇</li>
+                <li>manosaba_storyRoot_adj->简约</li>
+                <li>manosaba_storyRoot_adj->复杂而写实</li>
+                <li>manosaba_storyRoot_adj->超现实</li>
+                <li>manosaba_storyRoot_adj->古典</li>
+                <li>manosaba_storyRoot_adj->现代</li>
+                <li>manosaba_storyRoot_adj->象征</li>
+                <li>manosaba_storyRoot_adj->稚嫩但充满魅力</li>
+                <li>manosaba_storyRoot_adj->注重细节</li>
+                <li>manosaba_storyRoot_adj->立体</li>
+                <li>manosaba_storyRoot_adj->野兽</li>
+                <li>manosaba_storyRoot_adj->田园</li>
+                <li>manosaba_storyRoot_adj->隐喻</li>
+                <li>manosaba_storyRoot_adj->蜿蜒曲折</li>
+                <li>manosaba_storyRoot_adj->抽象</li>
+                <li>manosaba_storyRoot_adj->超写实</li>
+                <li>manosaba_storyRoot_adj->极简</li>
+                <li>manosaba_storyRoot_adj->朦胧</li>
+                <li>manosaba_storyRoot_adj->浪漫</li>
+                <li>manosaba_storyRoot_adj->性爱</li>
+                <li>manosaba_storyRoot_adj->感性</li>
+                <li>manosaba_storyRoot_adj->独创</li>
+                <li>manosaba_storyRoot_adj->令人心碎</li>
+                <li>manosaba_storyRoot_adj->荒诞不经</li>
+                <li>manosaba_storyRoot_adj->史诗般</li>
+                <li>manosaba_storyRoot_adj->平淡无奇</li>
+                <li>manosaba_storyRoot_adj->绝望</li>
+                <li>manosaba_storyRoot_adj->充满希望</li>
+                <li>manosaba_storyRoot_adj->关于救赎</li>
+                <li>manosaba_storyRoot_adj->关于复仇</li>
+                <li>manosaba_storyRoot_adj->充满哲理</li>
+                <li>manosaba_storyRoot_adj->赛博朋克</li>
+                <li>manosaba_storyRoot_adj->蒸汽朋克</li>
+                <li>manosaba_storyRoot_adj->哥特式</li>
+                <li>manosaba_storyRoot_adj->令人窒息</li>
+                <li>manosaba_storyRoot_adj->温暖人心</li>
+                <li>manosaba_storyRoot_adj->充满遗憾</li>
+                <li>manosaba_storyRoot_adj->跨越时空</li>
+                <li>manosaba_storyRoot_adj->毫无逻辑</li>
+                <li>manosaba_storyRoot_adj->充满讽刺</li>
+                <li>manosaba_storyRoot_adj->令人作呕</li>
+                <li>manosaba_storyRoot_adj->充满偏见</li>
+                <li>manosaba_storyRoot_adj->被遗忘</li>
+                <li>manosaba_storyRoot_adj->禁忌</li>
+                <li>manosaba_storyRoot_adj->充满谎言</li>
+                <li>manosaba_storyRoot_adj->令人费解</li>
+                <li>manosaba_storyRoot_adj->枯燥</li>
+                <li>manosaba_storyRoot_adj->充满血腥</li>
+                <li>manosaba_storyRoot_adj->充满温情</li>
+                <li>manosaba_storyRoot_adj->跌宕起伏</li>
+                <li>manosaba_storyRoot_adj->戛然而止</li>
+                <li>manosaba_storyRoot_adj->支离破碎</li>
+                <li>manosaba_storyRoot_adj->毫无意义</li>
+                <li>manosaba_storyRoot_adj->充满未知</li>
+                <li>manosaba_storyRoot_adj->关于背叛</li>
+                <li>manosaba_storyRoot_adj->充满荣耀</li>
+                <li>manosaba_storyRoot_adj->阴暗</li>
+                <li>manosaba_storyRoot_adj->光怪陆离</li>
+                <li>manosaba_storyRoot_adj->充满童趣</li>
+                <li>manosaba_storyRoot_adj->令人捧腹</li>
+                <li>manosaba_storyRoot_adj->令人深思</li>
+                <li>manosaba_storyRoot_adj->充满仪式感</li>
+                <li>manosaba_storyRoot_adj->虚构</li>
+                <li>manosaba_storyRoot_adj->纪实风格</li>
+                <li>manosaba_storyRoot_adj->充满悔恨</li>
+                <li>manosaba_storyRoot_adj->歇斯底里</li>
+                <li>manosaba_storyRoot_adj->充满暗示</li>
+                <li>manosaba_storyRoot_adj->令人不安</li>
+                <li>manosaba_storyRoot_adj->充满魔力</li>
+                <li>manosaba_storyRoot_adj->极其平凡</li>
+                <li>manosaba_storyRoot_adj->残酷</li>
+                <li>manosaba_storyRoot_adj->永无止境</li>
+                <li>manosaba_storyRoot_taleNoun->传说</li>
+                <li>manosaba_storyRoot_taleNoun->传闻</li>
+                <li>manosaba_storyRoot_taleNoun->轶事</li>
+                <li>manosaba_storyRoot_taleNoun->叙述</li>
+                <li>manosaba_storyRoot_taleNoun->篇章</li>
+                <li>manosaba_storyRoot_taleNoun->记录</li>
+                <li>manosaba_storyRoot_taleNoun->档案</li>
+                <li>manosaba_storyRoot_taleNoun->报告</li>
+                <li>manosaba_storyRoot_taleNoun->历史</li>
+                <li>manosaba_storyRoot_taleNoun->过往</li>
+                <li>manosaba_storyRoot_taleNoun->日记</li>
+                <li>manosaba_storyRoot_taleNoun->证词</li>
+                <li>manosaba_storyRoot_taleNoun->梦境</li>
+                <li>manosaba_storyRoot_taleNoun->噩梦</li>
+                <li>manosaba_storyRoot_taleNoun->幻想</li>
+                <li>manosaba_storyRoot_taleNoun->妄想</li>
+                <li>manosaba_storyRoot_taleNoun->记忆</li>
+                <li>manosaba_storyRoot_taleNoun->谎言</li>
+                <li>manosaba_storyRoot_taleNoun->幻觉</li>
+                <li>manosaba_storyRoot_taleNoun->悲剧</li>
+                <li>manosaba_storyRoot_taleNoun->喜剧</li>
+                <li>manosaba_storyRoot_taleNoun->寓言</li>
+                <li>manosaba_storyRoot_taleNoun->神话</li>
+                <li>manosaba_storyRoot_taleNoun->童话</li>
+                <li>manosaba_storyRoot_taleNoun->史诗</li>
+                <li>manosaba_storyRoot_taleNoun->预言</li>
+                <li>manosaba_storyRoot_taleNoun->片段</li>
+                <li>manosaba_storyRoot_taleNoun->谜题</li>
+                <li>manosaba_storyRoot_taleNoun->轮回</li>
+                <li>manosaba_storyRoot_taleNoun->玩笑</li>
+                <li>manosaba_storyRoot_taleNoun->实验</li>
+                <li>manosaba_storyRoot_taleNoun->游戏</li>
+                <li>manosaba_storyRoot_taleNoun->惨剧</li>
+                <li>manosaba_storyRoot_taleNoun->诅咒</li>
+                <li>manosaba_storyRoot_taleNoun->启示</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+</Defs>

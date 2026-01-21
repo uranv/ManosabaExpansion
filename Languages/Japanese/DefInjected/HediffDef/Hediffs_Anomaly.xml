@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmHediffTredecim.label>特雷德基姆</UmHediffTredecim.label> -->
+    <UmHediffTredecim.label>トレデキム</UmHediffTredecim.label>
+    <!-- <UmHediffTredecim.description>一种可以杀死拥有不死之躯的魔女的药物成分。</UmHediffTredecim.description> -->
+    <UmHediffTredecim.description>魔女を殺すことがてきる薬。この薬を使用しなければ、魔女を殺すことはできない。</UmHediffTredecim.description>
+    
+    <!-- <UmHediffCrystallized.label>结晶化</UmHediffCrystallized.label> -->
+    <UmHediffCrystallized.label>結晶化</UmHediffCrystallized.label>
+    <!-- <UmHediffCrystallized.description>这只眼睛已经结晶化。很美丽，但它的主人再也用不到它了。</UmHediffCrystallized.description> -->
+    <UmHediffCrystallized.description>この眼球は既に結晶化している。美しいが、持ち主がこれを使うことは二度とないだろう。</UmHediffCrystallized.description>
+    
+    <!-- <UmHediffMutantDummy.label>都是月代雪干的</UmHediffMutantDummy.label> -->
+    <UmHediffMutantDummy.label>全部ユキの仕業</UmHediffMutantDummy.label>
+    <!-- <UmHediffMutantDummy.description>管理变种人的特殊健康状态，你不应该看到这个</UmHediffMutantDummy.description> -->
+    <UmHediffMutantDummy.description>変異体の特殊な健康状態を管理する。これは表示されるべきではない。</UmHediffMutantDummy.description>
+    
+    <!-- <UmHediffMutantCountdown.label>心灵控制</UmHediffMutantCountdown.label> -->
+    <UmHediffMutantCountdown.label>洗脳制御</UmHediffMutantCountdown.label>
+    <!-- <UmHediffMutantCountdown.description>这只魔女的残骸目前处于被洗脑的状态，直到失控…</UmHediffMutantCountdown.description> -->
+    <UmHediffMutantCountdown.description>この魔女のなれはては現在洗脳状態にある。制御を失うまでは……</UmHediffMutantCountdown.description>
+    
+    <!-- <UmHediffMutantDraft.label>征召指令</UmHediffMutantDraft.label> -->
+    <UmHediffMutantDraft.label>徴兵指令</UmHediffMutantDraft.label>
+    <!-- <UmHediffMutantDraft.description>受控的残骸处于征召状态。\n\n她的战斗能力显著增强，但是失控倒计时加速 1.5 倍。</UmHediffMutantDraft.description> -->
+    <UmHediffMutantDraft.description>制御下のなれはてが徴兵状態にある。\n\n戦闘能力は著しく強化されるが、暴走までのカウントダウンが1.5倍に加速する。</UmHediffMutantDraft.description>
+
+    <!-- <UmHediffMutantHealingAbility.label>极速治疗</UmHediffMutantHealingAbility.label> -->
+    <UmHediffMutantHealingAbility.label>急速治癒</UmHediffMutantHealingAbility.label>
+    <!-- <UmHediffMutantHealingAbility.description>体内的魔女因子被激发至极限，获得了超乎想象的愈合能力。</UmHediffMutantHealingAbility.description> -->
+    <UmHediffMutantHealingAbility.description>体内の魔女の因子を極限まで活性化させ、想像を絶する治癒能力を得た。</UmHediffMutantHealingAbility.description>
+
+</LanguageData>

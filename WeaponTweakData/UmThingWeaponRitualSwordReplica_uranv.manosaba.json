@@ -1,0 +1,18 @@
+{
+  "TextureModID": "uranv.manosaba",
+  "ItemDefName": "UmThingWeaponRitualSwordReplica",
+  "ItemType": "ThingDef",
+  "ItemTypeNamespace": "Verse",
+  "ScaleX": 1.33,
+  "ScaleY": 1.33,
+  "OffX": 0.308724821,
+  "BladeStart": 0.0894857347,
+  "BladeEnd": 0.765100658,
+  "MeleeWeaponType": 6,
+  "TrailTint": {
+    "r": 0.0,
+    "g": 0.0,
+    "b": 0.0,
+    "a": 0.0
+  }
+}

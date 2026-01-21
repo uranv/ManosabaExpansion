@@ -1,0 +1,23 @@
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      
+      <li Class="PatchOperationAdd">
+        <success>Always</success>
+        
+        <xpath>/Defs/*[race/intelligence="Humanlike" and not(comps)]</xpath>
+        <value>
+          <comps />
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/*[race/intelligence="Humanlike"]/comps</xpath>
+        <value>
+          <li Class="UranvManosaba.Contents.Comps.CompProperties_NarehateVisuals" />
+        </value>
+      </li>
+      
+    </operations>
+  </Operation>
+</Patch>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <MutantDef>
+        <defName>UmMutantNarehate</defName>
+        <label>narehate of a witch</label>
+        <description>The final destination of one cursed by the witch factor, reduced to a narehate of a witch driven solely by murderous intent.</description>
+        <!--<hediff>UmHediffMutantDummy</hediff>-->
+        <overrideLabel>true</overrideLabel>
+        <overrideInspectString>true</overrideInspectString>
+        <consideredSubhuman>true</consideredSubhuman>
+        <thinkTree>UmThinkTreeHumanlikeNarehate</thinkTree>
+        <thinkTreeConstant>UmThinkTreeHumanlikeConstantNarehate</thinkTreeConstant>
+        <canGainXP>false</canGainXP>
+        <preventsMentalBreaks>false</preventsMentalBreaks>
+        <disablesIdeo>true</disablesIdeo>
+        <disableOwnership>true</disableOwnership>
+        <disablePolicies>false</disablePolicies>
+        <disableTitles>true</disableTitles>
+        <disableNeeds>true</disableNeeds>
+        <needWhitelist>
+            <li>Food</li>
+        </needWhitelist>
+        <abilityWhitelist>
+            <li>UmAbilityMutantHealing</li>
+            <li>UmAbilityMutantLongjump</li>
+        </abilityWhitelist>
+        <disableEatingAtTable>false</disableEatingAtTable>
+        <incapableOfSocialInteractions>true</incapableOfSocialInteractions>
+        <canBeCapturedToHoldingPlatform>true</canBeCapturedToHoldingPlatform>
+        <producesBioferrite>false</producesBioferrite>
+        <canBleed>true</canBleed>
+        <terminatePregnancy>true</terminatePregnancy>
+        <isImmuneToInfections>true</isImmuneToInfections>
+        <removeChronicIllnesses>true</removeChronicIllnesses>
+        <removeAddictions>true</removeAddictions>
+        <disableAging>false</disableAging>
+        <clearsEgo>false</clearsEgo>
+        <partsCleanAndDroppable>true</partsCleanAndDroppable>
+        <breathesAir>false</breathesAir>
+        <removesHediffs>
+            <li>CryptosleepSickness</li>
+            <li>LuciferiumHigh</li>
+            <li>LuciferiumAddiction</li>
+            <li>Scaria</li>
+            <li>CorpseTorment</li>
+            <li>CubeInterest</li>
+            <li>CubeWithdrawal</li>
+            <li>CubeComa</li>
+            <li>CubeRage</li>
+            <li>HeartAttack</li>
+            <li>Scaria</li>
+            <li MayRequire="Ludeon.RimWorld.Royalty">PsychicAmplifier</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">MechlinkImplant</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">PregnantHuman</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">PregnancyLabor</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">HemogenAmplified</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">DeathrestExhaustion</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">InterruptedDeathrest</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">HemogenCraving</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Deathrest</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">RegenerationComa</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">PostpartumExhaustion</li>
+            <li>Inhumanized</li>
+        </removesHediffs>
+        <disablesGenes>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Hemogenic</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Deathrest</li>
+        </disablesGenes>
+        <workDisables>
+            <li>Constructing</li>
+            <li>PlantWork</li>
+            <li>Mining</li>
+            <li>Artistic</li>
+            <li>Crafting</li>
+            <li>Intellectual</li>
+            <li>Caring</li>
+            <li>Animals</li>
+            <li>Hunting</li>
+            <li>Shooting</li>
+        </workDisables>
+        <canCarryPawns>true</canCarryPawns>
+        <canTend>true</canTend>
+        <canBeDrafted>true</canBeDrafted>
+        <disableApparel>false</disableApparel>
+        <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+        <canAttackWhileCrawling>true</canAttackWhileCrawling>
+        <canTravelInCaravan>true</canTravelInCaravan>
+        <respectsAllowedArea>true</respectsAllowedArea>
+        <canOpenDoors>true</canOpenDoors>
+        <deathOnDownedChance>0.0</deathOnDownedChance>
+        <removePermanentInjuries>true</removePermanentInjuries>
+        <codexEntry>UmEntryMutant</codexEntry>
+        <!-- Sounds -->
+        <soundAttackChance>0.25</soundAttackChance>
+        <soundWounded>Pawn_Ghoul_Pain</soundWounded>
+        <soundDeath>Pawn_Ghoul_Killed</soundDeath>
+        <soundCall>Pawn_Ghoul_Call</soundCall>
+        <soundAttack>Pawn_Ghoul_Attack</soundAttack>
+        <!-- Rendering -->
+        <renderNodeProperties>
+            <li>
+                <nodeClass>UranvManosaba.Contents.Visuals.PawnRenderNode_NarehateMutant</nodeClass>
+                <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateBody</workerClass>
+                <texPath>things/pawn/humanlike/narehate/body</texPath>
+                <baseLayer>10</baseLayer>
+                <tagDef>Body</tagDef>
+            </li>
+            <li>
+                <nodeClass>UranvManosaba.Contents.Visuals.PawnRenderNode_NarehateMutant</nodeClass>
+                <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateHead</workerClass>
+                <texPath>things/pawn/humanlike/narehate/head</texPath>
+                <baseLayer>50</baseLayer>
+                <tagDef>Head</tagDef>
+                <parentTagDef>Body</parentTagDef>
+            </li>
+        </renderNodeProperties>
+        <!--whitelistedFloatMenuProviders-->
+    </MutantDef>
+</Defs>

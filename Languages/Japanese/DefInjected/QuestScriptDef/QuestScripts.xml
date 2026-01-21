@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+            <li>deliveredLetterLabel->謎の荷物</li>
+            <li>deliveredLetterText->謎の荷物が届きました.それは死んだ魔女のなれはてのように見えます.\n\nよく観察すると、この死体はかつて[narehateName]という名の少女だったもののようだ.\n\n死体を研究することで,魔女の死に関する秘密をさらに詳しくわかります.</li>
+    </UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+</LanguageData>
+

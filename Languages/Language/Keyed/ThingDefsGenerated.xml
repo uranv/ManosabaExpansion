@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- ThingDef Narehate Corpse -->
+    <!-- <Manosaba_NarehateCorpse_Label>魔女残骸的尸体</Manosaba_NarehateCorpse_Label> -->
+    <Manosaba_NarehateCorpse_Label>Corpse of a narehate of a witch</Manosaba_NarehateCorpse_Label>
+    <!-- <ThingDef_NarehateCorpse_label>魔女残骸的尸体</ThingDef_NarehateCorpse_label> -->
+    <ThingDef_NarehateCorpse_label>Corpse of a narehate of a witch</ThingDef_NarehateCorpse_label>
+    <!-- <ThingDef_NarehateCorpse_description>一具原本属于人类的遗体，受魔女因子的诅咒转化为了魔女的残骸。等等，魔女的残骸不是无法死亡的吗……</ThingDef_NarehateCorpse_description> -->
+    <ThingDef_NarehateCorpse_description>The remains of what was once a human, transformed into a narehate of a witch by the curse of the witch factor. Wait, aren't narehates of witches immortal...?</ThingDef_NarehateCorpse_description>
+    <!-- <ThingDef_NarehateCorpse_Note1_label>初步调查</ThingDef_NarehateCorpse_Note1_label> -->
+    <ThingDef_NarehateCorpse_Note1_label>Preliminary investigation</ThingDef_NarehateCorpse_Note1_label>
+    <!-- <ThingDef_NarehateCorpse_Note1_text>过初步调查，在这具魔女的残骸的尸体上你发现了明显的异常之处。她的眼睛不知为何变成了结晶化的无机物宝石形态。</ThingDef_NarehateCorpse_Note1_text> -->
+    <ThingDef_NarehateCorpse_Note1_text>Through a preliminary investigation, you found obvious anomalies on this corpse of a narehate of a witch. For some reason, her eyes have turned into crystallized inorganic gemstone forms.</ThingDef_NarehateCorpse_Note1_text>
+    <!-- <ThingDef_NarehateCorpse_Note2_label>调查完成</ThingDef_NarehateCorpse_Note2_label> -->
+    <ThingDef_NarehateCorpse_Note2_label>Investigation complete</ThingDef_NarehateCorpse_Note2_label>
+    <!-- <ThingDef_NarehateCorpse_Note2_text>你已经完全解析了杀死这个魔女的残骸的秘密。利用一种被称为特雷德基姆的特殊药剂，你可以无效化魔女因子带来的不死性，并且彻底杀死它的携带者。</ThingDef_NarehateCorpse_Note2_text> -->
+    <ThingDef_NarehateCorpse_Note2_text>You have completely analyzed the secret to killing this narehate of a witch. By using a special potion called Trēdecim, you can nullify the immortality granted by the witch factor and thoroughly kill its carrier.</ThingDef_NarehateCorpse_Note2_text>
+</LanguageData>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!--异象图鉴: 魔女因子 -->
+    <EntityCodexEntryDef>
+        <defName>UmEntryFactor</defName>
+        <label>witch's factor</label>
+        <description>An anomaly foreign to this rimworld. It infects humanoids on a psychic level, eventually reducing them to murderous monsters.</description>
+        <uiIconPath>ui/codexentries/majyoinshi</uiIconPath>
+        <category>Basic</category>
+        <discoveredResearchProjects>
+            <li>UmResearchProjectPrereqs</li>
+            <li>UmResearchProjectDetect</li>
+        </discoveredResearchProjects>
+        <orderInCategory>1900</orderInCategory>
+    </EntityCodexEntryDef>
+
+    <!--异象图鉴: 魔女残骸尸体 -->
+    <EntityCodexEntryDef>
+        <defName>UmEntryCorpse</defName>
+        <label>narehate corpse</label>
+        <description>This corpse was once a humanoid cursed by the witch's factor, eventually becoming a narehate of a witch.\n\nWhile narehates of witches possess a form of immortality, there are still specific methods capable of killing them.</description>
+        <uiIconPath>ui/codexentries/narehate_corpse</uiIconPath>
+        <category>Advanced</category>
+        <!--<linkedThings><li>UmThingCorpseNarehate</li></linkedThings>-->
+        <discoveredResearchProjects>
+            <li>UmResearchProjectKill</li>
+        </discoveredResearchProjects>
+        <provocationIncidents>
+            <li>UmIncidentMystCargoCorpse</li>
+            <li>UmIncidentDropDebug</li>
+        </provocationIncidents>
+        <orderInCategory>2000</orderInCategory>
+    </EntityCodexEntryDef>
+
+    <!--异象图鉴: 魔女残骸 -->
+    <EntityCodexEntryDef>
+        <defName>UmEntryMutant</defName>
+        <label>narehate of a witch</label>
+        <description>Upon becoming a narehate, all previous magic vanishes, leaving behind an empty shell.\n\nHowever, they possess the immortal body of a witch and physical abilities that defy reason. They usually move slowly.</description>
+        <uiIconPath>ui/codexentries/narehate_mutant</uiIconPath>
+        <category>Basic</category>
+        <discoveredResearchProjects>
+            <li>UmResearchProjectControl</li>
+        </discoveredResearchProjects>
+        <orderInCategory>2000</orderInCategory>
+    </EntityCodexEntryDef>
+
+    <!--异象图鉴: 大魔女 -->
+    <EntityCodexEntryDef>
+        <defName>UmEntryYuki</defName>
+        <label>Yuki, the Great Witch</label>
+        <description>The culprit behind everything, the Great Witch patiently awaiting the arrival of destruction.\n\nShe has lost almost all her magic in order to spread the curse of the witch's factor.</description>
+        <uiIconPath>ui/codexentries/yuki</uiIconPath>
+        <category>Ultimate</category>
+        <discoveredResearchProjects>
+            <li>UmResearchProjectSabbat</li>
+        </discoveredResearchProjects>
+        <orderInCategory>2000</orderInCategory>
+        <linkedThings>
+            <li>UmThingRaceYuki</li>
+        </linkedThings>
+    </EntityCodexEntryDef>
+</Defs>

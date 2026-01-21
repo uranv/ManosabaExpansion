@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmThingAburibin.label>炙烤药瓶</UmThingAburibin.label> -->
+    <UmThingAburibin.label>炙りビン</UmThingAburibin.label>
+    <!-- <UmThingAburibin.description>"把药瓶烤一下就会变成炙烤药瓶哦!"某只小笨狗曾如是说道。\n\n但是烤过的药瓶究竟有什么用呢?</UmThingAburibin.description> -->
+    <UmThingAburibin.description>「ビンを炙ったら【炙りビン】になるよ！」あるバカ犬はそう言った。\n\nしかし、炙った薬瓶に一体何の意味があるのだろうか？</UmThingAburibin.description>
+
+    <!-- <UmThingCrystallizedEye.label>结晶化眼球</UmThingCrystallizedEye.label> -->
+    <UmThingCrystallizedEye.label>結晶化した眼球</UmThingCrystallizedEye.label>
+    <!-- <UmThingCrystallizedEye.description>使用特雷德基姆杀死魔女引起的副作用，也许有什么用处。</UmThingCrystallizedEye.description> -->
+    <UmThingCrystallizedEye.description>トレデキムを使用して魔女を殺した際の副作用。何か使い道があるかもしれない。</UmThingCrystallizedEye.description>
+
+    <!-- <UmThingDrugTredecim.label>特雷德基姆</UmThingDrugTredecim.label> -->
+    <UmThingDrugTredecim.label>トレデキム</UmThingDrugTredecim.label>
+    <!-- <UmThingDrugTredecim.description>特雷德基姆，拉丁语中数字十三的意思。据说是一种可以杀死魔女的独特药剂。</UmThingDrugTredecim.description> -->
+    <UmThingDrugTredecim.description>トレデキム、ラテン語で数字の13を意味する。魔女を殺すことができる唯一の薬剤だと言われている。</UmThingDrugTredecim.description>
+    <!-- <UmThingDrugTredecim.ingestible.ingestCommandString>服用{0}</UmThingDrugTredecim.ingestible.ingestCommandString> -->
+    <UmThingDrugTredecim.ingestible.ingestCommandString>{0}を服用する</UmThingDrugTredecim.ingestible.ingestCommandString>
+    <!-- <UmThingDrugTredecim.ingestible.ingestReportString>正在服用{0}</UmThingDrugTredecim.ingestible.ingestReportString> -->
+    <UmThingDrugTredecim.ingestible.ingestReportString>{0}を服用している</UmThingDrugTredecim.ingestible.ingestReportString>
+
+    <!-- <UmThingWeaponSimpleSpear.label>简易长矛</UmThingWeaponSimpleSpear.label> -->
+    <UmThingWeaponSimpleSpear.label>簡易な槍</UmThingWeaponSimpleSpear.label>
+    <!-- <UmThingWeaponSimpleSpear.description>这样的"武器"真的用来攻击吗？</UmThingWeaponSimpleSpear.description> -->
+    <UmThingWeaponSimpleSpear.description>こんな「武器」で本当に攻撃するつもりなのか？</UmThingWeaponSimpleSpear.description>
+    <!-- <UmThingWeaponSimpleSpear.tools.point.label>箭尖</UmThingWeaponSimpleSpear.tools.point.label> -->
+    <UmThingWeaponSimpleSpear.tools.point.label>穂先</UmThingWeaponSimpleSpear.tools.point.label>
+
+    <!-- <UmThingWeaponRitualSwordReplica.label>仿制仪式剑</UmThingWeaponRitualSwordReplica.label> -->
+    <UmThingWeaponRitualSwordReplica.label>模造儀礼剣</UmThingWeaponRitualSwordReplica.label>
+    <!-- <UmThingWeaponRitualSwordReplica.description>利用边缘世界的材料与手段仿制的仪式用品，真的能够起到应有的效果吗？</UmThingWeaponRitualSwordReplica.description> -->
+    <UmThingWeaponRitualSwordReplica.description>リムワールドの素材と手段を用いて模造された儀式用品。本当に本来の効果を発揮できるのだろうか？</UmThingWeaponRitualSwordReplica.description>
+    <!-- <UmThingWeaponRitualSwordReplica.tools.point.label>剑尖</UmThingWeaponRitualSwordReplica.tools.point.label> -->
+    <UmThingWeaponRitualSwordReplica.tools.point.label>先端</UmThingWeaponRitualSwordReplica.tools.point.label>
+    <!-- <UmThingWeaponRitualSwordReplica.tools.edge.label>剑刃</UmThingWeaponRitualSwordReplica.tools.edge.label> -->
+    <UmThingWeaponRitualSwordReplica.tools.edge.label>刃</UmThingWeaponRitualSwordReplica.tools.edge.label>
+
+    <!-- <UmThingWeaponRitualSword.label>仪式剑</UmThingWeaponRitualSword.label> -->
+    <UmThingWeaponRitualSword.label>儀礼剣</UmThingWeaponRitualSword.label>
+    <!-- <UmThingWeaponRitualSword.description>魔女安息仪式中召唤出的大魔女携带的魔法剑。</UmThingWeaponRitualSword.description> -->
+    <UmThingWeaponRitualSword.description>サバトの儀式で召喚された大魔女が携えている魔法の剣。</UmThingWeaponRitualSword.description>
+    <!-- <UmThingWeaponRitualSword.tools.point.label>剑尖</UmThingWeaponRitualSword.tools.point.label> -->
+    <UmThingWeaponRitualSword.tools.point.label>先端</UmThingWeaponRitualSword.tools.point.label>
+    <!-- <UmThingWeaponRitualSword.tools.edge.label>剑刃</UmThingWeaponRitualSword.tools.edge.label> -->
+    <UmThingWeaponRitualSword.tools.edge.label>刃</UmThingWeaponRitualSword.tools.edge.label>
+
+</LanguageData>

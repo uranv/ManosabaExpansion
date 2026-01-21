@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BaseWeapon">
+        <!-- BaseWeapon -->
+        <statBases>
+            <Beauty>12</Beauty>
+            <Flammability>0.0</Flammability>
+            <MaxHitPoints>146</MaxHitPoints>
+            <WorkToMake>24000</WorkToMake>
+            <Mass>2.0</Mass>
+            <MarketValue>2400</MarketValue>
+        </statBases>
+        <!-- Ultratech Melee-->
+        <techLevel>Ultra</techLevel>
+        <comps>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+            <li Class="CompProperties_Art">
+                <nameMaker>NamerArtWeaponMelee</nameMaker>
+                <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+                <minQualityForArtistic>Excellent</minQualityForArtistic>
+            </li>
+            <li Class="CompProperties_Biocodable"/>
+        </comps>
+        <smeltable>true</smeltable>
+        <burnableByRecipe>true</burnableByRecipe>
+        <thingCategories>
+            <li>WeaponsMelee</li>
+        </thingCategories>
+        <thingSetMakerTags>
+            <li>RewardStandardMidFreq</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>UltratechMelee</li>
+        </weaponTags>
+        <tradeTags>
+            <li>WeaponMelee</li>
+        </tradeTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+            <li>Ultratech</li>
+        </weaponClasses>
+        <!-- Basic Info -->
+        <defName>UmThingWeaponRitualSwordReplica</defName>
+        <label>ritual sword replica</label>
+        <description>A ritual item replicated using rimworld materials and methods. Can it really achieve the intended effect?</description>
+        <soundInteract>Interact_BladelinkMonoSword</soundInteract>
+        <meleeHitSound>MeleeHit_BladelinkMonoSword</meleeHitSound>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <relicChance>0</relicChance>
+        <graphicData>
+            <texPath>things/item/equipment/weaponmelee/ritual_sword</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.33</drawSize>
+            <drawOffset>(0, 0, 0)</drawOffset>
+        </graphicData>
+        <uiIconScale>1</uiIconScale>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>25</power>
+                <cooldownTime>2.5</cooldownTime>
+                <armorPenetration>0.9</armorPenetration>
+            </li>
+            <li>
+                <label>edge</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>25</power>
+                <cooldownTime>2.5</cooldownTime>
+                <armorPenetration>0.9</armorPenetration>
+            </li>
+        </tools>
+        <!-- Recipe Info -->
+        <possessionCount>1</possessionCount>
+        <costList>
+            <MeleeWeapon_LongSword>1</MeleeWeapon_LongSword>
+            <Shard>1</Shard>
+            <Gold>6</Gold>
+            <Cloth>60</Cloth>
+            <Dye>60</Dye>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>UmResearchProjectSabbat</researchPrerequisite>
+            <displayPriority>2100</displayPriority>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>ElectricSmithy</li>
+                <li>FueledSmithy</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+    <ThingDef ParentName="BaseWeapon">
+        <!-- BaseWeapon -->
+        <statBases>
+            <Beauty>12</Beauty>
+            <Flammability>0.0</Flammability>
+            <MaxHitPoints>146</MaxHitPoints>
+            <Mass>2.0</Mass>
+            <MarketValue>3000</MarketValue>
+        </statBases>
+        <!-- Ultratech Melee-->
+        <techLevel>Ultra</techLevel>
+        <comps>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+            <li Class="CompProperties_Art">
+                <nameMaker>NamerArtWeaponMelee</nameMaker>
+                <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+                <minQualityForArtistic>Excellent</minQualityForArtistic>
+            </li>
+            <li Class="CompProperties_BladelinkWeapon">
+                <biocodeOnEquip>true</biocodeOnEquip>
+            </li>
+        </comps>
+        <smeltable>false</smeltable>
+        <burnableByRecipe>true</burnableByRecipe>
+        <thingCategories>
+            <li>WeaponsMeleeBladelink</li>
+        </thingCategories>
+        <thingSetMakerTags>
+            <li>WeaponBladelink</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>UltratechMelee</li>
+        </weaponTags>
+        <tradeTags>
+            <li>WeaponMelee</li>
+        </tradeTags>
+        <weaponClasses>
+            <li>Melee</li>
+            <li>MeleePiercer</li>
+            <li>Ultratech</li>
+        </weaponClasses>
+        <!-- Basic Info -->
+        <defName>UmThingWeaponRitualSword</defName>
+        <label>ritual sword</label>
+        <description>The magic sword carried by the Great Witch summoned during the Witches' Sabbath.</description>
+        <soundInteract>Interact_BladelinkMonoSword</soundInteract>
+        <meleeHitSound>MeleeHit_BladelinkMonoSword</meleeHitSound>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <relicChance>0</relicChance>
+        <graphicData>
+            <texPath>things/item/equipment/weaponmelee/ritual_sword</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.33</drawSize>
+            <drawOffset>(0, 0, 0)</drawOffset>
+        </graphicData>
+        <uiIconScale>1</uiIconScale>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>27</power>
+                <cooldownTime>1.6</cooldownTime>
+                <armorPenetration>1.2</armorPenetration>
+            </li>
+            <li>
+                <label>edge</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>27</power>
+                <cooldownTime>1.6</cooldownTime>
+                <armorPenetration>1.2</armorPenetration>
+            </li>
+        </tools>
+        <!-- Recipe Info -->
+        <possessionCount>1</possessionCount>
+    </ThingDef>
+</Defs>

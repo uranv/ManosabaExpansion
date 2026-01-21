@@ -1,0 +1,14 @@
+<Defs>
+    <JobDef>
+        <defName>UmJobYukiVisitorCast</defName>
+        <driverClass>UranvManosaba.Contents.Incidents.JobDriver_YukiVisitorCast</driverClass>
+        <reportString>Moving to designated location.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+    <JobDef>
+        <defName>UmJobYukiVisitorCastHidden</defName>
+        <driverClass>UranvManosaba.Contents.Incidents.JobDriver_YukiVisitorCast_Hidden</driverClass>
+        <reportString>Moving to designated location.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+</Defs>

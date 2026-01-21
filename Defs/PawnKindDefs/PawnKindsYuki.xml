@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <PawnKindDef>
+        <defName>UmPawnKindYukiVisitor</defName>
+        <label>grand witch</label>
+        <labelMale>grand witch</labelMale>
+        <labelFemale>grand witch</labelFemale>
+        <labelPlural>grand witches</labelPlural>
+        <race>UmThingRaceYuki</race>
+        <defaultFactionDef>Ancients</defaultFactionDef>
+        <combatPower>50</combatPower>
+        <minGenerationAge>15.0</minGenerationAge>
+        <maxGenerationAge>15.9</maxGenerationAge>
+        <isFighter>true</isFighter>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <invNutrition>10.0</invNutrition>
+        <gearHealthRange>1~1</gearHealthRange>
+        <itemQuality>Legendary</itemQuality>
+        <apparelColor>(255,255,255)</apparelColor>
+        <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+        <favoriteColor MayRequire="Ludeon.RimWorld.Ideology">UmColorYuki</favoriteColor>
+        <initialWillRange>24~48</initialWillRange>
+        <initialResistanceRange>999~999</initialResistanceRange>
+        <humanPregnancyChance>0</humanPregnancyChance>
+        <acceptArrestChanceFactor>0</acceptArrestChanceFactor>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>UmBackstoryYukiChild</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+    <PawnKindDef>
+        <defName>UmPawnKindYukiColonist</defName>
+        <label>grand witch</label>
+        <labelMale>grand witch</labelMale>
+        <labelFemale>grand witch</labelFemale>
+        <labelPlural>grand witches</labelPlural>
+        <race>UmThingRaceYuki</race>
+        <defaultFactionDef>Ancients</defaultFactionDef>
+        <combatPower>50</combatPower>
+        <minGenerationAge>15.0</minGenerationAge>
+        <maxGenerationAge>15.9</maxGenerationAge>
+        <isFighter>true</isFighter>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <invNutrition>10.0</invNutrition>
+        <gearHealthRange>1~1</gearHealthRange>
+        <itemQuality>Legendary</itemQuality>
+        <apparelColor>(255,255,255)</apparelColor>
+        <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+        <favoriteColor MayRequire="Ludeon.RimWorld.Ideology">UmColorYuki</favoriteColor>
+        <initialWillRange>24~48</initialWillRange>
+        <initialResistanceRange>999~999</initialResistanceRange>
+        <humanPregnancyChance>0</humanPregnancyChance>
+        <acceptArrestChanceFactor>0</acceptArrestChanceFactor>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>UmBackstoryYukiChild</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+    <ColorDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="IdeoColorBase">
+        <defName>UmColorYuki</defName>
+        <label>yuki color</label>
+        <color>(199,213,231)</color>
+    </ColorDef>
+</Defs>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmResearchProjectPrereqs.label>魔女因子</UmResearchProjectPrereqs.label> -->
+    <!-- <UmResearchProjectPrereqs.label>Witch factor</UmResearchProjectPrereqs.label> -->
+    <!-- <UmResearchProjectPrereqs.description>你发现了魔女因子，一种不属于边缘世界的异象。</UmResearchProjectPrereqs.description> -->
+    <!-- <UmResearchProjectPrereqs.description>You have discovered the witch factor, an anomaly foreign to this rimworld.</UmResearchProjectPrereqs.description> -->
+    <!-- <UmResearchProjectPrereqs.discoveredLetterTitle>关于魔女因子</UmResearchProjectPrereqs.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectPrereqs.discoveredLetterTitle>About the witch factor</UmResearchProjectPrereqs.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectPrereqs.discoveredLetterText>你初次遇到了魔女因子，一种不属于边缘世界的异象。这样的相遇或许也为殖民者当中的一些同伴埋下了异变的种子……</UmResearchProjectPrereqs.discoveredLetterText> -->
+    <!-- <UmResearchProjectPrereqs.discoveredLetterText>You have encountered the witch factor for the first time, an anomaly foreign to this rimworld. Such an encounter may have already sown the seeds of mutation among some of your colonists...</UmResearchProjectPrereqs.discoveredLetterText> -->
+
+
+    <!-- <UmResearchProjectDetect.label>发现魔女的方法</UmResearchProjectDetect.label> -->
+    <!-- <UmResearchProjectDetect.label>Methods of detecting witches</UmResearchProjectDetect.label> -->
+    <!-- <UmResearchProjectDetect.description>嗯...嗯...原来如此，只需要这简单的外科手术，魔女因子便无处遁形。</UmResearchProjectDetect.description> -->
+    <!-- <UmResearchProjectDetect.description>Hmm... I see... with just this simple surgical procedure, the witch factor will have nowhere to hide.</UmResearchProjectDetect.description> -->
+    <!-- <UmResearchProjectDetect.discoveredLetterTitle>关于发现魔女的方法</UmResearchProjectDetect.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectDetect.discoveredLetterTitle>About detecting witches</UmResearchProjectDetect.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectDetect.discoveredLetterText>现在，即使在魔女化的相当早期阶段，你也可以通过外科手术来检查殖民者是否携带魔女因子了。</UmResearchProjectDetect.discoveredLetterText> -->
+    <!-- <UmResearchProjectDetect.discoveredLetterText>Now, even in the very early stages of witch transformation, you can perform surgery to check if a colonist carries the witch factor.</UmResearchProjectDetect.discoveredLetterText> -->
+
+
+    <!-- <UmResearchProjectKill.label>杀死魔女的方法</UmResearchProjectKill.label> -->
+    <!-- <UmResearchProjectKill.label>Methods of killing witches</UmResearchProjectKill.label> -->
+    <!-- <UmResearchProjectKill.description>本以为魔女因子是一种类似纳米机械感染的超凡造物，但是通过调查你发现只要给予适当的刺激，它居然会直接杀死宿主并消失。</UmResearchProjectKill.description> -->
+    <!-- <UmResearchProjectKill.description>You thought the witch factor was an archotech creation similar to a mechanite infection, but investigation reveals that with the right stimulation, it will directly kill the host and vanish.</UmResearchProjectKill.description> -->
+    <!-- <UmResearchProjectKill.discoveredLetterTitle>关于杀死魔女的方法</UmResearchProjectKill.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectKill.discoveredLetterTitle>About killing witches</UmResearchProjectKill.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectKill.discoveredLetterText>你成功利用这具魔女的残骸的尸体破解了杀死魔女的秘密，可惜制作那种特殊药剂特雷德基姆的素材在边缘世界可以说是无法获得的。\n\n但是，既然手上已经有了现成的尸体，或许你还可以通过某种逆向手段获得必要的素材。</UmResearchProjectKill.discoveredLetterText> -->
+    <!-- <UmResearchProjectKill.discoveredLetterText>You have successfully unlocked the secrets of killing a witch using the corpse of this narehate. Unfortunately, the materials to create the special potion, Trēdecim, are essentially unobtainable on this rimworld.\n\nHowever, since you have a ready-made corpse on hand, perhaps you can acquire the necessary materials through some form of reverse-engineering.</UmResearchProjectKill.discoveredLetterText> -->
+
+
+    <!-- <UmResearchProjectControl.label>控制魔女的方法</UmResearchProjectControl.label> -->
+    <!-- <UmResearchProjectControl.label>Methods of controlling witches</UmResearchProjectControl.label> -->
+    <!-- <UmResearchProjectControl.description>如果能操控魔女的残骸为我们所用，哪怕是那黑暗超凡智能的食尸鬼也无法匹敌呀!</UmResearchProjectControl.description> -->
+    <!-- <UmResearchProjectControl.description>If we can control the narehate of a witch for our own use, not even the ghouls of dark archotech intelligence could compare!</UmResearchProjectControl.description> -->
+    <!-- <UmResearchProjectControl.discoveredLetterTitle>关于控制魔女的方法</UmResearchProjectControl.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectControl.discoveredLetterTitle>About controlling witches</UmResearchProjectControl.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectControl.discoveredLetterText>既然完全转化成了魔女的残骸的人类依旧保持着十足的人类特征，不妨利用熟悉的方法来将魔女的残骸暂时无害化并为你所用。\n\n虽然这样破坏性的方法似乎会彻底摧毁魔女的残骸仅剩的心智并且完全抹除康复的可能，但是为了获取到这样强大个体的力量，也许都是必要的牺牲吧。</UmResearchProjectControl.discoveredLetterText> -->
+    <!-- <UmResearchProjectControl.discoveredLetterText>Since a human fully transformed into a narehate of a witch still retains significant human characteristics, you might as well use familiar methods to render the narehate temporarily harmless and use her for your own purposes.\n\nAlthough such destructive methods seem to completely destroy the narehate's remaining mind and eliminate any possibility of recovery, perhaps these are necessary sacrifices to obtain the power of such a strong entity.</UmResearchProjectControl.discoveredLetterText> -->
+
+
+    <!-- <UmResearchProjectGene.label>魔女因子基因</UmResearchProjectGene.label> -->
+    <!-- <UmResearchProjectGene.label>Witch factor gene</UmResearchProjectGene.label> -->
+    <!-- <UmResearchProjectGene.description>经过仔细的思考与研究，你发现魔女因子也未尝不是一种超凡基因……</UmResearchProjectGene.description> -->
+    <!-- <UmResearchProjectGene.description>After careful thought and research, you realize the witch factor might actually be a type of archotech gene...</UmResearchProjectGene.description> -->
+    <!-- <UmResearchProjectGene.discoveredLetterTitle>关于魔女因子的超凡基因</UmResearchProjectGene.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectGene.discoveredLetterTitle>About the witch factor archotech gene</UmResearchProjectGene.discoveredLetterTitle> -->
+    <!-- <UmResearchProjectGene.discoveredLetterText>通过调查，你发现了魔女因子与超凡基因具有某些共性。\n\n现在你能够通过植入基因来主动为殖民者植入魔女因子。但是不同于真正的基因，你并不能通过移除基因的手段来治愈殖民者身上的魔女因子。</UmResearchProjectGene.discoveredLetterText> -->
+    <!-- <UmResearchProjectGene.discoveredLetterText>Through investigation, you have discovered that the witch factor shares certain properties with archotech genes.\n\nYou can now actively implant the witch factor into colonists via gene implantation. However, unlike true genes, you cannot cure the witch factor in a colonist by removing the gene.</UmResearchProjectGene.discoveredLetterText> -->
+
+
+    <!-- <UmResearchProjectSabbat.label>魔女安息仪式</UmResearchProjectSabbat.label> -->
+    <!-- <UmResearchProjectSabbat.label>Witches' Sabbath</UmResearchProjectSabbat.label> -->
+    <!-- <UmResearchProjectSabbat.description>为了进行这个仪式，居然需要先找到13名具有魔女因子的女性殖民者。这好像比击败大魔女本身还要难……</UmResearchProjectSabbat.description> -->
+    <!-- <UmResearchProjectSabbat.description>To perform this ritual, one must first find 13 colonists possessing the witch factor. This seems even harder than defeating the Great Witch herself...</UmResearchProjectSabbat.description> -->
+
+
+</LanguageData>
+
+
+
+
+
+
+

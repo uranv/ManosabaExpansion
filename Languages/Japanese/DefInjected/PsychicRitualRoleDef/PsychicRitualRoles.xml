@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmRitualRoleNarehateTransTarget.label>转化目标</UmRitualRoleNarehateTransTarget.label> -->
+    <UmRitualRoleNarehateTransTarget.label>変換対象</UmRitualRoleNarehateTransTarget.label>
+    <!-- <UmRitualRoleNarehateTransTarget.description>处于魔女的残骸状态的类人生物</UmRitualRoleNarehateTransTarget.description> -->
+    <UmRitualRoleNarehateTransTarget.description>魔女のなれはての状態にある人型生物</UmRitualRoleNarehateTransTarget.description>
+
+    <!-- <UmRitualRoleSabbatInvoker.label>发起者</UmRitualRoleSabbatInvoker.label> -->
+    <UmRitualRoleSabbatInvoker.label>実行者</UmRitualRoleSabbatInvoker.label>
+    <!-- <UmRitualRoleSabbatInvoker.description>主持仪式、高举仪式之剑的魔女。</UmRitualRoleSabbatInvoker.description> -->
+    <UmRitualRoleSabbatInvoker.description>儀式を執り行い、儀礼剣を掲げる魔女。</UmRitualRoleSabbatInvoker.description>
+    <!-- <UmRitualRoleSabbatChanter.label>吟诵者</UmRitualRoleSabbatChanter.label> -->
+    <UmRitualRoleSabbatChanter.label>詠唱者</UmRitualRoleSabbatChanter.label>
+    <!-- <UmRitualRoleSabbatChanter.description>参与仪式的魔女们。</UmRitualRoleSabbatChanter.description> -->
+    <UmRitualRoleSabbatChanter.description>儀式に参加する魔女たち。</UmRitualRoleSabbatChanter.description>
+
+</LanguageData>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 施用B水 -->
+    <RecipeDef>
+        <defName>Administer_UmThingDrugTredecim</defName>
+        <label>Administer Trēdecim</label>
+        <description>Administer Trēdecim.</description>
+        <workerClass>Recipe_AdministerIngestible</workerClass>
+        <jobString>Administering Trēdecim.</jobString>
+        <targetsBodyPart>false</targetsBodyPart>
+        <anesthetize>false</anesthetize>
+        <workAmount>450</workAmount>
+        <dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
+        <surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>UmThingDrugTredecim</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>UmThingDrugTredecim</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+</Defs>

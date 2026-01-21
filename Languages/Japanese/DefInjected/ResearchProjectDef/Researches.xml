@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmResearchProjectPrereqs.label>魔女因子</UmResearchProjectPrereqs.label> -->
+    <UmResearchProjectPrereqs.label>魔女の因子</UmResearchProjectPrereqs.label>
+    <!-- <UmResearchProjectPrereqs.description>你发现了魔女因子，一种不属于边缘世界的异象。</UmResearchProjectPrereqs.description> -->
+    <UmResearchProjectPrereqs.description>魔女の因子を発見した。このリムワールドには属さないアノマリーの一種だ。</UmResearchProjectPrereqs.description>
+    <!-- <UmResearchProjectPrereqs.discoveredLetterTitle>关于魔女因子</UmResearchProjectPrereqs.discoveredLetterTitle> -->
+    <UmResearchProjectPrereqs.discoveredLetterTitle>魔女因子について</UmResearchProjectPrereqs.discoveredLetterTitle>
+    <!-- <UmResearchProjectPrereqs.discoveredLetterText>你初次遇到了魔女因子，一种不属于边缘世界的异象。这样的相遇或许也为殖民者当中的一些同伴埋下了异变的种子……</UmResearchProjectPrereqs.discoveredLetterText> -->
+    <UmResearchProjectPrereqs.discoveredLetterText>魔女の因子に初めて遭遇した。これはこのリムワールドには属さないアノマリーの一種だ。この遭遇は、入植者たちの仲間に異変の種を植え付けたかもしれない……</UmResearchProjectPrereqs.discoveredLetterText>
+
+
+    <!-- <UmResearchProjectDetect.label>发现魔女的方法</UmResearchProjectDetect.label> -->
+    <UmResearchProjectDetect.label>魔女を見つける方法</UmResearchProjectDetect.label>
+    <!-- <UmResearchProjectDetect.description>嗯...嗯...原来如此，只需要这简单的外科手术，魔女因子便无处遁形。</UmResearchProjectDetect.description> -->
+    <UmResearchProjectDetect.description>ふむ……ふむ……なるほど。簡単な外科手術だけで、魔女の因子を特定できるようだ。</UmResearchProjectDetect.description>
+    <!-- <UmResearchProjectDetect.discoveredLetterTitle>关于发现魔女的方法</UmResearchProjectDetect.discoveredLetterTitle> -->
+    <UmResearchProjectDetect.discoveredLetterTitle>魔女を見つける方法について</UmResearchProjectDetect.discoveredLetterTitle>
+    <!-- <UmResearchProjectDetect.discoveredLetterText>现在，即使在魔女化的相当早期阶段，你也可以通过外科手术来检查殖民者是否携带魔女因子了。</UmResearchProjectDetect.discoveredLetterText> -->
+    <UmResearchProjectDetect.discoveredLetterText>今や、魔女化のかなり初期の段階であっても、外科手術によって入植者が魔女の因子を持っているかどうか検査できるようになった。</UmResearchProjectDetect.discoveredLetterText>
+
+
+    <!-- <UmResearchProjectKill.label>杀死魔女的方法</UmResearchProjectKill.label> -->
+    <UmResearchProjectKill.label>魔女を殺す方法</UmResearchProjectKill.label>
+    <!-- <UmResearchProjectKill.description>本以为魔女因子是一种类似纳米机械感染的超凡造物，但是通过调查你发现只要给予适当的刺激，它居然会直接杀死宿主并消失。</UmResearchProjectKill.description> -->
+    <UmResearchProjectKill.description>魔女の因子はナノマシンの感染に似たアルコテックの産物だと思われていたが、調査の結果、適切な刺激を与えれば、宿主を直接殺して消滅することが判明した。</UmResearchProjectKill.description>
+    <!-- <UmResearchProjectKill.discoveredLetterTitle>关于杀死魔女的方法</UmResearchProjectKill.discoveredLetterTitle> -->
+    <UmResearchProjectKill.discoveredLetterTitle>魔女を殺す方法について</UmResearchProjectKill.discoveredLetterTitle>
+    <!-- <UmResearchProjectKill.discoveredLetterText>你成功利用这具魔女的残骸的尸体破解了杀死魔女的秘密，可惜制作那种特殊药剂特雷德基姆的素材在边缘世界可以说是无法获得的。\n\n但是，既然手上已经有了现成的尸体，或许你还可以通过某种逆向手段获得必要的素材。</UmResearchProjectKill.discoveredLetterText> -->
+    <UmResearchProjectKill.discoveredLetterText>この魔女のなれはての死体を利用して、魔女を殺す秘密を解き明かすことに成功した。残念ながら、その特殊な薬剤「トレデキム」の素材は、このリムワールドでは入手不可能と言っていい。\n\nしかし、手元に死体がある以上、何らかのリバースエンジニアリングによって必要な素材を入手できるかもしれない。</UmResearchProjectKill.discoveredLetterText>
+
+
+    <!-- <UmResearchProjectControl.label>控制魔女的方法</UmResearchProjectControl.label> -->
+    <UmResearchProjectControl.label>魔女を制御する方法</UmResearchProjectControl.label>
+    <!-- <UmResearchProjectControl.description>如果能操控魔女的残骸为我们所用，哪怕是那黑暗超凡智能的食尸鬼也无法匹敌呀!</UmResearchProjectControl.description> -->
+    <UmResearchProjectControl.description>もし魔女のなれはてを我々のために操ることができれば、あの暗黒アルコテック知性のグールでさえ敵わないだろう！</UmResearchProjectControl.description>
+    <!-- <UmResearchProjectControl.discoveredLetterTitle>关于控制魔女的方法</UmResearchProjectControl.discoveredLetterTitle> -->
+    <UmResearchProjectControl.discoveredLetterTitle>魔女を制御する方法について</UmResearchProjectControl.discoveredLetterTitle>
+    <!-- <UmResearchProjectControl.discoveredLetterText>既然完全转化成了魔女的残骸的人类依旧保持着十足的人类特征，不妨利用熟悉的方法来将魔女的残骸暂时无害化并为你所用。\n\n虽然这样破坏性的方法似乎会彻底摧毁魔女的残骸仅剩的心智并且完全抹除康复的可能，但是为了获取到这样强大个体的力量，也许都是必要的牺牲吧。</UmResearchProjectControl.discoveredLetterText> -->
+    <UmResearchProjectControl.discoveredLetterText>完全に魔女のなれはてと化した人間も、依然として人間的な特徴を十分に保っている。慣れ親しんだ方法を利用して、魔女のなれはてを一時的に無力化し、利用してみてはどうだろうか。\n\nそのような破壊的な方法は、魔女のなれはてに残されたわずかな理性を完全に破壊し、回復の可能性を完全に断ち切ってしまうように思える。しかし、これほど強力な個体の力を手に入れるためには、必要な犠牲なのかもしれない。</UmResearchProjectControl.discoveredLetterText>
+
+
+    <!-- <UmResearchProjectGene.label>魔女因子基因</UmResearchProjectGene.label> -->
+    <UmResearchProjectGene.label>魔女因子遺伝子</UmResearchProjectGene.label>
+    <!-- <UmResearchProjectGene.description>经过仔细的思考与研究，你发现魔女因子也未尝不是一种超凡基因……</UmResearchProjectGene.description> -->
+    <UmResearchProjectGene.description>慎重な考察と研究の結果、魔女因子もまたアルコテック遺伝子の一種ではないかという結論に至った……</UmResearchProjectGene.description>
+    <!-- <UmResearchProjectGene.discoveredLetterTitle>关于魔女因子的超凡基因</UmResearchProjectGene.discoveredLetterTitle> -->
+    <UmResearchProjectGene.discoveredLetterTitle>魔女因子の遺伝子について</UmResearchProjectGene.discoveredLetterTitle>
+    <!-- <UmResearchProjectGene.discoveredLetterText>通过调查，你发现了魔女因子与超凡基因具有某些共性。\n\n现在你能够通过植入基因来主动为殖民者植入魔女因子。但是不同于真正的基因，你并不能通过移除基因的手段来治愈殖民者身上的魔女因子。</UmResearchProjectGene.discoveredLetterText> -->
+    <UmResearchProjectGene.discoveredLetterText>調査を通じて、魔女の因子とアルコテック遺伝子にはある種の共通点があることを発見した。\n\n今や、遺伝子移植によって入植者に魔女の因子を能動的に埋め込むことができる。しかし、真の遺伝子とは異なり、遺伝子を除去する手段で入植者の魔女の因子を治療することはできない。</UmResearchProjectGene.discoveredLetterText>
+
+
+    <!-- <UmResearchProjectSabbat.label>魔女安息仪式</UmResearchProjectSabbat.label> -->
+    <UmResearchProjectSabbat.label>サバトの儀式</UmResearchProjectSabbat.label>
+    <!-- <UmResearchProjectSabbat.description>为了进行这个仪式，居然需要先找到13名具有魔女因子的殖民者。这好像比击败大魔女本身还要难……</UmResearchProjectSabbat.description> -->
+    <UmResearchProjectSabbat.description>この儀式を行うためには、魔女の因子を持つ入植者を13人も見つけ出さなければならない。これは大魔女そのものを倒すよりも難しいかもしれない……</UmResearchProjectSabbat.description>
+
+
+</LanguageData>

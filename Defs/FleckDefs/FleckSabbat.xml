@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FleckDef ParentName="FleckBase_RandomGraphic">
+        <defName>UmFleckSabbatBlood</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0.5</fadeInTime>
+        <solidTime>84</solidTime>
+        <fadeOutTime>3.0</fadeOutTime>
+        <randomGraphics>
+            <li>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <texPath>things/mote/spatter/SpatterA</texPath>
+                <shaderType>Transparent</shaderType>
+                <renderInstanced>false</renderInstanced>
+            </li>
+            <li>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <texPath>things/mote/spatter/SpatterB</texPath>
+                <shaderType>Transparent</shaderType>
+                <renderInstanced>false</renderInstanced>
+            </li>
+            <li>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <texPath>things/mote/spatter/SpatterC</texPath>
+                <shaderType>Transparent</shaderType>
+                <renderInstanced>false</renderInstanced>
+            </li>
+        </randomGraphics>
+    </FleckDef>
+</Defs>

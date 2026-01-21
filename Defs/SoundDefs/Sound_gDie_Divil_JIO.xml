@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <SoundDef>
+        <defName>UmSound_gDie_Divil_JIO</defName>
+        <context>MapOnly</context>
+        <sustain>True</sustain>
+        <priorityMode>PrioritizeNearest</priorityMode>
+        <subSounds>
+            <li>
+                <name>gDie_Divil_JIO</name>
+                <onCamera>True</onCamera>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>psychicrituals/bgm</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>90~90</volumeRange>
+                <sustainAttack>1.0</sustainAttack>
+                <sustainRelease>1.0</sustainRelease>
+                <paramMappings>
+                    <li>
+                        <inParam Class="SoundParamSource_MusicPlayingFadeOut" />
+                        <outParam Class="SoundParamTarget_Volume" />
+                        <paramUpdateMode>Constant</paramUpdateMode>
+                        <curve>
+                            <points>
+                                <li>
+                                    <loc>
+                                        <x>0</x>
+                                        <y>0</y>
+                                    </loc>
+                                </li>
+                                <li>
+                                    <loc>
+                                        <x>1</x>
+                                        <y>1</y>
+                                    </loc>
+                                </li>
+                            </points>
+                        </curve>
+                    </li>
+                    <li>
+                        <inParam Class="SoundParamSource_CameraAltitude" />
+                        <outParam Class="SoundParamTarget_Volume" />
+                        <curve>
+                            <points>
+                                <li>
+                                    <loc>
+                                        <x>11</x>
+                                        <y>1</y>
+                                    </loc>
+                                </li>
+                                <li>
+                                    <loc>
+                                        <x>40</x>
+                                        <y>0.7</y>
+                                    </loc>
+                                </li>
+                            </points>
+                        </curve>
+                    </li>
+                    <li>
+                        <inParam Class="SoundParamSource_External">
+                            <inParamName>MusicVolume</inParamName>
+                        </inParam>
+                        <outParam Class="SoundParamTarget_Volume" />
+                        <paramUpdateMode>Constant</paramUpdateMode>
+                        <curve>
+                            <points>
+                                <li>
+                                    <loc>
+                                        <x>0</x>
+                                        <y>0</y>
+                                    </loc>
+                                </li>
+                                <li>
+                                    <loc>
+                                        <x>1</x>
+                                        <y>1</y>
+                                    </loc>
+                                </li>
+                            </points>
+                        </curve>
+                    </li>
+                </paramMappings>
+            </li>
+        </subSounds>
+    </SoundDef>
+</Defs>

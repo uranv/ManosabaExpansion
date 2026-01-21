@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- Letter Recipe Unlocks -->
+    <!-- <RecipeAburiBinUnlocked_Log>你解锁了制作配方【炙烤药瓶】！(P.S. 这不是错误信息 :D)</RecipeAburiBinUnlocked_Log> -->
+    <RecipeAburiBinUnlocked_Log>You have unlocked the recipe [Seared vial]! (P.S. This is not an error :D)</RecipeAburiBinUnlocked_Log>
+    <!-- <RecipeAburiBinUnlocked_Label>解锁配方：炙烤药瓶</RecipeAburiBinUnlocked_Label> -->
+    <RecipeAburiBinUnlocked_Label>Recipe unlocked: Seared vial</RecipeAburiBinUnlocked_Label>
+    <!-- <RecipeAburiBinUnlocked_Text>为了解明这位魔女的残骸的死因，你将目光投向了尸体边散落的玻璃碎片。这些玻璃碎片似乎是由受热破碎的玻璃药瓶产生。\n\n对于为什么要加热一个空药瓶，你有了些新奇的想法!</RecipeAburiBinUnlocked_Text> -->
+    <RecipeAburiBinUnlocked_Text>To unravel the cause of death of this narehate of a witch, you turned your gaze to the glass fragments scattered beside the corpse. These fragments appear to have come from a glass vial that shattered due to heat.\n\nYou have some novel ideas about why one would heat an empty vial!</RecipeAburiBinUnlocked_Text>
+    <!-- <RecipeSimpleSpearUnlocked_Log>你解锁了制作配方【简易长矛】！(P.S. 这不是错误信息 :D)</RecipeSimpleSpearUnlocked_Log> -->
+    <RecipeSimpleSpearUnlocked_Log>You have unlocked the recipe [Simple spear]! (P.S. This is not an error :D)</RecipeSimpleSpearUnlocked_Log>
+    <!-- <RecipeSimpleSpearUnlocked_Label>解锁配方：简易长矛</RecipeSimpleSpearUnlocked_Label> -->
+    <RecipeSimpleSpearUnlocked_Label>Recipe unlocked: Simple spear</RecipeSimpleSpearUnlocked_Label>
+    <!-- <RecipeSimpleSpearUnlocked_Text>随着魔女因子被认知的同时，你也追随原始的本能，想到了一种可以延长短剑攻击距离的"简易长矛"制作方法。</RecipeSimpleSpearUnlocked_Text> -->
+    <RecipeSimpleSpearUnlocked_Text>As the witch factor became recognized, you followed your primal instincts and devised a method for making a "Simple spear" to extend the reach of a gladius.</RecipeSimpleSpearUnlocked_Text>
+    <!-- Letter Research Unlocks -->
+    <!-- <Manosaba_ResearchUnlocked_Label>已发现：魔女因子</Manosaba_ResearchUnlocked_Label> -->
+    <Manosaba_ResearchUnlocked_Label>Discovered: Witch factor</Manosaba_ResearchUnlocked_Label>
+    <!-- <Manosaba_ResearchUnlocked_Text>通过近期的种种异常现象，你获得了新的见解。你发现同时解锁了魔女因子，现在可以进行以下的研究研究项目:\n\n - 检查魔女的方法</Manosaba_ResearchUnlocked_Text> -->
+    <Manosaba_ResearchUnlocked_Text>Through various recent anomalies, you have gained new insights. You have discovered the witch factor, and can now undertake the following research projects:\n\n - Methods of detecting witches</Manosaba_ResearchUnlocked_Text>
+    <!-- Letter Surgical Inspections -->
+    <!-- <Manosaba_SurgicalInspection_Label>手术检测：魔女因子</Manosaba_SurgicalInspection_Label> -->
+    <Manosaba_SurgicalInspection_Label>Surgical inspection: Witch factor</Manosaba_SurgicalInspection_Label>
+    <!-- <Manosaba_SurgicalInspection_Text>{DOCTOR_labelShort}对{PATIENT_labelShort}进行了详细的外科检查。\n\n检查结果令人不安：{PATIENT_labelShort}确实携带有魔女因子。虽然目前侵蚀程度尚浅，但是{PATIENT_labelShort}终有一日会成为为殖民地带来灾厄的魔女。</Manosaba_SurgicalInspection_Text> -->
+    <Manosaba_SurgicalInspection_Text>{DOCTOR_labelShort} performed a detailed surgical inspection on {PATIENT_labelShort}.\n\nThe results are disturbing: {PATIENT_labelShort} does indeed carry the witch factor. Although the level of erosion is currently shallow, {PATIENT_labelShort} will one day become a witch who brings calamity to the colony.</Manosaba_SurgicalInspection_Text>
+    <!-- Letter Mental State -->
+    <!-- <Manosaba_LetterLabel_TurnIntoNarehate>魔女化</Manosaba_LetterLabel_TurnIntoNarehate> -->
+    <Manosaba_LetterLabel_TurnIntoNarehate>Witch transformation</Manosaba_LetterLabel_TurnIntoNarehate>
+    <!-- <Manosaba_LetterText_TurnIntoNarehate>{PAWN_labelShort}已经彻底魔女化，化为仅由杀意驱动的残骸。</Manosaba_LetterText_TurnIntoNarehate> -->
+    <Manosaba_LetterText_TurnIntoNarehate>{PAWN_labelShort} has completely transformed into a witch, becoming a narehate driven solely by murderous intent.</Manosaba_LetterText_TurnIntoNarehate>
+    <!-- <MentalBreakFactor_Recovery>{0} 从魔女因子的暴走中平复下来了。\n她不再尝试杀死 {1} 了，暂时地。</MentalBreakFactor_Recovery> -->
+    <MentalBreakFactor_Recovery>{0} has calmed down from the rampage caused by the witch factor.\nShe is no longer attempting to kill {1}, for now.</MentalBreakFactor_Recovery>
+    <!-- Letter Yuki Visitor -->
+    <!-- <Manosaba_Incident_YukiVisitor_letterLabel>访客</Manosaba_Incident_YukiVisitor_letterLabel> -->
+    <Manosaba_Incident_YukiVisitor_letterLabel>Visitor</Manosaba_Incident_YukiVisitor_letterLabel>
+    <!-- <Manosaba_Incident_YukiVisitor_letterText>一位来历不明的年轻女性来到了你的殖民地。\n\n她自称为"{YUKI}"，她的来访似乎有一些隐藏的目的。\n\n你可以与她交谈，了解更多信息。</Manosaba_Incident_YukiVisitor_letterText> -->
+    <Manosaba_Incident_YukiVisitor_letterText>A young woman of unknown origin has arrived at your colony.\n\nShe calls herself "{YUKI}", and her visit seems to have some hidden purpose.\n\nYou can talk to her to learn more.</Manosaba_Incident_YukiVisitor_letterText>
+    <!-- Letter Yuki Undead -->
+    <!-- <Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel>{YUKI}已离开</Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel> -->
+    <Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel>{YUKI} has left</Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel>
+    <!-- <Manosaba_PatchUndead_teleportLeaveOnDeath_letterText>由于受到致命伤害，{YUKI}已经离开殖民地。</Manosaba_PatchUndead_teleportLeaveOnDeath_letterText> -->
+    <Manosaba_PatchUndead_teleportLeaveOnDeath_letterText>Having sustained fatal injuries, {YUKI} has left the colony.</Manosaba_PatchUndead_teleportLeaveOnDeath_letterText>
+    <!-- Message Killed by Tredecim -->
+    <!-- <Manosaba_Message_KilledByTredecim>{0}由于携带有魔女因子被特雷德基姆杀死了。\n但是魔女因子本身并没有离开殖民地。</Manosaba_Message_KilledByTredecim> -->
+    <Manosaba_Message_KilledByTredecim>{0} was killed by Trēdecim due to carrying the witch factor.\nHowever, the witch factor itself has not left the colony.</Manosaba_Message_KilledByTredecim>
+    <!-- Message No Resurrect due to Tredecim -->
+    <!-- <Manosaba_Message_NoResurrect>魔女 {0} 已经被特雷德基姆彻底杀死，无法被复活了。</Manosaba_Message_NoResurrect> -->
+    <Manosaba_Message_NoResurrect>The witch {0} has been thoroughly killed by Trēdecim and cannot be resurrected.</Manosaba_Message_NoResurrect>
+    <!-- Reason Psychic Ritual Narehate Requirement -->
+    <!-- <Manosaba_NarehateTargetInvalid>{0}不是魔女的残骸</Manosaba_NarehateTargetInvalid> -->
+    <Manosaba_NarehateTargetInvalid>{0} is not a narehate of a witch</Manosaba_NarehateTargetInvalid>
+    <!-- Reason Psychic Ritual Sabbat Requirement -->
+    <!-- <Manosaba_Sabbat_NoMajyoinshi>{0} 没有魔女因子</Manosaba_Sabbat_NoMajyoinshi> -->
+    <Manosaba_Sabbat_NoMajyoinshi>{0} does not have the witch factor</Manosaba_Sabbat_NoMajyoinshi>
+    <!-- Message Part Regeneration -->
+    <!-- <Manosaba_Message_PartRegen>由于{0_nameDef}的魔女因子，{0_pronoun}的{1}再生了!</Manosaba_Message_PartRegen> -->
+    <Manosaba_Message_PartRegen>{0_nameDef}'s {1} has regenerated due to {0_pronoun} witch factor!</Manosaba_Message_PartRegen>
+    <!-- Reason Yuki Ability Add -->
+    <!-- <Manosaba_AbilityAdd_NotHumanlike>{0} 不是类人生物。</Manosaba_AbilityAdd_NotHumanlike> -->
+    <Manosaba_AbilityAdd_NotHumanlike>{0} is not humanlike.</Manosaba_AbilityAdd_NotHumanlike>
+    <!-- <Manosaba_AbilityAdd_AlreadyHas>{0} 已经拥有魔女因子。</Manosaba_AbilityAdd_AlreadyHas> -->
+    <Manosaba_AbilityAdd_AlreadyHas>{0} already possesses the witch factor.</Manosaba_AbilityAdd_AlreadyHas>
+    <!-- <Manosaba_AbilityAdd_CannotBeYuki>{0} 无法被赋予魔女因子。</Manosaba_AbilityAdd_CannotBeYuki> -->
+    <Manosaba_AbilityAdd_CannotBeYuki>{0} cannot be granted the witch factor.</Manosaba_AbilityAdd_CannotBeYuki>
+    <!-- <Manosaba_AbilityRemove_NotHumanlike>{0} 不是类人生物。</Manosaba_AbilityRemove_NotHumanlike> -->
+    <Manosaba_AbilityRemove_NotHumanlike>{0} is not humanlike.</Manosaba_AbilityRemove_NotHumanlike>
+    <!-- <Manosaba_AbilityRemove_DoesntHave>{0} 没有魔女因子。</Manosaba_AbilityRemove_DoesntHave> -->
+    <Manosaba_AbilityRemove_DoesntHave>{0} does not have the witch factor.</Manosaba_AbilityRemove_DoesntHave>
+    <!-- <Manosaba_AbilityRemove_CannotBeYuki>{0} 无法被移除魔女因子。</Manosaba_AbilityRemove_CannotBeYuki> -->
+    <Manosaba_AbilityRemove_CannotBeYuki>{0} cannot have the witch factor removed.</Manosaba_AbilityRemove_CannotBeYuki>
+</LanguageData>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- Common Strings -->
+    <ManosabaSettings_yukiNameDef>月代雪</ManosabaSettings_yukiNameDef>
+    <ManosabaSettings_activatedChoice>已启用</ManosabaSettings_activatedChoice>
+    <ManosabaSettings_deactivatedChoice>已禁用</ManosabaSettings_deactivatedChoice>
+    
+
+    <!-- Settings Tabs -->
+    <ManosabaSettings_ModName>魔女因子设置（魔法少女的魔女审判拓展）</ManosabaSettings_ModName>
+    <ManosabaSettings_GeneralTab>一般设置</ManosabaSettings_GeneralTab>
+    <ManosabaSettings_ProgressTab>魔女化设置</ManosabaSettings_ProgressTab>
+    <ManosabaSettings_HealingTab>疗愈设置</ManosabaSettings_HealingTab>
+    <ManosabaSettings_RitualTab>仪式设置</ManosabaSettings_RitualTab>
+    <ManosabaSettings_MiscTab>其他设置</ManosabaSettings_MiscTab>
+    
+
+    <!-- General Tab -->
+    <ManosabaSettings_isShowProgress>显示魔女化数值</ManosabaSettings_isShowProgress>
+    <ManosabaSettings_isShowProgress_Desc_1>Hediff 中将显示魔女化具体数值，如"魔女因子(轻度,50%)"</ManosabaSettings_isShowProgress_Desc_1>
+    <ManosabaSettings_isShowProgress_Desc_1_disable>Hediff 中仅显示魔女化大致进度，如"魔女因子(轻度)" [默认选项]</ManosabaSettings_isShowProgress_Desc_1_disable>
+    <ManosabaSettings_isShowProgress_Desc_2>• 魔女因子未被发现时，仍不会出现 Hediff 且不显示数值进度</ManosabaSettings_isShowProgress_Desc_2>
+
+    <ManosabaSettings_debugMode>调试模式</ManosabaSettings_debugMode>
+    <ManosabaSettings_debugMode_Desc>• 启用时在控制台输出调试信息</ManosabaSettings_debugMode_Desc>
+
+    <ManosabaSettings_GeneralPanelTitle>魔女化进度预览面板</ManosabaSettings_GeneralPanelTitle>
+    <ManosabaSettings_GeneralPanel_Desc_1>• 预览魔女化进度变化量关于心情的变化曲线，\n调节右侧预览参数获取具体数值\n• 调节曲线形态的细致参数位于"魔女化设置"面板</ManosabaSettings_GeneralPanel_Desc_1>
+    <ManosabaSettings_GeneralPreviewSeverity>魔女化进度 {0}%</ManosabaSettings_GeneralPreviewSeverity>
+    <ManosabaSettings_GeneralPreviewMood>心情 {0}%</ManosabaSettings_GeneralPreviewMood>
+    <ManosabaSettings_GeneralPreviewMinorThres>轻度崩溃阈值 {0}%</ManosabaSettings_GeneralPreviewMinorThres>
+    
+    <ManosabaSettings_changePerDayPreview>当前每日魔女化进度变化：{0}%</ManosabaSettings_changePerDayPreview>
+    <ManosabaSettings_mtbDaysPreview>当前"魔女因子杀意"精神崩溃期望周期：{0}天</ManosabaSettings_mtbDaysPreview>
+    <ManosabaSettings_drawIncreaseThreshold>增加阈值\n{0}%</ManosabaSettings_drawIncreaseThreshold>
+    <ManosabaSettings_drawDecreaseThreshold>减少阈值\n{0}%</ManosabaSettings_drawDecreaseThreshold>
+
+
+    <!-- Progress Tab -->
+    <ManosabaSettings_severityIncreaseFactor>魔女化增加系数：{0}% 每天</ManosabaSettings_severityIncreaseFactor>
+    <ManosabaSettings_severityIncreaseFactor_Desc>• 此系数反应心情为 0% 时，每天魔女化进度增加上限</ManosabaSettings_severityIncreaseFactor_Desc>
+
+    <ManosabaSettings_severityDecreaseFactor>魔女化减少系数：{0}% 每天</ManosabaSettings_severityDecreaseFactor>
+    <ManosabaSettings_severityDecreaseFactor_Desc>• 此系数反应心情为 100% 时，每天魔女化进度减少上限</ManosabaSettings_severityDecreaseFactor_Desc>
+
+    <ManosabaSettings_severityIncreaseBias>魔女化增加的心情偏移：{0}%</ManosabaSettings_severityIncreaseBias>
+    <ManosabaSettings_severityIncreaseBias_Desc>• 此系数反应魔女化进度增加阈值相对轻度心情崩溃阈值 (默认 35) 的正偏移量</ManosabaSettings_severityIncreaseBias_Desc>
+
+    <ManosabaSettings_severityFlatBias>魔女化不变的心情区间：{0}%</ManosabaSettings_severityFlatBias>
+    <ManosabaSettings_severityFlatBias_Desc>• 此系数反应魔女化进度不变的心情区间宽度</ManosabaSettings_severityFlatBias_Desc>
+
+    <ManosabaSettings_severityIncreaseExponent>魔女化增加指数修正：{0}</ManosabaSettings_severityIncreaseExponent>
+    <ManosabaSettings_severityIncreaseExponent_Desc>• （高级选项）此系数影响魔女化进度增加速率随心情恶化的加速程度</ManosabaSettings_severityIncreaseExponent_Desc>
+
+    <ManosabaSettings_severityDecreaseExponent>魔女化减少指数修正：{0}</ManosabaSettings_severityDecreaseExponent>
+    <ManosabaSettings_severityDecreaseExponent_Desc>• （高级选项）此因子反应魔女化进度减少速率随心情改善的加速程度</ManosabaSettings_severityDecreaseExponent_Desc>
+
+    <ManosabaSettings_baseMtbDays>"魔女因子杀意"精神崩溃的基础周期：{0}天</ManosabaSettings_baseMtbDays>
+    <ManosabaSettings_baseMtbDays_Desc_1>• 此数值为魔女化进度 50%，心情 50% 时发生"魔女因子杀意"精神崩溃的期望周期</ManosabaSettings_baseMtbDays_Desc_1>
+    <ManosabaSettings_baseMtbDays_Desc_2>• 实际精神崩溃的期望周期随魔女化进度以及实时心情变化，在此数值的 (1/8,8) 倍率范围波动</ManosabaSettings_baseMtbDays_Desc_2>
+
+    <ManosabaSettings_ResetProgressTab>重置本页设置为默认值</ManosabaSettings_ResetProgressTab>
+    <ManosabaSettings_ProgressTabDesc>本页中系数设置的具体作用可在一般设置页的函数图表直观查看</ManosabaSettings_ProgressTabDesc>
+    
+
+    <!-- Healing Tab -->
+    <ManosabaSettings_factorHealing>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_factorHealing>
+    <ManosabaSettings_factorHealing_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_factorHealing_Desc_1>
+    <ManosabaSettings_factorHealing_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_factorHealing_Desc_2>
+    
+    <ManosabaSettings_factorBloodHealing>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_factorBloodHealing>
+    <ManosabaSettings_factorBloodHealing_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_factorBloodHealing_Desc_1>
+    <ManosabaSettings_factorBloodHealing_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_factorBloodHealing_Desc_1_Disable>
+    <ManosabaSettings_factorBloodHealing_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_factorBloodHealing_Desc_2>
+    <ManosabaSettings_factorBloodHealing_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_factorBloodHealing_Desc_3>
+
+    <ManosabaSettings_postFactorHealing>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postFactorHealing>
+    <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 倍率的魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1>
+    <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1_Disable>
+    <ManosabaSettings_postFactorHealing_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postFactorHealing_Desc_2>
+    <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postFactorHealing_Desc_2_Disable>
+    
+    <ManosabaSettings_ResetHealingTab>重置本页设置为默认值</ManosabaSettings_ResetHealingTab>
+
+
+    <!-- Ritual Tab -->
+    <ManosabaSettings_NBw_title>魔女残骸洗脑仪式相关设置</ManosabaSettings_NBw_title>
+    <ManosabaSettings_NBw_mutantFullCircle>• 魔女残骸控制时间上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle>
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 此系数决定了魔女残骸的洗脑控制时间上限</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 拥有魔女残骸状态的生物可通过仪式"魔女残骸洗脑"在一定时间内转化为可受控的对象</ManosabaSettings_NBw_mutantFullCircle_Desc_2>
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 对于处于控制状态的魔女残骸，其剩余控制时间可通过相同仪式延长至不超过此上限</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
+
+    <ManosabaSettings_Sabbat_title>魔女安息仪式相关设置</ManosabaSettings_Sabbat_title>
+    <ManosabaSettings_Sabbat_thresholdMinusOne>• 品质偏移 -1 阈值：{0}%</ManosabaSettings_Sabbat_thresholdMinusOne>
+    <ManosabaSettings_Sabbat_thresholdZero>• 品质偏移 0 阈值：{0}%</ManosabaSettings_Sabbat_thresholdZero>
+    <ManosabaSettings_Sabbat_thresholdPlusOne>• 品质偏移 +1 阈值：{0}%</ManosabaSettings_Sabbat_thresholdPlusOne>
+    <ManosabaSettings_Sabbat_thresholds_Desc_1>- 这些阈值决定了魔女安息仪式中召唤出{YUKI}的装备品质偏移效果与仪式品质的对应关系</ManosabaSettings_Sabbat_thresholds_Desc_1>
+    <ManosabaSettings_Sabbat_thresholds_Desc_2>- 仪式品质高于对应阈值时，召唤的装备品质相对消耗献祭物品品质应用对应的偏移效果</ManosabaSettings_Sabbat_thresholds_Desc_2>
+    <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例如使用 极佳(+4) 品质的仪式剑，以 86% (默认阈值时+1) 的仪式质量，召唤出的{YUKI}会持有 大师(+5) 品质的装备</ManosabaSettings_Sabbat_thresholds_Desc_3>
+
+    <ManosabaSettings_ResetRitualTab>重置本页设置为默认值</ManosabaSettings_ResetRitualTab>
+
+
+    <!-- Misc Tab -->
+    <ManosabaSettings_inverseTemperature>魔女因子随机参数：{0}</ManosabaSettings_inverseTemperature>
+    <ManosabaSettings_inverseTemperature_Desc_1>• 此参数影响通过随机分布选择目标时的选择倾向</ManosabaSettings_inverseTemperature_Desc_1>
+    <ManosabaSettings_inverseTemperature_Desc_2>• 数值较大时，随机分布倾向于选择"与其他殖民者关系更差"的殖民者；数值较小时，倾向于选择"与其他殖民者关系更好"的殖民者；\n绝对值越小越接近平均分布</ManosabaSettings_inverseTemperature_Desc_2>
+    <ManosabaSettings_inverseTemperature_Desc_3>• 随机选择器使用玻尔兹曼分布，将"对于其他殖民者关系之和"归一化视为能量，此参数即为逆温度</ManosabaSettings_inverseTemperature_Desc_3>
+    <ManosabaSettings_inverseTemperature_Desc_4>• 设定上，魔女因子的传播和"心情"相关，那么这里通过关系总和来量化传播概率似乎很合理 :D</ManosabaSettings_inverseTemperature_Desc_4>
+    
+    <ManosabaSettings_disableTale>禁用月代雪对话使用故事</ManosabaSettings_disableTale>
+    <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需禁用。</ManosabaSettings_disableTale_Desc_1>
+    
+    <ManosabaSettings_ResetMiscTab>重置本页设置为默认值</ManosabaSettings_ResetMiscTab>
+
+</LanguageData>

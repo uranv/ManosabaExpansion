@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmThingAburibin.label>炙烤药瓶</UmThingAburibin.label> -->
+    <!-- <UmThingAburibin.label>Seared vial</UmThingAburibin.label> -->
+    <!-- <UmThingAburibin.description>"把药瓶烤一下就会变成炙烤药瓶哦!"某只小笨狗曾如是说道。\n\n但是烤过的药瓶究竟有什么用呢?</UmThingAburibin.description> -->
+    <!-- <UmThingAburibin.description>"Just roast the vial and it becomes a seared vial!" a certain silly puppy once said.\n\nBut what is the use of a roasted vial?</UmThingAburibin.description> -->
+
+
+    <!-- <UmThingCrystallizedEye.label>结晶化眼球</UmThingCrystallizedEye.label> -->
+    <!-- <UmThingCrystallizedEye.label>Crystallized eye</UmThingCrystallizedEye.label> -->
+    <!-- <UmThingCrystallizedEye.description>使用特雷德基姆杀死魔女引起的副作用，也许有什么用处。</UmThingCrystallizedEye.description> -->
+    <!-- <UmThingCrystallizedEye.description>A side effect caused by killing a witch using Trēdecim. Perhaps it has some use.</UmThingCrystallizedEye.description> -->
+
+
+    <!-- <UmThingDrugTredecim.label>特雷德基姆</UmThingDrugTredecim.label> -->
+    <!-- <UmThingDrugTredecim.label>Trēdecim</UmThingDrugTredecim.label> -->
+    <!-- <UmThingDrugTredecim.description>特雷德基姆，拉丁语中数字十三的意思。据说是一种可以杀死魔女的独特药剂。</UmThingDrugTredecim.description> -->
+    <!-- <UmThingDrugTredecim.description>Trēdecim, meaning the number thirteen in Latin. It is said to be a unique potion capable of killing a witch.</UmThingDrugTredecim.description> -->
+    <!-- <UmThingDrugTredecim.ingestible.ingestCommandString>服用{0}</UmThingDrugTredecim.ingestible.ingestCommandString> -->
+    <!-- <UmThingDrugTredecim.ingestible.ingestCommandString>Ingest {0}</UmThingDrugTredecim.ingestible.ingestCommandString> -->
+    <!-- <UmThingDrugTredecim.ingestible.ingestReportString>正在服用{0}</UmThingDrugTredecim.ingestible.ingestReportString> -->
+    <!-- <UmThingDrugTredecim.ingestible.ingestReportString>Ingesting {0}</UmThingDrugTredecim.ingestible.ingestReportString> -->
+
+
+    <!-- <UmThingWeaponSimpleSpear.label>简易长矛</UmThingWeaponSimpleSpear.label> -->
+    <!-- <UmThingWeaponSimpleSpear.label>Simple spear</UmThingWeaponSimpleSpear.label> -->
+    <!-- <UmThingWeaponSimpleSpear.description>这样的"武器"真的用来攻击吗？</UmThingWeaponSimpleSpear.description> -->
+    <!-- <UmThingWeaponSimpleSpear.description>Is such a "weapon" really meant for attacking?</UmThingWeaponSimpleSpear.description> -->
+    <!-- <UmThingWeaponSimpleSpear.tools.point.label>箭尖</UmThingWeaponSimpleSpear.tools.point.label> -->
+    <!-- <UmThingWeaponSimpleSpear.tools.point.label>point</UmThingWeaponSimpleSpear.tools.point.label> -->
+
+
+    <!-- <UmThingWeaponRitualSwordReplica.label>仿制仪式剑</UmThingWeaponRitualSwordReplica.label> -->
+    <!-- <UmThingWeaponRitualSwordReplica.label>ritual sword replica</UmThingWeaponRitualSwordReplica.label> -->
+    <!-- <UmThingWeaponRitualSwordReplica.description>利用边缘世界的材料与手段仿制的仪式用品，真的能够起到应有的效果吗？</UmThingWeaponRitualSwordReplica.description> -->
+    <!-- <UmThingWeaponRitualSwordReplica.description>A ritual item replicated using rimworld materials and methods. Can it really achieve the intended effect?</UmThingWeaponRitualSwordReplica.description> -->
+    <!-- <UmThingWeaponRitualSwordReplica.tools.point.label>剑尖</UmThingWeaponRitualSwordReplica.tools.point.label> -->
+    <!-- <UmThingWeaponRitualSwordReplica.tools.point.label>point</UmThingWeaponRitualSwordReplica.tools.point.label> -->
+    <!-- <UmThingWeaponRitualSwordReplica.tools.edge.label>剑刃</UmThingWeaponRitualSwordReplica.tools.edge.label> -->
+    <!-- <UmThingWeaponRitualSwordReplica.tools.edge.label>edge</UmThingWeaponRitualSwordReplica.tools.edge.label> -->
+
+
+    <!-- <UmThingWeaponRitualSword.label>仪式剑</UmThingWeaponRitualSword.label> -->
+    <!-- <UmThingWeaponRitualSword.label>Ritual sword</UmThingWeaponRitualSword.label> -->
+    <!-- <UmThingWeaponRitualSword.description>魔女安息仪式中召唤出的大魔女携带的魔法剑。</UmThingWeaponRitualSword.description> -->
+    <!-- <UmThingWeaponRitualSword.description>The magic sword carried by the Great Witch summoned during the Witches' Sabbath.</UmThingWeaponRitualSword.description> -->
+    <!-- <UmThingWeaponRitualSword.tools.point.label>剑尖</UmThingWeaponRitualSword.tools.point.label> -->
+    <!-- <UmThingWeaponRitualSword.tools.point.label>point</UmThingWeaponRitualSword.tools.point.label> -->
+    <!-- <UmThingWeaponRitualSword.tools.edge.label>剑刃</UmThingWeaponRitualSword.tools.edge.label> -->
+    <!-- <UmThingWeaponRitualSword.tools.edge.label>edge</UmThingWeaponRitualSword.tools.edge.label> -->
+
+</LanguageData>

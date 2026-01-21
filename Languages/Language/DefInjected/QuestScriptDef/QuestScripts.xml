@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+            <li>deliveredLetterLabel->神秘货舱</li>
+            <li>deliveredLetterText->神秘货舱已送达。这似乎是一具死去的魔女的残骸。\n\n仔细观察后，这具尸体看起来曾属于一位名叫[narehateName]的少女。\n\n你可以对其进行研究以了解更多关于魔女死亡的秘密。</li>
+    </UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings> -->
+    <!-- <UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+            <li>deliveredLetterLabel->Mysterious cargo</li>
+            <li>deliveredLetterText->A mysterious cargo pod has arrived. It appears to be the corpse of a deceased narehate of a witch.\n\nUpon closer inspection, this corpse seems to have belonged to a young girl named [narehateName].\n\nYou can study it to learn more about the secrets of a witch's death.</li>
+    </UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings> -->
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmGeneFactor.label>魔女因子</UmGeneFactor.label> -->
+    <!-- <UmGeneFactor.label>Witch factor</UmGeneFactor.label> -->
+    <!-- <UmGeneFactor.labelShortAdj>魔女</UmGeneFactor.labelShortAdj> -->
+    <!-- <UmGeneFactor.labelShortAdj>Witch</UmGeneFactor.labelShortAdj> -->
+    <!-- <UmGeneFactor.description>这种"基因"的携带者受到魔女因子的诅咒。随着诅咒加深，她们的身体能力也会发生变化。</UmGeneFactor.description> -->
+    <!-- <UmGeneFactor.description>Carriers of this "gene" are cursed by the witch factor. As the curse deepens, their physical abilities will change.</UmGeneFactor.description> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.0>主动赋予携带者魔女因子的诅咒</UmGeneFactor.customEffectDescriptions.0> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.0>Actively grants the carrier the curse of the witch factor.</UmGeneFactor.customEffectDescriptions.0> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.1>被添加后无法移除，失去时会自动重新\n添加</UmGeneFactor.customEffectDescriptions.1> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.1>Cannot be removed once added; automatically re-added if lost.</UmGeneFactor.customEffectDescriptions.1> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.2>解锁科技"魔女因子基因"后，魔女因子\n才能作为"基因"存在</UmGeneFactor.customEffectDescriptions.2> -->
+    <!-- <UmGeneFactor.customEffectDescriptions.2>The witch factor can only exist as a "gene" after unlocking the "Witch Factor Gene" research.</UmGeneFactor.customEffectDescriptions.2> -->
+</LanguageData>

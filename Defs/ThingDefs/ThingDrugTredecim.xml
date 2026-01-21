@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- B水物品 -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>UmThingDrugTredecim</defName>
+        <label>Trēdecim</label>
+        <description>Trēdecim, meaning the number thirteen in Latin. It is said to be a unique potion capable of killing a witch.</description>
+        <graphicData>
+            <texPath>things/item/drug/tredecim</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>600</WorkToMake>
+            <MarketValue>800</MarketValue>
+            <Mass>0.1</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <stackLimit>1</stackLimit>
+        <tradeability>Sellable</tradeability>
+        <thingCategories>
+            <li>Drugs</li>
+        </thingCategories>
+        <ingestible>
+            <foodType>Processed</foodType>
+            <preferability>NeverForNutrition</preferability>
+            <baseIngestTicks>100</baseIngestTicks>
+            <chairSearchRadius>0</chairSearchRadius>
+            <ingestSound>Ingest_Inject</ingestSound>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>take {0}</ingestCommandString>
+            <ingestReportString>Taking {0}.</ingestReportString>
+            <drugCategory>None</drugCategory>
+            <outcomeDoers>
+                <li Class="UranvManosaba.Contents.Items.IngestionOutcomeDoer_Tredecim" />
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+        </comps>
+    </ThingDef>
+</Defs>

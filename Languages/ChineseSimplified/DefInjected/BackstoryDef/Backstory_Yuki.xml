@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmBackstoryYukiChild.title>魔女岛的大魔女</UmBackstoryYukiChild.title>
+    <UmBackstoryYukiChild.titleFemale>魔女岛的大魔女</UmBackstoryYukiChild.titleFemale>
+    <UmBackstoryYukiChild.titleShort>大魔女</UmBackstoryYukiChild.titleShort>
+    <UmBackstoryYukiChild.titleShortFemale>大魔女</UmBackstoryYukiChild.titleShortFemale>
+    <UmBackstoryYukiChild.description>[PAWN_nameDef]作为最年轻的大魔女，从小在魔女岛上生活。\n\n战后，她离开了魔女岛，独自周游世界。</UmBackstoryYukiChild.description>
+
+    <UmBackstoryYukiAdult.title>复活的大魔女</UmBackstoryYukiAdult.title>
+    <UmBackstoryYukiAdult.titleFemale>复活的大魔女</UmBackstoryYukiAdult.titleFemale>
+    <UmBackstoryYukiAdult.titleShort>大魔女</UmBackstoryYukiAdult.titleShort>
+    <UmBackstoryYukiAdult.titleShortFemale>大魔女</UmBackstoryYukiAdult.titleShortFemale>
+    <UmBackstoryYukiAdult.description>魔女安息仪式中复活的最后的大魔女。</UmBackstoryYukiAdult.description>
+
+</LanguageData>

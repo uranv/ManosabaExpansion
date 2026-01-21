@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectPrereqs</defName>
+        <label>witch's factor</label>
+        <description>You have discovered the witch's factor, an anomaly foreign to this rimworld.</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>3101040</knowledgeCost>
+        <knowledgeCategory>Basic</knowledgeCategory>
+        <researchViewX>0.0</researchViewX>
+        <researchViewY>0.1</researchViewY>
+        <discoveredLetterTitle>About the witch's factor</discoveredLetterTitle>
+        <discoveredLetterText>You have encountered the witch's factor for the first time, an anomaly foreign to this rimworld. Such an encounter may have already sown the seeds of mutation among some of your colonists...</discoveredLetterText>
+        <discoveredLetterDisabledWhen>
+            <bigThreatsDisabled>true</bigThreatsDisabled>
+        </discoveredLetterDisabledWhen>
+    </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectDetect</defName>
+        <label>methods of detecting witches</label>
+        <description>Hmm... I see... with just this simple surgical procedure, the witch's factor will have nowhere to hide.</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>15</knowledgeCost>
+        <knowledgeCategory>Basic</knowledgeCategory>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>1.90</researchViewY>
+        <prerequisites></prerequisites>
+        <hiddenPrerequisites>
+            <li>UmResearchProjectPrereqs</li>
+        </hiddenPrerequisites>
+        <discoveredLetterTitle>About detecting witches</discoveredLetterTitle>
+        <discoveredLetterText>Now, even in the very early stages of witch transformation, you can perform surgery to check if a colonist carries the witch's factor.</discoveredLetterText>
+        <discoveredLetterDisabledWhen>
+            <bigThreatsDisabled>true</bigThreatsDisabled>
+        </discoveredLetterDisabledWhen>
+    </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectKill</defName>
+        <label>methods of killing witches</label>
+        <description>You thought the witch's factor was an archotech creation similar to a mechanite infection, but investigation reveals that with the right stimulation, it will directly kill the host and vanish.</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>20</knowledgeCost>
+        <knowledgeCategory>Basic</knowledgeCategory>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>1.30</researchViewY>
+        <prerequisites>
+            <li>UmResearchProjectDetect</li>
+        </prerequisites>
+        <discoveredLetterTitle>About killing witches</discoveredLetterTitle>
+        <discoveredLetterText>You have successfully unlocked the secrets of killing a witch using the corpse of this narehate. Unfortunately, the materials to create the special potion, Trēdecim, are essentially unobtainable on this rimworld.\n\nHowever, since you have a ready-made corpse on hand, perhaps you can acquire the necessary materials through some form of reverse-engineering.</discoveredLetterText>
+        <discoveredLetterDisabledWhen>
+            <bigThreatsDisabled>true</bigThreatsDisabled>
+        </discoveredLetterDisabledWhen>
+    </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectControl</defName>
+        <label>methods of controlling witches</label>
+        <description>If we can control the narehate of a witch for our own use, not even the ghouls of dark archotech intelligence could compare!</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>20</knowledgeCost>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>1.90</researchViewY>
+        <prerequisites>
+            <li>UmResearchProjectDetect</li>
+        </prerequisites>
+        <hiddenPrerequisites>
+            <li>Brainwipe</li>
+        </hiddenPrerequisites>
+        <discoveredLetterTitle>About controlling witches</discoveredLetterTitle>
+        <discoveredLetterText>Since a human fully transformed into a narehate of a witch still retains significant human characteristics, you might as well use familiar methods to render the narehate temporarily harmless and use her for your own purposes.\n\nAlthough such destructive methods seem to completely destroy the narehate's remaining mind and eliminate any possibility of recovery, perhaps these are necessary sacrifices to obtain the power of such a strong entity.</discoveredLetterText>
+        <discoveredLetterDisabledWhen>
+            <bigThreatsDisabled>true</bigThreatsDisabled>
+        </discoveredLetterDisabledWhen>
+    </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectGene</defName>
+        <label>witch's factor gene</label>
+        <description>After careful thought and research, you realize the witch's factor might actually be a type of archotech gene...</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>20</knowledgeCost>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <researchViewX>4.50</researchViewX>
+        <researchViewY>1.90</researchViewY>
+        <prerequisites>
+            <li>UmResearchProjectKill</li>
+            <li>UmResearchProjectControl</li>
+        </prerequisites>
+        <hiddenPrerequisites>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Archogenetics</li>
+        </hiddenPrerequisites>
+        <discoveredLetterTitle>About the witch's factor archotech gene</discoveredLetterTitle>
+        <discoveredLetterText>Through investigation, you have discovered that the witch's factor shares certain properties with archotech genes.\n\nYou can now actively implant the witch's factor into colonists via gene implantation. However, unlike true genes, you cannot cure the witch's factor in a colonist by removing the gene.</discoveredLetterText>
+        <discoveredLetterDisabledWhen>
+            <bigThreatsDisabled>true</bigThreatsDisabled>
+        </discoveredLetterDisabledWhen>
+        <descriptionHyperlinks>
+            <GeneDef>UmGeneFactor</GeneDef>
+        </descriptionHyperlinks>
+    </ResearchProjectDef>
+    <ResearchProjectDef>
+        <defName>UmResearchProjectSabbat</defName>
+        <label>Witches' Sabbath</label>
+        <description>To perform this ritual, one must first find 13 colonists possessing the witch's factor. This seems even harder than defeating the Great Witch herself...</description>
+        <tab>Anomaly</tab>
+        <knowledgeCost>67</knowledgeCost>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <researchViewX>6.50</researchViewX>
+        <researchViewY>1.90</researchViewY>
+        <prerequisites>
+            <li>UmResearchProjectGene</li>
+        </prerequisites>
+    </ResearchProjectDef>
+</Defs>

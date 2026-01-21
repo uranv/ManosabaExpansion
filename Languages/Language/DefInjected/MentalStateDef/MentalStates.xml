@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmMentalBreakFactor.label>魔女因子杀意</UmMentalBreakFactor.label> -->
+    <!-- <UmMentalBreakFactor.label>Witch factor murderous intent</UmMentalBreakFactor.label> -->
+    <!-- <UmMentalBreakFactor.baseInspectLine>正在杀害仇恨对象 {1}</UmMentalBreakFactor.baseInspectLine> -->
+    <!-- <UmMentalBreakFactor.baseInspectLine>Killing object of hatred {1}</UmMentalBreakFactor.baseInspectLine> -->
+    <!-- <UmMentalBreakFactor.beginLetterLabel>魔女因子杀意</UmMentalBreakFactor.beginLetterLabel> -->
+    <!-- <UmMentalBreakFactor.beginLetterLabel>Witch factor murderous intent</UmMentalBreakFactor.beginLetterLabel> -->
+    <!-- <UmMentalBreakFactor.beginLetter>{0}因为魔女因子的影响，已经陷入了杀戮冲动中!\n\n她对{1}的恨意已经转化为无法控制的杀意。</UmMentalBreakFactor.beginLetter> -->
+    <!-- <UmMentalBreakFactor.beginLetter>Due to the influence of the witch factor, {0} has fallen into a killing urge!\n\nHer hatred for {1} has transformed into uncontrollable murderous intent.</UmMentalBreakFactor.beginLetter> -->
+    
+    <!-- <UmMentalBreakNarehate.label>魔女的残骸</UmMentalBreakNarehate.label> -->
+    <!-- <UmMentalBreakNarehate.label>Narehate of a witch</UmMentalBreakNarehate.label> -->
+
+</LanguageData>

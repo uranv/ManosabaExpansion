@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 仪式定义 -->
+    <PsychicRitualDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualDef_NarehateTrans">
+        <defName>UmRitualNarehateTrans</defName>
+        <label>narehate brainwipe</label>
+        <description>With the aid of dark archotech intelligence, it is possible to temporarily control a narehate of a witch through brainwipe, or extend the control duration for an already controlled narehate.\n\nSuch an attempt will completely destroy the witch's mind, reducing her to a narehate driven by instinct.\n\nWarning: This process is irreversible.</description>
+        <iconPath>ui/psychicrituals/narehate_infusion</iconPath>
+        <outcomeDescription>The target narehate of a witch will be unilaterally transformed into a controlled form.\n\nDepending on the current ritual quality, extends the brainwashing control of the narehate of a witch by {0} days.</outcomeDescription>
+        <researchPrerequisite>UmResearchProjectControl</researchPrerequisite>
+        <hoursUntilOutcome>4</hoursUntilOutcome>
+        <cooldownHours>240</cooldownHours>
+        <targetRole>UmRitualRoleNarehateTransTarget</targetRole>
+        <chanterRole>ChanterAdvanced</chanterRole>
+        <requiredOffering>
+            <filter>
+                <thingDefs>
+                    <li>Shard</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </requiredOffering>
+        <severityFromQualityCurve>
+            <points>
+                <li>(0, 10)</li>
+                <!-- 最低控制 10% 即 10 天 -->
+                <li>(0.5, 45)</li>
+                <!-- 中等控制 45% 即 45 天 -->
+                <li>(1, 75)</li>
+                <!-- 最高控制 75% 即 75 天 -->
+            </points>
+        </severityFromQualityCurve>
+    </PsychicRitualDef>
+    <!-- 仪式角色定义 -->
+    <PsychicRitualRoleDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualRoleDef_NarehateTarget">
+        <defName>UmRitualRoleNarehateTransTarget</defName>
+        <label>transformation target</label>
+        <description>A humanoid in the state of being a narehate of a witch.</description>
+        <allowedCount>1</allowedCount>
+        <allowedConditions>Default, Downed, Prisoner, Slave, Sleeping, IdeoUnwilling, NoPsychicSensitivity,MentalState, NonPlayerFaction, NonHumanlike, Humanlike, SubHuman, Bleeding</allowedConditions>
+        <showInvocationVfx>true</showInvocationVfx>
+        <removeOnLost>false</removeOnLost>
+    </PsychicRitualRoleDef>
+</Defs>

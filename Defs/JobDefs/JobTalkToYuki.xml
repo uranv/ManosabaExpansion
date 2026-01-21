@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <JobDef>
+        <defName>UmJobTalkToYuki</defName>
+        <driverClass>UranvManosaba.Contents.Incidents.JobDriver_TalkToYuki</driverClass>
+        <reportString>Talking to TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+</Defs>

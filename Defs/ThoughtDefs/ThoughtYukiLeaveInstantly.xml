@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThoughtDef>
+        <defName>UmThoughtYukiLeaveInstantly</defName>
+        <durationDays>1</durationDays>
+        <stackLimit>1</stackLimit>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>resentment as expected</label>
+                <description>My mind is filled with whispers of hatred...\n\nThis is retaliation for our hostile acts against a mysterious visitor. The visitor's counterattack suggests she was not surprised by our hostility.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <QuestScriptDef ParentName="MysteriousCargoBase">
+        <defName>UmQuestScriptMystCargoCorpse</defName>
+        <root Class="UranvManosaba.Contents.Incidents.QuestNode_Root_MystCargoNarehate" />
+        <questContentRules>
+            <rulesStrings>
+                <li>deliveredLetterLabel->Mysterious Cargo</li>
+                <li>deliveredLetterText->Mysterious cargo has been delivered. It appears to be a dead narehate of a witch.\n\nUpon closer inspection, this corpse seems to have belonged to a girl named [narehateName].\n\nYou can study it to learn more about the secrets of a witch's death.</li>
+            </rulesStrings>
+        </questContentRules>
+    </QuestScriptDef>
+</Defs>

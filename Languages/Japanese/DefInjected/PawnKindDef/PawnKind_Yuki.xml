@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmPawnKindYukiVisitor.label>大魔女</UmPawnKindYukiVisitor.label>
+    <UmPawnKindYukiVisitor.labelMale>大魔女</UmPawnKindYukiVisitor.labelMale>
+    <UmPawnKindYukiVisitor.labelFemale>大魔女</UmPawnKindYukiVisitor.labelFemale>
+    <UmPawnKindYukiVisitor.labelPlural>大魔女たち</UmPawnKindYukiVisitor.labelPlural>
+
+    <UmPawnKindYukiColonist.label>大魔女</UmPawnKindYukiColonist.label>
+    <UmPawnKindYukiColonist.labelMale>大魔女</UmPawnKindYukiColonist.labelMale>
+    <UmPawnKindYukiColonist.labelFemale>大魔女</UmPawnKindYukiColonist.labelFemale>
+    <UmPawnKindYukiColonist.labelPlural>大魔女たち</UmPawnKindYukiColonist.labelPlural>
+</LanguageData>

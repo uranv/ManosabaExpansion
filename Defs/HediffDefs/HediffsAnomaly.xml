@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- B水隐藏 hediff -->
+    <HediffDef>
+        <defName>UmHediffTredecim</defName>
+        <label>trēdecim</label>
+        <description>A medicinal compound capable of killing witches who possess immortal bodies.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- 魔女尸体 可见hediff -->
+    <HediffDef>
+        <defName>UmHediffCrystallized</defName>
+        <label>crystalized</label>
+        <description>This eye has crystallized. It is beautiful, but its owner can no longer use it.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.86, 0.4, 0.45)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <partEfficiencyOffset>-1</partEfficiencyOffset>
+            </li>
+        </stages>
+    </HediffDef>
+    <!-- 维护 Mutatnt 属性 -->
+    <HediffDef>
+        <defName>UmHediffMutantDummy</defName>
+        <label>Yuki Tsukishiro did this</label>
+        <defaultLabelColor>(199,213,231)</defaultLabelColor>
+        <description>Manages special health states for mutants. You should not be seeing this.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_MutantDummy">
+                <narehateHediffDef>UmHediffNarehate</narehateHediffDef>
+                <narehateHiddenHediffDef>UmHediffNarehateHidden</narehateHiddenHediffDef>
+                <countdownHediffDef>UmHediffMutantCountdown</countdownHediffDef>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
+                <applyPostFactor>false</applyPostFactor>
+            </li>
+            <li Class="HediffCompProperties_GiveAbility">
+                <abilityDefs>
+                    <li>UmAbilityMutantLongjump</li>
+                    <li>UmAbilityMutantHealing</li>
+                </abilityDefs>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- 失控倒计时 hediff -->
+    <HediffDef>
+        <defName>UmHediffMutantCountdown</defName>
+        <label>psychic control</label>
+        <description>This narehate of a witch is currently brainwashed, until control is lost...</description>
+        <descriptionHyperlinks>
+            <PsychicRitualDef>UmRitualNarehateTrans</PsychicRitualDef>
+        </descriptionHyperlinks>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.0001</initialSeverity>
+        <maxSeverity>1.0</maxSeverity>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Countdown_Mutant">
+                <draftFactor>1.5</draftFactor>
+            </li>
+        </comps>
+    </HediffDef>
+    <!-- 战斗 buff -->
+    <HediffDef>
+        <defName>UmHediffMutantDraft</defName>
+        <label>draft command</label>
+        <description>The controlled narehate is drafted.\n\nHer combat capabilities are significantly enhanced, but the countdown to loss of control accelerates by 1.5x.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>8</MeleeDodgeChance>
+                    <MeleeHitChance>8</MeleeHitChance>
+                    <MoveSpeed>6.2</MoveSpeed>
+                </statOffsets>
+                <statFactors>
+                    <IncomingDamageFactor>0.75</IncomingDamageFactor>
+                    <MeleeCooldownFactor>0.4</MeleeCooldownFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>GhoulFrenzy</stateEffecter>
+            </li>
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>UmHediffMutantHealingAbility</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+        <label>ultrafast healing</label>
+        <description>The witch's factor within the body is stimulated to its limit, granting unimaginable regenerative capabilities.</description>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.05</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
+                <overrideHealFactor>2222</overrideHealFactor>
+                <overrideBloodFactor>2222</overrideBloodFactor>
+                <overrideRegenTick>60</overrideRegenTick>
+            </li>
+        </comps>
+    </HediffDef>
+</Defs>

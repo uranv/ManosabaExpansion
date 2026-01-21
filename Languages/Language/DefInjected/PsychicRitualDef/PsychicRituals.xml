@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmRitualNarehateTrans.label>残骸洗脑仪式</UmRitualNarehateTrans.label> -->
+    <!-- <UmRitualNarehateTrans.label>Narehate brainwashing ritual</UmRitualNarehateTrans.label> -->
+    <!-- <UmRitualNarehateTrans.description>借助黑暗超凡智能，得以暂时地通过洗脑控制魔女的残骸，对于已经受控制的残骸也可以如此延长控制时间。\n\n这样的尝试将会彻底摧毁魔女的心智，沦为本能驱使的残骸。\n\n警告：此过程不可逆。</UmRitualNarehateTrans.description> -->
+    <!-- <UmRitualNarehateTrans.description>With the aid of dark archotech intelligence, it is possible to temporarily control a narehate of a witch through brainwashing, or extend the control duration for an already controlled narehate.\n\nSuch an attempt will completely destroy the witch's mind, reducing her to a narehate driven by instinct.\n\nWarning: This process is irreversible.</UmRitualNarehateTrans.description> -->
+    <!-- <UmRitualNarehateTrans.outcomeDescription>作为目标的魔女的残骸将被单方向转化为受控制的形态。\n\n根据当前的仪式质量，延长对魔女的残骸的洗脑控制 {0} 天。</UmRitualNarehateTrans.outcomeDescription> -->
+    <!-- <UmRitualNarehateTrans.outcomeDescription>The target narehate of a witch will be unilaterally transformed into a controlled form.\n\nDepending on the current ritual quality, extends the brainwashing control of the narehate of a witch by {0} days.</UmRitualNarehateTrans.outcomeDescription> -->
+
+    <!-- <UmRitualSabbat.label>魔女安息仪式</UmRitualSabbat.label> -->
+    <!-- <UmRitualSabbat.label>Witches' Sabbath</UmRitualSabbat.label> -->
+    <!-- <UmRitualSabbat.description>传说中找回大魔女的方法，需要由13名魔女聚集起来，使用特定的圣物来执行仪式。</UmRitualSabbat.description> -->
+    <!-- <UmRitualSabbat.description>A legendary method to retrieve the Great Witch, requiring a gathering of 13 witches and the use of specific holy relics to perform the ritual.</UmRitualSabbat.description> -->
+    <!-- <UmRitualSabbat.outcomeDescription>根据当前的仪式质量，召唤出月代雪的装备将具有 {0} 等级的品质偏移。</UmRitualSabbat.outcomeDescription> -->
+    <!-- <UmRitualSabbat.outcomeDescription>Depending on the current ritual quality, the summoned equipment of Yuki Tsukishiro will have a quality offset of {0}.</UmRitualSabbat.outcomeDescription> -->
+    
+</LanguageData>

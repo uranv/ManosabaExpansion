@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <IncidentDef>
+        <defName>UmIncidentYukiVisitor</defName>
+        <label>visitor</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>UranvManosaba.Contents.Incidents.IncidentWorker_YukiVisitor</workerClass>
+        <baseChance>0.25</baseChance>
+        <earliestDay>5</earliestDay>
+        <minRefireDays>15</minRefireDays>
+        <minPopulation>1</minPopulation>
+        <requireColonistsPresent>True</requireColonistsPresent>
+        <minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+        <letterLabel>visitor</letterLabel>
+        <letterText>A young girl of unknown origin has arrived at your colony.\n\nShe calls herself "{0}", and her visit seems to have some hidden purpose.\n\nYou can talk to her to learn more.</letterText>
+        <letterDef>NeutralEvent</letterDef>
+    </IncidentDef>
+</Defs>

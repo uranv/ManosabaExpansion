@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmMentalBreakFactor.label>魔女因子杀意</UmMentalBreakFactor.label> -->
+    <UmMentalBreakFactor.label>魔女因子の殺意</UmMentalBreakFactor.label>
+    <!-- <UmMentalBreakFactor.baseInspectLine>正在杀害仇恨对象 {1}</UmMentalBreakFactor.baseInspectLine> -->
+    <UmMentalBreakFactor.baseInspectLine>憎悪対象である {1} を殺そうとしている</UmMentalBreakFactor.baseInspectLine>
+    <!-- <UmMentalBreakFactor.beginLetterLabel>魔女因子杀意</UmMentalBreakFactor.beginLetterLabel> -->
+    <UmMentalBreakFactor.beginLetterLabel>魔女因子の殺意</UmMentalBreakFactor.beginLetterLabel>
+    <!-- <UmMentalBreakFactor.beginLetter>{0}因为魔女因子的影响，已经陷入了杀戮冲动中!\n\n她对{1}的恨意已经转化为无法控制的杀意。</UmMentalBreakFactor.beginLetter> -->
+    <UmMentalBreakFactor.beginLetter>{0}は魔女因子の影響により、殺害衝動に駆られている！\n\n{1}への憎しみは、制御不能な殺意へと変貌した。</UmMentalBreakFactor.beginLetter>
+    
+    <!-- <UmMentalBreakNarehate.label>魔女的残骸</UmMentalBreakNarehate.label> -->
+    <UmMentalBreakNarehate.label>魔女のなれはて</UmMentalBreakNarehate.label>
+
+</LanguageData>
+
+    

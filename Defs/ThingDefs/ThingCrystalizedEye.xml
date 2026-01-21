@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 魔女残骸: 结晶化眼球 -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>UmThingCrystallizedEye</defName>
+        <label>crystalized eyeball</label>
+        <description>A side effect caused by killing a witch using Trēdecim. Perhaps it has some use.</description>
+        <graphicData>
+            <texPath>things/item/resource/crystallized_eye</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <soundInteract>ChunkRock_Drop</soundInteract>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <stackLimit>10</stackLimit>
+        <useHitPoints>false</useHitPoints>
+        <statBases>
+            <Mass>0.05</Mass>
+            <Flammability>0</Flammability>
+            <MarketValue>250</MarketValue>
+            <Beauty>4</Beauty>
+        </statBases>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+</Defs>

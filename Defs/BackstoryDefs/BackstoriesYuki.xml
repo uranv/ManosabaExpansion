@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <BackstoryDef>
+        <defName>UmBackstoryYukiChild</defName>
+        <title>grand witch of the Witch Island</title>
+        <titleFemale>grand witch of the Witch Island</titleFemale>
+        <titleShort>grand witch</titleShort>
+        <titleShortFemale>grand witch</titleShortFemale>
+        <description>As the youngest grand witch, [PAWN_nameDef] grew up on the Witch Island.\n\nAfter the war, she left the island to wander the world alone.</description>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>UmPawnKindYukiVisitor</li>
+            <li>UmPawnKindYukiColonist</li>
+        </spawnCategories>
+        <workDisables>
+            <li>ManualDumb</li>
+        </workDisables>
+    </BackstoryDef>
+    <BackstoryDef>
+        <defName>UmBackstoryYukiAdult</defName>
+        <title>resurrected grand witch</title>
+        <titleFemale>resurrected grand witch</titleFemale>
+        <titleShort>grand witch</titleShort>
+        <titleShortFemale>grand witch</titleShortFemale>
+        <description>The last grand witch resurrected by the Witches' Sabbath ritual.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>UmPawnKindYukiVisitor</li>
+            <li>UmPawnKindYukiColonist</li>
+        </spawnCategories>
+        <workDisables>
+            <li>ManualDumb</li>
+        </workDisables>
+    </BackstoryDef>
+</Defs>

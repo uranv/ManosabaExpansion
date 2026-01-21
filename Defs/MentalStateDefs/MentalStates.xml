@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 魔女因子崩溃 -->
+    <MentalStateDef>
+        <defName>UmMentalBreakFactor</defName>
+        <label>witch's factor murderous intent</label>
+        <stateClass>UranvManosaba.Contents.MentalStates.MentalState_MentalBreakFactor</stateClass>
+        <stateEffecter>Berserk</stateEffecter>
+        <category>Aggro</category>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <nameColor>(0.9, 0.2, 0.5)</nameColor>
+        <recoveryMtbDays>0.5</recoveryMtbDays>
+        <baseInspectLine>Killing object of hatred {1}</baseInspectLine>
+        <beginLetterLabel>Witch's factor murderous intent</beginLetterLabel>
+        <beginLetter>Due to the influence of the witch factor, {0} has fallen into a killing urge!\n\nHer hatred for {1} has transformed into uncontrollable murderous intent.</beginLetter>
+    </MentalStateDef>
+    <!-- 魔女残骸杀意 -->
+    <MentalStateDef>
+        <defName>UmMentalBreakNarehate</defName>
+        <label>narehate of a witch</label>
+        <stateClass>MentalState_Berserk</stateClass>
+        <stateEffecter>Berserk</stateEffecter>
+        <category>Aggro</category>
+        <recoveryMtbDays>0</recoveryMtbDays>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <nameColor>(0.9, 0.2, 0.5)</nameColor>
+        <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+        <recoverFromSleep>false</recoverFromSleep>
+    </MentalStateDef>
+</Defs>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>UmHeadTypeYuki</defName>
+        <graphicPath>things/pawn/humanlike/yuki/head/head</graphicPath>
+        <gender>Female</gender>
+        <eyeOffsetEastWest>(0.13, 0, 0.17)</eyeOffsetEastWest>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+</Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 魔女残骸: 炙烤药瓶 -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>UmThingAburibin</defName>
+        <label>seared vial</label>
+        <description>"Just roast the vial and it becomes a seared vial!" a certain silly puppy once said.\n\nBut what is the use of a roasted vial?</description>
+        <graphicData>
+            <texPath>things/item/resource/aburi_bin</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Standard_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <stackLimit>1</stackLimit>
+        <useHitPoints>false</useHitPoints>
+        <statBases>
+            <Mass>0.05</Mass>
+            <Flammability>0</Flammability>
+            <MarketValue>1</MarketValue>
+            <Beauty>32</Beauty>
+        </statBases>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+</Defs>

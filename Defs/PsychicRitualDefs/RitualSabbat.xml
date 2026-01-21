@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <PsychicRitualDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualDef_Sabbat">
+        <defName>UmRitualSabbat</defName>
+        <label>Witches' Sabbath</label>
+        <description>A legendary method to retrieve the Great Witch, requiring a gathering of 13 witches and the use of specific holy relics to perform the ritual.</description>
+        <iconPath>ui/psychicrituals/sabbat</iconPath>
+        <outcomeDescription>Depending on the current ritual quality, the summoned equipment of Yuki Tsukishiro will have a quality offset of {0}.</outcomeDescription>
+        <researchPrerequisite>UmResearchProjectSabbat</researchPrerequisite>
+        <requiredOffering>
+            <filter>
+                <thingDefs>
+                    <li>UmThingWeaponRitualSwordReplica</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </requiredOffering>
+        <hoursUntilOutcome>2</hoursUntilOutcome>
+        <cooldownHours>1440</cooldownHours>
+        <invokerRole>UmRitualRoleSabbatInvoker</invokerRole>
+        <chanterRole>UmRitualRoleSabbatChanter</chanterRole>
+    </PsychicRitualDef>
+    <PsychicRitualRoleDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualRoleDef_SabbatInvoker">
+        <defName>UmRitualRoleSabbatInvoker</defName>
+        <label>invoker</label>
+        <description>The witch who presides over the ritual and holds the ritual sword aloft.</description>
+        <allowedCount>1</allowedCount>
+        <allowedConditions>Default, Downed, Prisoner, Slave, Sleeping, IdeoUnwilling, NoPsychicSensitivity, Humanlike</allowedConditions>
+    </PsychicRitualRoleDef>
+    <PsychicRitualRoleDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualRoleDef_SabbatChanter">
+        <defName>UmRitualRoleSabbatChanter</defName>
+        <label>chanters</label>
+        <description>Witches participating in the ritual.</description>
+        <allowedCount>12</allowedCount>
+        <allowedConditions>Default, Downed, Prisoner, Slave, Sleeping, IdeoUnwilling, NoPsychicSensitivity, Humanlike</allowedConditions>
+    </PsychicRitualRoleDef>
+</Defs>

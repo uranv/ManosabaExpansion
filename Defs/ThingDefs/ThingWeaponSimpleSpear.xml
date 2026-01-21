@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BaseWeapon">
+        <!-- Basic Info -->
+        <defName>UmThingWeaponSimpleSpear</defName>
+        <label>simple spear</label>
+        <description>Is such a "weapon" really meant for attacking?</description>
+        <possessionCount>1</possessionCount>
+        <graphicData>
+            <texPath>things/item/equipment/weaponmelee/simple_spear</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.66</drawSize>
+            <drawOffset>(0, 0, 0)</drawOffset>
+        </graphicData>
+        <uiIconScale>0.75</uiIconScale>
+        <statBases>
+            <WorkToMake>39720</WorkToMake>
+            <Mass>1.0</Mass>
+            <MarketValue>200</MarketValue>
+        </statBases>
+        <equippedAngleOffset>-60</equippedAngleOffset>
+        <tools>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>UmToolCapacityBreakOnStab</li>
+                </capacities>
+                <power>50</power>
+                <cooldownTime>3</cooldownTime>
+            </li>
+        </tools>
+        <costList>
+            <MeleeWeapon_Gladius>1</MeleeWeapon_Gladius>
+            <WoodLog>1</WoodLog>
+            <Cloth>2</Cloth>
+        </costList>
+        <recipeMaker>
+            <!--<researchPrerequisite>UmResearchProjectPrereqs</researchPrerequisite>-->
+            <displayPriority>2000</displayPriority>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>ElectricSmithy</li>
+                <li>FueledSmithy</li>
+                <li>CraftingSpot</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+        </recipeMaker>
+        <weaponTags>
+            <li>MedievalMeleeDecent</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>MeleePiercer</li>
+        </weaponClasses>
+        <thingCategories>
+            <li>WeaponsMelee</li>
+        </thingCategories>
+        <!-- BaseWeapon -->
+        <equipmentType>Primary</equipmentType>
+        <techLevel>Medieval</techLevel>
+        <smeltable>true</smeltable>
+        <burnableByRecipe>true</burnableByRecipe>
+        <relicChance>0</relicChance>
+        <tradeTags>
+            <li>WeaponMelee</li>
+        </tradeTags>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_BreakOnAttack">
+                <dropSwordDef>MeleeWeapon_Gladius</dropSwordDef>
+                <dropWoodDef>WoodLog</dropWoodDef>
+                <dropClothDef>Cloth</dropClothDef>
+            </li>
+        </comps>
+    </ThingDef>
+    <ToolCapacityDef>
+        <defName>UmToolCapacityBreakOnStab</defName>
+        <label>stab</label>
+    </ToolCapacityDef>
+    <ManeuverDef>
+        <defName>UmManeuverBreakOnStab</defName>
+        <requiredCapacity>UmToolCapacityBreakOnStab</requiredCapacity>
+        <verb>
+            <verbClass>UranvManosaba.Contents.Items.Verb_BreakOnAttack</verbClass>
+            <meleeDamageDef>Stab</meleeDamageDef>
+        </verb>
+        <logEntryDef>MeleeAttack</logEntryDef>
+        <combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+        <combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+        <combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+        <combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+    </ManeuverDef>
+</Defs>

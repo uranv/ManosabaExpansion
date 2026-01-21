@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmEntryFactor.label>魔女因子</UmEntryFactor.label> -->
+    <!-- <UmEntryFactor.label>Witch factor</UmEntryFactor.label> -->
+    <!-- <UmEntryFactor.description>一种不属于边缘世界之外的异象。能够从心灵层面感染类人生物，最终使其沦为杀意驱使的怪物。</UmEntryFactor.description> -->
+    <!-- <UmEntryFactor.description>An anomaly foreign to this rimworld. It infects humanoids on a psychic level, eventually reducing them to murderous monsters.</UmEntryFactor.description> -->
+    
+    <!-- <UmEntryCorpse.label>残骸尸体</UmEntryCorpse.label> -->
+    <!-- <UmEntryCorpse.label>Narehate corpse</UmEntryCorpse.label> -->
+    <!-- <UmEntryCorpse.description>这具尸体曾经是受到魔女因子的诅咒，最终沦为魔女的残骸的类人生物。\n\n魔女的残骸虽然具有一般意义的不死性，但是仍然存在某些特殊手段能够杀死她们。</UmEntryCorpse.description> -->
+    <!-- <UmEntryCorpse.description>This corpse was once a humanoid cursed by the witch factor, eventually becoming a narehate of a witch.\n\nWhile narehates of witches possess a form of immortality, there are still specific methods capable of killing them.</UmEntryCorpse.description> -->
+    
+    <!-- <UmEntryMutant.label>魔女的残骸</UmEntryMutant.label> -->
+    <!-- <UmEntryMutant.label>Narehate of a witch</UmEntryMutant.label> -->
+    <!-- <UmEntryMutant.description>成为残骸之后，之前拥有的魔法就会消失，成为空壳一样的存在。\n\n但是，她们拥有作为魔女的不死之躯，还拥有了超乎常理的身体能力。平时动作缓慢。</UmEntryMutant.description> -->
+    <!-- <UmEntryMutant.description>Upon becoming a narehate, all previous magic vanishes, leaving behind an empty shell.\n\nHowever, they possess the immortal body of a witch and physical abilities that defy reason. They usually move slowly.</UmEntryMutant.description> -->
+
+    <!-- <UmEntryYuki.label>大魔女·雪</UmEntryYuki.label> -->
+    <!-- <UmEntryYuki.label>Yuki, the Great Witch</UmEntryYuki.label> -->
+    <!-- <UmEntryYuki.description>一切的元凶，耐心地等待者破灭的到来的大魔女。\n\n为了散播魔女因子的诅咒几乎失去了所有魔法。</UmEntryYuki.description> -->
+    <!-- <UmEntryYuki.description>The culprit behind everything, the Great Witch patiently awaiting the arrival of destruction.\n\nShe has lost almost all her magic in order to spread the curse of the witch factor.</UmEntryYuki.description> -->
+
+</LanguageData>

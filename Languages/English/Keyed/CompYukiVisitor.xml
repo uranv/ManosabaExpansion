@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- 生成名字 -->
+    <!-- <YukiGenerator_firstName>雪</YukiGenerator_firstName> -->
+    <YukiGenerator_firstName>Yuki</YukiGenerator_firstName>
+    <!-- <YukiGenerator_nickName>雪</YukiGenerator_nickName> -->
+    <YukiGenerator_nickName>Yuki</YukiGenerator_nickName>
+    <!-- <YukiGenerator_lastName>月代</YukiGenerator_lastName> -->
+    <YukiGenerator_lastName>Tsukishiro</YukiGenerator_lastName>
+    <!-- 离开通知 -->
+    <!-- <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel>{0}已离开</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel> -->
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel>{0} has left</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText>由于你的不友善行为，{0}在一片血雾中消失了。</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText> -->
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText>Due to your unfriendly behavior, {0} vanished in a mist of blood.</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText>
+    <!-- <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel>{0}已离开</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel> -->
+    <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel>{0} has left</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText>由于受到伤害，{0}在一片血雾中消失了。</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText> -->
+    <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText>After taking damage, {0} vanished in a mist of blood.</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText>
+    <!-- <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach>也许很快，你还会再次见到{0}.</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach> -->
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach>Maybe you will see {0} again soon.</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach>
+    <!-- 右键菜单 -->
+    <!-- <Manosaba_CompYukiVisitor_CannotTalkTo>无法和{0}交谈</Manosaba_CompYukiVisitor_CannotTalkTo> -->
+    <Manosaba_CompYukiVisitor_CannotTalkTo>Cannot talk to {0}</Manosaba_CompYukiVisitor_CannotTalkTo>
+    <!-- <Manosaba_CompYukiVisitor_NoPath>没有路径</Manosaba_CompYukiVisitor_NoPath> -->
+    <Manosaba_CompYukiVisitor_NoPath>No path</Manosaba_CompYukiVisitor_NoPath>
+    <!-- <Manosaba_CompYukiVisitor_Incapable>无法胜任</Manosaba_CompYukiVisitor_Incapable> -->
+    <Manosaba_CompYukiVisitor_Incapable>Incapable</Manosaba_CompYukiVisitor_Incapable>
+    <!-- <Manosaba_CompYukiVisitor_IsBusy>{0}正忙</Manosaba_CompYukiVisitor_IsBusy> -->
+    <Manosaba_CompYukiVisitor_IsBusy>{0} is busy</Manosaba_CompYukiVisitor_IsBusy>
+    <!-- <Manosaba_CompYukiVisitor_TalkTo>与{0}交谈</Manosaba_CompYukiVisitor_TalkTo> -->
+    <Manosaba_CompYukiVisitor_TalkTo>Talk to {0}</Manosaba_CompYukiVisitor_TalkTo>
+    <!--对话组件-->
+    <!-- <Manosaba_Story_Root>{0_nameDef}把手伸向{1_nameDef}的</Manosaba_Story_Root> -->
+    <Manosaba_Story_Root>{0_nameDef} reaches for {1_nameDef}'s</Manosaba_Story_Root>
+    <!-- <Manosaba_Tale_Root>{0_nameDef}快速触摸了{1_nameDef}的</Manosaba_Tale_Root> -->
+    <Manosaba_Tale_Root>{0_nameDef} quickly touched {1_nameDef}'s</Manosaba_Tale_Root>
+    <!-- <Manosaba_CompYukiVisitor_level_choice_quit>离开对话</Manosaba_CompYukiVisitor_level_choice_quit> -->
+    <Manosaba_CompYukiVisitor_level_choice_quit>Leave conversation</Manosaba_CompYukiVisitor_level_choice_quit>
+    <!-- 对话层级 1 -->
+    <!-- <Manosaba_CompYukiVisitor_level_1>{0_nameDef}自称受到帝国雇佣，需要来到你的殖民地中释放某种魔法，以获得需要的勘探数据。{0_nameDef}承诺在完成她的工作后会给予你一些奖励。\n\n值得怀疑的是，当你问她雇主的姓名时，她露出了一丝困惑的表情，随后拒绝回答。</Manosaba_CompYukiVisitor_level_1> -->
+    <Manosaba_CompYukiVisitor_level_1>{0_nameDef} claims to be hired by the Empire and needs to cast a certain magic within your colony to obtain necessary survey data. {0_nameDef} promises to give you a reward after completing her work.\n\nSuspiciously, when you asked for her employer's information, she showed a trace of confusion and then refused to answer.</Manosaba_CompYukiVisitor_level_1>
+    <!-- <Manosaba_CompYukiVisitor_level_1_choice_1>虽然有些怀疑，但你还允许了她的行动。</Manosaba_CompYukiVisitor_level_1_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_1_choice_1>Although skeptical, you allow her to proceed.</Manosaba_CompYukiVisitor_level_1_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_1_choice_2>你实在无法信任她的动机，想要拒绝她的请求。</Manosaba_CompYukiVisitor_level_1_choice_2> -->
+    <Manosaba_CompYukiVisitor_level_1_choice_2>You cannot trust her motives and want to refuse her request.</Manosaba_CompYukiVisitor_level_1_choice_2>
+    <!-- 对话层级 2 -->
+    <!-- <Manosaba_CompYukiVisitor_level_2>{0_nameDef}希望再次考虑。甚至提出可以先给你奖励，随后再去完成她的任务。</Manosaba_CompYukiVisitor_level_2> -->
+    <Manosaba_CompYukiVisitor_level_2>{0_nameDef} asks you to reconsider. She even offers to give you the reward first before completing her task.</Manosaba_CompYukiVisitor_level_2>
+    <!-- <Manosaba_CompYukiVisitor_level_2_choice_1>奖励什么的，还是太诱人了。你虽然仍有疑心，但还是同意了她的提议。</Manosaba_CompYukiVisitor_level_2_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_2_choice_1>The reward is just too tempting. Although you still have doubts, you agree to her proposal.</Manosaba_CompYukiVisitor_level_2_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_2_choice_2>天底下哪有这么好的事情？你果断地拒绝了她的提议。</Manosaba_CompYukiVisitor_level_2_choice_2> -->
+    <Manosaba_CompYukiVisitor_level_2_choice_2>Where in the world would you find such a deal? You firmly refuse her proposal.</Manosaba_CompYukiVisitor_level_2_choice_2>
+    <!-- 对话层级 3 -->
+    <!-- <Manosaba_CompYukiVisitor_level_3>{0_nameDef}表示你可以从以下两种奖励中选取其一，随后她便会去执行她的任务了。\n\n - 大魔女的教导：{0_nameDef}会随机传授你一项尚未解锁科技，你将获得该研究的1000研究点数。\n\n - 大魔女的馈赠：{0_nameDef}会赠送你少量稀有资源。</Manosaba_CompYukiVisitor_level_3> -->
+    <Manosaba_CompYukiVisitor_level_3>{0_nameDef} states that you can choose one of the following two rewards, after which she will proceed to execute her task.\n\n - Teachings of the Great Witch: {0_nameDef} will randomly teach you an unlocked technology, granting you some research points for that project.\n\n - Gift of the Great Witch: {0_nameDef} will give you a small amount of rare resources.</Manosaba_CompYukiVisitor_level_3>
+    <!-- <Manosaba_CompYukiVisitor_level_3_choice_1>研究科技要紧，来教我吧！</Manosaba_CompYukiVisitor_level_3_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_3_choice_1>Research is crucial, teach me!</Manosaba_CompYukiVisitor_level_3_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_3_choice_2>果然还要拿得到手的才是自己的，给我点资源吧！</Manosaba_CompYukiVisitor_level_3_choice_2> -->
+    <Manosaba_CompYukiVisitor_level_3_choice_2>Only what I hold in my hand is truly mine, give me some resources!</Manosaba_CompYukiVisitor_level_3_choice_2>
+    <!-- <Manosaba_CompYukiVisitor_level_3_choice_3>不行不行，这点奖励我不感兴趣。给我讲讲你的故事吧！</Manosaba_CompYukiVisitor_level_3_choice_3> -->
+    <Manosaba_CompYukiVisitor_level_3_choice_3>No, no, I'm not interested in this reward. Tell me your story instead!</Manosaba_CompYukiVisitor_level_3_choice_3>
+    <!-- <Manosaba_CompYukiVisitor_level_3_choice_4>转念一想，你果然不是什么好东西。赶紧从我家里出去！</Manosaba_CompYukiVisitor_level_3_choice_4> -->
+    <Manosaba_CompYukiVisitor_level_3_choice_4>On second thought, you're definitely up to no good. Get out of my house now!</Manosaba_CompYukiVisitor_level_3_choice_4>
+    <!-- 对话层级 4 -->
+    <!-- <Manosaba_CompYukiVisitor_level_4>{0_nameDef}对你的回应表示很失望。她将很快离开你的殖民地……吗？</Manosaba_CompYukiVisitor_level_4> -->
+    <Manosaba_CompYukiVisitor_level_4>{0_nameDef} is very disappointed with your response. She will leave your colony soon... or will she?</Manosaba_CompYukiVisitor_level_4>
+    <!-- <Manosaba_CompYukiVisitor_level_4_choice_1>……</Manosaba_CompYukiVisitor_level_4_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_4_choice_1>...</Manosaba_CompYukiVisitor_level_4_choice_1>
+    <!-- 对话层级 5 -->
+    <!-- <Manosaba_CompYukiVisitor_level_5>{0_nameDef}似乎被你的选择逗笑了。</Manosaba_CompYukiVisitor_level_5> -->
+    <Manosaba_CompYukiVisitor_level_5>{0_nameDef} seems amused by your choice.</Manosaba_CompYukiVisitor_level_5>
+    <!-- <Manosaba_CompYukiVisitor_level_5_choice_1>有意思，我还要再听一个故事！</Manosaba_CompYukiVisitor_level_5_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_5_choic_1>Interesting, I want to hear another story!
+    
+    </Manosaba_CompYukiVisitor_level_5_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_5_choice_2>无聊，我听够了。你去做你自己的事情吧！</Manosaba_CompYukiVisitor_level_5_choice_2> -->
+    <Manosaba_CompYukiVisitor_level_5_choice_2>Boring, I've heard enough. Go do your own thing!</Manosaba_CompYukiVisitor_level_5_choice_2>
+    <!-- 对话层级 6 -->
+    <!-- <Manosaba_CompYukiVisitor_level_6>{0_nameDef}表示她已经累了，不想继续讲故事了。</Manosaba_CompYukiVisitor_level_6> -->
+    <Manosaba_CompYukiVisitor_level_6>{0_nameDef} says she is tired and doesn't want to tell any more stories.</Manosaba_CompYukiVisitor_level_6>
+    <!-- <Manosaba_CompYukiVisitor_level_6_choice_1>好吧……</Manosaba_CompYukiVisitor_level_6_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_6_choice_1>Alright...</Manosaba_CompYukiVisitor_level_6_choice_1>
+    <!-- 对话层级 10 -->
+    <!-- <Manosaba_CompYukiVisitor_level_10>任务完成！{0_nameDef}前来询问你想要的奖励。她表示你可以从以下两种奖励中选取其一。\n\n - 大魔女的教导：{0_nameDef}会随机传授你一项尚未解锁科技，你将获得该研究的1000研究点数。\n\n - 大魔女的馈赠：{0_nameDef}会赠送你少量稀有资源。</Manosaba_CompYukiVisitor_level_10> -->
+    <Manosaba_CompYukiVisitor_level_10>Task complete! {0_nameDef} has come to ask what reward you want. She says you can choose one of the following two rewards.\n\n - Teachings of the Great Witch: {0_nameDef} will randomly teach you an unlocked technology, granting you some research points for that project.\n\n - Gift of the Great Witch: {0_nameDef} will give you a small amount of rare resources.</Manosaba_CompYukiVisitor_level_10>
+    <!-- <Manosaba_CompYukiVisitor_level_10_choice_1>研究科技要紧，快来教我吧！</Manosaba_CompYukiVisitor_level_10_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_10_choice_1>Research is crucial, teach me quickly!</Manosaba_CompYukiVisitor_level_10_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_10_choice_2>果然还要拿得到手的才是自己的，给我点资源吧！</Manosaba_CompYukiVisitor_level_10_choice_2> -->
+    <Manosaba_CompYukiVisitor_level_10_choice_2>Only what I hold in my hand is truly mine, give me some resources!</Manosaba_CompYukiVisitor_level_10_choice_2>
+    <!-- <Manosaba_CompYukiVisitor_level_10_choice_3>不行不行，这点奖励我不感兴趣。给我讲讲你的故事吧！</Manosaba_CompYukiVisitor_level_10_choice_3> -->
+    <Manosaba_CompYukiVisitor_level_10_choice_3>No, no, I'm not interested in this reward. Tell me your story instead!</Manosaba_CompYukiVisitor_level_10_choice_3>
+    <!-- 对话层级 11 -->
+    <!-- <Manosaba_CompYukiVisitor_level_11>{0_nameDef}的目的顺利达成了，你也为你的付出获得了"应得的"奖励。\n\n{0_nameDef}还会在你的殖民地停留一小段时间，也许你还可以继续和她聊天。</Manosaba_CompYukiVisitor_level_11> -->
+    <Manosaba_CompYukiVisitor_level_11>{0_nameDef}'s goal has been successfully achieved, and you have received the "deserved" reward for your efforts.\n\n{0_nameDef} will stay in your colony for a short while longer; perhaps you can continue chatting with her.</Manosaba_CompYukiVisitor_level_11>
+    <!-- <Manosaba_CompYukiVisitor_level_11_choice_1>继续聊下去。</Manosaba_CompYukiVisitor_level_11_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_11_choice_1>Keep chatting.</Manosaba_CompYukiVisitor_level_11_choice_1>
+    <!-- 对话层级 Inf1 -->
+    <!-- <Manosaba_CompYukiVisitor_level_inf_1>{0_nameDef}虽然没有回应你，但是她默默地……在原地翻了个跟头！</Manosaba_CompYukiVisitor_level_inf_1> -->
+    <Manosaba_CompYukiVisitor_level_inf_1>{0_nameDef} didn't respond to you, but she silently... did a somersault on the spot!</Manosaba_CompYukiVisitor_level_inf_1>
+    <!-- 对话层级 Inf2 -->
+    <!-- <Manosaba_CompYukiVisitor_level_inf_2>{0_nameDef}没有注意到你，但是你听到她嘴里念念有词。\n\n"1，2，3，……"她似乎在数什么东西。</Manosaba_CompYukiVisitor_level_inf_2> -->
+    <Manosaba_CompYukiVisitor_level_inf_2>{0_nameDef} didn't notice you, but you hear her mumbling something.\n\n"1, 2, 3..." She seems to be counting something.</Manosaba_CompYukiVisitor_level_inf_2>
+    <!-- 对话层级 Inf3 -->
+    <!-- <Manosaba_CompYukiVisitor_level_inf_3>{0_nameDef}看到你的到来，眼中仿佛闪过一丝不易察觉的怒意。\n\n你听到她在小声背诵一些你完全听不懂的语言，听起来不像是我们应该深究的内容……</Manosaba_CompYukiVisitor_level_inf_3> -->
+    <Manosaba_CompYukiVisitor_level_inf_3>{0_nameDef} saw you coming, and a trace of imperceptible anger seemed to flash in her eyes.\n\nYou hear her whispering in a language you can't understand at all; it doesn't sound like something we should pry into...</Manosaba_CompYukiVisitor_level_inf_3>
+    <!-- 无限答复 -->
+    <!-- <Manosaba_CompYukiVisitor_level_inf_choice_1>……？</Manosaba_CompYukiVisitor_level_inf_choice_1> -->
+    <Manosaba_CompYukiVisitor_level_inf_choice_1>...?</Manosaba_CompYukiVisitor_level_inf_choice_1>
+    <!-- <Manosaba_CompYukiVisitor_level_inf_choice_tale>{0_nameDef}，我又想听故事了！</Manosaba_CompYukiVisitor_level_inf_choice_tale> -->
+    <Manosaba_CompYukiVisitor_level_inf_choice_tale>{0_nameDef}, I want to hear a story again!</Manosaba_CompYukiVisitor_level_inf_choice_tale>
+    <!--完成通知-->
+    <!-- <Manosaba_CompYukiVisitor_castBefore_letterLabel>任务完成：{0}</Manosaba_CompYukiVisitor_castBefore_letterLabel> -->
+    <Manosaba_CompYukiVisitor_castBefore_letterLabel>Task complete: {0}</Manosaba_CompYukiVisitor_castBefore_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_castBefore_letterText>你的许可让{0}成功达到了她的目的。\n\n现在，你可以继续与她对话获得承诺的奖励了。</Manosaba_CompYukiVisitor_castBefore_letterText> -->
+    <Manosaba_CompYukiVisitor_castBefore_letterText>Your permission allowed {0} to successfully achieve her goal.\n\nNow, you can continue talking to her to receive the promised reward.</Manosaba_CompYukiVisitor_castBefore_letterText>
+    <!-- <Manosaba_CompYukiVisitor_castAfter_letterLabel>任务完成：{0}</Manosaba_CompYukiVisitor_castAfter_letterLabel> -->
+    <Manosaba_CompYukiVisitor_castAfter_letterLabel>Task complete: {0}</Manosaba_CompYukiVisitor_castAfter_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_castAfter_letterText>你的许可让{0}成功达到了她的目的。\n\n虽然你已经得到了奖励，但{0}还会在你的殖民地停留一段时间，也许你还可以继续和她聊天。</Manosaba_CompYukiVisitor_castAfter_letterText> -->
+    <Manosaba_CompYukiVisitor_castAfter_letterText>Your permission allowed {0} to successfully achieve her goal.\n\nAlthough you have already received the reward, {0} will stay in your colony for a while; perhaps you can continue chatting with her.</Manosaba_CompYukiVisitor_castAfter_letterText>
+    <!-- <Manosaba_CompYukiVisitor_castHidden_letterLabel>任务完成：{0}</Manosaba_CompYukiVisitor_castHidden_letterLabel> -->
+    <Manosaba_CompYukiVisitor_castHidden_letterLabel>Task complete: {0}</Manosaba_CompYukiVisitor_castHidden_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_castHidden_letterText>一个强大的未知法术在你的殖民地中心被释放了。虽然你没有允许{0}的行径，看起来{0}还是设法完成了她的目的。</Manosaba_CompYukiVisitor_castHidden_letterText> -->
+    <Manosaba_CompYukiVisitor_castHidden_letterText>A powerful unknown spell has been unleashed in the center of your colony. Although you did not permit {0}'s actions, it seems {0} managed to accomplish her goal anyway.</Manosaba_CompYukiVisitor_castHidden_letterText>
+    <!--奖励通知-->
+    <!-- <Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel>研究奖励：{0}点</Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel> -->
+    <Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel>Research reward: {0} points</Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel>
+    <!-- <Manosaba_CompYukiVisitor_ResearchPoints_LetterText>在大魔女的指导下，你对{0}的理解增加了。\n\n研究项目：{0}的进度增加了{1}点。</Manosaba_CompYukiVisitor_ResearchPoints_LetterText> -->
+    <Manosaba_CompYukiVisitor_ResearchPoints_LetterText>Under the guidance of the Great Witch, your understanding of {0} has increased.\n\nProgress for research project: {0} has increased by {1} points.</Manosaba_CompYukiVisitor_ResearchPoints_LetterText>
+    <!-- <Manosaba_CompYukiVisitor_Item_letterLabel>物资奖励：{0}元</Manosaba_CompYukiVisitor_Item_letterLabel> -->
+    <Manosaba_CompYukiVisitor_Item_letterLabel>Items rewarded: {0} silver</Manosaba_CompYukiVisitor_Item_letterLabel>
+    <!-- <Manosaba_CompYukiVisitor_Item_letterText>大魔女赠送了你总计价值约{0}元的物资作为回报。你获得了：\n\n</Manosaba_CompYukiVisitor_Item_letterText> -->
+    <Manosaba_CompYukiVisitor_Item_letterText>The Great Witch has gifted you supplies worth approximately {0} silver in return. You received:\n\n</Manosaba_CompYukiVisitor_Item_letterText>
+    <!-- <Manosaba_CompYukiVisitor_Item_letterTextAfter>\n\n她身上怎么有这么多东西？</Manosaba_CompYukiVisitor_Item_letterTextAfter> -->
+    <Manosaba_CompYukiVisitor_Item_letterTextAfter>\n\nHow is she carrying so many things?</Manosaba_CompYukiVisitor_Item_letterTextAfter>
+</LanguageData>

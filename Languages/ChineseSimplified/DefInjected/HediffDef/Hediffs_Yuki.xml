@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmHediffYukiDummy.label>都是月代雪干的</UmHediffYukiDummy.label>
+    <UmHediffYukiDummy.description>管理月代雪的特殊健康状态，你不应该看到这个</UmHediffYukiDummy.description>
+
+    <UmHediffYukiVisitor.label>大魔女的加护</UmHediffYukiVisitor.label>
+    <UmHediffYukiVisitor.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiVisitor.description>
+
+    <UmHediffYukiVisitorHidden.label>大魔女的加护</UmHediffYukiVisitorHidden.label>
+    <UmHediffYukiVisitorHidden.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiVisitorHidden.description>
+
+    <UmHediffYukiColonist.label>大魔女的加护</UmHediffYukiColonist.label>
+    <UmHediffYukiColonist.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiColonist.description>
+    
+    <UmHediffYukiColonistHidden.label>大魔女的加护</UmHediffYukiColonistHidden.label>
+    <UmHediffYukiColonistHidden.description>大魔女施展了强大的魔法来保护自己。</UmHediffYukiColonistHidden.description>
+
+    <UmHediffYukiVisitorInvisiblity.label>暂时隐身的魔法</UmHediffYukiVisitorInvisiblity.label>
+    <UmHediffYukiVisitorInvisiblity.description>大魔女通过魔法暂时隐去了身形。</UmHediffYukiVisitorInvisiblity.description>
+
+    <UmHediffYukiSkipDebuff.label>血肉重组</UmHediffYukiSkipDebuff.label>
+    <UmHediffYukiSkipDebuff.description>刚刚重组的肉体，比起平常更加脆弱。</UmHediffYukiSkipDebuff.description>
+</LanguageData>
