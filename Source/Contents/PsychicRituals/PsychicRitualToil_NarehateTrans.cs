@@ -13,7 +13,7 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
     {
         base.ExposeData();
         Scribe_Defs.Look(ref _targetRole, "_targetRole");
-        Scribe_Values.Look(ref _qualityCurve, "_qualityCurve");
+        Scribe_Deep.Look(ref _qualityCurve, "_qualityCurve");
     }
     public PsychicRitualToil_NarehateTrans(PsychicRitualRoleDef targetRole, SimpleCurve qualityCurve)
     {

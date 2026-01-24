@@ -35,7 +35,7 @@
         <removeAddictions>true</removeAddictions>
         <disableAging>false</disableAging>
         <clearsEgo>false</clearsEgo>
-        <partsCleanAndDroppable>true</partsCleanAndDroppable>
+        <partsCleanAndDroppable>false</partsCleanAndDroppable>
         <breathesAir>false</breathesAir>
         <removesHediffs>
             <li>CryptosleepSickness</li>

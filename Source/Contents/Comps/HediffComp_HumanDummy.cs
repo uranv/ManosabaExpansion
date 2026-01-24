@@ -143,6 +143,7 @@ public class HediffComp_HumanDummy : HediffComp
         {
             if (cachedIsCured) return "H";
             if (cachedIsNarehate) return "N";
+            if (cachedIsFinished) return "E";
             if (cachedIsDisplay) return "T";
             if (!cachedIsDisplay) return "F";
             return base.CompLabelInBracketsExtra;

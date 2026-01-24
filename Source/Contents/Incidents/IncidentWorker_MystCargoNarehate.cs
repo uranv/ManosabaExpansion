@@ -22,6 +22,7 @@ public class IncidentWorker_MystCargoNarehate:IncidentWorker_GiveQuest
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
+        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba]Try Excute Incident MystCargoNare (Incidents.IncidentWorker_MystCargoNarehate.TryExecuteWorker)");
         var result = base.TryExecuteWorker(parms);
         if (result)
         {

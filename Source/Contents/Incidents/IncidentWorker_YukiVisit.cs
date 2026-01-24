@@ -22,11 +22,11 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
     // 初始x16倍概率；发生过魔女残骸神秘空投后，若仍没触发过则x32倍概率；发生过后不再有概率提升
     public override float ChanceFactorNow(IIncidentTarget target)
     {
-        var postFactor = 16f;
+        var postFactor = 32f;
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
         if (comp != null)
         {
-            if (!comp.isYukiVisited && comp.isCorspeDroped) postFactor = 32f;
+            if (!comp.isYukiVisited && comp.isCorspeDroped) postFactor = 64f;
             else if (comp.isYukiVisited)postFactor = 1f;
         }
         return postFactor * base.ChanceFactorNow(target);
@@ -34,6 +34,7 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
     
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
+        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba]Try Excute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
         var map = (Map)parms.target;
 
         // 寻找生成点 (地图边缘)

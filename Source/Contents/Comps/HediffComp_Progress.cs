@@ -65,16 +65,16 @@ public class HediffComp_Progress : HediffComp
         // 计算严重度变化
         _severityChange = GetSeverityChange(mood, minorThreshold);
         // 应用变化
-        if (parent.Severity + _severityChange is > 0f and <= 1f) parent.Severity += _severityChange;
+        parent.Severity = Mathf.Max(0f, Mathf.Min(parent.Severity + _severityChange, 1f));
         if (parent.Severity >= 0.5f) isDisplay = true;
     }
     // 转化为魔女残骸
     private void TryTurnIntoNarehate()
     {
         // 如果已经达到 1.0 (100%), 尝试转化魔女残骸
-        if (parent.Severity < 1.0f - MinUpdatePerCall) return;
+        if (parent.Severity <= 1.0f - MinUpdatePerCall) return;
         // 所有装别放进背包
-        Utils.NarehateUtils.UnequipAll(Pawn);
+        NarehateUtils.UnequipAll(Pawn);
         // 添加 魔女残骸 Hediff
         if (!Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
             Pawn.health.AddHediff(ModDefOf.UmHediffNarehate);

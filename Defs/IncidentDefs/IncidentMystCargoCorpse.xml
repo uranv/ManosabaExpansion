@@ -9,7 +9,7 @@
             <li>Map_PlayerHome</li>
         </targetTags>
         <workerClass>UranvManosaba.Contents.Incidents.IncidentWorker_MystCargoNarehate</workerClass>
-        <baseChance>0.8</baseChance>
+        <baseChance>1.2</baseChance>
         <earliestDay>5</earliestDay>
         <minRefireDays>15</minRefireDays>
         <minPopulation>1</minPopulation>
