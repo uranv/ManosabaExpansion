@@ -21,7 +21,8 @@
                 <colonistHiddenHediff>UmHediffYukiColonistHidden</colonistHiddenHediff>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <applyPostFactor>true</applyPostFactor>
+                <applyPostMultiplier>true</applyPostMultiplier>
+                <applyStatusSwitch>false</applyStatusSwitch>
             </li>
             <li Class="HediffCompProperties_GiveAbility">
                 <abilityDefs>
@@ -54,7 +55,7 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostFactor>true</applyPostFactor>
+                <applyPostMultiplier>true</applyPostMultiplier>
             </li>
         </comps>
     </HediffDef>
@@ -106,7 +107,7 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostFactor>true</applyPostFactor>
+                <applyPostMultiplier>true</applyPostMultiplier>
             </li>
         </comps>
     </HediffDef>

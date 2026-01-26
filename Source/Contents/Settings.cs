@@ -28,12 +28,14 @@ public class ManosabaModSettings : ModSettings
 
 
     // 魔女残骸治疗设置
-    public float factorHealing = 500f;  // HediffComp_Narehate & HediffComp_Hanmajyo
-    public float factorBloodHealing = 67f;  // HediffComp_Narehate & HediffComp_Hanmajyo
-    public bool isBloodHealing = false;  // HediffComp_Narehate & HediffComp_Hanmajyo
-    public float postFactorHealing = 0.22f;  // HediffComp_Narehate & HediffComp_Hanmajyo
-    // 后处理系数作用于: 半魔女奖励, 小雪；使用tick为600, 即默认为 factorHealing / 10 * factorBloodHealing
-    public bool isPostHealing = true;  // HediffComp_Narehate & HediffComp_Hanmajyo
+    public float narehateHealFactor = 500f;
+    public float narehateBloodHealFactor = 67f;
+    public bool isNarehateBloodHeal = true;
+    public float narehateDownedDivisor = 5f;
+    public bool isNarehateDownedDivisor = true;
+    // 后处理系数作用于: 半魔女奖励, 小雪；使用tick为600, 即默认为 narehateHealFactor / 10 * narehateBloodHealFactor
+    public float postHealMultiplier = 0.22f;
+    public bool postAllowHeal = true;
         
 
     // 魔女变种人控制时间
@@ -65,11 +67,13 @@ public class ManosabaModSettings : ModSettings
         Scribe_Values.Look(ref baseMtbDays, "baseMtbDays", 60);
 
 
-        Scribe_Values.Look(ref factorHealing, "factorHealing", 500f);
-        Scribe_Values.Look(ref factorBloodHealing, "factorBloodHealing", 67f);
-        Scribe_Values.Look(ref isBloodHealing, "isBloodHealing", false);
-        Scribe_Values.Look(ref postFactorHealing, "postFactorHealing", 0.22f);
-        Scribe_Values.Look(ref isPostHealing, "isPostHealing", true);
+        Scribe_Values.Look(ref narehateHealFactor, "narehateHealFactor", 500f);
+        Scribe_Values.Look(ref narehateBloodHealFactor, "narehateBloodHealFactor", 67f);
+        Scribe_Values.Look(ref isNarehateBloodHeal, "isNarehateBloodHeal", true);
+        Scribe_Values.Look(ref narehateDownedDivisor, "narehateDownedDivisor", 5f);
+        Scribe_Values.Look(ref isNarehateDownedDivisor, "isNarehateDownedDivisor", true);
+        Scribe_Values.Look(ref postHealMultiplier, "postHealMultiplier", 0.22f);
+        Scribe_Values.Look(ref postAllowHeal, "postAllowHeal", true);
 
 
         Scribe_Values.Look(ref mutantFullCircle, "mutantFullCircle", 100.0f);
@@ -486,8 +490,8 @@ public class ManosabaMod : Mod
         // 魔女残骸自愈系数
         DrawSliderPanels(
             list,
-            labelTextTranslateString: "ManosabaSettings_factorHealing",
-            value: ref Settings.factorHealing,
+            labelTextTranslateString: "ManosabaSettings_narehateHealFactor",
+            value: ref Settings.narehateHealFactor,
             slideMin: 100f,
             slideMax: 1000f,
             roundTo: 50f,
@@ -495,30 +499,51 @@ public class ManosabaMod : Mod
         );
         list.Indent(20f);
         GUI.color = _lightGray;
-        list.Label("ManosabaSettings_factorHealing_Desc_1".Translate());
-        list.Label("ManosabaSettings_factorHealing_Desc_2".Translate(Settings.factorHealing.ToString("F0")));
+        list.Label("ManosabaSettings_narehateHealFactor_Desc_1".Translate());
+        list.Label("ManosabaSettings_narehateHealFactor_Desc_2".Translate(Settings.narehateHealFactor.ToString("F0")));
         GUI.color = Color.white;
         list.Outdent(20f);
         list.Gap(listGap);
         // 魔女残骸失血治疗系数
         DrawSliderPanels(
             list,
-            labelTextTranslateString: "ManosabaSettings_factorBloodHealing",
-            value: ref Settings.factorBloodHealing,
+            labelTextTranslateString: "ManosabaSettings_narehateBloodHealFactor",
+            value: ref Settings.narehateBloodHealFactor,
             slideMin: 0f,
             slideMax: 100f,
             roundTo: 1f,
             valueFormat: "F0"
         );
-        Settings.isBloodHealing = Settings.factorBloodHealing != 0f;
+        Settings.isNarehateBloodHeal = !Mathf.Approximately(Settings.narehateBloodHealFactor,0f);
         list.Indent(20f);
         GUI.color = _lightGray;
-        var bloodHealingDesc1 = Settings.isBloodHealing ?
-            "• " + EnabledChoice + ", " + "ManosabaSettings_factorBloodHealing_Desc_1".Translate(Settings.factorBloodHealing.ToString("F0")) :
-            "• " + DisabledChoice + ", " + "ManosabaSettings_factorBloodHealing_Desc_1_Disable".Translate();
+        var bloodHealingDesc1 = Settings.isNarehateBloodHeal ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateBloodHealFactor_Desc_1".Translate(Settings.narehateBloodHealFactor.ToString("F0")) :
+            "• " + DisabledChoice + ", " + "ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable".Translate();
         list.Label(bloodHealingDesc1);
-        list.Label("ManosabaSettings_factorBloodHealing_Desc_2".Translate());
-        list.Label("ManosabaSettings_factorBloodHealing_Desc_3".Translate());
+        list.Label("ManosabaSettings_narehateBloodHealFactor_Desc_2".Translate());
+        list.Label("ManosabaSettings_narehateBloodHealFactor_Desc_3".Translate());
+        GUI.color = Color.white;
+        list.Outdent(20f);
+        list.Gap(listGap);
+        // 魔女残骸倒地治疗除数
+        DrawSliderPanels(
+            list,
+            labelTextTranslateString: "ManosabaSettings_narehateDownedDivisor",
+            value: ref Settings.narehateDownedDivisor,
+            slideMin: 1f,
+            slideMax: 10f,
+            roundTo: 0.1f,
+            valueFormat: "F1"
+        );
+        Settings.isNarehateDownedDivisor = !Mathf.Approximately(Settings.narehateDownedDivisor, 1f);
+        list.Indent(20f);
+        GUI.color = _lightGray;
+        var downedDevisorDesc1 = Settings.isNarehateDownedDivisor ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateDownedDivisor_Desc_1".Translate((1f/Settings.narehateDownedDivisor).ToString("P0")) :
+            "• " + DisabledChoice + ", " + "ManosabaSettings_narehateDownedDivisor_Desc_1_Disable".Translate();
+        list.Label(downedDevisorDesc1);
+        list.Label("ManosabaSettings_narehateDownedDivisor_Desc_2".Translate());
         GUI.color = Color.white;
         list.Outdent(20f);
         list.Gap(listGap);
@@ -527,24 +552,24 @@ public class ManosabaMod : Mod
         // 治愈系数后处理系数
         DrawSliderPanels(
             list,
-            labelTextTranslateString: "ManosabaSettings_postFactorHealing",
-            value: ref Settings.postFactorHealing,
+            labelTextTranslateString: "ManosabaSettings_postHealMultiplier",
+            value: ref Settings.postHealMultiplier,
             slideMin: 0f,
             slideMax: 1f,
             roundTo: 0.01f,
             valueFormat: "F2"
         );
-        Settings.isPostHealing = Settings.postFactorHealing != 0f;
-        var postHealingEffective = (Settings.postFactorHealing * Settings.factorHealing).ToString("F2");
-        var postBloodHealingEffective = (Settings.postFactorHealing * Settings.factorBloodHealing).ToString("F2");
+        Settings.postAllowHeal = Settings.postHealMultiplier != 0f;
+        var postHealingEffective = (Settings.postHealMultiplier * Settings.narehateHealFactor).ToString("F2");
+        var postBloodHealingEffective = (Settings.postHealMultiplier * Settings.narehateBloodHealFactor).ToString("P0");
         list.Indent(20f);
         GUI.color = _lightGray;
-        var postHealingDesc1 = Settings.isPostHealing ?
-            "• " + EnabledChoice + ", " + "ManosabaSettings_postFactorHealing_Desc_1".Translate(Settings.postFactorHealing.ToString("F2"),YukiNameDef.Named("YUKI")) :
-            "• " + DisabledChoice + ", " + "ManosabaSettings_postFactorHealing_Desc_1_Disable".Translate(YukiNameDef.Named("YUKI"));
-        var postHealingDesc2 = Settings.isPostHealing ?
-            "ManosabaSettings_postFactorHealing_Desc_2".Translate(postHealingEffective, postBloodHealingEffective,YukiNameDef.Named("YUKI")) :
-            "ManosabaSettings_postFactorHealing_Desc_2_Disable".Translate(YukiNameDef.Named("YUKI"));
+        var postHealingDesc1 = Settings.postAllowHeal ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_postHealMultiplier_Desc_1".Translate(Settings.postHealMultiplier.ToString("F2"),YukiNameDef.Named("YUKI")) :
+            "• " + DisabledChoice + ", " + "ManosabaSettings_postHealMultiplier_Desc_1_Disable".Translate(YukiNameDef.Named("YUKI"));
+        var postHealingDesc2 = Settings.postAllowHeal ?
+            "ManosabaSettings_postHealMultiplier_Desc_2".Translate(postHealingEffective, postBloodHealingEffective,YukiNameDef.Named("YUKI")) :
+            "ManosabaSettings_postHealMultiplier_Desc_2_Disable".Translate(YukiNameDef.Named("YUKI"));
         list.Label(postHealingDesc1);
         list.Label(postHealingDesc2);
         GUI.color = Color.white;
@@ -569,9 +594,12 @@ public class ManosabaMod : Mod
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
-            Settings.factorHealing = 500f;
-            Settings.factorBloodHealing = 67f;
-            Settings.postFactorHealing = 0.22f;
+            Settings.narehateHealFactor = 500f;
+            Settings.narehateBloodHealFactor = 67f;
+            Settings.isNarehateBloodHeal = true;
+            Settings.narehateDownedDivisor = 5f;
+            Settings.isNarehateDownedDivisor = true;
+            Settings.postHealMultiplier = 0.22f;
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
 

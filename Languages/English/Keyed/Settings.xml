@@ -95,32 +95,40 @@
 
 
     <!-- Healing Tab -->
-    <!-- <ManosabaSettings_factorHealing>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_factorHealing> -->
-    <ManosabaSettings_factorHealing>Narehate natural healing factor: {0} hp/day</ManosabaSettings_factorHealing>
-    <!-- <ManosabaSettings_factorHealing_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_factorHealing_Desc_1> -->
-    <ManosabaSettings_factorHealing_Desc_1>• When in the narehate state, the above natural healing factor is added to all wounds.</ManosabaSettings_factorHealing_Desc_1>
-    <!-- <ManosabaSettings_factorHealing_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_factorHealing_Desc_2> -->
-    <ManosabaSettings_factorHealing_Desc_2>• This means all wounds will recover {0} hp per day.</ManosabaSettings_factorHealing_Desc_2>
-    <!-- <ManosabaSettings_factorBloodHealing>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_factorBloodHealing> -->
-    <ManosabaSettings_factorBloodHealing>Narehate blood loss healing factor: {0}% / day</ManosabaSettings_factorBloodHealing>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_factorBloodHealing_Desc_1> -->
-    <ManosabaSettings_factorBloodHealing_Desc_1>When in the narehate state, "Blood loss" will naturally heal an additional {0}% per day.</ManosabaSettings_factorBloodHealing_Desc_1>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_factorBloodHealing_Desc_1_Disable> -->
-    <ManosabaSettings_factorBloodHealing_Desc_1_Disable>No extra healing factor for "Blood loss".</ManosabaSettings_factorBloodHealing_Desc_1_Disable>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_factorBloodHealing_Desc_2> -->
-    <ManosabaSettings_factorBloodHealing_Desc_2>• For comparison, the default healing rate for "Blood loss" is 33.3% per day (unaffected by traits, genes, or artificial parts).</ManosabaSettings_factorBloodHealing_Desc_2>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_factorBloodHealing_Desc_3> -->
-    <ManosabaSettings_factorBloodHealing_Desc_3>• However, default healing stops while bleeding, whereas the healing effect provided by this factor remains active even while bleeding.</ManosabaSettings_factorBloodHealing_Desc_3>
-    <!-- <ManosabaSettings_postFactorHealing>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postFactorHealing> -->
-    <ManosabaSettings_postFactorHealing>Witch healing post-process factor: {0}x</ManosabaSettings_postFactorHealing>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 倍率的魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1> -->
-    <ManosabaSettings_postFactorHealing_Desc_1>{YUKI} and other entities in a partial witch state receive {0}x the narehate self-healing effect.</ManosabaSettings_postFactorHealing_Desc_1>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1_Disable> -->
-    <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI} and other entities in a partial witch state do not apply the narehate self-healing effect.</ManosabaSettings_postFactorHealing_Desc_1_Disable>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postFactorHealing_Desc_2> -->
-    <ManosabaSettings_postFactorHealing_Desc_2>• Eligible entities receive an additional {0} hp/day wound natural healing factor and {1}%/day blood loss natural healing factor.</ManosabaSettings_postFactorHealing_Desc_2>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postFactorHealing_Desc_2_Disable> -->
-    <ManosabaSettings_postFactorHealing_Desc_2_Disable>• Narehate self-healing effect applies only to entities with the narehate state.</ManosabaSettings_postFactorHealing_Desc_2_Disable>
+    <!-- <ManosabaSettings_narehateHealFactor>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_narehateHealFactor> -->
+    <ManosabaSettings_narehateHealFactor>Narehate natural healing factor: {0} hp/day</ManosabaSettings_narehateHealFactor>
+    <!-- <ManosabaSettings_narehateHealFactor_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_narehateHealFactor_Desc_1> -->
+    <ManosabaSettings_narehateHealFactor_Desc_1>• When in the narehate state, the above natural healing factor is added to all wounds.</ManosabaSettings_narehateHealFactor_Desc_1>
+    <!-- <ManosabaSettings_narehateHealFactor_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_narehateHealFactor_Desc_2> -->
+    <ManosabaSettings_narehateHealFactor_Desc_2>• This means all wounds will recover {0} hp per day.</ManosabaSettings_narehateHealFactor_Desc_2>
+    <!-- <ManosabaSettings_narehateBloodHealFactor>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_narehateBloodHealFactor> -->
+    <ManosabaSettings_narehateBloodHealFactor>Narehate blood loss healing factor: {0}% / day</ManosabaSettings_narehateBloodHealFactor>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_narehateBloodHealFactor_Desc_1> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_1>When in the narehate state, "Blood loss" will naturally heal an additional {0}% per day.</ManosabaSettings_narehateBloodHealFactor_Desc_1>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>No extra healing factor for "Blood loss".</ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_narehateBloodHealFactor_Desc_2> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_2>• For comparison, the default healing rate for "Blood loss" is 33.3% per day (unaffected by traits, genes, or artificial parts).</ManosabaSettings_narehateBloodHealFactor_Desc_2>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_narehateBloodHealFactor_Desc_3> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_3>• However, default healing stops while bleeding, whereas the healing effect provided by this factor remains active even while bleeding.</ManosabaSettings_narehateBloodHealFactor_Desc_3>
+    <!-- <ManosabaSettings_narehateDownedDivisor>魔女残骸倒地愈合削弱：{0} 倍</ManosabaSettings_narehateDownedDivisor> -->
+    <ManosabaSettings_narehateDownedDivisor>Narehate downed divisor: / {0}</ManosabaSettings_narehateDownedDivisor>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_1>处于倒地状态时，魔女残骸提供的自然愈合系数被削弱为原来的 {0}</ManosabaSettings_narehateDownedDivisor_Desc_1> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_1>When downed, the natural healing factor provided by the narehate is reduced to {0} of the original value.</ManosabaSettings_narehateDownedDivisor_Desc_1>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>魔女残骸提供的自然愈合系数不受倒地影响</ManosabaSettings_narehateDownedDivisor_Desc_1_Disable> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>The natural healing factor provided by the narehate is unaffected by being downed.</ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_2>• 此系数用于缓解由于魔女残骸快速自愈导致倒地时间过短的问题</ManosabaSettings_narehateDownedDivisor_Desc_2> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_2>• This factor is used to mitigate the issue of narehates having too short a downed duration due to rapid self-healing.</ManosabaSettings_narehateDownedDivisor_Desc_2>
+    <!-- <ManosabaSettings_postHealMultiplier>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postHealMultiplier> -->
+    <ManosabaSettings_postHealMultiplier>Witch healing post-process factor: {0}x</ManosabaSettings_postHealMultiplier>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 的魔女残骸自愈效果</ManosabaSettings_postHealMultiplier_Desc_1> -->
+    <ManosabaSettings_postHealMultiplier_Desc_1>{YUKI} and other entities in a partial witch state receive {0}x the narehate self-healing effect.</ManosabaSettings_postHealMultiplier_Desc_1>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postHealMultiplier_Desc_1_Disable> -->
+    <ManosabaSettings_postHealMultiplier_Desc_1_Disable>{YUKI} and other entities in a partial witch state do not apply the narehate self-healing effect.</ManosabaSettings_postHealMultiplier_Desc_1_Disable>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postHealMultiplier_Desc_2> -->
+    <ManosabaSettings_postHealMultiplier_Desc_2>• Eligible entities receive an additional {0} hp/day wound natural healing factor and {1}%/day blood loss natural healing factor.</ManosabaSettings_postHealMultiplier_Desc_2>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postHealMultiplier_Desc_2_Disable> -->
+    <ManosabaSettings_postHealMultiplier_Desc_2_Disable>• Narehate self-healing effect applies only to entities with the narehate state.</ManosabaSettings_postHealMultiplier_Desc_2_Disable>
     <!-- <ManosabaSettings_ResetHealingTab>重置本页设置为默认值</ManosabaSettings_ResetHealingTab> -->
     <ManosabaSettings_ResetHealingTab>Reset this page to defaults</ManosabaSettings_ResetHealingTab>
 

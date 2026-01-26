@@ -165,7 +165,7 @@ public static class YukiGeneralUtils
         p.Name = new NameTriple(firstName, nickName, lastName);
     }
     // 瞬移离开地图
-    public static void LeaveMapInstantly(Pawn p, DestroyMode mode = DestroyMode.Vanish)
+    public static void LeaveMapInstantly(Pawn p, DestroyMode mode = DestroyMode.Vanish, bool applyMood = false)
     {
         if (p is not { Spawned: true }) return;
         var map = p.Map;
@@ -175,7 +175,7 @@ public static class YukiGeneralUtils
         EffecterDefOf.MeatExplosion.Spawn(pos, map).Cleanup();
         GenClamor.DoClamor(p, pos, 10, ClamorDefOf.Ability);
         // 心情减益
-        if (!p.IsColonist) AddThoughtToAllColonists(map, ModDefOf.UmThoughtYukiLeaveInstantly);
+        if (applyMood && !p.IsColonist) AddThoughtToAllColonists(map, ModDefOf.UmThoughtYukiLeaveInstantly);
         // 移除 Pawn 并通知 Group
         p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.LeftVoluntarily, null);
         // 推迟到当前 tick 结束执行，规避一些日志记录 pawn def 问题

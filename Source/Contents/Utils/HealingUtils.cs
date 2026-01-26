@@ -30,8 +30,8 @@ public static class HealingUtils
         }
     }
     /// <summary>
-    /// Try to recover all wounds by {factorHealing/1000} hp per call
-    /// - 默认每 60 ticks 调用一次, 对应每日 1000 次愈合对应 factorHealing
+    /// Try to recover all wounds by {narehateHealFactor/1000} hp per call
+    /// - 默认每 60 ticks 调用一次, 对应每日 1000 次愈合对应 narehateHealFactor
     /// </summary>
     public static void TryHeal(Pawn pawn,float factorHealing = 0f)
     {
@@ -52,9 +52,9 @@ public static class HealingUtils
         }
     }
     /// <summary>
-    /// Try to heal blood loss by {factorBloodHealing/1000}% per call
+    /// Try to heal blood loss by {narehateBloodHealFactor/1000}% per call
     /// - 默认每 60 ticks 调用一次, 对应每日 1000 次愈合
-    /// - factorBloodHealing 为百分比系数，所以整体归一化系数为 1000*100
+    /// - narehateBloodHealFactor 为百分比系数，所以整体归一化系数为 1000*100
     /// </summary>
     public static void TryBloodLoss(Pawn pawn,float factorBloodHealing = 0f)
     {

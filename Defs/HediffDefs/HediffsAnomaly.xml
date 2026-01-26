@@ -51,7 +51,8 @@
                 <countdownHediffDef>UmHediffMutantCountdown</countdownHediffDef>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <applyPostFactor>false</applyPostFactor>
+                <applyPostMultiplier>false</applyPostMultiplier>
+                <applyStatusSwitch>false</applyStatusSwitch>
             </li>
             <li Class="HediffCompProperties_GiveAbility">
                 <abilityDefs>

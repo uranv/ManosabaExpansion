@@ -31,7 +31,13 @@ public class Comp_YukiVisitor : ThingComp
         Scribe_Values.Look(ref _isInfLevel, "_isInfLevel", false);
         
     }
-    // 受到伤害时触发撤离
+    // 条件触发自动撤离
+    private TaggedString LetterLabelHurt => "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel".Translate(parent.LabelShort);
+    private TaggedString LetterTextHurt => "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText".Translate(parent.LabelShort);
+    private TaggedString LetterTextAttach => "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach".Translate(parent.LabelShort);
+    private TaggedString LetterLabelNeutral => "Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel".Translate(parent.LabelShort);
+    private TaggedString LetterTextNeutral => "Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText".Translate(parent.LabelShort);
+    // 受伤时离开
     public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
     {
         base.PostPostApplyDamage(dinfo, totalDamageDealt);
@@ -39,29 +45,42 @@ public class Comp_YukiVisitor : ThingComp
         if (dinfo.Def.ExternalViolenceFor(parent))
         {
             // 通知
-            var letterLabel = "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel".Translate(parent.LabelShort);
-            var letterText = "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText".Translate(parent.LabelShort);
-            if (!_isCasted)
-            {
-                var letterTextAttach = "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach".Translate(parent.LabelShort);
-                letterText += "\n\n" + letterTextAttach;
-            }
-            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
-            YukiLeaveMap();
+            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Yuki left due to violence: {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
+            var letterText = LetterTextHurt + (_isCasted ? null : ("\n\n" + LetterTextAttach));
+            Find.LetterStack.ReceiveLetter(LetterLabelHurt, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
+            YukiLeaveMap(true);
         }
         else
         {
             // 通知
-            var letterLabel = "Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel".Translate(parent.LabelShort);
-            var letterText = "Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText".Translate(parent.LabelShort);
-            if (!_isCasted)
-            {
-                var letterTextAttach = "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach".Translate(parent.LabelShort);
-                letterText += "\n\n" + letterTextAttach;
-            }
-            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
+            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Yuki left due to: injury {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
+            var letterText = LetterTextNeutral + (_isCasted ? null : ("\n\n" + LetterTextAttach));
+            Find.LetterStack.ReceiveLetter(LetterLabelNeutral, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
             YukiLeaveMap();
         }
+    }
+    // 倒地时离开
+    public override void Notify_Downed()
+    {
+        if (parent.Destroyed || !parent.Spawned) return;
+        // 通知
+        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Yuki left due to: downed (Comps.CompProperties_YukiVisitor.PostNotify_Downed)");
+        var letterText = LetterTextHurt + (_isCasted ? null : ("\n\n" + LetterTextAttach));
+        Find.LetterStack.ReceiveLetter(LetterLabelHurt, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
+        YukiLeaveMap();
+        base.Notify_Downed();
+    }
+    // 被捕时离开
+    public override void Notify_Arrested(bool succeeded)
+    {
+        if (parent.Destroyed || !parent.Spawned) return;
+        // 通知
+        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Yuki left due to: arrested (Comps.CompProperties_YukiVisitor.Notify_Arrested");
+        var letterText = LetterTextNeutral + (_isCasted ? null : ("\n\n" + LetterTextAttach));
+        Find.LetterStack.ReceiveLetter(LetterLabelNeutral, letterText, LetterDefOf.NeutralEvent,
+            new TargetInfo(parent.Position, parent.Map));
+        YukiLeaveMap();
+        base.Notify_Arrested(succeeded);
     }
     // 右键菜单入口
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
@@ -89,7 +108,7 @@ public class Comp_YukiVisitor : ThingComp
         }
         yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("Manosaba_CompYukiVisitor_TalkTo".Translate(visitor.LabelShort), delegate
         {
-            Utils.MiscUtils.SanityCheckPawnData(visitor, "Visitor(CompYuki)");
+            MiscUtils.SanityCheckPawnData(visitor, "Visitor(CompYuki)");
             var job = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("UmJobTalkToYuki"), visitor);
             job.playerForced = true;
             selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -100,8 +119,8 @@ public class Comp_YukiVisitor : ThingComp
         YukiGeneralUtils.CheckYukiName(speaker);
         var visitor = (Pawn)parent;
             
-        Utils.MiscUtils.SanityCheckPawnData(visitor, "Visitor(CompYuki)");
-        Utils.MiscUtils.SanityCheckPawnData(speaker, "Speaker(CompYuki)");
+        MiscUtils.SanityCheckPawnData(visitor, "Visitor(CompYuki)");
+        MiscUtils.SanityCheckPawnData(speaker, "Speaker(CompYuki)");
             
         // 加载对话内容
         LoadDialogContent(visitor);
@@ -870,10 +889,10 @@ public class Comp_YukiVisitor : ThingComp
 
 
     // 瞬移离开
-    public void YukiLeaveMap()
+    public void YukiLeaveMap(bool applyMood = false)
     {
         var p = (Pawn)parent;
-        YukiGeneralUtils.LeaveMapInstantly(p);
+        YukiGeneralUtils.LeaveMapInstantly(p, applyMood: applyMood);
         // 状态重置
         _interactionSteps = 0;
         _isWorking = false;

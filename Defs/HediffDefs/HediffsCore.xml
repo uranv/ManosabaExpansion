@@ -25,7 +25,8 @@
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Progress"/>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <checkStatus>true</checkStatus>
+                <applyPostMultiplier>false</applyPostMultiplier>
+                <applyStatusSwitch>true</applyStatusSwitch>
             </li>
         </comps>
     </HediffDef>
@@ -153,7 +154,7 @@
                 <curedHediffDef>UmHediffNarehateHealed</curedHediffDef>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostFactor>false</applyPostFactor>
+                <applyPostMultiplier>false</applyPostMultiplier>
             </li>
         </comps>
     </HediffDef>
@@ -230,7 +231,7 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostFactor>true</applyPostFactor>
+                <applyPostMultiplier>true</applyPostMultiplier>
             </li>
         </comps>
     </HediffDef>

@@ -5,8 +5,8 @@ namespace UranvManosaba.Contents.Comps;
 
 public class HediffCompProperties_NarehateHealing : HediffCompProperties
 {
-    public bool checkStatus = false;
-    public bool applyPostFactor = false;
+    public bool applyPostMultiplier = false;
+    public bool applyStatusSwitch = false;
     public int overrideHealFactor = -1;
     public int overrideBloodFactor = -1;
     public int overrideRegenTick = -1;
@@ -22,53 +22,62 @@ public class HediffComp_NarehateHealing : HediffComp
         
     private HediffComp_HumanDummy _cachedHumanDummy;
     private HediffComp_HumanDummy CachedHumanDummy => _cachedHumanDummy ??= parent.TryGetComp<HediffComp_HumanDummy>();
-    private bool ApplyPostFactor
+    private bool ApplyPostMultiplier
     {
         get
         {
-            if (!Props.checkStatus) return Props.applyPostFactor;
+            if (!Props.applyStatusSwitch) return Props.applyPostMultiplier;
             return !CachedHumanDummy.cachedIsNarehate;
         }
     }
+    private bool IsOverrideHealFactor => Props.overrideHealFactor > 0;
+    private bool IsOverrideBloodFactor => Props.overrideBloodFactor > 0;
+    private bool IsOverrideRegenTickInterval => Props.overrideRegenTick > 0;
 
-    private bool IsOverrideHealFactor => Props.overrideHealFactor != -1;
-    private bool IsOverrideBloodFactor => Props.overrideBloodFactor != -1;
-    private bool IsOverrideRegenFactor => Props.overrideRegenTick != -1;
-        
-        
-    private float EffectiveHealingFactor => IsOverrideHealFactor ? 
-        Props.overrideHealFactor :
-        ManosabaMod.Settings.factorHealing * (ApplyPostFactor ? ManosabaMod.Settings.postFactorHealing * 10f : 1);
+    private float EffectiveHealFactor
+    {
+        get
+        {
+            if (IsOverrideHealFactor) return Props.overrideHealFactor;
+            var multiplier = ApplyPostMultiplier ? ManosabaMod.Settings.postHealMultiplier * 10 : 1;
+            var divisor = ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed ? ManosabaMod.Settings.narehateDownedDivisor : 1;
+            return ManosabaMod.Settings.narehateHealFactor * multiplier / divisor;
+        }
+    }
+    private float EffectiveBloodHealFactor 
+    {
+        get
+        {
+            if (IsOverrideBloodFactor) return Props.overrideBloodFactor;
+            var multiplier = ApplyPostMultiplier ? ManosabaMod.Settings.postHealMultiplier * 10 : 1;
+            var divisor = ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed ? ManosabaMod.Settings.narehateDownedDivisor : 1;
+            return ManosabaMod.Settings.narehateBloodHealFactor * multiplier / divisor;
+        }
+    }
 
-    private float EffectiveBloodHealingFactor => IsOverrideBloodFactor ?
-        Props.overrideBloodFactor :
-        ManosabaMod.Settings.factorBloodHealing * (ApplyPostFactor ? ManosabaMod.Settings.postFactorHealing * 10f : 1);
-
-    private int HealingTickInterval => ApplyPostFactor ? 600 : 60;
-    private int RegenTickInterval => IsOverrideRegenFactor ?
-        Props.overrideRegenTick :
-        ApplyPostFactor ? 60000 :
-            900;
-        
-        
-        
-        
+    private int HealTickInterval => (IsOverrideHealFactor || !ApplyPostMultiplier) ? 60 : 600;
+    private int RegenTickInterval
+    {
+        get
+        {
+            if (IsOverrideRegenTickInterval) return Props.overrideRegenTick;
+            var baseInterval = ApplyPostMultiplier ? 60000 : 600;
+            var multiplier = ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed ? ManosabaMod.Settings.narehateDownedDivisor : 1;
+            return Mathf.RoundToInt(baseInterval * multiplier);
+        }
+    }
+    
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
-        //if(parent.pawn.IsMutant) Log.ErrorOnce($"{parent.def.defName} => heal:[{IsOverrideHealFactor}, {Props.overrideHealFactor}], regTick:{RegenTickInterval}",11);
-        if (Props.checkStatus && !CachedHumanDummy.cachedIsFinished) return;
-            
-        if (Pawn.IsHashIntervalTick(HealingTickInterval))
+
+        if (Props.applyStatusSwitch && !CachedHumanDummy.cachedIsFinished) return;
+        
+        if (Pawn.IsHashIntervalTick(HealTickInterval))
         {
-            if (!ApplyPostFactor || ManosabaMod.Settings.isPostHealing)
-            {
-                Utils.HealingUtils.TryHeal(Pawn, EffectiveHealingFactor);
-            }
-            if (!ApplyPostFactor || ManosabaMod.Settings.isBloodHealing)
-            {
-                Utils.HealingUtils.TryBloodLoss(Pawn, EffectiveBloodHealingFactor);
-            }
+            if (ApplyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return;
+            Utils.HealingUtils.TryHeal(Pawn, EffectiveHealFactor);
+            if (ManosabaMod.Settings.isNarehateBloodHeal) Utils.HealingUtils.TryBloodLoss(Pawn, EffectiveBloodHealFactor);
         }
         if (Pawn.IsHashIntervalTick(RegenTickInterval))
         {
@@ -81,32 +90,22 @@ public class HediffComp_NarehateHealing : HediffComp
         get
         {
             var result = string.Empty;
-            if (Props.checkStatus && !CachedHumanDummy.cachedIsFinished) return result;
-                
-            var varHeal = ManosabaMod.Settings.factorHealing;
-            var varBlood = ManosabaMod.Settings.factorBloodHealing;
-            if (ApplyPostFactor)
+            // 若检查进度，魔女化前不恢复不需要显示
+            if (Props.applyStatusSwitch && !CachedHumanDummy.cachedIsFinished) return result;
+            // 若使用后系数，若系数为 0 禁用不需要显示
+            if (ApplyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return result;
+            // 生成说明
+            var healPerDay = EffectiveHealFactor;
+            var bloodHealPerDay = EffectiveBloodHealFactor;
+            if (ApplyPostMultiplier)
             {
-                varHeal *= ManosabaMod.Settings.postFactorHealing;
-                varBlood *= ManosabaMod.Settings.postFactorHealing;
+                healPerDay *= 10f;
+                bloodHealPerDay *= 10f;
             }
-                
-            if (IsOverrideHealFactor) varHeal = Props.overrideHealFactor;
-            if (IsOverrideBloodFactor) varBlood = Props.overrideBloodFactor;
-                
-            var stringHeal = "HediffComp_NarehateHealing_TipHeal".Translate(Mathf.Round(varHeal));
-            var stringBlood = "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(varBlood));
- 
-                
-            if (!ApplyPostFactor) result = stringHeal + "\n" + stringBlood;
-            else
-            {
-                bool var1 = ManosabaMod.Settings.isPostHealing;
-                bool var2 = ManosabaMod.Settings.isBloodHealing;
-                if (var1) result += stringHeal;
-                if (var1 && var2) result += "\n";
-                if (var2) result += stringBlood;
-            }
+            var stringHeal = "HediffComp_NarehateHealing_TipHeal".Translate(Mathf.Round(healPerDay));
+            var stringBlood = "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(bloodHealPerDay));
+            result += stringHeal;
+            if (ManosabaMod.Settings.isNarehateBloodHeal) result += "\n" + stringBlood;
             return result;
         }
     }

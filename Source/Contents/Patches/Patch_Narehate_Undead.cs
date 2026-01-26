@@ -49,8 +49,8 @@ public static class Patch_Pawn_Kill
         // 月代雪：判定死亡时不死直接离开地图
         if (hasYukiDummy)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patches.Patch_Pawn_Kill)");
             // 发信
+            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] {__instance.LabelShort} left due to: lethal damage (Patches.Patch_Pawn_Kill)");
             var letterLabel = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
             var letterText = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterText".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
             // 无地图时直接离开
@@ -63,8 +63,8 @@ public static class Patch_Pawn_Kill
             // 有地图时放下全部装备，播放特效并离开
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(__instance.Position, __instance.Map));
             if (__instance.IsColonist) Utils.NarehateUtils.UnequipAll(__instance, false);
-            var mode = __instance.IsColonist ? DestroyMode.KillFinalize : DestroyMode.Vanish;
-            Utils.YukiGeneralUtils.LeaveMapInstantly(__instance, mode);
+            // var mode = __instance.IsColonist ? DestroyMode.KillFinalize : DestroyMode.Vanish;
+            Utils.YukiGeneralUtils.LeaveMapInstantly(__instance);
             return false;
         }
             

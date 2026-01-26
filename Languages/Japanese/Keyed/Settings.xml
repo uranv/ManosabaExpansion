@@ -105,34 +105,43 @@
     
 
     <!-- Healing Tab -->
-    <!-- <ManosabaSettings_factorHealing>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_factorHealing> -->
-    <ManosabaSettings_factorHealing>魔女の自然回復係数：{0} HP/日</ManosabaSettings_factorHealing>
-    <!-- <ManosabaSettings_factorHealing_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_factorHealing_Desc_1> -->
-    <ManosabaSettings_factorHealing_Desc_1>• 「魔女のなれはて」状態にある時、全ての傷に対して上記の自然回復係数が加算されます。</ManosabaSettings_factorHealing_Desc_1>
-    <!-- <ManosabaSettings_factorHealing_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_factorHealing_Desc_2> -->
-    <ManosabaSettings_factorHealing_Desc_2>• つまり、全ての傷が毎日 {0} HPずつ回復します。</ManosabaSettings_factorHealing_Desc_2>
+    <!-- <ManosabaSettings_narehateHealFactor>魔女残骸伤口自然愈合系数：{0} 点耐久/天</ManosabaSettings_narehateHealFactor> -->
+    <ManosabaSettings_narehateHealFactor>魔女の自然回復係数：{0} HP/日</ManosabaSettings_narehateHealFactor>
+    <!-- <ManosabaSettings_narehateHealFactor_Desc_1>• 拥有魔女残骸状态时，所有伤口会添加上述的自然愈合系数</ManosabaSettings_narehateHealFactor_Desc_1> -->
+    <ManosabaSettings_narehateHealFactor_Desc_1>• 「魔女のなれはて」状態にある時、全ての傷に対して上記の自然回復係数が加算されます。</ManosabaSettings_narehateHealFactor_Desc_1>
+    <!-- <ManosabaSettings_narehateHealFactor_Desc_2>• 也就是说，此时所有伤口每日都会恢复 {0} 点耐久</ManosabaSettings_narehateHealFactor_Desc_2> -->
+    <ManosabaSettings_narehateHealFactor_Desc_2>• つまり、全ての傷が毎日 {0} HPずつ回復します。</ManosabaSettings_narehateHealFactor_Desc_2>
     
-    <!-- <ManosabaSettings_factorBloodHealing>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_factorBloodHealing> -->
-    <ManosabaSettings_factorBloodHealing>魔女の失血自然回復係数：{0}% /日</ManosabaSettings_factorBloodHealing>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_factorBloodHealing_Desc_1> -->
-    <ManosabaSettings_factorBloodHealing_Desc_1>「魔女のなれはて」状態にある時、「失血」状態が毎日 {0}% 追加で自然回復します。</ManosabaSettings_factorBloodHealing_Desc_1>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_factorBloodHealing_Desc_1_Disable> -->
-    <ManosabaSettings_factorBloodHealing_Desc_1_Disable>「失血」状態への回復係数ボーナスはありません。</ManosabaSettings_factorBloodHealing_Desc_1_Disable>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_factorBloodHealing_Desc_2> -->
-    <ManosabaSettings_factorBloodHealing_Desc_2>• 参考として、「失血」のデフォルトの回復率は33.3%/日です（才能、特性、遺伝子、人工部位の影響を受けません）。</ManosabaSettings_factorBloodHealing_Desc_2>
-    <!-- <ManosabaSettings_factorBloodHealing_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_factorBloodHealing_Desc_3> -->
-    <ManosabaSettings_factorBloodHealing_Desc_3>• デフォルトの回復は出血中に停止しますが、この係数による回復効果は出血中も有効です。</ManosabaSettings_factorBloodHealing_Desc_3>
+    <!-- <ManosabaSettings_narehateBloodHealFactor>魔女残骸失血自然愈合系数：{0}% 每天</ManosabaSettings_narehateBloodHealFactor> -->
+    <ManosabaSettings_narehateBloodHealFactor>魔女の失血自然回復係数：{0}% /日</ManosabaSettings_narehateBloodHealFactor>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_1>拥有魔女残骸状态时"失血"状态会额外自然愈合 {0}% 每天</ManosabaSettings_narehateBloodHealFactor_Desc_1> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_1>「魔女のなれはて」状態にある時、「失血」状態が毎日 {0}% 追加で自然回復します。</ManosabaSettings_narehateBloodHealFactor_Desc_1>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>"失血"状态没有额外愈合系数加成</ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>「失血」状態への回復係数ボーナスはありません。</ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_2>• 作为对比，"失血"的默认愈合系数为 33.3% 每天 (不受天赋、特性、基因、人造部件影响)</ManosabaSettings_narehateBloodHealFactor_Desc_2> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_2>• 参考として、「失血」のデフォルトの回復率は33.3%/日です（才能、特性、遺伝子、人工部位の影響を受けません）。</ManosabaSettings_narehateBloodHealFactor_Desc_2>
+    <!-- <ManosabaSettings_narehateBloodHealFactor_Desc_3>• 但是默认愈合会在任意流血状态时停止，而本系数提供的愈合效果在流血时保持生效</ManosabaSettings_narehateBloodHealFactor_Desc_3> -->
+    <ManosabaSettings_narehateBloodHealFactor_Desc_3>• デフォルトの回復は出血中に停止しますが、この係数による回復効果は出血中も有効です。</ManosabaSettings_narehateBloodHealFactor_Desc_3>
 
-    <!-- <ManosabaSettings_postFactorHealing>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postFactorHealing> -->
-    <ManosabaSettings_postFactorHealing>魔女の治癒の後処理係数：{0} 倍</ManosabaSettings_postFactorHealing>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 倍率的魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1> -->
-    <ManosabaSettings_postFactorHealing_Desc_1>{YUKI}やその他の「部分的な魔女化」状態の生物は、{0}倍のなれはて自然回復効果を得ます。</ManosabaSettings_postFactorHealing_Desc_1>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postFactorHealing_Desc_1_Disable> -->
-    <ManosabaSettings_postFactorHealing_Desc_1_Disable>{YUKI}やその他の「部分的な魔女化」状態の生物には、魔女の自然回復効果は適用されません。</ManosabaSettings_postFactorHealing_Desc_1_Disable>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postFactorHealing_Desc_2> -->
-    <ManosabaSettings_postFactorHealing_Desc_2>• 対象の生物は、毎日 {0} HPの傷自然回復係数と、{1}% の失血自然回復係数を追加で獲得します。</ManosabaSettings_postFactorHealing_Desc_2>
-    <!-- <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postFactorHealing_Desc_2_Disable> -->
-    <ManosabaSettings_postFactorHealing_Desc_2_Disable>• 魔女の自然回復効果は、「魔女のなれはて」状態を持つ生物にのみ適用されます。</ManosabaSettings_postFactorHealing_Desc_2_Disable>
+    <!-- <ManosabaSettings_narehateDownedDivisor>魔女残骸倒地愈合削弱：{0} 倍</ManosabaSettings_narehateDownedDivisor> -->
+    <ManosabaSettings_narehateDownedDivisor>魔女のダウン時回復減衰：{0} 倍</ManosabaSettings_narehateDownedDivisor>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_1>处于倒地状态时，魔女残骸提供的自然愈合系数被削弱为原来的 {0}</ManosabaSettings_narehateDownedDivisor_Desc_1> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_1>ダウン状態の時、「魔女のなれはて」による自然回復係数は元の {0} に低下します</ManosabaSettings_narehateDownedDivisor_Desc_1>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>魔女残骸提供的自然愈合系数不受倒地影响</ManosabaSettings_narehateDownedDivisor_Desc_1_Disable> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>「魔女のなれはて」による自然回復係数はダウンの影響を受けません</ManosabaSettings_narehateDownedDivisor_Desc_1_Disable>
+    <!-- <ManosabaSettings_narehateDownedDivisor_Desc_2>• 此系数用于缓解由于魔女残骸快速自愈导致倒地时间过短的问题</ManosabaSettings_narehateDownedDivisor_Desc_2> -->
+    <ManosabaSettings_narehateDownedDivisor_Desc_2>• この係数は、「魔女のなれはて」の急速な自己回復によりダウン時間が短くなりすぎる問題を緩和します</ManosabaSettings_narehateDownedDivisor_Desc_2>
+
+    <!-- <ManosabaSettings_postHealMultiplier>魔女疗愈后处理系数：{0} 倍</ManosabaSettings_postHealMultiplier> -->
+    <ManosabaSettings_postHealMultiplier>魔女の治癒の後処理係数：{0} 倍</ManosabaSettings_postHealMultiplier>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_1>{YUKI}和其他半魔女状态的生物获得 {0} 倍率的魔女残骸自愈效果</ManosabaSettings_postHealMultiplier_Desc_1> -->
+    <ManosabaSettings_postHealMultiplier_Desc_1>{YUKI}やその他の「部分的な魔女化」状態の生物は、{0}のなれはて自然回復効果を得ます。</ManosabaSettings_postHealMultiplier_Desc_1>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_1_Disable>{YUKI}和其他半魔女状态的生物不应用魔女残骸自愈效果</ManosabaSettings_postHealMultiplier_Desc_1_Disable> -->
+    <ManosabaSettings_postHealMultiplier_Desc_1_Disable>{YUKI}やその他の「部分的な魔女化」状態の生物には、魔女の自然回復効果は適用されません。</ManosabaSettings_postHealMultiplier_Desc_1_Disable>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_2>• 此时符合条件生物额外获得每日 {0} 点伤口自然愈合系数和 {1}% 点失血自然愈合系数</ManosabaSettings_postHealMultiplier_Desc_2> -->
+    <ManosabaSettings_postHealMultiplier_Desc_2>• 対象の生物は、毎日 {0} HPの傷自然回復係数と、{1}% の失血自然回復係数を追加で獲得します。</ManosabaSettings_postHealMultiplier_Desc_2>
+    <!-- <ManosabaSettings_postHealMultiplier_Desc_2_Disable>• 此时魔女残骸自愈效果仅应用于具有魔女残骸状态的生物</ManosabaSettings_postHealMultiplier_Desc_2_Disable> -->
+    <ManosabaSettings_postHealMultiplier_Desc_2_Disable>• 魔女の自然回復効果は、「魔女のなれはて」状態を持つ生物にのみ適用されます。</ManosabaSettings_postHealMultiplier_Desc_2_Disable>
     
     <!-- <ManosabaSettings_ResetHealingTab>重置本页设置为默认值</ManosabaSettings_ResetHealingTab> -->
     <ManosabaSettings_ResetHealingTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetHealingTab>

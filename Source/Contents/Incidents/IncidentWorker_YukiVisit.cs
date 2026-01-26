@@ -34,7 +34,7 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
     
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba]Try Excute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
+        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Try Excute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
         var map = (Map)parms.target;
 
         // 寻找生成点 (地图边缘)
