@@ -12,6 +12,24 @@
     <HediffComp_NarehateHealingReveal_TipHeal>  - Witch healing: {0} hp/day</HediffComp_NarehateHealingReveal_TipHeal>
     <!-- <HediffComp_NarehateHealingReveal_TipBlood>  - 魔女失血愈疗：{0}%/天</HediffComp_NarehateHealingReveal_TipBlood> -->
     <HediffComp_NarehateHealingReveal_TipBlood>  - Witch blood loss recovery: {0}%/day</HediffComp_NarehateHealingReveal_TipBlood>
+    
+    <!-- <HediffComp_NarehateHealing_TipHealOverride>  - 魔女愈疗：{0}点耐久/秒</HediffComp_NarehateHealing_TipHealOverride> -->
+    <HediffComp_NarehateHealing_TipHealOverride>  - Witch healing: {0} hp/sec</HediffComp_NarehateHealing_TipHealOverride>
+    <!-- <HediffComp_NarehateHealing_TipBloodOverride>  - 魔女失血愈疗：{0}%/秒</HediffComp_NarehateHealing_TipBloodOverride> -->
+    <HediffComp_NarehateHealing_TipBloodOverride>  - Witch blood loss recovery: {0}%/sec</HediffComp_NarehateHealing_TipBloodOverride>
+    <!-- <HediffComp_NarehateHealing_TipRegenUnit1> 天/处</HediffComp_NarehateHealing_TipRegenUnit1> -->
+    <HediffComp_NarehateHealing_TipRegenUnit1> days/part</HediffComp_NarehateHealing_TipRegenUnit1>
+    <!-- <HediffComp_NarehateHealing_TipRegenUnit2> 处/天</HediffComp_NarehateHealing_TipRegenUnit2> -->
+    <HediffComp_NarehateHealing_TipRegenUnit2> parts/day</HediffComp_NarehateHealing_TipRegenUnit2>
+    <!-- <HediffComp_NarehateHealing_TipRegenUnit3> 处/小时</HediffComp_NarehateHealing_TipRegenUnit3> -->
+    <HediffComp_NarehateHealing_TipRegenUnit3> parts/hour</HediffComp_NarehateHealing_TipRegenUnit3>
+    <!-- <HediffComp_NarehateHealing_TipRegenUnit4> 秒/处</HediffComp_NarehateHealing_TipRegenUnit4> -->
+    <HediffComp_NarehateHealing_TipRegenUnit4> seconds/part</HediffComp_NarehateHealing_TipRegenUnit4>
+    <!-- <HediffComp_NarehateHealing_TipRegenUnit5> 处/秒</HediffComp_NarehateHealing_TipRegenUnit5> -->
+    <HediffComp_NarehateHealing_TipRegenUnit5> parts/sec</HediffComp_NarehateHealing_TipRegenUnit5>
+    <!-- <HediffComp_NarehateHealing_TipRegen>  - 魔女器官愈疗：</HediffComp_NarehateHealing_TipRegen> -->
+    <HediffComp_NarehateHealing_TipRegen>  - Witch organ regeneration:</HediffComp_NarehateHealing_TipRegen>
+    
     <!-- 魔女安息仪式：禁止原因 -->
     <!-- <Manosaba_SabbatReason_YukiExists>当前殖民地已存在{YUKI}。</Manosaba_SabbatReason_YukiExists> -->
     <Manosaba_SabbatReason_YukiExists>{YUKI} already exists in the current colony.</Manosaba_SabbatReason_YukiExists>

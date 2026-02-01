@@ -30,14 +30,18 @@ public class HediffComp_Progress : HediffComp
     private const float UpdatesPerDay = 60000f / TickInterval;
     private const float MinUpdatePerCall = 1e-7f;
 
-    public override void CompPostTick(ref float severityAdjustment)
+    public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
-        base.CompPostTick(ref severityAdjustment);
-        if (isFinished) return;
-        if (!Pawn.IsHashIntervalTick(TickInterval)) return;
-        UpdateSeverityBasedOnMood();        // 计算隐藏进度
-        TryTurnIntoNarehate();              // 转化魔女残骸
-        TryMentalBreak();                   // 触发魔女因子杀意
+        base.CompPostTickInterval(ref severityAdjustment, delta);
+
+        if (Pawn.IsHashIntervalTick(TickInterval, delta))
+        {
+            if (isFinished) return;
+            
+            UpdateSeverityBasedOnMood(); // 计算隐藏进度
+            TryTurnIntoNarehate(); // 转化魔女残骸
+            TryMentalBreak(); // 触发魔女因子杀意
+        }
     }
         
     // 显示当前数值 #.#E-#,#.#E-# 形式分别输出当前Severity和上一次更新变化量
@@ -65,14 +69,14 @@ public class HediffComp_Progress : HediffComp
         // 计算严重度变化
         _severityChange = GetSeverityChange(mood, minorThreshold);
         // 应用变化
-        parent.Severity = Mathf.Max(0f, Mathf.Min(parent.Severity + _severityChange, 1f));
-        if (parent.Severity >= 0.5f) isDisplay = true;
+        parent.Severity = Mathf.Max(MinUpdatePerCall, Mathf.Min(parent.Severity + _severityChange, 1f));
+        if (!isDisplay && parent.Severity >= 0.5f) isDisplay = true;
     }
     // 转化为魔女残骸
     private void TryTurnIntoNarehate()
     {
         // 如果已经达到 1.0 (100%), 尝试转化魔女残骸
-        if (parent.Severity <= 1.0f - MinUpdatePerCall) return;
+        if (parent.Severity < 1.0f) return;
         // 所有装别放进背包
         NarehateUtils.UnequipAll(Pawn);
         // 添加 魔女残骸 Hediff

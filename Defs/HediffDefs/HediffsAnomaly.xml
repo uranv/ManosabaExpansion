@@ -129,9 +129,16 @@
                 <showRemainingTime>true</showRemainingTime>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
+                <isOverride>true</isOverride>
                 <overrideHealFactor>2222</overrideHealFactor>
                 <overrideBloodFactor>2222</overrideBloodFactor>
-                <overrideRegenTick>60</overrideRegenTick>
+                <overrideRegenFactor>1</overrideRegenFactor>
+            </li>
+            <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
+                <isOverride>true</isOverride>
+                <overrideHealFactor>2222</overrideHealFactor>
+                <overrideBloodFactor>2222</overrideBloodFactor>
+                <overrideRegenFactor>1</overrideRegenFactor>
             </li>
         </comps>
     </HediffDef>

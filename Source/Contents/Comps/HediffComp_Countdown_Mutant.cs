@@ -19,25 +19,32 @@ public class HediffComp_Countdown_Mutant : HediffComp
     // 更新逻辑
     private const int TickInterval = 600; // 基础 Tick 间隔
     private const float UpdatesPerDay = 60000f / TickInterval; // 每更新频率
-    private float TickChange => Props.draftFactor / (ManosabaMod.Settings.mutantFullCircle * UpdatesPerDay);
+    private float TickChange => (Pawn.Drafted ? Props.draftFactor : 1f) / (ManosabaMod.Settings.mutantFullCircle * UpdatesPerDay);
+    public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+    {
+        base.CompPostTickInterval(ref severityAdjustment, delta);
+        // 每 600 Tick 更新倒计时
+        if (Pawn.IsHashIntervalTick(TickInterval, delta))
+        {
+            parent.Severity = Mathf.Max(0.0001f, Mathf.Min(parent.Severity - TickChange, 1f));
+        }
+    }
+
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
-        // 每 600 Tick 更新倒计时
-        if (Pawn.IsHashIntervalTick(TickInterval))
-        {
-            parent.Severity = Mathf.Max(parent.Severity-TickChange, 0.0001f);
-        }
         // 较小间隔维护精神状态
-        if (!Pawn.IsHashIntervalTick(300)) return;
-        switch (parent.Severity)
+        if (Pawn.IsHashIntervalTick(300))
         {
-            case > 0.005f when Pawn.InMentalState:
-                Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
-                break;
-            case <= 0.005f:
-                MaintainMentalState();
-                break;
+            switch (parent.Severity)
+            {
+                case > 0.001f when Pawn.InMentalState:
+                    Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+                    break;
+                case <= 0.001f:
+                    MaintainMentalState();
+                    break;
+            }
         }
     }
 
@@ -63,7 +70,7 @@ public class HediffComp_Countdown_Mutant : HediffComp
             true, // forced
             true, // forceWake
             false, //causedByMood
-            null, //PawnotherPawn
+            null, //otherPawn
             true // transitionSilently
         );
     }

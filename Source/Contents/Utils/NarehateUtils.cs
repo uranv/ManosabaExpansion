@@ -30,8 +30,11 @@ public static class NarehateUtils
         var pos = pawn.DrawPos;
         var map = pawn.Map;
 
-        // 中心闪光 (瞬间高亮)
-        FleckMaker.ThrowLightningGlow(pos, map, 3.0f);
+        // 血肉特效
+        EffecterDefOf.MeatExplosion.Spawn(pos.ToIntVec3(), pawn.Map);
+        
+        // // 中心闪光 (瞬间高亮)
+        // FleckMaker.ThrowLightningGlow(pos, map, 3.0f);
         // 爆发烟雾 (产生气浪感)
         for (var i = 0; i < 6; i++)
         {
@@ -39,21 +42,20 @@ public static class NarehateUtils
             FleckMaker.ThrowAirPuffUp(pos + offset, map);
         }
         // 能量粒子 (向四周飞溅)
-        for (var i = 0; i < 12; i++)
-        {
-            var data = FleckMaker.GetDataStatic(
-                pos, 
-                map, 
-                FleckDefOf.MicroSparks, 
-                Rand.Range(1.2f, 2.5f)
-            );
-            data.velocityAngle = Rand.Range(0, 360);
-            data.velocitySpeed = Rand.Range(1f, 4f);
-            map.flecks.CreateFleck(data);
-        }
-
+        // for (var i = 0; i < 12; i++)
+        // {
+        //     var data = FleckMaker.GetDataStatic(
+        //         pos, 
+        //         map, 
+        //         FleckDefOf.MicroSparks, 
+        //         Rand.Range(1.2f, 2.5f)
+        //     );
+        //     data.velocityAngle = Rand.Range(0, 360);
+        //     data.velocitySpeed = Rand.Range(1f, 4f);
+        //     map.flecks.CreateFleck(data);
+        // }
         // 音效
-        SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(pawn);
+        // SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(pawn);
     }
 
     /// <summary>

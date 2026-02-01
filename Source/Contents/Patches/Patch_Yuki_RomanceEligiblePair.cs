@@ -63,16 +63,13 @@ public static class Patch_RomanceEligiblePair_Prefix
         {
             return targetReport;
         }
-            
-        // 【昂贵检查区】
-
-        // 可达性检查 (寻路，较慢)
+        // 可达性检查
         if ((!forOpinionExplanation && !initiator.CanReach(target, PathEndMode.Touch, Danger.Deadly)) ||
             target.IsForbidden(initiator))
         {
             return "CantRomanceTargetUnreachable".Translate();
         }
-        // 成功率检查 (非常慢，涉及大量 Def 遍历和计算)
+        // 成功率检查
         if (!forOpinionExplanation && InteractionWorker_RomanceAttempt.SuccessChance(initiator, target, 1f) <= 0f)
         {
             return "CantRomanceTargetZeroChance".Translate();

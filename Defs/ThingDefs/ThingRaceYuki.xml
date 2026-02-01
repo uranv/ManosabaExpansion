@@ -49,11 +49,11 @@
             <li Class="UranvManosaba.Contents.Comps.CompProperties_YukiHair">
                 <!-- 前头发 -->
                 <texPathFront>things/pawn/humanlike/yuki/hair_front/hair</texPathFront>
-                <layerFront>100</layerFront>
+                <layerFront>89.1</layerFront>
                 <drawSizeFront>(1.25,1.25)</drawSizeFront>
                 <!-- 后头发 -->
                 <texPathBack>things/pawn/humanlike/yuki/hair_back/hair</texPathBack>
-                <layerBack>1</layerBack>
+                <layerBack>-0.1</layerBack>
                 <drawSizeBack>(1.25,1.25)</drawSizeBack>
             </li>
         </comps>

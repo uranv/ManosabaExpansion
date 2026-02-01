@@ -15,8 +15,8 @@
     <UmHediffMutantDraft.label>征召指令</UmHediffMutantDraft.label>
     <UmHediffMutantDraft.description>受控的残骸处于征召状态。\n\n她的战斗能力显著增强，但是失控倒计时加速 1.5 倍。</UmHediffMutantDraft.description>
 
-    <UmHediffMutantHealingAbility.label>极速治疗</UmHediffMutantHealingAbility.label>
-    <UmHediffMutantHealingAbility.description>体内的魔女因子被激发至极限，获得了超乎想象的愈合能力。</UmHediffMutantHealingAbility.description>
+    <UmHediffMutantHealingAbility.label>极速愈疗</UmHediffMutantHealingAbility.label>
+    <UmHediffMutantHealingAbility.description>体内的魔女因子被激发至极限，获得了超乎想象的自愈能力。</UmHediffMutantHealingAbility.description>
 
 
 </LanguageData>

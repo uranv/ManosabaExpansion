@@ -99,19 +99,31 @@
         <!-- Rendering -->
         <renderNodeProperties>
             <li>
-                <nodeClass>UranvManosaba.Contents.Visuals.PawnRenderNode_NarehateMutant</nodeClass>
-                <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateBody</workerClass>
-                <texPath>things/pawn/humanlike/narehate/body</texPath>
-                <baseLayer>10</baseLayer>
+                <debugLabel>Narehate_Body</debugLabel>
+                <workerClass>PawnRenderNodeWorker_Body</workerClass>
+                <nodeClass>PawnRenderNode</nodeClass>
                 <tagDef>Body</tagDef>
+                <baseLayer>0</baseLayer>
+                <overlayLayer>Body</overlayLayer>
+                <texPath>things/pawn/humanlike/narehate/body</texPath>
+                <pawnType>Any</pawnType>
+                <useRottenColor>false</useRottenColor>
+                <useSkinShader>false</useSkinShader>
+                <colorType>Custom</colorType>
             </li>
             <li>
-                <nodeClass>UranvManosaba.Contents.Visuals.PawnRenderNode_NarehateMutant</nodeClass>
-                <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateHead</workerClass>
-                <texPath>things/pawn/humanlike/narehate/head</texPath>
-                <baseLayer>50</baseLayer>
+                <debugLabel>Narehate_Head</debugLabel>
+                <workerClass>PawnRenderNodeWorker_Head</workerClass>
+                <nodeClass>PawnRenderNode</nodeClass>
                 <tagDef>Head</tagDef>
                 <parentTagDef>Body</parentTagDef>
+                <baseLayer>50</baseLayer>
+                <overlayLayer>Head</overlayLayer>
+                <texPath>things/pawn/humanlike/narehate/head</texPath>
+                <pawnType>Any</pawnType>
+                <useRottenColor>false</useRottenColor>
+                <useSkinShader>false</useSkinShader>
+                <colorType>Custom</colorType>
             </li>
         </renderNodeProperties>
         <!--whitelistedFloatMenuProviders-->

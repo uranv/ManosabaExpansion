@@ -47,7 +47,7 @@ public class ManosabaModSettings : ModSettings
 
 
     // 其他设置
-    public float inverseTemperature = 5f;  // Manosaba_Utils
+    public float inverseTemperature = 3f;  // Manosaba_Utils
     public bool allowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
     public bool disableTale = false;  // Grammar_Utils
 
@@ -70,7 +70,7 @@ public class ManosabaModSettings : ModSettings
         Scribe_Values.Look(ref narehateHealFactor, "narehateHealFactor", 500f);
         Scribe_Values.Look(ref narehateBloodHealFactor, "narehateBloodHealFactor", 67f);
         Scribe_Values.Look(ref isNarehateBloodHeal, "isNarehateBloodHeal", true);
-        Scribe_Values.Look(ref narehateDownedDivisor, "narehateDownedDivisor", 5f);
+        Scribe_Values.Look(ref narehateDownedDivisor, "narehateDownedDivisor", 3f);
         Scribe_Values.Look(ref isNarehateDownedDivisor, "isNarehateDownedDivisor", true);
         Scribe_Values.Look(ref postHealMultiplier, "postHealMultiplier", 0.22f);
         Scribe_Values.Look(ref postAllowHeal, "postAllowHeal", true);
@@ -597,7 +597,7 @@ public class ManosabaMod : Mod
             Settings.narehateHealFactor = 500f;
             Settings.narehateBloodHealFactor = 67f;
             Settings.isNarehateBloodHeal = true;
-            Settings.narehateDownedDivisor = 5f;
+            Settings.narehateDownedDivisor = 3f;
             Settings.isNarehateDownedDivisor = true;
             Settings.postHealMultiplier = 0.22f;
             SoundDefOf.Click.PlayOneShotOnCamera();

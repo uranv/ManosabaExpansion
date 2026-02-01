@@ -13,7 +13,7 @@
     <UmAbilityMutantLongjump.description>命令残骸利用其超凡的身体能力跳跃到远处，消耗微量洗脑控制时间。</UmAbilityMutantLongjump.description>
     <UmAbilityMutantLongjump.verbProperties.label>跳跃</UmAbilityMutantLongjump.verbProperties.label>
 
-    <UmAbilityMutantHealing.label>极速治疗</UmAbilityMutantHealing.label>
-    <UmAbilityMutantHealing.description>将受控制的残骸体内的魔女因子激发至极限，获得超乎想象的愈合能力，即使失去知觉仍然可以使用，代价是消耗大量洗脑控制时间。</UmAbilityMutantHealing.description>
+    <UmAbilityMutantHealing.label>极速愈疗</UmAbilityMutantHealing.label>
+    <UmAbilityMutantHealing.description>将受控制的残骸体内的魔女因子激发至极限，获得超乎想象的自愈能力，即使失去知觉仍然可以使用，代价是消耗大量洗脑控制时间。</UmAbilityMutantHealing.description>
 
 </LanguageData>
