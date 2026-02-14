@@ -72,7 +72,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
                 SoundDef.Named("PsychicSootheGlobal").PlayOneShotOnCamera(map);
                 // 更新 CompYukiVisitor 状态
                 var comp = pawn.GetComp<Comp_YukiVisitor>();
-                comp?.Notify_isFinished(pawn, true);
+                comp?.Notify_Finished(pawn, true);
             }
             // 解除隐身
             var invisibleHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(invisibleDef);
@@ -130,7 +130,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
         yield return Toils_General.Do(delegate
         {
             var comp = pawn.GetComp<Comp_YukiVisitor>();
-            comp?.YukiLeaveMap();
+            comp?.Notify_LeaveMap();
         });
     }
 }

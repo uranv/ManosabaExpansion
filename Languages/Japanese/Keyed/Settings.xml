@@ -170,9 +170,9 @@
     <!-- <ManosabaSettings_Sabbat_thresholds_Desc_1>- 这些阈值决定了魔女安息仪式中召唤出{YUKI}的装备品质偏移效果与仪式品质的对应关系</ManosabaSettings_Sabbat_thresholds_Desc_1> -->
     <ManosabaSettings_Sabbat_thresholds_Desc_1>- これらのしきい値は、サバトの儀式で召喚される{YUKI}の装備の品質補正と、儀式の質の対応関係を決定します。</ManosabaSettings_Sabbat_thresholds_Desc_1>
     <!-- <ManosabaSettings_Sabbat_thresholds_Desc_2>- 仪式品质高于对应阈值时，召唤的装备品质相对消耗献祭物品品质应用对应的偏移效果</ManosabaSettings_Sabbat_thresholds_Desc_2> -->
-    <ManosabaSettings_Sabbat_thresholds_Desc_2>- 儀式の質が対応するしきい値を上回った場合、召喚される装備の品質は、捧げられた物品の品質に対して対応する補正を受けます。</ManosabaSettings_Sabbat_thresholds_Desc_2>
+    <ManosabaSettings_Sabbat_thresholds_Desc_2>- 儀式の質が対応するしきい値を上回った場合、召喚される装備の品質は、捧げられた物品の品質に対して対応する補正を受け\nます。</ManosabaSettings_Sabbat_thresholds_Desc_2>
     <!-- <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例如使用 极佳(+4) 品质的仪式剑，以 86% (默认阈值时+1) 的仪式质量，召唤出的{YUKI}会持有 大师(+5) 品质的装备</ManosabaSettings_Sabbat_thresholds_Desc_3> -->
-    <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例：秀品(+4)品質の儀礼剣を使用し、儀式の質が86%（デフォルトの+1しきい値）の場合、召喚される{YUKI}は名品(+5)品質の装備を所持します。</ManosabaSettings_Sabbat_thresholds_Desc_3>
+    <ManosabaSettings_Sabbat_thresholds_Desc_3>- 例：秀品(+4)品質の儀礼剣を使用し、儀式の質が86%（デフォルトの+1しきい値）の場合、召喚される{YUKI}は名品(+5)品\n質の装備を所持します。</ManosabaSettings_Sabbat_thresholds_Desc_3>
 
     <!-- <ManosabaSettings_ResetRitualTab>重置本页设置为默认值</ManosabaSettings_ResetRitualTab> -->
     <ManosabaSettings_ResetRitualTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetRitualTab>
@@ -184,9 +184,9 @@
     <!-- <ManosabaSettings_inverseTemperature_Desc_1>• 此参数影响通过随机分布选择目标时的选择倾向</ManosabaSettings_inverseTemperature_Desc_1> -->
     <ManosabaSettings_inverseTemperature_Desc_1>• このパラメータは、ランダム分布によるターゲット選択時の傾向に影響します。</ManosabaSettings_inverseTemperature_Desc_1>
     <!-- <ManosabaSettings_inverseTemperature_Desc_2>• 数值较大时，随机分布倾向于选择"与其他殖民者关系更差"的殖民者；数值较小时，倾向于选择"与其他殖民者关系更好"的殖民者；\n绝对值越小越接近平均分布</ManosabaSettings_inverseTemperature_Desc_2> -->
-    <ManosabaSettings_inverseTemperature_Desc_2>• 値が大きいほど「他の入植者との関係が悪い」入植者が選ばれやすく、小さいほど「関係が良い」入植者が選ばれやすくなります。\n絶対値が小さいほど平均的な分布に近づきます。</ManosabaSettings_inverseTemperature_Desc_2>
+    <ManosabaSettings_inverseTemperature_Desc_2>• 値が大きいほど「他の入植者との関係が悪い」入植者が選ばれやすく、小さいほど「関係が良い」入植者が選ばれやすくなり\nます。絶対値が小さいほど平均的な分布に近づきます。</ManosabaSettings_inverseTemperature_Desc_2>
     <!-- <ManosabaSettings_inverseTemperature_Desc_3>• 随机选择器使用玻尔兹曼分布，将"对于其他殖民者关系之和"归一化视为能量，此参数即为逆温度</ManosabaSettings_inverseTemperature_Desc_3> -->
-    <ManosabaSettings_inverseTemperature_Desc_3>• ランダムセレクターはボルツマン分布を使用しており、「他の入植者との関係の総和」を正規化してエネルギーと見なしています。このパラメータは逆温度に相当します。</ManosabaSettings_inverseTemperature_Desc_3>
+    <ManosabaSettings_inverseTemperature_Desc_3>• ランダムセレクターはボルツマン分布を使用しており、「他の入植者との関係の総和」を正規化してエネルギーと見なしていま\nす。このパラメータは逆温度に相当します。</ManosabaSettings_inverseTemperature_Desc_3>
     <!-- <ManosabaSettings_inverseTemperature_Desc_4>• 设定上，魔女因子的传播和"心情"相关，那么这里通过关系总和来量化传播概率似乎很合理 :D</ManosabaSettings_inverseTemperature_Desc_4> -->
     <ManosabaSettings_inverseTemperature_Desc_4>• 設定上、魔女の因子の伝播は「気分」に関連しているため、関係の総和で伝播確率を定量化するのは合理的でしょう :D</ManosabaSettings_inverseTemperature_Desc_4>
     
@@ -198,10 +198,19 @@
     <ManosabaSettings_allowMutantAssignTab_Desc_2>• デフォルトで無効。この設定を変更した場合、ゲームの再起動が必要です。</ManosabaSettings_allowMutantAssignTab_Desc_2>
     
     <!-- <ManosabaSettings_disableTale>禁用月代雪对话使用故事</ManosabaSettings_disableTale> -->
-    <ManosabaSettings_disableTale>月代ユキの会話での物語使用を無効化</ManosabaSettings_disableTale>
+    <ManosabaSettings_disableTale>(互換性) 月代ユキの会話での物語使用を無効化</ManosabaSettings_disableTale>
     <!-- <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需禁用。</ManosabaSettings_disableTale_Desc_1> -->
-    <ManosabaSettings_disableTale_Desc_1>• セーブデータの入植者ログに既にエラー記録が存在する場合、会話で物語記録を使用して内容を生成する際にクラッシュする問題を回避するためのものです。通常は無効にする必要はありません。</ManosabaSettings_disableTale_Desc_1>
+    <ManosabaSettings_disableTale_Desc_1>• セーブデータの入植者ログに既にエラー記録が存在する場合、会話で物語記録を使用して内容を生成する際にクラッシュする問\n題を回避するためのものです。通常は無効にする必要はありません。</ManosabaSettings_disableTale_Desc_1>
+    <!-- <ManosabaSettings_useUniqueBodyType>(兼容选项)生成月代雪使用独特体型</ManosabaSettings_useUniqueBodyType> -->
+    <ManosabaSettings_useUniqueBodyType>(互換性) 月代ユキの生成時に独自の体型を使用する</ManosabaSettings_useUniqueBodyType>
+    <!-- <ManosabaSettings_useUniqueBodyType_Desc_1>• 用于解决使用部分体型贴图替换时，与月代雪服装贴图冲突问题。由于会不可避免地影响其他服装贴图，非冲突时无需选择。</ManosabaSettings_useUniqueBodyType_Desc_1> -->
+    <ManosabaSettings_useUniqueBodyType_Desc_1>• 一部の体型テクスチャ変更Modを使用する際、月代ユキの衣服テクスチャと競合する問題を解決するための設定です。他の衣服\nテクスチャにも避けられない影響を与えるため、競合が発生していない場合は有効にしないでください。</ManosabaSettings_useUniqueBodyType_Desc_1>
+    <!-- <ManosabaSettings_useUniqueBodyType_Desc_2>• 选项仅在*生成月代雪*时生效，对于已生成的角色无效。</ManosabaSettings_useUniqueBodyType_Desc_2> -->
+    <ManosabaSettings_useUniqueBodyType_Desc_2>• このオプションは*月代ユキの生成時*にのみ適用され、既に生成されたキャラクターには影響しません。</ManosabaSettings_useUniqueBodyType_Desc_2>
     
+    
+
+
     <!-- <ManosabaSettings_ResetMiscTab>重置本页设置为默认值</ManosabaSettings_ResetMiscTab> -->
     <ManosabaSettings_ResetMiscTab>このページの値をデフォルトにリセット</ManosabaSettings_ResetMiscTab>
 

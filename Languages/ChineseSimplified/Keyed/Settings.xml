@@ -115,11 +115,15 @@
     
     <ManosabaSettings_allowMutantAssignTab>为魔女残骸启用方案管理</ManosabaSettings_allowMutantAssignTab>
     <ManosabaSettings_allowMutantAssignTab_Desc_1>• 启用时，魔女残骸的变种人将加入"方案"管理界面。</ManosabaSettings_allowMutantAssignTab_Desc_1>
-    <ManosabaSettings_allowMutantAssignTab_Desc_2>• 默认禁用方案。改变此选项时，需要重启游戏生效。</ManosabaSettings_allowMutantAssignTab_Desc_2>
+    <ManosabaSettings_allowMutantAssignTab_Desc_2>• 默认禁用方案。改变此选项时，需要*重启游戏生效*。</ManosabaSettings_allowMutantAssignTab_Desc_2>
 
-    <ManosabaSettings_disableTale>禁用月代雪对话使用故事</ManosabaSettings_disableTale>
-    <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需禁用。</ManosabaSettings_disableTale_Desc_1>
-    
+    <ManosabaSettings_disableTale>(兼容选项)禁用月代雪对话使用故事</ManosabaSettings_disableTale>
+    <ManosabaSettings_disableTale_Desc_1>• 用于拯救存档中殖民者日志已经存在错误记录时，对话使用故事记录生成内容的崩溃问题，正常使用无需选择。</ManosabaSettings_disableTale_Desc_1>
+    <ManosabaSettings_useUniqueBodyType>(兼容选项)生成月代雪使用独特体型</ManosabaSettings_useUniqueBodyType>
+    <ManosabaSettings_useUniqueBodyType_Desc_1>• 用于解决使用部分体型贴图替换时，与月代雪服装贴图冲突问题。由于会不可避免地影响其他服装贴图，非冲突时无需选择。</ManosabaSettings_useUniqueBodyType_Desc_1>
+    <ManosabaSettings_useUniqueBodyType_Desc_2>• 选项仅在*生成月代雪*时生效，对于已生成的角色无效。</ManosabaSettings_useUniqueBodyType_Desc_2>
+
+
     <ManosabaSettings_ResetMiscTab>重置本页设置为默认值</ManosabaSettings_ResetMiscTab>
 
 </LanguageData>

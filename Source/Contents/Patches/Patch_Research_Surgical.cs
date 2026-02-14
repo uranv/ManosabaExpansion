@@ -21,8 +21,8 @@ public static class Patch_SurgicalInspection
         ResearchUtils.UnlockResearchPrereqs();
         // 设置魔女因子为可见
         Comps.HediffComp_HumanDummy.SetDummyShouldDisplay(pawn);
-        var visibleHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffHumanVisible);
-        if (visibleHediff == null)
+        var visibleHediff = pawn.health?.hediffSet?.HasHediff(ModDefOf.UmHediffHumanVisible);
+        if (visibleHediff is null or false)
         {
             pawn.health?.AddHediff(ModDefOf.UmHediffHumanVisible);
         }

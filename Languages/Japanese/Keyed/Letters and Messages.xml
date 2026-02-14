@@ -19,8 +19,8 @@
     <!-- <Manosaba_ResearchUnlocked_Text>通过近期的种种异常现象，你获得了新的见解。你发现同时解锁了魔女因子，现在可以进行以下的研究研究项目:\n\n - 检查魔女的方法</Manosaba_ResearchUnlocked_Text> -->
     <!-- Letter Surgical Inspections -->
     <Manosaba_ResearchUnlocked_Text>最近の様々な異常現象を通じて、新たな知見を得た。魔女の因子を発見し、以下の研究プロジェクトが可能になった：\n\n - 魔女を見つける方法</Manosaba_ResearchUnlocked_Text>
-    <!-- <Manosaba_SurgicalInspection_Label>手术检测：魔女因子</Manosaba_SurgicalInspection_Label> -->
-    <Manosaba_SurgicalInspection_Label>外科調査の結果：魔女因子</Manosaba_SurgicalInspection_Label>
+    <!-- <Manosaba_SurgicalInspection_Label>发现魔女因子</Manosaba_SurgicalInspection_Label> -->
+    <Manosaba_SurgicalInspection_Label>魔女因子の検知</Manosaba_SurgicalInspection_Label>
     <!-- <Manosaba_SurgicalInspection_Text>{DOCTOR_labelShort}对{PATIENT_labelShort}进行了详细的外科检查。\n\n检查结果令人不安：{PATIENT_labelShort}确实携带有魔女因子。虽然目前侵蚀程度尚浅，但是{PATIENT_labelShort}终有一日会成为为殖民地带来灾厄的魔女。</Manosaba_SurgicalInspection_Text> -->
     <Manosaba_SurgicalInspection_Text>{DOCTOR_nameDef}は{PATIENT_nameDef}の外科調査を行いました.\n\n検査結果は不安なものだった。{PATIENT_labelShort}は確かに魔女の因子を宿している。現在の浸食の程度はまだ浅いが、{PATIENT_labelShort}はいずれコロニーに災厄をもたらす魔女となるだろう。</Manosaba_SurgicalInspection_Text>
     <!-- Letter Mental State -->

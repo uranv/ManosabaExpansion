@@ -43,6 +43,7 @@ public static class ModDefOf
     public static ThingDef UmThingMoteSabbat;
     public static FleckDef UmFleckSabbatBlood;
     public static SoundDef UmSound_gDie_Divil_JIO;
+    public static BodyTypeDef UmBodyTypeYuki;
     
     // MutantDefs
     public static MutantDef UmMutantNarehate;

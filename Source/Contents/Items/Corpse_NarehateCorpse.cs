@@ -1,4 +1,5 @@
 using RimWorld;
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Items;
@@ -18,6 +19,7 @@ public class Corpse_NarehateCorpse : Corpse
     public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
         base.SpawnSetup(map, respawningAfterLoad);
+        DefGenerator_NarehateCorpse.RefreshAllStorageSettings();  // 实例化尸体时刷新储存区域清单 v1.0.6
         if (respawningAfterLoad) return;
         
         // 解锁图鉴: 魔女残骸的尸体

@@ -1,3 +1,4 @@
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -119,6 +120,8 @@ public static class RandomSelector
         }
         var candidates = map.mapPawns.FreeColonistsSpawned
             .Where(p => 
+                !p.IsQuestLodger() &&  // 排除任务成员 v1.0.6
+                !p.IsSlaveOfColony &&  // 排除奴隶成员 v1.0.6
                 !p.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy)&&
                 !p.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy))
             .ToList();

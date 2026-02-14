@@ -182,4 +182,25 @@ public static class DefGenerator_NarehateCorpse
             }
         }
     }
+    
+    public static void RefreshAllStorageSettings()
+    {
+        foreach (var map in Find.Maps)
+        {
+            // 刷新区域
+            foreach (var zone in map.zoneManager.AllZones)
+            {
+                if (zone is not Zone_Stockpile stockpile) continue;
+                stockpile.settings?.filter?.RecalculateDisplayRootCategory();
+            }
+            // 刷新储存建筑
+            foreach (var thing in map.spawnedThings)
+            {
+                if (thing is not Building_Storage storage) continue;
+                var settings = storage.GetStoreSettings();
+                settings?.filter?.RecalculateDisplayRootCategory();
+            }
+            
+        }
+    }
 }

@@ -78,7 +78,8 @@ public static class YukiGeneralUtils
         // 外观
         p.story.hairDef = HairDefOf.Bald;
         p.story.HairColor = Color.white;// Color(233/255f,236/255f,254/255f);
-        p.story.bodyType = BodyTypeDefOf.Thin;
+        // p.story.bodyType = BodyTypeDefOf.Thin;
+        p.story.bodyType = ManosabaMod.Settings.useUniqueBodyType? ModDefOf.UmBodyTypeYuki : BodyTypeDefOf.Thin;  // 默认直接使用Thin体型，兼容选项使用独立体型 v1.0.6
         p.story.skinColorOverride = Color.white;//new Color(251/255f,254/255f,255/255f);
         p.story.headType = ModDefOf.UmHeadTypeYuki;
         if (p.style != null)
@@ -126,32 +127,23 @@ public static class YukiGeneralUtils
         p.apparel.Wear((Apparel)cloth, locked: true);
         // 添加 Hediff
         p.health.AddHediff(ModDefOf.UmHediffYukiDummy);
-        //if (!isColonist)
-        //{
-        //    p.health.AddHediff(ModDefOf.UmHediffYukiVisitor);
-        //    p.health.AddHediff(ModDefOf.UmHediffYukiVisitorHidden);
-        //}
-        //else
-        //{
-        //    p.health.AddHediff(ModDefOf.UmHediffYukiColonist);
-        //    p.health.AddHediff(ModDefOf.UmHediffYukiColonistHidden);
-        //}
+
         // 非殖民者添加对话组件
-        if (!isColonist && !p.HasComp<Comp_YukiVisitor>())
-        {
-            var comps = AccessTools.FieldRefAccess<ThingWithComps, List<ThingComp>>("comps")(p);
-            
-            var newComp = new Comp_YukiVisitor();
-            newComp.parent = p; 
-            var props = new CompProperties_YukiVisitor(); 
-            newComp.Initialize(props);
-            comps.Add(newComp);
-            
-            if (p.Spawned)
-            {
-                newComp.PostSpawnSetup(false);
-            }
-        }
+        // if (!isColonist && !p.HasComp<Comp_YukiVisitor>())
+        // {
+        //     var comps = AccessTools.FieldRefAccess<ThingWithComps, List<ThingComp>>("comps")(p);
+        //     
+        //     var newComp = new Comp_YukiVisitor();
+        //     newComp.parent = p; 
+        //     var props = new CompProperties_YukiVisitor(); 
+        //     newComp.Initialize(props);
+        //     comps.Add(newComp);
+        //     
+        //     if (p.Spawned)
+        //     {
+        //         newComp.PostSpawnSetup(false);
+        //     }
+        // }
         
     }
     // 检查 Name

@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <AssemblyName>UranvManosaba</AssemblyName>
-        <AssemblyVersion>1.0.5</AssemblyVersion>
+        <AssemblyVersion>1.0.6</AssemblyVersion>
         <RootNamespace>UranvManosaba</RootNamespace>
         <LangVersion>10</LangVersion>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>

@@ -66,8 +66,6 @@ public static class ResearchUtils
             }
 
             // 发送信号
-            // 虽然不是必须的, 但某些任务或脚本可能会监听这个信号
-            // 由于我们跳过了 SetDiscovered, 如果想保持最大兼容性, 可以手动发一下（不会触发信件）
             Find.SignalManager.SendSignal(new Signal(EntityCodex.EntityDiscoveredSignal, global: true));
                 
             // 调试日志

@@ -16,7 +16,8 @@ public static class Patch_NarehateVisuals
         {
             if (typeof(PawnRenderNode).IsAssignableFrom(type) && !type.IsAbstract)
             {
-                var method = AccessTools.Method(type, "GraphicFor");
+                // 仅匹配 GraphicFor(Pawn p)的方法 (v1.0.6 26-02-13)
+                var method = AccessTools.Method(type, "GraphicFor", new Type[] { typeof(Pawn) });
                 if (method != null && method.DeclaringType == type)
                 {
                     if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Patch Success: {type.Name} (Patches.Patch_NarehateVisuals.TargetMethods)");

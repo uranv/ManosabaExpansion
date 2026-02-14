@@ -70,9 +70,7 @@
     <!-- <Manosaba_CompYukiVisitor_level_5>{0_nameDef}似乎被你的选择逗笑了。</Manosaba_CompYukiVisitor_level_5> -->
     <Manosaba_CompYukiVisitor_level_5>{0_nameDef} seems amused by your choice.</Manosaba_CompYukiVisitor_level_5>
     <!-- <Manosaba_CompYukiVisitor_level_5_choice_1>有意思，我还要再听一个故事！</Manosaba_CompYukiVisitor_level_5_choice_1> -->
-    <Manosaba_CompYukiVisitor_level_5_choic_1>Interesting, I want to hear another story!
-    
-    </Manosaba_CompYukiVisitor_level_5_choice_1>
+    <Manosaba_CompYukiVisitor_level_5_choic_1>Interesting, I want to hear another story!</Manosaba_CompYukiVisitor_level_5_choice_1>
     <!-- <Manosaba_CompYukiVisitor_level_5_choice_2>无聊，我听够了。你去做你自己的事情吧！</Manosaba_CompYukiVisitor_level_5_choice_2> -->
     <Manosaba_CompYukiVisitor_level_5_choice_2>Boring, I've heard enough. Go do your own thing!</Manosaba_CompYukiVisitor_level_5_choice_2>
     <!-- 对话层级 6 -->

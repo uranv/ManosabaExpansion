@@ -101,4 +101,30 @@ public class HediffComp_YukiDummy : HediffComp
         var gene = Pawn?.genes?.GetGene(ModDefOf.UmGeneFactor);
         if (gene != null) Pawn.genes.RemoveGene(gene);
     }
+    
+    
+    private Comp_YukiVisitor _cachedComp;
+    private Comp_YukiVisitor CachedComp
+    {
+        get
+        {
+            _cachedComp ??= Pawn.TryGetComp<Comp_YukiVisitor>();
+            return _cachedComp;
+        }
+    }
+    public override string CompTipStringExtra
+    {
+        get
+        {
+            const string tipString = "Comp_YukiVisitor:";
+            if (CachedComp is null) return tipString + " is null";
+            if (Pawn.IsColonist) return tipString + " is colonist";
+            var interactionSteps = "\n  - interactionSteps = " + CachedComp.interactionSteps.ToString("F0");
+            var isTale = "\n  - isTale = " + CachedComp.isTale;
+            var isCasted = "\n  - isCasted = " + CachedComp.isCasted;
+            var isWorking = "\n  - isWorking = " + CachedComp.isWorking;
+            var isInfLevel = "\n  - isInfLevel = " + CachedComp.isInfLevel;
+            return tipString + interactionSteps + isTale + isCasted + isWorking + isInfLevel;
+        }
+    }
 }

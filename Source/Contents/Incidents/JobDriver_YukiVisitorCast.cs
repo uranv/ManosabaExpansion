@@ -53,7 +53,7 @@ public class JobDriver_YukiVisitorCast : JobDriver
             SoundDef.Named("PsychicSootheGlobal").PlayOneShotOnCamera(pawn.Map);
             // 更新 CompYukiVisitor 状态
             var comp = pawn.GetComp<Comp_YukiVisitor>();
-            comp?.Notify_isFinished(pawn);
+            comp?.Notify_Finished(pawn);
         });
     }
 }

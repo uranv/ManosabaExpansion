@@ -50,6 +50,7 @@ public class ManosabaModSettings : ModSettings
     public float inverseTemperature = 3f;  // Manosaba_Utils
     public bool allowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
     public bool disableTale = false;  // Grammar_Utils
+    public bool useUniqueBodyType = false; // YukiGeneralUtils
 
         
     public override void ExposeData()
@@ -85,6 +86,7 @@ public class ManosabaModSettings : ModSettings
         Scribe_Values.Look(ref inverseTemperature, "inverseTemperature", 5f);
         Scribe_Values.Look(ref allowMutantAssignTab, "allowMutantAssignTab", false);
         Scribe_Values.Look(ref disableTale, "disableTale", false);
+        Scribe_Values.Look(ref useUniqueBodyType, "useUniqueBodyType", false);
         // 临时设置
         base.ExposeData();
     }
@@ -766,7 +768,19 @@ public class ManosabaMod : Mod
         GUI.color = Color.white;
         list.Outdent(20f);
         list.Gap(listGap);
-
+        
+        // 月代雪使用独立体型
+        list.CheckboxLabeled(
+            "ManosabaSettings_useUniqueBodyType".Translate(),
+            ref Settings.useUniqueBodyType
+        );
+        list.Indent(20f);
+        GUI.color = _lightGray;
+        list.Label("ManosabaSettings_useUniqueBodyType_Desc_1".Translate());
+        list.Label("ManosabaSettings_useUniqueBodyType_Desc_2".Translate());
+        GUI.color = Color.white;
+        list.Outdent(20f);
+        list.Gap(listGap);
 
         // 重置本页
         string buttonLabel = "ManosabaSettings_ResetMiscTab".Translate();
