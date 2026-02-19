@@ -10,11 +10,22 @@ public static class Patch_CanDrawTryRomance_Prefix
 {
     public static bool Prefix(Pawn pawn, ref bool __result)
     {
-        if (__result) return true;
+        if (__result)
+        {
+            return true;
+        }
+        if (!pawn.Spawned || pawn.Dead)
+        {
+            return true;
+        }
+        
         var thisIsYuki = pawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
                          pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
-        if (!thisIsYuki) return true;
-        if (!pawn.Spawned || pawn.Dead) return true;
+        if (!thisIsYuki)
+        {
+            return true;
+        }
+
         __result = true;
         return false;
     }

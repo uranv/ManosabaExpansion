@@ -42,41 +42,29 @@ public static class Patch_Pawn_Kill
         var hasHumanDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy);
         var hasMutantDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffMutantDummy);
         var hasYukiDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy);
-            
+        
+        if (!hasHumanDummy && !hasMutantDummy && !hasYukiDummy) return true;
+        
         var hasNarehate = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate)||
                           __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehateHidden);
         var hasPotion = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffTredecim);
+        
         // 月代雪：判定死亡时不死直接离开地图
         if (hasYukiDummy)
         {
-            // 发信
-            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] {__instance.LabelShort} left due to: lethal damage (Patches.Patch_Pawn_Kill)");
-            var letterLabel = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
-            var letterText = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterText".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
-            // 无地图时直接离开
-            if (__instance is { Map: null })
-            {
-                Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent);
-                __instance.GetLord()?.Notify_PawnLost(__instance, PawnLostCondition.LeftVoluntarily, null);
-                __instance.DeSpawn();
-            }
-            // 有地图时放下全部装备，播放特效并离开
-            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(__instance.Position, __instance.Map));
-            if (__instance.IsColonist) Utils.NarehateUtils.UnequipAll(__instance, false);
-            // var mode = __instance.IsColonist ? DestroyMode.KillFinalize : DestroyMode.Vanish;
-            Utils.YukiGeneralUtils.LeaveMapInstantly(__instance);
+            OnKillYuki(__instance);
             return false;
         }
             
         // 拥有 魔女残骸 Hediff, 且没有 B水 Hediff, 则阻止死亡指令
         if (hasNarehate && !hasPotion )
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patches.Patch_Pawn_Kill)");
+            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patch_Pawn_Kill)");
             return false; 
         }
             
         // 拥有 B水 Hediff 且拥有魔女因子, 则死亡判定时额外效果触发
-        if (!hasPotion || (!hasHumanDummy && !hasMutantDummy)) return true;
+        if (!hasPotion) return true;
         // 添加 晶体化眼 Hediff
         if (!__instance.health.hediffSet.HasHediff(ModDefOf.UmHediffCrystallized))
         {
@@ -86,6 +74,29 @@ public static class Patch_Pawn_Kill
         Utils.RandomSelector.TryAddDummyToRandomPawnOnMap(__instance.Map, 1, ManosabaMod.Settings.inverseTemperature);
         return true;
     }
+
+    private static void OnKillYuki(Pawn pawn)
+    {
+        // 发信
+        if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] {pawn.LabelShort} left due to: lethal damage (Patch_Pawn_Kill)");
+        var letterLabel = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
+        var letterText = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterText".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
+        // 无地图时直接离开
+        if (pawn is { Map: null })
+        {
+            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent);
+            pawn.GetLord()?.Notify_PawnLost(pawn, PawnLostCondition.LeftVoluntarily, null);
+            pawn.DeSpawn();
+        }
+        // 有地图时放下全部装备，播放特效并离开
+        else
+        {
+            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(pawn.Position, pawn.Map));
+            if (pawn.IsColonist) Utils.NarehateUtils.UnequipAll(pawn, false);
+            // var mode = __instance.IsColonist ? DestroyMode.KillFinalize : DestroyMode.Vanish;
+            Utils.YukiGeneralUtils.LeaveMapInstantly(pawn);
+        }
+    }
 }
     
 // Patch: 阻止魔女残骸倒地时持续起身的消息轰炸
@@ -94,16 +105,35 @@ public static class Patch_SilenceUndownedMessage
 {
     public static bool Prefix(string text, LookTargets lookTargets, MessageTypeDef def)
     {
-        if (def != MessageTypeDefOf.PositiveEvent) return true;
-        if (lookTargets.targets is not { Count: > 0 }) return true;
+        if (def != MessageTypeDefOf.PositiveEvent)
+        {
+            return true;
+        }
+        if (lookTargets is { targets: not { Count: > 0 } })
+        {
+            return true;
+        }
+        if (text is { Length: > 0 })
+        {
+            return true;
+        }
+        
         foreach (var target in lookTargets.targets)
         {
             if (target.Thing is not Pawn pawn ||
-                !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate)) continue;
+                pawn.health?.hediffSet == null ||
+                !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
+            {
+                continue;
+            }
             // 检查消息内容: 原版Key "MessageNoLongerDowned", 使用 Translate 键值匹配
             string noLongerDownedText = "MessageNoLongerDowned".Translate(pawn.LabelCap, pawn);
-            if (text == noLongerDownedText) return false; // 阻止起身消息发送
+            if (text == noLongerDownedText)
+            {
+                return false; // 阻止起身消息发送
+            }
         }
+        
         return true;
     }
 }

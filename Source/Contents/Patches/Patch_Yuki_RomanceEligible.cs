@@ -11,8 +11,8 @@ public static class Patch_RomanceEligible_Prefix
 {
     public static bool Prefix(Pawn pawn, bool initiator, bool forOpinionExplanation, ref AcceptanceReport __result)
     {
-        var isYuki = pawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                     pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var isYuki = pawn?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
+                     pawn?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
         if (!isYuki) return true;
         __result = RomanceEligible(pawn, initiator, forOpinionExplanation );
         return false;
@@ -33,8 +33,7 @@ public static class Patch_RomanceEligible_Prefix
         {
             return !forOpinionExplanation ? "CantRomanceInitiateMessageSlave".Translate(pawn).CapitalizeFirst() : AcceptanceReport.WasRejected;
         }
-            
-            
+        
         var story = pawn.story;
         if (story != null && story.traits?.HasTrait(TraitDefOf.Asexual) == true)
         {

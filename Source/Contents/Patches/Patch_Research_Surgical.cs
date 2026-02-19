@@ -11,16 +11,30 @@ public static class Patch_SurgicalInspection
 {
     public static bool Prefix(Pawn pawn, Pawn billDoer)
     {
-        if (pawn?.health?.hediffSet == null) return true;
-        if (ModDefOf.UmResearchProjectDetect == null || !ModDefOf.UmResearchProjectDetect.IsFinished) return true;
-        if (!pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy)) return true;
+        if (ModDefOf.UmResearchProjectDetect == null || !ModDefOf.UmResearchProjectDetect.IsFinished)
+        {
+            return true;
+        }
+        if (pawn?.health?.hediffSet == null ||
+            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy))
+        {
+            return true;
+        }
         // 若存在魔女因子 dummy Hediff
         // 发信通知
-        SendInspectionLetter(pawn, billDoer);
+        if (billDoer is not null)
+        {
+            SendInspectionLetter(pawn, billDoer);
+        }
+        else
+        {
+            Log.Error("[Manosaba] billDoer of Surgical Inspection not found (Patches.Patch_SurgicalInspection)");
+        }
         // 解锁科技
         ResearchUtils.UnlockResearchPrereqs();
         // 设置魔女因子为可见
         Comps.HediffComp_HumanDummy.SetDummyShouldDisplay(pawn);
+        
         var visibleHediff = pawn.health?.hediffSet?.HasHediff(ModDefOf.UmHediffHumanVisible);
         if (visibleHediff is null or false)
         {

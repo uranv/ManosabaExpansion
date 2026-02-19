@@ -10,16 +10,17 @@ public static class Patch_MassUtility_Capacity
 {
     public static void Postfix(Pawn p, ref float __result)
     {
-        if (p is { IsMutant: true } && p.mutant.Def.defName == "UmMutantNarehate")
+        if (p is not { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" })
         {
-            if (__result <= 0.1f)
-            {
-                __result = 35f * p.BodySize;
-            }
-            if (Find.Scenario != null)
-            {
-                __result *= Find.Scenario.GetStatFactor(StatDefOf.CarryingCapacity);
-            }
+            return;
+        }
+        if (__result <= 0.1f)
+        {
+            __result = 35f * p.BodySize;
+        }
+        if (Find.Scenario is not null)
+        {
+            __result *= Find.Scenario.GetStatFactor(StatDefOf.CarryingCapacity);
         }
     }
 }

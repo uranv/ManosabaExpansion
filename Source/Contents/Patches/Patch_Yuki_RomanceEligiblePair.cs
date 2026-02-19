@@ -13,10 +13,10 @@ public static class Patch_RomanceEligiblePair_Prefix
 {
     public static bool Prefix(Pawn initiator, Pawn target, bool forOpinionExplanation, ref AcceptanceReport __result)
     {
-        var initYuki = initiator.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                       initiator.kindDef == ModDefOf.UmPawnKindYukiVisitor;
-        var tarYuki = target.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                      target.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var initYuki = initiator?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
+                       initiator?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var tarYuki = target?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
+                      target?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
         if (!initYuki && !tarYuki) return true;
         __result = CustomRomanceEligiblePair(initiator, target, forOpinionExplanation);
         return false;
@@ -25,16 +25,25 @@ public static class Patch_RomanceEligiblePair_Prefix
     private static AcceptanceReport CustomRomanceEligiblePair(Pawn initiator, Pawn target, bool forOpinionExplanation)
     {
         // 检查目标
-        if (initiator == target) return false;
+        if (initiator == target)
+        {
+            return false;
+        }
         // 检查冷却
-        if (initiator.relations.IsTryRomanceOnCooldown) return "RomanceOnCooldown".Translate();
+        if (initiator.relations.IsTryRomanceOnCooldown)
+        {
+            return "RomanceOnCooldown".Translate();
+        }
         // 检查取向
         if (!RelationsUtility.AttractedToGender(initiator, target.gender) || !RelationsUtility.AttractedToGender(target, initiator.gender))
         {
             return !forOpinionExplanation ? AcceptanceReport.WasRejected : "CantRomanceTargetSexuality".Translate();
         }
         // 检查哺乳
-        if (ChildcareUtility.CanSuckle(target, out _)) return false;
+        if (ChildcareUtility.CanSuckle(target, out _))
+        {
+            return false;
+        }
         // 现有关系检查
         var directPawnRelation = LovePartnerRelationUtility.ExistingLoveRealtionshipBetween(initiator, target, allowDead: false);
         if (directPawnRelation != null)

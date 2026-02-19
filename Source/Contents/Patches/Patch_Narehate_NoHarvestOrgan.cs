@@ -9,10 +9,19 @@ public static class Patch_MedicalRecipesUtility_IsCleanAndDroppable
 {
     public static bool Prefix(Pawn pawn, BodyPartRecord part, ref bool __result)
     {
-        if (pawn.Dead) return true;
-
+        if (pawn is { Dead: true })
+        {
+            return true;
+        }
+        if (pawn.health?.hediffSet is null)
+        {
+            return true;
+        }
         if (!pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate) &&
-            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy)) return true;
+            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy))
+        {
+            return true;
+        }
         
         __result = false;
         return false;

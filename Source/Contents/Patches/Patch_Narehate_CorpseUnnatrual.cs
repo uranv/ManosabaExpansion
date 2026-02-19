@@ -11,7 +11,10 @@ public static class Patch_SpecialThingFilterWorker_CorpsesUnnatural_Matches
 {
     public static void Postfix(Thing t, ref bool __result)
     {
-        if (__result) return;
+        if (__result)
+        {
+            return;
+        }
         if (t is Corpse_NarehateCorpse)
         {
             __result = true;

@@ -18,8 +18,20 @@ public static class Patch_PsychicRitualRoleDef_PawnCanDo_Public
         ref PsychicRitualRoleDef.Reason reason,
         ref bool __result)
     {
-        if (__instance.defName != "UmRitualRoleNarehateTransTarget" && __instance.defName != "UmRitualRoleSabbatInvoker" && __instance.defName != "UmRitualRoleSabbatChanter") return;
-        if (!__result) return;
+        if (!__result)
+        {
+            return;
+        }
+        if (__instance is null || pawn is null)
+        {
+            return;
+        }
+        if (__instance.defName != "UmRitualRoleNarehateTransTarget" &&
+            __instance.defName != "UmRitualRoleSabbatInvoker" &&
+            __instance.defName != "UmRitualRoleSabbatChanter")
+        {
+            return;
+        }
         switch (__instance.defName)
         {
             // 魔女残骸洗脑仪式: 仪式对象必须是【魔女残骸】
@@ -73,7 +85,7 @@ public static class Patch_PsychicRitualRoleDef_PawnCanDo_Public
             // 魔女安息仪式: 参与者必须拥有【魔女因子】
             case "UmRitualRoleSabbatChanter":
             {
-                bool hasDummyHediff = pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy);
+                var hasDummyHediff = pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy);
                 if (!hasDummyHediff)
                 {
                     __result = false;

@@ -14,24 +14,34 @@ public static class Patch_NarehateVisuals
     {
         foreach (var type in GenTypes.AllTypes)
         {
-            if (typeof(PawnRenderNode).IsAssignableFrom(type) && !type.IsAbstract)
+            if (!typeof(PawnRenderNode).IsAssignableFrom(type) || type.IsAbstract)
             {
-                // 仅匹配 GraphicFor(Pawn p)的方法 (v1.0.6 26-02-13)
-                var method = AccessTools.Method(type, "GraphicFor", new Type[] { typeof(Pawn) });
-                if (method != null && method.DeclaringType == type)
-                {
-                    if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Patch Success: {type.Name} (Patches.Patch_NarehateVisuals.TargetMethods)");
-                    yield return method;
-                }
+                continue;
             }
+            // 仅匹配 GraphicFor(Pawn p)的方法 (v1.0.6 26-02-13)
+            var method = AccessTools.Method(type, "GraphicFor", new Type[] { typeof(Pawn) });
+            if (method == null || method.DeclaringType != type)
+            {
+                continue;
+            }
+            if (ManosabaMod.Settings.debugMode)
+            {
+                Log.Message($"[Manosaba] Patch Success: {type.Name} (Patch_NarehateVisuals.TargetMethods)");
+            }
+            yield return method;
         }
     }
     public static bool Prefix(PawnRenderNode __instance, Pawn pawn, ref Graphic __result)
     {
-        if (pawn?.health?.hediffSet != null &&
-            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate)) return true;
-
-        if (__instance is PawnRenderNode_Narehate) return true;
+        if (pawn?.health?.hediffSet == null ||
+            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
+        {
+            return true;
+        }
+        if (__instance is PawnRenderNode_Narehate)
+        {
+            return true;
+        }
 
         __result = null;
         return false;

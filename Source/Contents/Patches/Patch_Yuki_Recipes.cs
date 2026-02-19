@@ -9,12 +9,12 @@ public class Patch_Recipe_ExtractOvum_AvailableReport
 {
     public static bool Prefix(Thing thing, BodyPartRecord part, ref AcceptanceReport __result )
     {
-        Log.WarningOnce("[Manosaba] Try Patch_Recipe_ExtractOvum_AvailableReport", GenTicks.TicksGame/10 + thing.thingIDNumber);
+        // Log.WarningOnce("[Manosaba] Try Patch_Recipe_ExtractOvum_AvailableReport", GenTicks.TicksGame/10 + thing.thingIDNumber);
         if (thing.def != ModDefOf.UmThingRaceYuki)
         {
             return true;
         }
-        Log.WarningOnce("[Manosaba] Found Yuki to Patch_Recipe_ExtractOvum_AvailableReport", GenTicks.TicksGame/10 + thing.thingIDNumber);
+        // Log.WarningOnce("[Manosaba] Found Yuki to Patch_Recipe_ExtractOvum_AvailableReport", GenTicks.TicksGame/10 + thing.thingIDNumber);
         __result = AvailableReport(thing, part);
         return false;
     }

@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using Verse;
 
 namespace UranvManosaba.Contents.Patches;
 
@@ -9,13 +10,25 @@ public static class Patch_GeneTracker_BiologicalAgeTickFactor
 {
     public static void Postfix(Pawn_GeneTracker __instance, ref float __result)
     {
-        var pawn = __instance.pawn;
-        if (pawn == null) return;
-        var yukiDummy = ModDefOf.UmHediffYukiDummy;
-        if ( pawn.health?.hediffSet?.HasHediff(yukiDummy) ?? true)
+        if (__instance is not { pawn: { } pawn })
         {
-            var ageYears = pawn.ageTracker.AgeBiologicalYearsFloat;
-            if (ageYears >= 15.5f) __result = 0f;
+            return;
+        }
+        var yukiDummy = ModDefOf.UmHediffYukiDummy;
+        if (yukiDummy == null)
+        {
+            Log.ErrorOnce("[Manosaba] HediffDef \"UmHediffYukiDummy\" not found (Patch_GeneTracker_BiologicalAgeTickFactor)",
+                Gen.HashCombine(pawn.thingIDNumber,"Patch_GeneTracker_BiologicalAgeTickFactor")); 
+            return;
+        }
+        if (pawn.health?.hediffSet == null ||
+            !pawn.health.hediffSet.HasHediff(yukiDummy))
+        {
+            return;
+        }
+        if (pawn.ageTracker?.AgeBiologicalYearsFloat >= 15.5f)
+        {
+            __result = 0f;
         }
     }
 }

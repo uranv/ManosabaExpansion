@@ -16,19 +16,24 @@ public static class Patch_MajyoinshiLetter
     public static void Prefix(MentalStateHandler __instance, MentalStateDef stateDef, ref bool transitionSilently, out bool __state)
     {
         __state = false;
-        if (stateDef == ModDefOf.UmMentalBreakFactor)
+        if (stateDef != ModDefOf.UmMentalBreakFactor)
         {
-            if (!transitionSilently)
-            {
-                transitionSilently = true;
-                __state = true;
-            }
+            return;
         }
+        if (transitionSilently)
+        {
+            return;
+        }
+        transitionSilently = true;
+        __state = true;
     }
     // 发送自定义消息
     public static void Postfix(MentalStateHandler __instance, MentalStateDef stateDef, bool __result, bool __state)
     {
-        if (!__result || !__state) return;
+        if (!__result || !__state)
+        {
+            return;
+        }
         var pawn = (Pawn)_pawnField.GetValue(__instance);
         if (pawn != null)
         {
@@ -39,7 +44,7 @@ public static class Patch_MajyoinshiLetter
     {
         var target = JobGiver_MentalBreakFactor.FindHatedTarget(pawn);
         // 标题
-        var targetName = target?.NameShortColored ?? "".Translate();
+        var targetName = target?.NameShortColored ?? "";
         var pawnName = pawn.NameShortColored;
         TaggedString labelBase = stateDef.beginLetterLabel ?? "Manosaba_LetterLabel_Break".Translate();
         TaggedString finalLabel;

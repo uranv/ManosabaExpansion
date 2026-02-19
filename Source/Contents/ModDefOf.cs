@@ -35,6 +35,7 @@ public static class ModDefOf
     
     // ThingDefs
     public static ThingDef UmThingAburibin;
+    public static ThingDef UmThingCrystallizedEye;
     public static ThingDef UmThingRaceYuki;
     public static ThingDef UmThingApparelYukiDress;
     public static ThingDef UmThingWeaponSimpleSpear;

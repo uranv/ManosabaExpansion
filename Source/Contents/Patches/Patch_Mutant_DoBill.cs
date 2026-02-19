@@ -11,14 +11,23 @@ public static class Patch_Bill_PawnAllowedToStartAnew
 {
     public static void Postfix(Bill __instance, Pawn p, ref bool __result)
     {
-        if (__result) return;
-
-        if (p.IsMutant && p.mutant.Def.defName == "UmMutantNarehate")
+        if (__result)
         {
-            if (__instance.PawnRestriction != null && __instance.PawnRestriction != p) return;
-            if (__instance.suspended) return;
-            __result = true;
+            return;
         }
+        if (p is not { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" })
+        {
+            return;
+        }
+        if (__instance.PawnRestriction is not null && __instance.PawnRestriction != p)
+        {
+            return;
+        }
+        if (__instance is { suspended: true })
+        {
+            return;
+        }
+        __result = true;
     }
 }
     
@@ -43,13 +52,5 @@ public static class Patch_FloatMenuOptionProvider_SelectedPawnValid
             yield return code;
         }
     }
-
-    public static bool IsMutantButNotNarehate(Pawn p)
-    {
-        if (p.IsMutant && p.mutant.Def.defName == "UmMutantNarehate")
-        {
-            return false; 
-        }
-        return p.IsMutant;
-    }
+    public static bool IsMutantButNotNarehate(Pawn p) => p is not { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" } && p.IsMutant;
 }

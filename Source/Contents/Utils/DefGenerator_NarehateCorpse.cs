@@ -27,10 +27,10 @@ public static class DefGenerator_NarehateCorpse
             defName = "UmThingCorpseNarehate",
             label = "ThingDef_NarehateCorpse_label".Translate(),
             description = "ThingDef_NarehateCorpse_description".Translate(),
-            uiIconPath = "ui/icons/menu_icon_narehate_corpse"
+            // uiIconPath = "ui/icons/menu_icon_narehate_corpse"
         };
 
-        narehateDef.uiIcon = ContentFinder<Texture2D>.Get(narehateDef.uiIconPath);  // 手动唤起加载资源
+        // narehateDef.uiIcon = ContentFinder<Texture2D>.Get(narehateDef.uiIconPath);  // 手动唤起加载资源
         if (narehateDef.uiIcon == null && ManosabaMod.Settings.debugMode)
         {
             Log.Warning("[Manosaba] UI Icon load failed: " + narehateDef.uiIconPath + " (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");

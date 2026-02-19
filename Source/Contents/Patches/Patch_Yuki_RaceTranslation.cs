@@ -10,15 +10,20 @@ public static class Patch_FixYukiTranslations
     static Patch_FixYukiTranslations()
     {
         var myPawnDef = ModDefOf.UmThingRaceYuki;
-
         var humanDef = ThingDefOf.Human;
 
         if (myPawnDef == null || humanDef == null)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning("[Manosaba] Translation patch failed: Pawn or Human definition missing. (Patches.Patch_FixYukiTranslations)");
+            if (ManosabaMod.Settings.debugMode)
+            {
+                Log.Warning("[Manosaba] Translation patch failed: Pawn or Human Def not found. (Patch_FixYukiTranslations)");
+            }
             return;
         }
-        if (humanDef.tools == null) return;
+        if (humanDef.tools == null)
+        {
+            return;
+        }
         if (myPawnDef.tools != null)
         {
             for (var i = 0; i < myPawnDef.tools.Count; i++)

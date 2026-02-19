@@ -12,9 +12,7 @@ public static class Patch_MutantMainTabWindow
         if (Find.CurrentMap == null) return;
 
         var narehates = Find.CurrentMap.mapPawns.AllPawnsSpawned
-            .Where(p => p.Faction == Faction.OfPlayer && 
-                        p.IsMutant && 
-                        p.mutant.Def.defName == "UmMutantNarehate");
+            .Where(p => p is { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" } && p.Faction == Faction.OfPlayer);
 
         var enumerable = narehates.ToList();
         if (enumerable.Any())
@@ -38,11 +36,8 @@ public static class Patch_MainTabWindow_Work_Pawns
 [HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
 public static class Patch_MainTabWindow_Assign_Pawns
 {
-    static bool Prepare()
-    {
-        return ManosabaMod.Settings.allowMutantAssignTab;
-    }
-    
+    static bool Prepare() => ManosabaMod.Settings.allowMutantAssignTab;
+
     public static void Postfix(ref IEnumerable<Pawn> __result)
     {
         Patch_MutantMainTabWindow.AddNarehates(ref __result);

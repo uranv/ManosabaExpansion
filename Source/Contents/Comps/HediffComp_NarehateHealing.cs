@@ -42,7 +42,7 @@ public class HediffComp_NarehateHealing : HediffComp
                     var log = "[Manosaba] HediffComp_NarehateHealing has {overrideHealFactor: " +
                               $"{Props.overrideHealFactor}" +
                               "} but {isOverride: true}";
-                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, 86336819));
+                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.EffectiveHealFactor"));
                     return 1f;
                 }
                 return Props.overrideHealFactor;
@@ -70,7 +70,7 @@ public class HediffComp_NarehateHealing : HediffComp
                     var log = "[Manosaba] HediffComp_NarehateHealing has {overrideBloodFactor: " +
                               $"{Props.overrideBloodFactor}" +
                               "} but {isOverride: true}";
-                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, 14849043));
+                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.EffectiveBloodHealFactor"));
                     return 1f;
                 }
                 return Props.overrideBloodFactor;
@@ -100,7 +100,7 @@ public class HediffComp_NarehateHealing : HediffComp
                     var log = "[Manosaba] HediffComp_NarehateHealing has invalid {overrideRegenFactor: " +
                               $"{Props.overrideRegenFactor}" +
                               "} but {isOverride: true}. This will not cause any error but also not take any effect.";
-                    Log.WarningOnce(log, Gen.HashCombine(Pawn.thingIDNumber, 21584546));
+                    Log.WarningOnce(log, Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.RegenChance"));
                 }
                 return chance;
             }
@@ -199,7 +199,8 @@ public class HediffComp_NarehateHealing : HediffComp
                     break;
                 // 错误
                 default:
-                    Log.ErrorOnce("[Manosaba] HediffComp_NarehateHealing has {regenExpectTick: 0}",Gen.HashCombine(Pawn.thingIDNumber, 21884456));
+                    Log.ErrorOnce("[Manosaba] HediffComp_NarehateHealing has {regenExpectTick: 0}",
+                        Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.CompDebugString"));
                     tipRegenNumber = "ERR";
                     break;
             }

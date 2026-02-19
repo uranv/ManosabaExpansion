@@ -10,34 +10,38 @@ public static class Patch_Corpse_ButcherProducts
 {
     public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Corpse __instance)
     {
-        foreach (var thing in __result)
+        if (__result != null)
         {
-            yield return thing;
+            foreach (var thing in __result)
+            {
+                yield return thing;
+            }
         }
-
-        if (__instance.InnerPawn?.health?.hediffSet == null)
+        if (__instance is not { InnerPawn: { } p } || p.health?.hediffSet == null)
         {
             yield break;
         }
-
-        int crystalEyeCount = 0;
-        var hediffs = __instance.InnerPawn.health.hediffSet.hediffs;
-        foreach (var t in hediffs)
+        
+        var crystalEyeCount = Enumerable.Count(p.health.hediffSet.hediffs, h => h.def == ModDefOf.UmHediffCrystallized);
+        if (crystalEyeCount <= 0)
         {
-            if (t.def == ModDefOf.UmHediffCrystallized)
-            {
-                crystalEyeCount++;
-            }
+            yield break;
         }
-            
-        if (crystalEyeCount > 0)
+        
+        var extraProductDef = ModDefOf.UmThingCrystallizedEye;  //DefDatabase<ThingDef>.GetNamed("UmThingCrystallizedEye", false);
+        if (extraProductDef == null)
         {
-            var extraProductDef = DefDatabase<ThingDef>.GetNamed("UmThingCrystallizedEye", false);
-
-            if (extraProductDef == null) yield break;
-            var extraThing = ThingMaker.MakeThing(extraProductDef);
-            extraThing.stackCount = crystalEyeCount;
-            yield return extraThing;
+            yield break;
+        }
+        
+        var stackLimit = extraProductDef.stackLimit;
+        while (crystalEyeCount > 0)
+        {
+            var stack = Math.Min(crystalEyeCount, stackLimit);
+            var thing = ThingMaker.MakeThing(extraProductDef);
+            thing.stackCount = stack;
+            yield return thing;
+            crystalEyeCount -= stack;
         }
     }
 }
