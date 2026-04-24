@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmIncidentDropDebug.letterLabel>死亡的殘骸</UmIncidentDropDebug.letterLabel>
+    <UmIncidentDropDebug.letterText>一具魔女的殘骸的屍體墜落到了附近...</UmIncidentDropDebug.letterText>
+
+    <UmIncidentMystCargoCorpse.letterLabel>神秘貨物</UmIncidentMystCargoCorpse.letterLabel>
+    
+    <UmIncidentYukiVisitor.label>訪客</UmIncidentYukiVisitor.label>
+    <UmIncidentYukiVisitor.letterLabel>訪客</UmIncidentYukiVisitor.letterLabel>
+    <UmIncidentYukiVisitor.letterText>一位來歷不明的年輕女性來到了你的殖民地。\n\n她自稱為"{0}"，她的來訪似乎有一些隱藏的目的。\n\n你可以與她交談，瞭解更多信息。</UmIncidentYukiVisitor.letterText>
+</LanguageData>
+

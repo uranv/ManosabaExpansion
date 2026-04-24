@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+            <li>deliveredLetterLabel->神秘貨艙</li>
+            <li>deliveredLetterText->神秘貨艙已送達。這似乎是一具死去的魔女的殘骸。\n\n仔細觀察後，這具屍體看起來曾屬於一位名叫[narehateName]的少女。\n\n你可以對其進行研究以瞭解更多關於魔女死亡的秘密。</li>
+    </UmQuestScriptMystCargoCorpse.questContentRules.rulesStrings>
+</LanguageData>
+

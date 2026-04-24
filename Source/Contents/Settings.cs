@@ -304,7 +304,8 @@ public class ManosabaMod : Mod
         );
         list.Indent(20f);
         GUI.color = _lightGray;
-        var buildDate = " (last compiled at " + DateTime.Now.ToString("yyyy-MM-dd") + ")";
+        // var buildDate = " (last compiled at " + DateTime.Now.ToString("yyyy-MM-dd") + ")";
+        string buildDate = BuildConstants.BuildDate;
         string debugModeDesc = Settings.debugMode ?
             "ManosabaSettings_debugMode_Desc".Translate() + buildDate :
             "ManosabaSettings_debugMode_Desc".Translate();

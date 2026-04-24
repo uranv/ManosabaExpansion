@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmRitualNarehateTrans.label>殘骸洗腦儀式</UmRitualNarehateTrans.label>
+    <UmRitualNarehateTrans.description>借助黑暗超凡智能，得以暫時地通過洗腦控制魔女的殘骸，對於已經受控制的殘骸也可以如此延長控制時間。\n\n這樣的嘗試將會徹底摧毀魔女的心智，淪為本能驅使的殘骸。\n\n警告：此過程不可逆。</UmRitualNarehateTrans.description>
+    <UmRitualNarehateTrans.outcomeDescription>作為目標的魔女的殘骸將被單方向轉化為受控制的形態。\n\n根據當前的儀式質量，延長對魔女的殘骸的洗腦控制 {0} 天。</UmRitualNarehateTrans.outcomeDescription>
+
+    <UmRitualSabbat.label>魔女安息儀式</UmRitualSabbat.label>
+    <UmRitualSabbat.description>傳說中找回大魔女的方法，需要由13名魔女聚集起來，使用特定的聖物來執行儀式。</UmRitualSabbat.description>
+    <UmRitualSabbat.outcomeDescription>根據當前的儀式質量，召喚出月代雪的裝備將具有 {0} 等級的品質偏移。</UmRitualSabbat.outcomeDescription>
+    
+</LanguageData>
+

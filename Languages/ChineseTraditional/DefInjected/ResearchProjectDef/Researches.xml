@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmResearchProjectPrereqs.label>魔女因子</UmResearchProjectPrereqs.label>
+    <UmResearchProjectPrereqs.description>你發現了魔女因子，一種不屬於邊緣世界的異象。</UmResearchProjectPrereqs.description>
+    <UmResearchProjectPrereqs.discoveredLetterTitle>關於魔女因子</UmResearchProjectPrereqs.discoveredLetterTitle>
+    <UmResearchProjectPrereqs.discoveredLetterText>你初次遇到了魔女因子，一種不屬於邊緣世界的異象。這樣的相遇或許也為殖民者當中的一些同伴埋下了異變的種子……</UmResearchProjectPrereqs.discoveredLetterText>
+
+
+    <UmResearchProjectDetect.label>發現魔女的方法</UmResearchProjectDetect.label>
+    <UmResearchProjectDetect.description>嗯...嗯...原來如此，只需要這簡單的外科手術，魔女因子便無處遁形。</UmResearchProjectDetect.description>
+    <UmResearchProjectDetect.discoveredLetterTitle>關於發現魔女的方法</UmResearchProjectDetect.discoveredLetterTitle>
+    <UmResearchProjectDetect.discoveredLetterText>現在，即使在魔女化的相當早期階段，你也可以通過外科手術來檢查殖民者是否攜帶魔女因子了。</UmResearchProjectDetect.discoveredLetterText>
+
+
+    <UmResearchProjectKill.label>殺死魔女的方法</UmResearchProjectKill.label>
+    <UmResearchProjectKill.description>本以為魔女因子是一種類似納米機械感染的超凡造物，但是通過調查你發現只要給予適當的刺激，它居然會直接殺死宿主並消失。</UmResearchProjectKill.description>
+    <UmResearchProjectKill.discoveredLetterTitle>關於殺死魔女的方法</UmResearchProjectKill.discoveredLetterTitle>
+    <UmResearchProjectKill.discoveredLetterText>你成功利用這具魔女的殘骸的屍體破解了殺死魔女的秘密，可惜製作那種特殊藥劑特雷德基姆的素材在邊緣世界可以說是無法獲得的。\n\n但是，既然手上已經有了現成的屍體，或許你還可以通過某種逆向手段獲得必要的素材。</UmResearchProjectKill.discoveredLetterText>
+
+
+    <UmResearchProjectControl.label>控制魔女的方法</UmResearchProjectControl.label>
+    <UmResearchProjectControl.description>如果能操控魔女的殘骸為我們所用，哪怕是那黑暗超凡智能的食屍鬼也無法匹敵呀!</UmResearchProjectControl.description>
+    <UmResearchProjectControl.discoveredLetterTitle>關於控制魔女的方法</UmResearchProjectControl.discoveredLetterTitle>
+    <UmResearchProjectControl.discoveredLetterText>既然完全轉化成了魔女的殘骸的人類依舊保持著十足的人類特徵，不妨利用熟悉的方法來將魔女的殘骸暫時無害化並為你所用。\n\n雖然這樣破壞性的方法似乎會徹底摧毀魔女的殘骸僅剩的心智並且完全抹除康復的可能，但是為了獲取到這樣強大個體的力量，也許都是必要的犧牲吧。</UmResearchProjectControl.discoveredLetterText>
+
+
+    <UmResearchProjectGene.label>魔女因子基因</UmResearchProjectGene.label>
+    <UmResearchProjectGene.description>經過仔細的思考與研究，你發現魔女因子也未嘗不是一種超凡基因……</UmResearchProjectGene.description>
+    <UmResearchProjectGene.discoveredLetterTitle>關於魔女因子的超凡基因</UmResearchProjectGene.discoveredLetterTitle>
+    <UmResearchProjectGene.discoveredLetterText>通過調查，你發現了魔女因子與超凡基因具有某些共性。\n\n現在你能夠通過植入基因來主動為殖民者植入魔女因子。但是不同於真正的基因，你並不能通過移除基因的手段來治癒殖民者身上的魔女因子。</UmResearchProjectGene.discoveredLetterText>
+
+
+    <UmResearchProjectSabbat.label>魔女安息儀式</UmResearchProjectSabbat.label>
+    <UmResearchProjectSabbat.description>為了進行這個儀式，居然需要先找到13名具有魔女因子的殖民者。這好像比擊敗大魔女本身還要難……</UmResearchProjectSabbat.description>
+
+
+</LanguageData>
+

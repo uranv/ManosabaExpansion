@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmHediffHumanDummy.label>都是月代雪乾的</UmHediffHumanDummy.label>
+    <UmHediffHumanDummy.description>管理人類的特殊健康狀態，你不應該看到這個</UmHediffHumanDummy.description>
+    <UmHediffHumanVisible.label>魔女因子</UmHediffHumanVisible.label>
+    <UmHediffHumanVisible.description>受到魔女因子的詛咒。隨著詛咒加深，身體能力也會發生變化。</UmHediffHumanVisible.description>
+    <UmHediffHumanVisible.stages.0.label>潛伏</UmHediffHumanVisible.stages.0.label>
+    <UmHediffHumanVisible.stages.1.label>輕度</UmHediffHumanVisible.stages.1.label>
+    <UmHediffHumanVisible.stages.2.label>輕度</UmHediffHumanVisible.stages.2.label>
+    <UmHediffHumanVisible.stages.3.label>中度</UmHediffHumanVisible.stages.3.label>
+    <UmHediffHumanVisible.stages.4.label>中度</UmHediffHumanVisible.stages.4.label>
+    <UmHediffHumanVisible.stages.5.label>重度</UmHediffHumanVisible.stages.5.label>
+    <UmHediffNarehate.label>魔女的殘骸</UmHediffNarehate.label>
+    <UmHediffNarehate.description>受魔女因子的詛咒之人的終點，淪為一個僅由殺意驅使的魔女的殘骸。</UmHediffNarehate.description>
+    <UmHediffNarehateHealed.label>部分魔女化</UmHediffNarehateHealed.label>
+    <UmHediffNarehateHealed.description>曾受魔女因子的詛咒化為殘骸。\n\n幸運的是，奇跡拯救了她。</UmHediffNarehateHealed.description>
+    <UmHediffNarehateHidden.label>魔女的殘骸</UmHediffNarehateHidden.label>
+    <UmHediffNarehateHidden.description>受魔女因子的詛咒之人的終點，淪為一個僅由殺意驅使的魔女的殘骸。</UmHediffNarehateHidden.description>
+</LanguageData>
+

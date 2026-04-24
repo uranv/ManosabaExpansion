@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmGeneFactor.label>魔女因子</UmGeneFactor.label>
+    <UmGeneFactor.labelShortAdj>魔女</UmGeneFactor.labelShortAdj>
+    <UmGeneFactor.description>這種"基因"的攜帶者受到魔女因子的詛咒。隨著詛咒加深，她們的身體能力也會發生變化。</UmGeneFactor.description>
+    <UmGeneFactor.customEffectDescriptions.0>主動賦予攜帶者魔女因子的詛咒</UmGeneFactor.customEffectDescriptions.0>
+    <UmGeneFactor.customEffectDescriptions.1>被添加後無法移除，失去時會自動重新\n添加</UmGeneFactor.customEffectDescriptions.1>
+    <UmGeneFactor.customEffectDescriptions.2>解鎖科技"魔女因子基因"後，魔女因子\n才能作為"基因"存在</UmGeneFactor.customEffectDescriptions.2>
+</LanguageData>
+

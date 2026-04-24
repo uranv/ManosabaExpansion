@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <UmJobTalkToYuki.reportString>正在與 TargetA 交談。</UmJobTalkToYuki.reportString>
+
+    <UmJobYukiVisitorCast.reportString>正在前往指定地點。</UmJobYukiVisitorCast.reportString>
+    <UmJobYukiVisitorCastHidden.reportString>正在前往指定地點。</UmJobYukiVisitorCastHidden.reportString> 
+</LanguageData>
+

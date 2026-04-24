@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- 魔女殘骸變種人受控制時間在 countdown Hediff 顯示的單位 -->
+    <HediffComp_Countdown_Mutant_Unit>天</HediffComp_Countdown_Mutant_Unit>
+    <!-- 魔女愈療提示 -->
+    <HediffComp_NarehateHealing_TipHeal>  - 魔女愈療：{0}點耐久/天</HediffComp_NarehateHealing_TipHeal>
+    <HediffComp_NarehateHealing_TipHealOverride>  - 魔女愈療：{0}點耐久/秒</HediffComp_NarehateHealing_TipHealOverride>
+    <HediffComp_NarehateHealing_TipBlood>  - 魔女失血愈療：{0}%/天</HediffComp_NarehateHealing_TipBlood>
+    <HediffComp_NarehateHealing_TipBloodOverride>  - 魔女失血愈療：{0}%/秒</HediffComp_NarehateHealing_TipBloodOverride>
+    <HediffComp_NarehateHealingReveal_TipHeal>  - 魔女愈療：{0}點耐久/天</HediffComp_NarehateHealingReveal_TipHeal>
+    <HediffComp_NarehateHealingReveal_TipBlood>  - 魔女失血愈療：{0}%/天</HediffComp_NarehateHealingReveal_TipBlood>
+    <HediffComp_NarehateHealing_TipRegenUnit1> 天/處</HediffComp_NarehateHealing_TipRegenUnit1>
+    <HediffComp_NarehateHealing_TipRegenUnit2> 處/天</HediffComp_NarehateHealing_TipRegenUnit2>
+    <HediffComp_NarehateHealing_TipRegenUnit3> 處/小時</HediffComp_NarehateHealing_TipRegenUnit3>
+    <HediffComp_NarehateHealing_TipRegenUnit4> 秒/處</HediffComp_NarehateHealing_TipRegenUnit4>
+    <HediffComp_NarehateHealing_TipRegenUnit5> 處/秒</HediffComp_NarehateHealing_TipRegenUnit5>
+    <HediffComp_NarehateHealing_TipRegen>  - 魔女器官愈療：</HediffComp_NarehateHealing_TipRegen>
+    <!-- 魔女安息儀式：禁止原因 -->
+    <Manosaba_SabbatReason_YukiExists>當前殖民地已存在{YUKI}。</Manosaba_SabbatReason_YukiExists>
+    <!-- 變種人技能消耗時間 -->
+    <Manosaba_MutantAbility_Cost>消耗控制時間：{0}天</Manosaba_MutantAbility_Cost>
+    <Manosaba_MutantAbility_NotMutant>{0_labelShort}不是魔女殘骸。</Manosaba_MutantAbility_NotMutant>
+    <Manosaba_MutantAbility_NotEnoughTime>{0_labelShort}剩餘的控制時間不足。</Manosaba_MutantAbility_NotEnoughTime>
+</LanguageData>
+

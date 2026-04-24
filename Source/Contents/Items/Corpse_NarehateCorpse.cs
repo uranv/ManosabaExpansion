@@ -38,7 +38,7 @@ public class Corpse_NarehateCorpse : Corpse
     
     public override void Notify_Studied(Pawn studier, float amount, KnowledgeCategoryDef category = null)
     {
-        const float maxKnowledge = 10.0f;  
+        const float maxKnowledge = 20.0f;  
             
         var studiable = GetComp<CompStudiable>();
         if (studiable == null) 

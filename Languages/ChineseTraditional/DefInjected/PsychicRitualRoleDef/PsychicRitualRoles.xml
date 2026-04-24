@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmRitualRoleNarehateTransTarget.label>轉化目標</UmRitualRoleNarehateTransTarget.label>
+    <UmRitualRoleNarehateTransTarget.description>處於魔女的殘骸狀態的類人生物</UmRitualRoleNarehateTransTarget.description>
+
+    <UmRitualRoleSabbatInvoker.label>發起者</UmRitualRoleSabbatInvoker.label>
+    <UmRitualRoleSabbatInvoker.description>主持儀式、高舉儀式之劍的魔女。</UmRitualRoleSabbatInvoker.description>
+    <UmRitualRoleSabbatChanter.label>吟誦者</UmRitualRoleSabbatChanter.label>
+    <UmRitualRoleSabbatChanter.description>參與儀式的魔女們。</UmRitualRoleSabbatChanter.description>
+
+</LanguageData>
+

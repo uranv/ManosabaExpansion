@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- 生成名字 -->
+    <YukiGenerator_firstName>雪</YukiGenerator_firstName>
+    <YukiGenerator_nickName>雪</YukiGenerator_nickName>
+    <YukiGenerator_lastName>月代</YukiGenerator_lastName>
+    <!-- 離開通知 -->
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel>{0}已離開</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel>
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText>由於你的不友善行爲，{0}在一片血霧中消失了.</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText>
+    <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel>{0}已離開</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterLabel>
+    <Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText>由於受到傷害，{0}在一片血霧中消失了.</Manosaba_CompYukiVisitor_teleportLeaveNeutral_letterText>
+    <Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach>也許很快，你還會再次見到{0}.</Manosaba_CompYukiVisitor_teleportLeaveHurt_letterTextAttach>
+    <!-- 右鍵菜單 -->
+    <Manosaba_CompYukiVisitor_CannotTalkTo>無法和{0}交談</Manosaba_CompYukiVisitor_CannotTalkTo>
+    <Manosaba_CompYukiVisitor_NoPath>沒有路徑</Manosaba_CompYukiVisitor_NoPath>
+    <Manosaba_CompYukiVisitor_Incapable>無法勝任</Manosaba_CompYukiVisitor_Incapable>
+    <Manosaba_CompYukiVisitor_IsBusy>{0}正忙</Manosaba_CompYukiVisitor_IsBusy>
+    <Manosaba_CompYukiVisitor_TalkTo>與{0}交談</Manosaba_CompYukiVisitor_TalkTo>
+    <!--對話組件-->
+    <Manosaba_Story_Root>{0_nameDef}把手伸向{1_nameDef}的</Manosaba_Story_Root>
+    <Manosaba_Tale_Root>{0_nameDef}快速觸摸了{1_nameDef}的</Manosaba_Tale_Root>
+    <Manosaba_CompYukiVisitor_level_choice_quit>離開對話</Manosaba_CompYukiVisitor_level_choice_quit>
+    <!-- 對話層級 1 -->
+    <Manosaba_CompYukiVisitor_level_1>{0_nameDef}自稱受到帝國僱傭，需要來到你的殖民地中釋放某種魔法，以獲得需要的勘探數據。{0_nameDef}承諾在完成她的工作後會給予你一些獎勵。\n\n值得懷疑的是，當你問她僱主的姓名時，她露出了一絲困惑的表情，隨後拒絕回答。</Manosaba_CompYukiVisitor_level_1>
+    <Manosaba_CompYukiVisitor_level_1_choice_1>雖然有些懷疑，但你還允許了她的行動。</Manosaba_CompYukiVisitor_level_1_choice_1>
+    <Manosaba_CompYukiVisitor_level_1_choice_2>你實在無法信任她的動機，想要拒絕她的請求。</Manosaba_CompYukiVisitor_level_1_choice_2>
+    <!-- 對話層級 2 -->
+    <Manosaba_CompYukiVisitor_level_2>{0_nameDef}希望再次考慮。甚至提出可以先給你獎勵，隨後再去完成她的任務。</Manosaba_CompYukiVisitor_level_2>
+    <Manosaba_CompYukiVisitor_level_2_choice_1>獎勵什麼的，還是太誘人了。你雖然仍有疑心，但還是同意了她的提議。</Manosaba_CompYukiVisitor_level_2_choice_1>
+    <Manosaba_CompYukiVisitor_level_2_choice_2>天底下哪有這麼好的事情？你果斷地拒絕了她的提議。</Manosaba_CompYukiVisitor_level_2_choice_2>
+    <!-- 對話層級 3 -->
+    <Manosaba_CompYukiVisitor_level_3>{0_nameDef}表示你可以從以下兩種獎勵中選取其一，隨後她便會去執行她的任務了。\n\n - 大魔女的教導：{0_nameDef}會隨機傳授你一項尚未解鎖科技，你將獲得該研究的一定研究點數。\n\n - 大魔女的饋贈：{0_nameDef}會贈送你少量稀有資源。</Manosaba_CompYukiVisitor_level_3>
+    <Manosaba_CompYukiVisitor_level_3_choice_1>研究科技要緊，來教我吧！</Manosaba_CompYukiVisitor_level_3_choice_1>
+    <Manosaba_CompYukiVisitor_level_3_choice_2>果然還要拿得到手的纔是自己的，給我點資源吧！</Manosaba_CompYukiVisitor_level_3_choice_2>
+    <Manosaba_CompYukiVisitor_level_3_choice_3>不行不行，這點獎勵我不感興趣。給我講講你的故事吧！</Manosaba_CompYukiVisitor_level_3_choice_3>
+    <Manosaba_CompYukiVisitor_level_3_choice_4>轉念一想，你果然不是什麼好東西。趕緊從我家裏出去！</Manosaba_CompYukiVisitor_level_3_choice_4>
+    <!-- 對話層級 4 -->
+    <Manosaba_CompYukiVisitor_level_4>{0_nameDef}對你的回應表示很失望。她將很快離開你的殖民地……嗎？</Manosaba_CompYukiVisitor_level_4>
+    <Manosaba_CompYukiVisitor_level_4_choice_1>……</Manosaba_CompYukiVisitor_level_4_choice_1>
+    <!-- 對話層級 5 -->
+    <Manosaba_CompYukiVisitor_level_5>{0_nameDef}似乎被你的選擇逗笑了。</Manosaba_CompYukiVisitor_level_5>
+    <Manosaba_CompYukiVisitor_level_5_choice_1>有意思，我還要再聽一個故事！</Manosaba_CompYukiVisitor_level_5_choice_1>
+    <Manosaba_CompYukiVisitor_level_5_choice_2>無聊，我聽夠了。你去做你自己的事情吧！</Manosaba_CompYukiVisitor_level_5_choice_2>
+    <!-- 對話層級 6 -->
+    <Manosaba_CompYukiVisitor_level_6>{0_nameDef}表示她已經累了，不想繼續講故事了。</Manosaba_CompYukiVisitor_level_6>
+    <Manosaba_CompYukiVisitor_level_6_choice_1>好吧……</Manosaba_CompYukiVisitor_level_6_choice_1>
+    <!-- 對話層級 10 -->
+    <Manosaba_CompYukiVisitor_level_10>任務完成！{0_nameDef}前來詢問你想要的獎勵。她表示你可以從以下兩種獎勵中選取其一。\n\n - 大魔女的教導：{0_nameDef}會隨機傳授你一項尚未解鎖科技，你將獲得該研究的一定研究點數。\n\n - 大魔女的饋贈：{0_nameDef}會贈送你少量稀有資源。</Manosaba_CompYukiVisitor_level_10>
+    <Manosaba_CompYukiVisitor_level_10_choice_1>研究科技要緊，快來教我吧！</Manosaba_CompYukiVisitor_level_10_choice_1>
+    <Manosaba_CompYukiVisitor_level_10_choice_2>果然還要拿得到手的纔是自己的，給我點資源吧！</Manosaba_CompYukiVisitor_level_10_choice_2>
+    <Manosaba_CompYukiVisitor_level_10_choice_3>不行不行，這點獎勵我不感興趣。給我講講你的故事吧！</Manosaba_CompYukiVisitor_level_10_choice_3>
+    <!-- 對話層級 11 -->
+    <Manosaba_CompYukiVisitor_level_11>{0_nameDef}的目的順利達成了，你也爲你的付出獲得了"應得的"獎勵。\n\n{0_nameDef}還會在你的殖民地停留一小段時間，也許你還可以繼續和她聊天。</Manosaba_CompYukiVisitor_level_11>
+    <Manosaba_CompYukiVisitor_level_11_choice_1>繼續聊下去。</Manosaba_CompYukiVisitor_level_11_choice_1>
+    <!-- 對話層級 Inf1 -->
+    <Manosaba_CompYukiVisitor_level_inf_1>{0_nameDef}雖然沒有回應你，但是她默默地……在原地翻了個跟頭！</Manosaba_CompYukiVisitor_level_inf_1>
+    <!-- 對話層級 Inf2 -->
+    <Manosaba_CompYukiVisitor_level_inf_2>{0_nameDef}沒有注意到你，但是你聽到她嘴裏唸唸有詞。\n\n"1，2，3，……"她似乎在數什麼東西。</Manosaba_CompYukiVisitor_level_inf_2>
+    <!-- 對話層級 Inf3 -->
+    <Manosaba_CompYukiVisitor_level_inf_3>{0_nameDef}看到你的到來，眼中彷彿閃過一絲不易察覺的怒意。\n\n你聽到她在小聲背誦一些你完全聽不懂的語言，聽起來不像是我們應該深究的內容……</Manosaba_CompYukiVisitor_level_inf_3>
+    <!-- 無限答覆 -->
+    <Manosaba_CompYukiVisitor_level_inf_choice_1>……？</Manosaba_CompYukiVisitor_level_inf_choice_1>
+    <Manosaba_CompYukiVisitor_level_inf_choice_tale>{0_nameDef}，我又想聽故事了！</Manosaba_CompYukiVisitor_level_inf_choice_tale>
+    <!--完成通知-->
+    <Manosaba_CompYukiVisitor_castBefore_letterLabel>任務完成：{0}</Manosaba_CompYukiVisitor_castBefore_letterLabel>
+    <Manosaba_CompYukiVisitor_castBefore_letterText>你的許可讓{0}成功達到了她的目的。\n\n現在，你可以繼續與她對話獲得承諾的獎勵了。</Manosaba_CompYukiVisitor_castBefore_letterText>
+    <Manosaba_CompYukiVisitor_castAfter_letterLabel>任務完成：{0}</Manosaba_CompYukiVisitor_castAfter_letterLabel>
+    <Manosaba_CompYukiVisitor_castAfter_letterText>你的許可讓{0}成功達到了她的目的。\n\n雖然你已經得到了獎勵，但{0}還會在你的殖民地停留一段時間，也許你還可以繼續和她聊天。</Manosaba_CompYukiVisitor_castAfter_letterText>
+    <Manosaba_CompYukiVisitor_castHidden_letterLabel>任務完成：{0}</Manosaba_CompYukiVisitor_castHidden_letterLabel>
+    <Manosaba_CompYukiVisitor_castHidden_letterText>一個強大的未知法術在你的殖民地中心被釋放了。雖然你沒有允許{0}的行徑，看起來{0}還是設法完成了她的目的。</Manosaba_CompYukiVisitor_castHidden_letterText>
+    <!--獎勵通知-->
+    <Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel>研究獎勵：{0}點</Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel>
+    <Manosaba_CompYukiVisitor_ResearchPoints_LetterText>在大魔女的指導下，你對{0}的理解增加了。\n\n研究項目：{0}的進度增加了{1}點。</Manosaba_CompYukiVisitor_ResearchPoints_LetterText>
+    <Manosaba_CompYukiVisitor_Item_letterLabel>物資獎勵：{0}元</Manosaba_CompYukiVisitor_Item_letterLabel>
+    <Manosaba_CompYukiVisitor_Item_letterText>大魔女贈送了你總計價值約{0}元的物資作爲回報。你獲得了：\n\n</Manosaba_CompYukiVisitor_Item_letterText>
+    <Manosaba_CompYukiVisitor_Item_letterTextAfter>\n\n她身上怎麼有這麼多東西？</Manosaba_CompYukiVisitor_Item_letterTextAfter>
+</LanguageData>

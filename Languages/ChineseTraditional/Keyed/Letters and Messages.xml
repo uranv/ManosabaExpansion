@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- Letter Recipe Unlocks -->
+    <RecipeAburiBinUnlocked_Log>你解鎖了製作配方【炙烤藥瓶】！(P.S. 這不是錯誤信息 :D)</RecipeAburiBinUnlocked_Log>
+    <RecipeAburiBinUnlocked_Label>解鎖配方：炙烤藥瓶</RecipeAburiBinUnlocked_Label>
+    <RecipeAburiBinUnlocked_Text>爲了解明這位魔女的殘骸的死因，你將目光投向了屍體邊散落的玻璃碎片。這些玻璃碎片似乎是由受熱破碎的玻璃藥瓶產生。\n\n對於爲什麼要加熱一個空藥瓶，你有了些新奇的想法!</RecipeAburiBinUnlocked_Text>
+    <RecipeSimpleSpearUnlocked_Log>你解鎖了製作配方【簡易長矛】！(P.S. 這不是錯誤信息 :D)</RecipeSimpleSpearUnlocked_Log>
+    <RecipeSimpleSpearUnlocked_Label>解鎖配方：簡易長矛</RecipeSimpleSpearUnlocked_Label>
+    <RecipeSimpleSpearUnlocked_Text>隨着魔女因子被認知的同時，你也追隨原始的本能，想到了一種可以延長短劍攻擊距離的"簡易長矛"製作方法。</RecipeSimpleSpearUnlocked_Text>
+    <!-- Letter Research Unlocks -->
+    <Manosaba_ResearchUnlocked_Label>已發現：魔女因子</Manosaba_ResearchUnlocked_Label>
+    <Manosaba_ResearchUnlocked_Text>通過近期的種種異常現象，你獲得了新的見解。你發現同時解鎖了魔女因子，現在可以進行以下的研究研究項目:\n\n - 檢查魔女的方法</Manosaba_ResearchUnlocked_Text>
+    <!-- Letter Surgical Inspections -->
+    <Manosaba_SurgicalInspection_Label>發現魔女因子</Manosaba_SurgicalInspection_Label>
+    <Manosaba_SurgicalInspection_Text>{DOCTOR_labelShort}對{PATIENT_labelShort}進行了詳細的外科檢查。\n\n檢查結果令人不安：{PATIENT_labelShort}確實攜帶有魔女因子。雖然目前侵蝕程度尚淺，但是{PATIENT_labelShort}終有一日會成爲爲殖民地帶來災厄的魔女。</Manosaba_SurgicalInspection_Text>
+    <!-- Letter Mental State -->
+    <Manosaba_LetterLabel_TurnIntoNarehate>魔女化</Manosaba_LetterLabel_TurnIntoNarehate>
+    <Manosaba_LetterText_TurnIntoNarehate>{PAWN_labelShort}已經徹底魔女化，化爲僅由殺意驅動的殘骸。</Manosaba_LetterText_TurnIntoNarehate>
+    <MentalBreakFactor_Recovery>{0} 從魔女因子的暴走中平復下來了。\n她不再嘗試殺死 {1} 了，暫時地。</MentalBreakFactor_Recovery>
+    <!-- Letter Yuki Visitor -->
+    <Manosaba_Incident_YukiVisitor_letterLabel>訪客</Manosaba_Incident_YukiVisitor_letterLabel>
+    <Manosaba_Incident_YukiVisitor_letterText>一位來歷不明的年輕女性來到了你的殖民地。\n\n她自稱爲"{YUKI}"，她的來訪似乎有一些隱藏的目的。\n\n你可以與她交談，瞭解更多信息。</Manosaba_Incident_YukiVisitor_letterText>
+    <!-- Letter Yuki Undead -->
+    <Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel>{YUKI}已離開</Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel>
+    <Manosaba_PatchUndead_teleportLeaveOnDeath_letterText>由於受到致命傷害，{YUKI}已經離開殖民地。</Manosaba_PatchUndead_teleportLeaveOnDeath_letterText>
+    <!-- Message Killed by Tredecim -->
+    <Manosaba_Message_KilledByTredecim>{0}由於攜帶有魔女因子被特雷德基姆殺死了。\n但是魔女因子本身並沒有離開殖民地。</Manosaba_Message_KilledByTredecim>
+    <!-- Message No Resurrect due to Tredecim -->
+    <Manosaba_Message_NoResurrect>魔女 {0} 已經被特雷德基姆徹底殺死，無法被複活了。</Manosaba_Message_NoResurrect>
+    <!-- Reason Psychic Ritual Narehate Requirement -->
+    <Manosaba_NarehateTargetInvalid>{0}不是魔女的殘骸</Manosaba_NarehateTargetInvalid>
+    <!-- Reason Psychic Ritual Sabbat Requirement -->
+    <Manosaba_Sabbat_NoMajyoinshi>{0} 沒有魔女因子</Manosaba_Sabbat_NoMajyoinshi>
+    <!-- Message Part Regeneration -->
+    <Manosaba_Message_PartRegen>由於{0_nameDef}的魔女因子，{0_pronoun}的{1}再生了!</Manosaba_Message_PartRegen>
+    <!-- Reason Yuki Ability Add -->
+    <Manosaba_AbilityAdd_NotHumanlike>{0} 不是類人生物</Manosaba_AbilityAdd_NotHumanlike>
+    <Manosaba_AbilityAdd_AlreadyHas>{0} 已經擁有魔女因子</Manosaba_AbilityAdd_AlreadyHas>
+    <Manosaba_AbilityAdd_CannotBeYuki>{0} 無法被賦予魔女因子</Manosaba_AbilityAdd_CannotBeYuki>
+    <Manosaba_AbilityRemove_NotHumanlike>{0} 不是類人生物</Manosaba_AbilityRemove_NotHumanlike>
+    <Manosaba_AbilityRemove_DoesntHave>{0} 沒有魔女因子</Manosaba_AbilityRemove_DoesntHave>
+    <Manosaba_AbilityRemove_CannotBeYuki>{0} 無法被移除魔女因子</Manosaba_AbilityRemove_CannotBeYuki>
+
+</LanguageData>

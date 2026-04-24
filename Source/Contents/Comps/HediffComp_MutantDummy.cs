@@ -16,7 +16,18 @@ public class HediffCompProperties_MutantDummy : HediffCompProperties
 public class HediffComp_MutantDummy : HediffComp
 {
     private HediffCompProperties_MutantDummy Props => (HediffCompProperties_MutantDummy)props;
-        
+
+    // public override string CompTipStringExtra
+    // {
+    //     get
+    //     {
+    //         var body = " IsColonist: " + (Pawn.IsColonist ? "true" : "false")
+    //             + "/n IsFreeColonist: " + (Pawn.IsFreeColonist ? "true" : "false")
+    //             + "/n IsColonySubhumanPlayerControlled: " + (Pawn.IsColonySubhumanPlayerControlled ? "true" : "false");
+    //         return body;
+    //     }
+    // }
+
     private const int TickInterval = 1000;
         
     private float _countdownSeverity = 0.0001f;

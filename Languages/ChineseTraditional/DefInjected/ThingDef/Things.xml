@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmThingAburibin.label>炙烤藥瓶</UmThingAburibin.label>
+    <UmThingAburibin.description>"把藥瓶烤一下就會變成炙烤藥瓶哦!"某只小笨狗曾如是說道。\n\n但是烤過的藥瓶究竟有什麼用呢?</UmThingAburibin.description>
+
+    <UmThingCrystallizedEye.label>結晶化眼球</UmThingCrystallizedEye.label>
+    <UmThingCrystallizedEye.description>使用特雷德基姆殺死魔女引起的副作用，也許有什麼用處。</UmThingCrystallizedEye.description>
+
+    <UmThingDrugTredecim.label>特雷德基姆</UmThingDrugTredecim.label>
+    <UmThingDrugTredecim.description>特雷德基姆，拉丁語中數字十三的意思。據說是一種可以殺死魔女的獨特藥劑。</UmThingDrugTredecim.description>
+    <UmThingDrugTredecim.ingestible.ingestCommandString>服用{0}</UmThingDrugTredecim.ingestible.ingestCommandString>
+    <UmThingDrugTredecim.ingestible.ingestReportString>正在服用{0}</UmThingDrugTredecim.ingestible.ingestReportString>
+
+    <UmThingWeaponSimpleSpear.label>簡易長矛</UmThingWeaponSimpleSpear.label>
+    <UmThingWeaponSimpleSpear.description>這樣的"武器"真的用來攻擊嗎？</UmThingWeaponSimpleSpear.description>
+    <UmThingWeaponSimpleSpear.tools.point.label>箭尖</UmThingWeaponSimpleSpear.tools.point.label>
+
+    <UmThingWeaponRitualSwordReplica.label>仿制儀式劍</UmThingWeaponRitualSwordReplica.label>
+    <UmThingWeaponRitualSwordReplica.description>利用邊緣世界的材料與手段仿制的儀式用品，真的能夠起到應有的效果嗎？</UmThingWeaponRitualSwordReplica.description>
+    <UmThingWeaponRitualSwordReplica.tools.point.label>劍尖</UmThingWeaponRitualSwordReplica.tools.point.label>
+    <UmThingWeaponRitualSwordReplica.tools.edge.label>劍刃</UmThingWeaponRitualSwordReplica.tools.edge.label>
+
+    <UmThingWeaponRitualSword.label>儀式劍</UmThingWeaponRitualSword.label>
+    <UmThingWeaponRitualSword.description>魔女安息儀式中召喚出的大魔女攜帶的魔法劍。</UmThingWeaponRitualSword.description>
+    <UmThingWeaponRitualSword.tools.point.label>劍尖</UmThingWeaponRitualSword.tools.point.label>
+    <UmThingWeaponRitualSword.tools.edge.label>劍刃</UmThingWeaponRitualSword.tools.edge.label>
+
+</LanguageData>
+

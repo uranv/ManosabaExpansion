@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <AssemblyName>UranvManosaba</AssemblyName>
-        <AssemblyVersion>1.0.6</AssemblyVersion>
+        <AssemblyVersion>1.0.8</AssemblyVersion>
         <RootNamespace>UranvManosaba</RootNamespace>
         <LangVersion>10</LangVersion>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -47,5 +47,25 @@
         <Compile Remove="**\.DS_Store" />
         <Compile Remove="**\**\.DS_Store" />
     </ItemGroup>
-    
+
+    <Target Name="GenerateBuildDate" BeforeTargets="BeforeCompile">
+        <PropertyGroup>
+            <BuildTime>$([System.DateTime]::Now.ToString('yyyy-MM-dd'))</BuildTime>
+            <GeneratedCode>
+                namespace UranvManosaba {
+                public static class BuildConstants {
+                public const string BuildDate = " (last compiled at $(BuildTime))"%3B
+                }
+                }
+            </GeneratedCode>
+        </PropertyGroup>
+        <WriteLinesToFile
+                File="$(IntermediateOutputPath)BuildConstants.g.cs"
+                Lines="$(GeneratedCode)"
+                Overwrite="true" />
+        <ItemGroup>
+            <Compile Include="$(IntermediateOutputPath)BuildConstants.g.cs" />
+        </ItemGroup>
+    </Target>
+
 </Project>

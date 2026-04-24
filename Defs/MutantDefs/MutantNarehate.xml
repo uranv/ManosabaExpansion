@@ -7,7 +7,7 @@
         <!--<hediff>UmHediffMutantDummy</hediff>-->
         <overrideLabel>true</overrideLabel>
         <overrideInspectString>true</overrideInspectString>
-        <consideredSubhuman>true</consideredSubhuman>
+        <consideredSubhuman>false</consideredSubhuman>
         <thinkTree>UmThinkTreeHumanlikeNarehate</thinkTree>
         <thinkTreeConstant>UmThinkTreeHumanlikeConstantNarehate</thinkTreeConstant>
         <canGainXP>false</canGainXP>

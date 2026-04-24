@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- ThingDef Narehate Corpse -->
+    <Manosaba_NarehateCorpse_Label>魔女殘骸的屍體</Manosaba_NarehateCorpse_Label>
+    <ThingDef_NarehateCorpse_label>魔女殘骸的屍體</ThingDef_NarehateCorpse_label>
+    <ThingDef_NarehateCorpse_description>一具原本屬於人類的遺體，受魔女因子的詛咒轉化為了魔女的殘骸。等等，魔女的殘骸不是無法死亡的嗎……</ThingDef_NarehateCorpse_description>
+    <ThingDef_NarehateCorpse_Note1_label>初步調查</ThingDef_NarehateCorpse_Note1_label>
+    <ThingDef_NarehateCorpse_Note1_text>過初步調查，在這具魔女的殘骸的屍體上你發現了明顯的異常之處。她的眼睛不知為何變成了結晶化的無機物寶石形態。</ThingDef_NarehateCorpse_Note1_text>
+    <ThingDef_NarehateCorpse_Note2_label>調查完成</ThingDef_NarehateCorpse_Note2_label>
+    <ThingDef_NarehateCorpse_Note2_text>你已經完全解析了殺死這個魔女的殘骸的秘密。利用一種被稱為特雷德基姆的特殊藥劑，你可以無效化魔女因子帶來的不死性，並且徹底殺死它的攜帶者。</ThingDef_NarehateCorpse_Note2_text>
+</LanguageData>
+

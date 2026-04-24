@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmHediffTredecim.label>特雷德基姆</UmHediffTredecim.label>
+    <UmHediffTredecim.description>一種可以殺死擁有不死之軀的魔女的藥物成分。</UmHediffTredecim.description>
+    
+    <UmHediffCrystallized.label>結晶化</UmHediffCrystallized.label>
+    <UmHediffCrystallized.description>這隻眼睛已經結晶化。很美麗，但它的主人再也用不到它了。</UmHediffCrystallized.description>
+    
+    <UmHediffMutantDummy.label>都是月代雪乾的</UmHediffMutantDummy.label>
+    <UmHediffMutantDummy.description>管理變種人的特殊健康狀態，你不應該看到這個</UmHediffMutantDummy.description>
+    
+    <UmHediffMutantCountdown.label>心靈控制</UmHediffMutantCountdown.label>
+    <UmHediffMutantCountdown.description>這只魔女的殘骸目前處於被洗腦的狀態，直到失控…</UmHediffMutantCountdown.description>
+    
+    <UmHediffMutantDraft.label>徵召指令</UmHediffMutantDraft.label>
+    <UmHediffMutantDraft.description>受控的殘骸處於徵召狀態。\n\n她的戰鬥能力顯著增強，但是失控倒計時加速 1.5 倍。</UmHediffMutantDraft.description>
+
+    <UmHediffMutantHealingAbility.label>極速愈療</UmHediffMutantHealingAbility.label>
+    <UmHediffMutantHealingAbility.description>體內的魔女因子被激發至極限，獲得了超乎想象的自愈能力。</UmHediffMutantHealingAbility.description>
+
+
+</LanguageData>
+

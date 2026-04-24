@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmEntryFactor.label>魔女因子</UmEntryFactor.label>
+    <UmEntryFactor.description>一種不屬於邊緣世界之外的異象。能夠從心靈層面感染類人生物，最終使其淪為殺意驅使的怪物。</UmEntryFactor.description>
+    
+    <UmEntryCorpse.label>殘骸屍體</UmEntryCorpse.label>
+    <UmEntryCorpse.description>這具屍體曾經是受到魔女因子的詛咒，最終淪為魔女的殘骸的類人生物。\n\n魔女的殘骸雖然具有一般意義的不死性，但是仍然存在某些特殊手段能夠殺死她們。</UmEntryCorpse.description>
+    
+    <UmEntryMutant.label>魔女的殘骸</UmEntryMutant.label>
+    <UmEntryMutant.description>成為殘骸之後，之前擁有的魔法就會消失，成為空殼一樣的存在。\n\n但是，她們擁有作為魔女的不死之軀，還擁有了超乎常理的身體能力。平時動作緩慢。</UmEntryMutant.description>
+
+    <UmEntryYuki.label>大魔女 雪</UmEntryYuki.label>
+    <UmEntryYuki.description>一切的元兇，耐心地等待者破滅的到來的大魔女。\n\n為了散播魔女因子的詛咒幾乎失去了所有魔法。</UmEntryYuki.description>
+</LanguageData>
+

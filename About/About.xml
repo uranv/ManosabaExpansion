@@ -22,7 +22,7 @@
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
 	</modDependencies>
-	<modVersion IgnoreIfNoMatchingField="True">1.0.7</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">1.0.8</modVersion>
 	<description>
 <![CDATA[<b>模组名:</b>
 魔女因子扩散中ー魔法少女的魔女审判拓展
@@ -30,17 +30,17 @@
 Witch's Factor Spreading - Magical Girl Witch Trials Expansion
 
 <b>简介:</b>
-基于游戏「魔法少女的魔女审判」中魔女因子的概念，添加了基于心情演化的魔女化机制，魔女残骸相关科技、仪式和人类亚种等游戏内容。
+基于游戏「魔法少女的魔女审判」中魔女因子的概念，添加了基于心情演化的魔女化机制，魔女残骸相关科技、仪式和变种人类等游戏内容。
 以及不知道为什么<color=lightblue>大魔女</color>也来到了边缘世界传播她的魔女因子了…
 
 <b>交流及错误反馈群：</b>1078271304
 
 <b>概要:</b>
-ゲーム「魔法少女の魔女裁判」における「魔女の因子」の概念に基づき、気分の変化によって進行する魔女化メカニズム、魔女のなれはてに関連する技術、儀式、そして亜人種などのコンテンツを追加します。
+ゲーム「魔法少女の魔女裁判」における「魔女の因子」の概念に基づき、気分の変化によって進行する魔女化メカニズム、魔女のなれはてに関連する技術、儀式、そして変異体などのコンテンツを追加します。
 そして、なぜか<color=lightblue>大魔女</color>もまた、彼女の魔女因子を広めるためにリムワールドへとやって来ました…
 
 <b>Introduction:</b>
-Based on the concept of the "Witch Factor" from the game "Magical Girl's Witch Trial", this mod introduces a witch transformation mechanism driven by pawn's mood, along with technologies, rituals, and a new subhuman species related to the "narehate of a witch".
+Based on the concept of the "Witch Factor" from the game "Magical Girl's Witch Trial", this mod introduces a witch transformation mechanism driven by pawn's mood, along with technologies, rituals, and a new mutant species related to the "narehate of a witch".
 Also, for some reason, the <color=lightblue>Grand Witch</color> has arrived on this rimworld to spread her witch's factor...
 ]]></description>
 </ModMetaData>

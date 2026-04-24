@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmAbilityYukiAdd.label>添加因子</UmAbilityYukiAdd.label>
+    <UmAbilityYukiAdd.description>向目標添加魔女因子。\n\n右鍵切換為移除魔女因子的能力。</UmAbilityYukiAdd.description>
+    
+    <UmAbilityYukiRemove.label>移除因子</UmAbilityYukiRemove.label>
+    <UmAbilityYukiRemove.description>從目標移除魔女因子。\n\n右鍵切換為添加魔女因子的能力。</UmAbilityYukiRemove.description>
+    
+    <UmAbilityYukiSkip.label>血肉折越</UmAbilityYukiSkip.label>
+    <UmAbilityYukiSkip.description>將軀體化為肉塊，並在附近的目標地點重組。躍遷後獲得短暫的易傷狀態。</UmAbilityYukiSkip.description> 
+
+    <UmAbilityMutantLongjump.label>殘骸跳躍</UmAbilityMutantLongjump.label>
+    <UmAbilityMutantLongjump.description>命令殘骸利用其超凡的身體能力跳躍到遠處，消耗微量洗腦控制時間。</UmAbilityMutantLongjump.description>
+    <UmAbilityMutantLongjump.verbProperties.label>跳躍</UmAbilityMutantLongjump.verbProperties.label>
+
+    <UmAbilityMutantHealing.label>極速愈療</UmAbilityMutantHealing.label>
+    <UmAbilityMutantHealing.description>將受控制的殘骸體內的魔女因子激發至極限，獲得超乎想象的自愈能力，即使失去知覺仍然可以使用，代價是消耗大量洗腦控制時間。</UmAbilityMutantHealing.description>
+
+</LanguageData>
+

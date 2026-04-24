@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Make_UmThingAburibin.label>製作炙烤藥瓶</Make_UmThingAburibin.label>
+    <Make_UmThingAburibin.description>"把藥瓶烤一下就會變成炙烤藥瓶哦!"</Make_UmThingAburibin.description>
+    <Make_UmThingAburibin.jobString>正在製作炙烤藥瓶。</Make_UmThingAburibin.jobString>
+
+    <Make_UmThingDrugTredecim.label>製作特雷德基姆</Make_UmThingDrugTredecim.label>
+    <Make_UmThingDrugTredecim.description>利用黑暗超凡碎片，你得以從魔女殘骸屍體中獲取的結晶化眼球中還原出殺死魔女的藥劑，特雷德基姆。</Make_UmThingDrugTredecim.description>
+    <Make_UmThingDrugTredecim.jobString>正在製作特雷德基姆。</Make_UmThingDrugTredecim.jobString>
+
+    <Administer_UmThingDrugTredecim.label>施用特雷德基姆</Administer_UmThingDrugTredecim.label>
+    <Administer_UmThingDrugTredecim.description>施用特雷德基姆。</Administer_UmThingDrugTredecim.description>
+    <Administer_UmThingDrugTredecim.jobString>正在施用特雷德基姆。</Administer_UmThingDrugTredecim.jobString>
+</LanguageData>
+
