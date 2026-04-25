@@ -94,7 +94,7 @@ public class HediffComp_NarehateHealing : HediffComp
             var chance = 0.1f;
             if (Props.isOverride)
             {
-                chance = Mathf.Min(0f,Mathf.Min(Props.overrideRegenFactor,1f));
+                chance = Mathf.Max(0f,Mathf.Min(Props.overrideRegenFactor,1f));
                 if (Props.overrideRegenFactor is <= 0 or > 1)
                 {
                     var log = "[Manosaba] HediffComp_NarehateHealing has invalid {overrideRegenFactor: " +
