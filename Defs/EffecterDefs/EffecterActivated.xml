@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EffecterDef>
+    <defName>UmEffecterActivated</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <fleckDef>UmFleckActivated</fleckDef>
+        <positionRadius>0</positionRadius>
+        <positionRadiusMin>0</positionRadiusMin>
+        <scale>1</scale>
+        <speed>0~0</speed>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <angle>0~0</angle>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>UmFleckActivated</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>4</solidTime>
+    <fadeOutTime>2.5</fadeOutTime>
+    <growthRate>2.5</growthRate>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.15</_distortionIntensity>
+        <_brightnessMultiplier>0.85</_brightnessMultiplier>
+        <_noiseIntensity>10</_noiseIntensity>
+        <_ageToNoiseRatio>0</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>8.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+</Defs>

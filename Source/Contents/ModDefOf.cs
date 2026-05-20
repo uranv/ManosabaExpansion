@@ -79,6 +79,9 @@ public static class ModDefOf
     // GeneDefs
     [MayRequireBiotech]
     public static GeneDef UmGeneFactor;
+
+    // EffecterDefs
+    public static EffecterDef UmEffecterActivated;
     
     static ModDefOf()
     {

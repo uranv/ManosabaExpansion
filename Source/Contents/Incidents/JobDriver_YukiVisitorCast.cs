@@ -43,13 +43,14 @@ public class JobDriver_YukiVisitorCast : JobDriver
         // 释放最终效果
         yield return Toils_General.Do(delegate
         {
-            var map = pawn.Map;
+            // var map = pawn.Map;
             //Vector3 center = pawn.DrawPos;
             // 中心波动
-            FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 16f);
-            FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 10f);
-            FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 6f);
+            // FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 16f);
+            // FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 10f);
+            // FleckMaker.Static(pawn.Position, map, FleckDefOf.PsycastAreaEffect, 6f);
             //FleckMaker.Static(pawn.Position, map, FleckDefOf.ExplosionFlash, 8f);
+            ModDefOf.UmEffecterActivated.Spawn(pawn.Position, pawn.Map);
             SoundDef.Named("PsychicSootheGlobal").PlayOneShotOnCamera(pawn.Map);
             // 更新 CompYukiVisitor 状态
             var comp = pawn.GetComp<Comp_YukiVisitor>();

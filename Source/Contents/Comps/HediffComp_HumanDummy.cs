@@ -77,6 +77,12 @@ public class HediffComp_HumanDummy : HediffComp
                 
         }
     }
+    public static bool QueryIsDisplayed(Pawn p)
+    {
+        var h = p?.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
+        var c = h?.TryGetComp<HediffComp_HumanDummy>();
+        return c is { shouldDisplay: true };
+    }
 
     //====================================
     // 覆盖函数

@@ -65,10 +65,11 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             if (map != null)
             {
                 // 中心波动
-                FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 16f);
-                FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 10f);
-                FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 6f);
+                // FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 16f);
+                // FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 10f);
+                // FleckMaker.Static(pos, map, FleckDefOf.PsycastAreaEffect, 6f);
                 //FleckMaker.Static(pawn.Position, map, FleckDefOf.ExplosionFlash, 8f);
+                ModDefOf.UmEffecterActivated.Spawn(pawn.Position, pawn.Map);
                 SoundDef.Named("PsychicSootheGlobal").PlayOneShotOnCamera(map);
                 // 更新 CompYukiVisitor 状态
                 var comp = pawn.GetComp<Comp_YukiVisitor>();
