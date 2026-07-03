@@ -8,7 +8,7 @@ namespace UranvManosaba.Contents;
 public class ManosabaModSettings : ModSettings
 {
     // 一般设置
-    public bool isShowProgress = false;  // HediffComp_ShowSeverity & HediffComp_Progress
+    public bool isShowProgress = true;  // HediffComp_ShowSeverity & HediffComp_Progress
     public bool debugMode = false; 
 
     public float previewMood = 50;  // do not save
@@ -31,7 +31,7 @@ public class ManosabaModSettings : ModSettings
     public float narehateHealFactor = 500f;
     public float narehateBloodHealFactor = 67f;
     public bool isNarehateBloodHeal = true;
-    public float narehateDownedDivisor = 5f;
+    public float narehateDownedDivisor = 3f;
     public bool isNarehateDownedDivisor = true;
     // 后处理系数作用于: 半魔女奖励, 小雪；使用tick为600, 即默认为 narehateHealFactor / 10 * narehateBloodHealFactor
     public float postHealMultiplier = 0.22f;
@@ -47,7 +47,7 @@ public class ManosabaModSettings : ModSettings
 
 
     // 其他设置
-    public float inverseTemperature = 3f;  // Manosaba_Utils
+    public float inverseTemperature = 5f;  // Manosaba_Utils
     public bool allowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
     public bool disableTale = false;  // Grammar_Utils
     public bool useUniqueBodyType = false; // YukiGeneralUtils
@@ -58,7 +58,7 @@ public class ManosabaModSettings : ModSettings
         Scribe_Values.Look(ref debugMode, "debugMode", false);
 
 
-        Scribe_Values.Look(ref isShowProgress, "isShowProgress", false);
+        Scribe_Values.Look(ref isShowProgress, "isShowProgress", true);
         Scribe_Values.Look(ref severityIncreaseFactor, "severityIncreaseFactor", 16.0f);
         Scribe_Values.Look(ref severityDecreaseFactor, "severityDecreaseFactor", 8.0f);
         Scribe_Values.Look(ref severityIncreaseBias, "severityIncreaseBias", 23.0f);
@@ -108,6 +108,7 @@ public class ManosabaMod : Mod
     public static TaggedString EnabledChoice => EnabledChoiceRaw.Colorize(Color.green);
     public static TaggedString DisabledChoice => DisabledChoiceRaw.Colorize(Color.red);
 
+    private const float DailyUpdateCount = 120 * 100;
     // Mod 名称
     public override string SettingsCategory() => "ManosabaSettings_ModName".Translate();
 
@@ -281,7 +282,7 @@ public class ManosabaMod : Mod
         var leftRectValOutput = new Rect(rowRectValOutput.x, rowRectValOutput.y, colWidthValOutput, rowRectValOutput.height);
         var rightRectValOutput = new Rect(rowRectValOutput.x + (colWidthValOutput + 50f), rowRectValOutput.y, colWidthValOutput, rowRectValOutput.height);
         // 预览输出左
-        var changePerDayPreview = 120*100*Comps.HediffComp_Progress.GetSeverityChange(Settings.previewMood / 100f,  Settings.previewMinorThres / 100f);
+        var changePerDayPreview = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange(Settings.previewMood / 100f,  Settings.previewMinorThres / 100f);
         string leftTextValOutput = "ManosabaSettings_changePerDayPreview".Translate(changePerDayPreview.ToString("F4"));
         // 预览输出右
         var mtbDaysPreview = Settings.baseMtbDays 
@@ -873,7 +874,7 @@ public class ManosabaMod : Mod
         {
             var t = (float)i / segments;
             var mathX = Mathf.Lerp(xMin, xMax, t); // X 轴取值范围 [xMin, xMax]
-            var mathY = 120*100*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
+            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
             var guiX = rect.x + t * rect.width;
             var normalizedY = (Settings.severityIncreaseFactor - mathY) / yValRange; // 函数值 -[-sDF,sIF] 映射为 [0,1]
             var guiY = rect.y + yDrawLength * (yEdgePercent + normalizedY);
@@ -888,7 +889,7 @@ public class ManosabaMod : Mod
         if (Settings.previewMood is >= xMin and <= xMax)
         {
             var mathX = Settings.previewMood;
-            var mathY = 120*100*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
+            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
             var t = (mathX - xMin) / (xMax - xMin);
             var guiX = rect.x + t * rect.width;
             var normalizedY = (Settings.severityIncreaseFactor - mathY) / yValRange;

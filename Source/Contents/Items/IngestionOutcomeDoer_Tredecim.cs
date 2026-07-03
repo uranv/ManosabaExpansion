@@ -8,7 +8,7 @@ public class IngestionOutcomeDoer_Tredecim : IngestionOutcomeDoer
 {
     protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
     {
-        if (pawn == null) return;
+        if (pawn?.health == null) return;
         
         var potionDef = ModDefOf.UmHediffTredecim;
         if (potionDef != null)
@@ -19,8 +19,8 @@ public class IngestionOutcomeDoer_Tredecim : IngestionOutcomeDoer
         var dummyDef = ModDefOf.UmHediffHumanDummy;
         var mutantDummyDef = ModDefOf.UmHediffMutantDummy;
 
-        var hasDummy = dummyDef != null && pawn.health?.hediffSet?.HasHediff(dummyDef) != false;
-        var hasMutantDummy = mutantDummyDef != null && pawn.health?.hediffSet?.HasHediff(mutantDummyDef) != false;
+        var hasDummy = dummyDef != null && pawn.health.hediffSet.HasHediff(dummyDef);
+        var hasMutantDummy = mutantDummyDef != null && pawn.health.hediffSet.HasHediff(mutantDummyDef);
 
         if (!hasDummy && !hasMutantDummy) return;
         // 发送消息提示

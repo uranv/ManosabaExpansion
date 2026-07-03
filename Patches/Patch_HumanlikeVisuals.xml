@@ -4,7 +4,6 @@
       
       <li Class="PatchOperationAdd">
         <success>Always</success>
-        
         <xpath>/Defs/*[race/intelligence="Humanlike" and not(comps)]</xpath>
         <value>
           <comps />
@@ -12,6 +11,7 @@
       </li>
 
       <li Class="PatchOperationAdd">
+        <success>Always</success>
         <xpath>/Defs/*[race/intelligence="Humanlike"]/comps</xpath>
         <value>
           <li Class="UranvManosaba.Contents.Comps.CompProperties_NarehateVisuals" />

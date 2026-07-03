@@ -18,7 +18,7 @@
     <!-- 魔女尸体 可见hediff -->
     <HediffDef>
         <defName>UmHediffCrystallized</defName>
-        <label>crystalized</label>
+        <label>crystallized</label>
         <description>This eye has crystallized. It is beautiful, but its owner can no longer use it.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <defaultLabelColor>(0.86, 0.4, 0.45)</defaultLabelColor>

@@ -1,4 +1,5 @@
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace UranvManosaba.Contents.Comps;
@@ -31,7 +32,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
         get
         {
             var h = parent.pawn.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown);
-            return h != null && !(h.Severity + 0.01f < Props.SeverityCost);
+            return h != null && (h.Severity - Props.SeverityCost > 0.0001f );
         }
     }
 
@@ -41,7 +42,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
         
         var p = parent.pawn;
         var h = p?.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown);
-        if (h != null) h.Severity -= Props.SeverityCost;
+        if (h != null) h.Severity = Mathf.Max(0.0001f, h.Severity - Props.SeverityCost);
     }
 
     public override bool GizmoDisabled(out string reason)
@@ -52,7 +53,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
             reason = "Manosaba_MutantAbility_NotMutant".Translate(parent.pawn);
             return true;
         }
-        if (h.Severity + 0.01f < Props.SeverityCost)
+        if (h.Severity - Props.SeverityCost <= 0.0001f )
         {
             reason = "Manosaba_MutantAbility_NotEnoughTime".Translate(parent.pawn);
             return true;

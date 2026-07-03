@@ -20,10 +20,10 @@ public static class GrammarUtils
 
 
     // 保底无 Tale 的生成文本
-    public static TaggedString GenerateStory(Pawn visitor, Pawn negitiator = null)
+    public static TaggedString GenerateStory(Pawn visitor, Pawn negotiator = null)
     {
         TaggedString generatedStory;
-        TaggedString rootStory = "Manosaba_Story_Root".Translate(visitor, negitiator);
+        TaggedString rootStory = "Manosaba_Story_Root".Translate(visitor, negotiator);
         var storyPack = ModDefOf.UmRulePackStory;
         var utilsPack = ModDefOf.UmRulePackUtils;
             
@@ -38,14 +38,14 @@ public static class GrammarUtils
         return rootStory+generatedStory;
     }
     // 生成 Tale 相关文本
-    public static TaggedString GenerateTale(Pawn visitor, Pawn negitiator = null)
+    public static TaggedString GenerateTale(Pawn visitor, Pawn negotiator = null)
     {
         if (ManosabaMod.Settings.disableTale) return "ERR: manually disabled generated from tales.";
             
-        var fallbackStory = GenerateStory(visitor, negitiator);
+        var fallbackStory = GenerateStory(visitor, negotiator);
             
         // 尝试使用存档 Tale 生成
-        var rootTale = "Manosaba_Tale_Root".Translate(visitor, negitiator);
+        var rootTale = "Manosaba_Tale_Root".Translate(visitor, negotiator);
         var validTales = Find.TaleManager
             .AllTalesListForReading.Where(t => t.def.usableForArt).ToList();
 

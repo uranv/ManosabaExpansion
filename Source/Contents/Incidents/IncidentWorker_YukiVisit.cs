@@ -26,7 +26,7 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
         if (comp != null)
         {
-            if (!comp.isYukiVisited && comp.isCorspeDroped) postFactor = 64f;
+            if (!comp.isYukiVisited && comp.isCorpseDropped) postFactor = 64f;
             else if (comp.isYukiVisited)postFactor = 1f;
         }
         return postFactor * base.ChanceFactorNow(target);

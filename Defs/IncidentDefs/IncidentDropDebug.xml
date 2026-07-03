@@ -13,7 +13,6 @@
         <letterLabel>Dead narehate</letterLabel>
         <letterText>A corpse of a narehate of a witch has fallen nearby...</letterText>
         <letterDef>NeutralEvent</letterDef>
-        <baseChance>1.0</baseChance>
         <minRefireDays>30</minRefireDays>
     </IncidentDef>
 </Defs>

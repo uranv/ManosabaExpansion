@@ -48,8 +48,8 @@
             </layers>
             <wornGraphicPath>things/pawn/humanlike/yuki/dress/dress</wornGraphicPath>
             <tags>
-                <li MayRequire="Ludeon.RimWorld.Royal">Royal</li>
-                <li MayRequire="Ludeon.RimWorld.Royal">RoyalTier7</li>
+                <li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>
+                <li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier7</li>
             </tags>
             <countsAsClothingForNudity>true</countsAsClothingForNudity>
             <canBeDesiredForIdeo MayRequire="Ludeon.RimWorld.Ideology">false</canBeDesiredForIdeo>

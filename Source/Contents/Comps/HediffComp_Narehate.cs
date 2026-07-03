@@ -33,7 +33,10 @@ public class HediffComp_Narehate : HediffComp
     public override void CompPostPostRemoved()
     {
         base.CompPostPostRemoved();
-            
+
+        // 若 Pawn 健康组件已销毁？则跳过处理
+        if (Pawn?.health == null) return;
+
         // 修改 dummy cured state
         var dummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
         HediffComp_HumanDummy.SetDummyCured(dummyHediff);

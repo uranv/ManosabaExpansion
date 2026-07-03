@@ -4,7 +4,6 @@
         <defName>UmRulePackStory</defName>
         <include>
             <li>UmRulePackUtils</li>
-            <li>UmRulePackUtils</li>
             <li>UmRulePackSingle_Actions</li>
             <li>UmRulePackSingle_Bridges</li>
             <li>UmRulePackSingle_Ends</li>

@@ -3,7 +3,7 @@
     <!-- 魔女残骸: 结晶化眼球 -->
     <ThingDef ParentName="ResourceBase">
         <defName>UmThingCrystallizedEye</defName>
-        <label>crystalized eyeball</label>
+        <label>crystallized eyeball</label>
         <description>A side effect caused by killing a witch using Trēdecim. Perhaps it has some use.</description>
         <graphicData>
             <texPath>things/item/resource/crystallized_eye</texPath>

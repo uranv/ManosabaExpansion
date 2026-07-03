@@ -18,7 +18,7 @@ public static class ModDefOf
     public static HediffDef UmHediffYukiDummy;
     public static HediffDef UmHediffYukiVisitor;
     public static HediffDef UmHediffYukiVisitorHidden;
-    public static HediffDef UmHediffYukiVisitorInvisiblity;
+    public static HediffDef UmHediffYukiVisitorInvisibility;
     public static HediffDef UmHediffYukiColonist;
     public static HediffDef UmHediffYukiColonistHidden;
     public static HediffDef UmHediffYukiSkipDebuff;

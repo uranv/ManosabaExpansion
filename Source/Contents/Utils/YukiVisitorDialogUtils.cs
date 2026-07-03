@@ -7,7 +7,7 @@ namespace UranvManosaba.Contents.Utils;
 public static class YukiVisitorDialogUtils
 {
     // 对话树
-    public static DiaNode CreateDialogTree(Pawn negitiator, YukiVisitorDialogues dialog, Comp_YukiVisitor comp)
+    public static DiaNode CreateDialogTree(Pawn negotiator, YukiVisitorDialogues dialog, Comp_YukiVisitor comp)
     {
         if (comp.parent is not Pawn visitor)
         {
@@ -22,8 +22,8 @@ public static class YukiVisitorDialogUtils
         var level2 = new DiaNode(dialog.Level2);
         var level3 = new DiaNode(dialog.Level3);
         var level4 = new DiaNode(dialog.Level4);
-        var level5 = new DiaNode(dialog.Level5+"\n\n"+GrammarUtils.GenerateTale(visitor, negitiator));
-        var level5Copy = new DiaNode(dialog.Level5+"\n\n"+GrammarUtils.GenerateTale(visitor, negitiator));
+        var level5 = new DiaNode(dialog.Level5+"\n\n"+GrammarUtils.GenerateTale(visitor, negotiator));
+        var level5Copy = new DiaNode(dialog.Level5+"\n\n"+GrammarUtils.GenerateTale(visitor, negotiator));
         var level6 = new DiaNode(dialog.Level6);
         var level10 = new DiaNode(dialog.Level10);
         var level11 = new DiaNode(dialog.Level11);    
@@ -379,7 +379,7 @@ public static class YukiVisitorDialogUtils
         var level5Choice1Copy = new DiaOption(dialog.Level5Choice1);
         level5Choice1Copy.action = delegate {
             comp.interactionSteps = comp.isInfLevel ? comp.interactionSteps : 5;
-            level5.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negitiator) : GrammarUtils.GenerateTale(visitor, negitiator);
+            level5.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negotiator) : GrammarUtils.GenerateTale(visitor, negotiator);
             level5Choice1Copy.link = Rand.Value > 0.05f ? level5 : level6;
         };
         var level5Choice2Copy = new DiaOption(dialog.Level5Choice2);
@@ -415,7 +415,7 @@ public static class YukiVisitorDialogUtils
         var level5Choice1 = new DiaOption(dialog.Level5Choice1);
         level5Choice1.action = delegate {
             comp.interactionSteps = comp.isInfLevel ? comp.interactionSteps : 5;
-            level5Copy.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negitiator) : GrammarUtils.GenerateTale(visitor, negitiator);
+            level5Copy.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negotiator) : GrammarUtils.GenerateTale(visitor, negotiator);
             level5Choice1.link = Rand.Value > 0.05f ? level5Copy : level6;
         };
         var level5Choice2 = new DiaOption(dialog.Level5Choice2)

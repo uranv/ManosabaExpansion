@@ -35,10 +35,5 @@
         <products>
             <UmThingAburibin>1</UmThingAburibin>
         </products>
-        <recipeUsers>
-            <li>Campfire</li>
-            <li>FueledStove</li>
-            <li>ElectricStove</li>
-        </recipeUsers>
     </RecipeDef>
 </Defs>

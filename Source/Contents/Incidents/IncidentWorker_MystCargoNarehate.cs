@@ -14,7 +14,7 @@ public class IncidentWorker_MystCargoNarehate:IncidentWorker_GiveQuest
         {
             // var lastFireTicks = target.StoryState.lastFireTicks;
             // var isEverFired= lastFireTicks.TryGetValue(def, out var ticks);
-            if (comp.isYukiVisited && !comp.isCorspeDroped) postFactor = 32f;
+            if (comp.isYukiVisited && !comp.isCorpseDropped) postFactor = 32f;
             // Log.Warning($"[Manosaba] lastFireTicks={ticks} and pF={postFactor} (IncidentWorker_MystCargoNarehate)");
         }
         return postFactor * base.ChanceFactorNow(target);
@@ -27,7 +27,7 @@ public class IncidentWorker_MystCargoNarehate:IncidentWorker_GiveQuest
         if (result)
         {
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp != null) comp.isCorspeDroped = true;
+            if (comp != null) comp.isCorpseDropped = true;
             //Log.Message("[Manosaba] excuted IncidentWorker_MystCargoNarehate");
         }
         return result;

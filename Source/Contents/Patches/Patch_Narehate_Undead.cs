@@ -113,7 +113,7 @@ public static class Patch_SilenceUndownedMessage
         {
             return true;
         }
-        if (text is { Length: > 0 })
+        if (text is not { Length: > 0 })
         {
             return true;
         }

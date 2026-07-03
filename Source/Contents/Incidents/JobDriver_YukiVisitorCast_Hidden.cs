@@ -27,7 +27,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
         yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 
         // 到达后添加隐身 Hediff
-        var invisibleDef = ModDefOf.UmHediffYukiVisitorInvisiblity;
+        var invisibleDef = ModDefOf.UmHediffYukiVisitorInvisibility;
         yield return Toils_General.Do(delegate
         {
             pawn.health?.AddHediff(invisibleDef);

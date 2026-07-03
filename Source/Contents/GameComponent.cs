@@ -13,10 +13,12 @@ public class ManosabaGameComponent : GameComponent
     // 小雪来访
     public bool isYukiVisited;
     // 尸体空投
-    public bool isCorspeDroped;
+    public bool isCorpseDropped;
         
     // 仪式缓存
     public int cachedQuality;
+
+    // 运行时 Unity 音频引用，无需持久化
     public Sustainer cachedSustainer;
 
     public ManosabaGameComponent(Game game)
@@ -29,7 +31,7 @@ public class ManosabaGameComponent : GameComponent
         Scribe_Values.Look(ref isAburiBinUnlocked, "isAburiBinUnlocked", false);
         Scribe_Values.Look(ref isSimpleSpearUnlocked, "isSimpleSpearUnlocked", false);
         Scribe_Values.Look(ref isYukiVisited, "isYukiVisited", false);
-        Scribe_Values.Look(ref isCorspeDroped, "isCorspeDroped", false);
+        Scribe_Values.Look(ref isCorpseDropped, "isCorpseDropped", false);
         Scribe_Values.Look(ref cachedQuality,"cachedQuality",0);
     }
 }

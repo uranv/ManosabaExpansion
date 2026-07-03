@@ -101,7 +101,7 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
             }
         }
         // Chanter 坐标
-        if (ChanterRole != null && invokerCount > 0)
+        if (ChanterRole != null && chanterCount > 0)
         {
             for (int i = 0; i < chanterCount; i++)
             {

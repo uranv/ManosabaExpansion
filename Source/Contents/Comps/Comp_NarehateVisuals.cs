@@ -24,7 +24,7 @@ public class Comp_NarehateVisuals : ThingComp
         {
             return base.CompRenderNodes();
         }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
         var list = new List<PawnRenderNode>();
 
         // 身体配置

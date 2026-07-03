@@ -15,11 +15,12 @@ public static class Patch_SurgicalInspection
         {
             return true;
         }
-        // if (pawn?.health?.hediffSet == null ||
-        //     !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy))
-        // {
-        //     return true;
-        // }
+        // 没有 hediff 时返回原版
+        if (pawn?.health?.hediffSet == null ||
+            !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy))
+        {
+            return true;
+        }
         // 已经发现时，不阻断原版手术检查
         if (Comps.HediffComp_HumanDummy.QueryIsDisplayed(pawn))
         {

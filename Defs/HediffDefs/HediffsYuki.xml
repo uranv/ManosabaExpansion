@@ -125,9 +125,9 @@
                 <statFactors>
                     <FilthRate>0</FilthRate>
                     <PsychicSensitivity>2.5</PsychicSensitivity>
-                    <PsychicEntropyMax MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</PsychicEntropyMax>
-                    <PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</PsychicEntropyRecoveryRate>
-                    <MeditationFocusGain MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Royalty">5</MeditationFocusGain>
+                    <PsychicEntropyMax MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">5</PsychicEntropyMax>
+                    <PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">5</PsychicEntropyRecoveryRate>
+                    <MeditationFocusGain MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">5</MeditationFocusGain>
                 </statFactors>
                 <statOffsets></statOffsets>
             </li>
@@ -135,7 +135,7 @@
         <comps/>
     </HediffDef>
     <HediffDef>
-        <defName>UmHediffYukiVisitorInvisiblity</defName>
+        <defName>UmHediffYukiVisitorInvisibility</defName>
         <label>invisibility magic</label>
         <description>The Great Witch has temporarily concealed her presence through magic.</description>
         <hediffClass>HediffWithComps</hediffClass>

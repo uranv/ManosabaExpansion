@@ -48,7 +48,6 @@
             <li>CubeComa</li>
             <li>CubeRage</li>
             <li>HeartAttack</li>
-            <li>Scaria</li>
             <li MayRequire="Ludeon.RimWorld.Royalty">PsychicAmplifier</li>
             <li MayRequire="Ludeon.RimWorld.Biotech">MechlinkImplant</li>
             <li MayRequire="Ludeon.RimWorld.Biotech">PregnantHuman</li>
