@@ -117,23 +117,58 @@ public static class Patch_SilenceUndownedMessage
         {
             return true;
         }
-        
+
+        // 只处理单一 pawn 事件
+        Pawn pawn = null;
         foreach (var target in lookTargets.targets)
         {
-            if (target.Thing is not Pawn pawn ||
-                pawn.health?.hediffSet == null ||
-                !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
+            if (target.Thing is not Pawn p)
             {
                 continue;
             }
+            if (pawn != null)
+            {
+                return true;
+            }
+            pawn = p;
+        }
+        if (pawn is null)
+        {
+            return true;
+        }
+        var health = pawn.health;
+        var hediffSet = health?.hediffSet;
+        if (hediffSet == null)
+        {
+            return true;
+        }
+        if (!hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
+        {
+            return true;
+        }
+        try
+        {
+            var label = pawn.LabelCap;
             // 检查消息内容: 原版Key "MessageNoLongerDowned", 使用 Translate 键值匹配
-            string noLongerDownedText = "MessageNoLongerDowned".Translate(pawn.LabelCap, pawn);
+            string noLongerDownedText = "MessageNoLongerDowned".Translate(
+                label,
+                pawn);
             if (text == noLongerDownedText)
             {
                 return false; // 阻止起身消息发送
             }
         }
-        
+        catch (Exception e)
+        {
+            Log.ErrorOnce(
+                $"[Manosaba] Exception while translating MessageNoLongerDowned\n" +
+                $"Pawn={pawn} ({pawn.thingIDNumber})\n" +
+                $"Def={pawn.def?.defName}\n" +
+                $"Text={text}\n" +
+                $"Exception:\n{e}",
+                Gen.HashCombine(pawn.thingIDNumber, e.Message)
+            );
+        }
         return true;
     }
 }
