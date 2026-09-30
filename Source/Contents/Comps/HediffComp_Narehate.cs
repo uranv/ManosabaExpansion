@@ -29,7 +29,7 @@ public class HediffComp_Narehate : HediffComp
         }
     }
 
-    // 实现治愈: 当被移除时,自动添加 [半魔女] Hediff
+    // 只有仍持有 HumanDummy 的非 mutant 才将移除残骸视为治愈。
     public override void CompPostPostRemoved()
     {
         base.CompPostPostRemoved();
@@ -37,12 +37,14 @@ public class HediffComp_Narehate : HediffComp
         // 若 Pawn 健康组件已销毁？则跳过处理
         if (Pawn?.health == null) return;
 
-        // 修改 dummy cured state
-        var dummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
-        HediffComp_HumanDummy.SetDummyCured(dummyHediff);
-            
-        // 强制刷新渲染器
+        // 清理错误 dummy 时也要刷新外观，但不能触发治愈副作用。
         Utils.NarehateUtils.RefreshPawnGraphics(Pawn);
+
+        var dummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
+        if (Pawn.IsMutant || dummyHediff == null) return;
+
+        // 修改 HumanDummy cured state；UmMutantNarehate 仍由 MutantDummy 维护残骸。
+        HediffComp_HumanDummy.SetDummyCured(dummyHediff);
 
         // 播放特效
         Utils.NarehateUtils.EffecterNarehateTrans(Pawn);

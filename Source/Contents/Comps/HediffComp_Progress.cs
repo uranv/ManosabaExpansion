@@ -33,6 +33,8 @@ public class HediffComp_Progress : HediffComp
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
         base.CompPostTickInterval(ref severityAdjustment, delta);
+        // HumanDummy 的宿主清理前，不再推进 mutant 的魔女化。
+        if (Pawn.IsMutant) return;
 
         if (Pawn.IsHashIntervalTick(TickInterval, delta))
         {

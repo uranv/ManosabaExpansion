@@ -49,7 +49,7 @@ public class HediffComp_HumanDummy : HediffComp
     public static void SetDummyCured(Hediff parent)
     {
         var comp = parent.TryGetComp<HediffComp_HumanDummy>();
-        if (comp != null)
+        if (comp != null && !comp.Pawn.IsMutant)
         {
             comp.cachedIsCured = true;
             // 立刻刷新状态
@@ -65,7 +65,7 @@ public class HediffComp_HumanDummy : HediffComp
     {
         var hediff = p?.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
         var comp = hediff.TryGetComp<HediffComp_HumanDummy>();
-        if (comp != null)
+        if (comp != null && !comp.Pawn.IsMutant)
         {
             comp.shouldDisplay = true;
             // 立刻刷新状态
@@ -91,15 +91,10 @@ public class HediffComp_HumanDummy : HediffComp
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
-        if (Pawn.IsHashIntervalTick(1000))
+        // HumanDummy 不属于任何 mutant；先转移并清理，再考虑维护状态。
+        if (Pawn.IsMutant)
         {
-            MaintainFlags();
-            MaintainHediffs();
-            MaintainGene();
-            // 任意魔女因子暴露时解锁前置科技
-            if (cachedIsDisplay) ResearchUtils.UnlockResearchPrereqs();
-            // 发现在变种人上时
-            if (Pawn.IsMutant) 
+            if (Pawn.IsHashIntervalTick(1000))
             {
                 if (ManosabaMod.Settings.debugMode) Log.Message(
                     $"[Manosaba] Try to transfer [Majyoinshi] from Mutant {Pawn.Name.ToStringFull} to other colonists on the map (Comps.HediffComp_HumanDummy.CompPostTick)");
@@ -108,6 +103,15 @@ public class HediffComp_HumanDummy : HediffComp
                 // 然后自我移除 Dummy 因子
                 Pawn.health.RemoveHediff(parent);
             }
+            return;
+        }
+        if (Pawn.IsHashIntervalTick(1000))
+        {
+            MaintainFlags();
+            MaintainHediffs();
+            MaintainGene();
+            // 任意魔女因子暴露时解锁前置科技
+            if (cachedIsDisplay) ResearchUtils.UnlockResearchPrereqs();
         }
         // 较短间隔维护精神状态
         if (Pawn.IsHashIntervalTick(300))
@@ -120,6 +124,7 @@ public class HediffComp_HumanDummy : HediffComp
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
+        if (Pawn.IsMutant) return;
         MaintainFlags();
         MaintainHediffs();
         MaintainGene();
@@ -141,6 +146,10 @@ public class HediffComp_HumanDummy : HediffComp
         // 删除基因
         var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
         if (gene != null) Pawn.genes.RemoveGene(gene);
+        if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+        {
+            Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+        }
     }
     // 开发者显示 当前进度状态
     public override string CompLabelInBracketsExtra

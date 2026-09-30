@@ -121,7 +121,9 @@ public class HediffComp_NarehateHealing : HediffComp
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
         base.CompPostTickInterval(ref severityAdjustment, delta);
-        
+        // 无效 MutantDummy 等待移除时，以及 HumanDummy 错挂在 mutant 上时，不执行治疗。
+        if (parent.ShouldRemove || (Props.applyStatusSwitch && Pawn.IsMutant)) return;
+
         if (Pawn.IsHashIntervalTick(TickInterval, delta))
         {
             if (Props.applyStatusSwitch && !CachedHumanDummy.cachedIsFinished) return;

@@ -29,19 +29,28 @@ public class HediffComp_MutantDummy : HediffComp
     // }
 
     private const int TickInterval = 1000;
-        
+
+    // 只在添加及读档后校验；交由健康系统统一移除，避免后续 GiveAbility
+    // 的添加回调在提前移除之后继续执行，留下孤立能力。
+    private bool _invalidHost;
+    public override bool CompShouldRemove => _invalidHost || base.CompShouldRemove;
+
     private float _countdownSeverity = 0.0001f;
     public override void CompExposeData()
     {
         base.CompExposeData();
         Scribe_Values.Look(ref _countdownSeverity, "temporalSeverity", 0.0001f);
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            _invalidHost = Pawn.mutant?.Def != ModDefOf.UmMutantNarehate;
+        }
     }
 
     // 维护循环
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
-        if (!Pawn.IsHashIntervalTick(TickInterval)) return;
+        if (_invalidHost || !Pawn.IsHashIntervalTick(TickInterval)) return;
         MaintainHediffs();
         MaintainGene();
     }
@@ -49,6 +58,8 @@ public class HediffComp_MutantDummy : HediffComp
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
+        _invalidHost = Pawn.mutant?.Def != ModDefOf.UmMutantNarehate;
+        if (_invalidHost) return;
         MaintainHediffs();
         MaintainGene();
     }
@@ -66,6 +77,11 @@ public class HediffComp_MutantDummy : HediffComp
         // 删除基因
         var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
         if (gene != null) Pawn.genes.RemoveGene(gene);
+        // 倒计时已移除，不再保留由它维持的残骸暴走。
+        if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+        {
+            Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+        }
     }
 
     // 维护 Hediffs
