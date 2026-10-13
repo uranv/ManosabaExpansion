@@ -28,7 +28,7 @@ public class HediffComp_NarehateHealing : HediffComp
         get
         {
             if (!Props.applyStatusSwitch) return Props.applyPostMultiplier;
-            return !CachedHumanDummy.cachedIsNarehate;
+            return !CachedHumanDummy.CachedIsNarehate;
         }
     }
     private float EffectiveHealFactor
@@ -126,7 +126,7 @@ public class HediffComp_NarehateHealing : HediffComp
 
         if (Pawn.IsHashIntervalTick(TickInterval, delta))
         {
-            if (Props.applyStatusSwitch && !CachedHumanDummy.cachedIsFinished) return;
+            if (Props.applyStatusSwitch && !CachedHumanDummy.CachedIsFinished) return;
             if (ApplyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return;
             
             Utils.HealingUtils.TryHeal(Pawn, EffectiveHealFactor);
@@ -147,7 +147,7 @@ public class HediffComp_NarehateHealing : HediffComp
     {
             var result = string.Empty;
             // 若检查进度，魔女化前不恢复不需要显示
-            if (Props.applyStatusSwitch && !CachedHumanDummy.cachedIsFinished) return result;
+            if (Props.applyStatusSwitch && !CachedHumanDummy.CachedIsFinished) return result;
             // 若使用后系数，若系数为 0 禁用不需要显示
             if (ApplyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return result;
             // 生成说明
