@@ -53,10 +53,10 @@ public static class RandomSelector
                 if (pawn == other) continue;
                 sum += pawn.relations.OpinionOf(other);
             }
-            dataList.Add(new PawnWeightData 
-            { 
-                pawn = pawn, 
-                sumAllRelation = sum 
+            dataList.Add(new PawnWeightData
+            {
+                pawn = pawn,
+                sumAllRelation = sum
             });
         }
         if (dataList.Count > 0)
@@ -92,7 +92,7 @@ public static class RandomSelector
                 break;
             }
         }
-            
+
         if (ManosabaMod.Settings.debugMode)
         {
             var debugMsg = selectedPawns.Aggregate("[Manosaba] Choose pawns: {", (current, p) => current + $"{p.LabelShort}, ");
@@ -101,7 +101,7 @@ public static class RandomSelector
             debugMsg += "} (Utils.RandomSelector.BoltzmannSelector)";
             Log.Message(debugMsg);
         }
-            
+
         return selectedPawns;
     }
 
@@ -119,10 +119,12 @@ public static class RandomSelector
             return;
         }
         var candidates = map.mapPawns.FreeColonistsSpawned
-            .Where(p => 
+            .Where(p =>
                 !p.IsQuestLodger() &&  // 排除任务成员 v1.0.6
                 !p.IsSlaveOfColony &&  // 排除奴隶成员 v1.0.6
+                !p.IsMutant &&  // 排除变种人(非人)成员 v1.1.0
                 !p.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy)&&
+                !p.health.hediffSet.HasHediff(ModDefOf.UmHediffMutantDummy)&&
                 !p.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy))
             .ToList();
 
