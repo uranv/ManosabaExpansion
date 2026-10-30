@@ -49,6 +49,9 @@ public static class ModDefOf
     // MutantDefs
     public static MutantDef UmMutantNarehate;
 
+    // HairDefs
+    public static HairDef UmHairYuki;
+
     // HeadTypeDefs
     public static HeadTypeDef UmHeadTypeYuki;
     

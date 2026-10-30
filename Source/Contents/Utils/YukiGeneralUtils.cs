@@ -76,7 +76,7 @@ public static class YukiGeneralUtils
             }
         }
         // 外观
-        p.story.hairDef = HairDefOf.Bald;
+        p.story.hairDef = ModDefOf.UmHairYuki;
         p.story.HairColor = Color.white;// Color(233/255f,236/255f,254/255f);
         // p.story.bodyType = BodyTypeDefOf.Thin;
         p.story.bodyType = ManosabaMod.Settings.useUniqueBodyType? ModDefOf.UmBodyTypeYuki : BodyTypeDefOf.Thin;  // 默认直接使用Thin体型，兼容选项使用独立体型 v1.0.6

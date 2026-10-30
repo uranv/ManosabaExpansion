@@ -18,10 +18,10 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_HumanDummy">
-                <visibleHediffDef>UmHediffHumanVisible</visibleHediffDef>
-                <narehateHediffDef>UmHediffNarehate</narehateHediffDef>
-                <narehateHiddenHediffDef>UmHediffNarehateHidden</narehateHiddenHediffDef>
-                <hanmajyoHediffDef>UmHediffNarehateHealed</hanmajyoHediffDef>
+                <VisibleHediffDef>UmHediffHumanVisible</VisibleHediffDef>
+                <NarehateHediffDef>UmHediffNarehate</NarehateHediffDef>
+                <NarehateHiddenHediffDef>UmHediffNarehateHidden</NarehateHiddenHediffDef>
+                <HanmajyoHediffDef>UmHediffNarehateHealed</HanmajyoHediffDef>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Progress"/>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationConditional">
+                <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]//li[nodeClass="PawnRenderNode_Hair"]/subworkerClasses</xpath>
+                <match Class="PatchOperationAdd">
+                    <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]//li[nodeClass="PawnRenderNode_Hair"]/subworkerClasses</xpath>
+                    <value>
+                        <li>UranvManosaba.Contents.Visuals.PawnRenderSubWorker_HairExtra</li>
+                    </value>
+                </match>
+                <nomatch Class="PatchOperationAdd">
+                    <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]//li[nodeClass="PawnRenderNode_Hair"]</xpath>
+                    <value>
+                        <subworkerClasses>
+                            <li>UranvManosaba.Contents.Visuals.PawnRenderSubWorker_HairExtra</li>
+                        </subworkerClasses>
+                    </value>
+                </nomatch>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/PawnRenderTreeDef[defName="Humanlike"]//li[tagDef="Head"]/children</xpath>
+                <value>
+                    <li>
+                        <debugLabel>Hair back</debugLabel>
+                        <nodeClass>UranvManosaba.Contents.Visuals.PawnRenderNode_HairBack</nodeClass>
+                        <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_HairBack</workerClass>
+                        <subworkerClasses>
+                            <li>UranvManosaba.Contents.Visuals.PawnRenderSubWorker_HairExtra</li>
+                        </subworkerClasses>
+                        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                        <colorType>Hair</colorType>
+                        <skipFlag>Hair</skipFlag>
+                        <baseLayer>-0.1</baseLayer>
+                        <visibleFacing>
+                            <li>South</li>
+                        </visibleFacing>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

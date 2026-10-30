@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HairDef>
+        <defName>UmHairYuki</defName>
+        <label>Yuki's hair</label>
+        <styleGender>Female</styleGender>
+        <styleTags>
+            <li>UmHairYuki</li>
+        </styleTags>
+        <texPath>things/pawn/humanlike/yuki/hair_front/hair</texPath>
+        <overrideShaderTypeDef>Cutout</overrideShaderTypeDef>
+        <modExtensions>
+            <li Class="UranvManosaba.Contents.Visuals.ModExtension_HairExtra">
+                <texPathBack>things/pawn/humanlike/yuki/hair_back/hair</texPathBack>
+                <drawSize>(1.25,1.25)</drawSize>
+                <layerFront>89.1</layerFront>
+                <layerBack>-0.1</layerBack>
+            </li>
+        </modExtensions>
+    </HairDef>
+</Defs>

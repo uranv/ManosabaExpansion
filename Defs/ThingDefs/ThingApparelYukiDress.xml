@@ -46,6 +46,11 @@
                 <li>Middle</li>
                 <li>Shell</li>
             </layers>
+            <!-- 帽饰由发型贴图提供，专属裙装保留头发显示。 -->
+            <renderSkipFlags>
+                <li>Beard</li>
+                <li>Eyes</li>
+            </renderSkipFlags>
             <wornGraphicPath>things/pawn/humanlike/yuki/dress/dress</wornGraphicPath>
             <tags>
                 <li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>
