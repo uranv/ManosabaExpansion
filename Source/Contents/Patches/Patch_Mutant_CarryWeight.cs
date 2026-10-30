@@ -4,7 +4,7 @@ using Verse;
 
 namespace UranvManosaba.Contents.Patches;
 
-// Patch: 修改魔女残骸 Mutant 的负重
+// Patch: 将剧本中的负重倍率应用于魔女残骸 Mutant
 [HarmonyPatch(typeof(MassUtility), "Capacity")]
 public static class Patch_MassUtility_Capacity
 {
@@ -13,10 +13,6 @@ public static class Patch_MassUtility_Capacity
         if (p is not { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" })
         {
             return;
-        }
-        if (__result <= 0.1f)
-        {
-            __result = 35f * p.BodySize;
         }
         if (Find.Scenario is not null)
         {

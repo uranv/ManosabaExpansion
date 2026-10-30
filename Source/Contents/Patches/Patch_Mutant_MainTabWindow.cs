@@ -4,42 +4,14 @@ using Verse;
 
 namespace UranvManosaba.Contents.Patches;
 
-// Patch: 允许控制魔女残骸变种人工作优先级 & 使用方案
-public static class Patch_MutantMainTabWindow
-{
-    public static void AddNarehates(ref IEnumerable<Pawn> resultList)
-    {
-        if (Find.CurrentMap == null) return;
-
-        var narehates = Find.CurrentMap.mapPawns.AllPawnsSpawned
-            .Where(p => p is { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" } && p.Faction == Faction.OfPlayer);
-
-        var enumerable = narehates.ToList();
-        if (enumerable.Any())
-        {
-            resultList = resultList.Concat(enumerable).Distinct();
-        }
-    }
-}
-
-// 1. 工作优先级面板 (Work Tab)
-[HarmonyPatch(typeof(MainTabWindow_Work), "Pawns", MethodType.Getter)]
-public static class Patch_MainTabWindow_Work_Pawns
-{
-    public static void Postfix(ref IEnumerable<Pawn> __result)
-    {
-        Patch_MutantMainTabWindow.AddNarehates(ref __result);
-    }
-}
-
-// 2. 方案分配面板 (Assign Tab)
+// 非 subhuman 的残骸已由原版纳入工作与方案面板；仅在设置关闭时从方案面板隐藏。
 [HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
 public static class Patch_MainTabWindow_Assign_Pawns
 {
-    static bool Prepare() => ManosabaMod.Settings.allowMutantAssignTab;
+    private static bool Prepare() => !ManosabaMod.Settings.allowMutantAssignTab;
 
     public static void Postfix(ref IEnumerable<Pawn> __result)
     {
-        Patch_MutantMainTabWindow.AddNarehates(ref __result);
+        __result = __result.Where(p => p is not { IsMutant: true, mutant.Def.defName: "UmMutantNarehate" });
     }
 }

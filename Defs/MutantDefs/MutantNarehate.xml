@@ -10,7 +10,7 @@
         <consideredSubhuman>false</consideredSubhuman>
         <thinkTree>UmThinkTreeHumanlikeNarehate</thinkTree>
         <thinkTreeConstant>UmThinkTreeHumanlikeConstantNarehate</thinkTreeConstant>
-        <canGainXP>false</canGainXP>
+        <canGainXP>true</canGainXP>
         <preventsMentalBreaks>false</preventsMentalBreaks>
         <disablesIdeo>true</disablesIdeo>
         <disableOwnership>true</disableOwnership>
