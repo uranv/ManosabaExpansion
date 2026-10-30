@@ -8,13 +8,13 @@ namespace UranvManosaba.Contents.Patches;
 [HarmonyPatch(typeof(Pawn_RelationsTracker), "SecondaryLovinChanceFactor")]
 public static class Patch_SecondaryLovinChanceFactor_Prefix
 {
-    private static readonly AccessTools.FieldRef<Pawn_RelationsTracker, Pawn> PawnFieldRef = 
+    private static readonly AccessTools.FieldRef<Pawn_RelationsTracker, Pawn> PawnFieldRef =
         AccessTools.FieldRefAccess<Pawn_RelationsTracker, Pawn>("pawn");
-        
+
     public static bool Prefix(Pawn_RelationsTracker __instance, Pawn otherPawn, ref float __result)
     {
         var pawn = PawnFieldRef(__instance);
-        
+
         var thisIsYuki = pawn?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
                          pawn?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
         var otherIsYuki = otherPawn?.kindDef == ModDefOf.UmPawnKindYukiColonist ||

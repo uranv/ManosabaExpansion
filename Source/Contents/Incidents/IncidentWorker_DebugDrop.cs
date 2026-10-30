@@ -23,7 +23,7 @@ public class IncidentWorker_DebugDrop : IncidentWorker
         }
         // 0.5 解锁前置科技
         ResearchUtils.UnlockResearchPrereqs();
-            
+
         // 1. 生成人类尸体 Pawn
         var specialCorpse = NarehateCorpseGenerator.GenCorpse();
 
@@ -43,7 +43,7 @@ public class IncidentWorker_DebugDrop : IncidentWorker
         RandomSelector.TryAddDummyToRandomPawnOnMap(map, inverseTemperature: ManosabaMod.Settings.inverseTemperature);
         return true;
     }
-    
+
     // 永不自然触发
     protected override bool CanFireNowSub(IncidentParms parms) => false;
 }

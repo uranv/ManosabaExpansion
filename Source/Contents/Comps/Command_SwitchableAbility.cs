@@ -18,7 +18,7 @@ public class Command_SwitchableAbility : Command_Ability
             base.ProcessInput(ev);
         }
     }
-        
+
     public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
     {
         var rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
@@ -33,7 +33,7 @@ public class Command_SwitchableAbility : Command_Ability
         base.GizmoOnGUI(topLeft, maxWidth, parms);
         return new GizmoResult(GizmoState.Clear);
     }
-    
+
     private void SwitchToNextAbility()
     {
         var currentAbility = this.Ability;
@@ -42,8 +42,8 @@ public class Command_SwitchableAbility : Command_Ability
 
         string myGroupId = currentComp.Props.groupId;
         var pawn = currentAbility.pawn;
-            
-        var allAbilities = pawn.abilities.abilities; 
+
+        var allAbilities = pawn.abilities.abilities;
         var groupAbilities = new List<Ability>();
 
         foreach (var ab in allAbilities)
@@ -54,11 +54,11 @@ public class Command_SwitchableAbility : Command_Ability
                 groupAbilities.Add(ab);
             }
         }
-            
+
         groupAbilities.SortBy(a => a.def.defName);
 
         if (groupAbilities.Count <= 1) return;
-            
+
         var index = groupAbilities.IndexOf(currentAbility);
         var nextIndex = (index + 1) % groupAbilities.Count;
         var nextAbility = groupAbilities[nextIndex];

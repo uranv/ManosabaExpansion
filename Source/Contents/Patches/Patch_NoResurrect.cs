@@ -25,7 +25,7 @@ public static class Patch_JobDriver_Resurrect_Manual
         {
             Log.Warning($"[Manosaba] Block resurrection for {corpse.InnerPawn.LabelShort} (Patch_JobDriver_Resurrect_Manual)");
         }
-        
+
         var text = "Manosaba_Message_NoResurrect".Translate(corpse.InnerPawn.LabelShort);
         Messages.Message(text, corpse.InnerPawn, MessageTypeDefOf.RejectInput);
 

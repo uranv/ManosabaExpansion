@@ -11,10 +11,10 @@ namespace UranvManosaba.Contents.Patches;
 [HarmonyPatch(new[] { typeof(PsychicRitualRoleDef.Context), typeof(Pawn), typeof(TargetInfo), typeof(PsychicRitualRoleDef.Reason) }, new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out })]
 public static class Patch_PsychicRitualRoleDef_PawnCanDo_Public
 {
-    public static void Postfix(PsychicRitualRoleDef __instance, 
-        PsychicRitualRoleDef.Context context, 
-        Pawn pawn, 
-        TargetInfo target, 
+    public static void Postfix(PsychicRitualRoleDef __instance,
+        PsychicRitualRoleDef.Context context,
+        Pawn pawn,
+        TargetInfo target,
         ref PsychicRitualRoleDef.Reason reason,
         ref bool __result)
     {

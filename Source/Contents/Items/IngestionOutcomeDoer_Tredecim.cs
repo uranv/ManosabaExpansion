@@ -9,13 +9,13 @@ public class IngestionOutcomeDoer_Tredecim : IngestionOutcomeDoer
     protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
     {
         if (pawn?.health == null) return;
-        
+
         var potionDef = ModDefOf.UmHediffTredecim;
         if (potionDef != null)
         {
             pawn.health.AddHediff(potionDef);
         }
-        
+
         var dummyDef = ModDefOf.UmHediffHumanDummy;
         var mutantDummyDef = ModDefOf.UmHediffMutantDummy;
 

@@ -17,7 +17,7 @@ public static class NarehateUtils
         pawn.Drawer.renderer.renderTree.SetDirty();
         PortraitsCache.SetDirty(pawn);
     }
-    
+
     /// <summary>
     /// 魔女残骸变身特效
     /// !!!needfix!!!
@@ -32,7 +32,7 @@ public static class NarehateUtils
 
         // 血肉特效
         EffecterDefOf.MeatExplosion.Spawn(pos.ToIntVec3(), pawn.Map);
-        
+
         // // 中心闪光 (瞬间高亮)
         // FleckMaker.ThrowLightningGlow(pos, map, 3.0f);
         // 爆发烟雾 (产生气浪感)
@@ -45,9 +45,9 @@ public static class NarehateUtils
         // for (var i = 0; i < 12; i++)
         // {
         //     var data = FleckMaker.GetDataStatic(
-        //         pos, 
-        //         map, 
-        //         FleckDefOf.MicroSparks, 
+        //         pos,
+        //         map,
+        //         FleckDefOf.MicroSparks,
         //         Rand.Range(1.2f, 2.5f)
         //     );
         //     data.velocityAngle = Rand.Range(0, 360);

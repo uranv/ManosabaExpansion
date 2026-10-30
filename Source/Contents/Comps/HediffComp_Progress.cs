@@ -23,8 +23,8 @@ public class HediffComp_Progress : HediffComp
         Scribe_Values.Look(ref isFinished, "isFinished", false);
         Scribe_Values.Look(ref isDisplay, "isDisplay", false);
     }
-        
-        
+
+
     private float _severityChange;
     private const int TickInterval = 500;
     private const float UpdatesPerDay = 60000f / TickInterval;
@@ -39,13 +39,13 @@ public class HediffComp_Progress : HediffComp
         if (Pawn.IsHashIntervalTick(TickInterval, delta))
         {
             if (isFinished) return;
-            
+
             UpdateSeverityBasedOnMood(); // 计算隐藏进度
             TryTurnIntoNarehate(); // 转化魔女残骸
             TryMentalBreak(); // 触发魔女因子杀意
         }
     }
-        
+
     // 显示当前数值 #.#E-#,#.#E-# 形式分别输出当前Severity和上一次更新变化量
     public override string CompLabelInBracketsExtra
     {
@@ -56,7 +56,7 @@ public class HediffComp_Progress : HediffComp
             return $"{printSeverity}, {printSeverityChange}";
         }
     }
-        
+
     // 根据心情调整隐藏进度
     private void UpdateSeverityBasedOnMood()
     {
@@ -128,20 +128,20 @@ public class HediffComp_Progress : HediffComp
         var severityFactor = Mathf.Lerp(-1.0f, 1.0f, severity); // 严重度越高, 期望天数越低
         var moodFactor = Mathf.Lerp(-1.0f, 1.0f, mood); // 心情越低, 期望天数越高
         var adjustedMtbDays = (float) (baseMtbDays * Math.Pow(4f, - severityFactor) * Math.Pow(2f, moodFactor));
-            
+
         if (!Rand.MTBEventOccurs(adjustedMtbDays, 60000f, TickInterval)) return;
         isDisplay = true;
         ResearchUtils.UnlockResearchPrereqs();
         Pawn.mindState.mentalStateHandler.TryStartMentalState(ModDefOf.UmMentalBreakFactor);
     }
-        
-        
+
+
     public static float GetSeverityChange(float mood, float minorThreshold)
     {
         // 增加阈值 (默认为 0.58, 最小 0.24, 最大 0.72)
-        var increaseThreshold = Mathf.Max(0.01f, Mathf.Min(minorThreshold + ManosabaMod.Settings.severityIncreaseBias/100, 0.98f)); 
+        var increaseThreshold = Mathf.Max(0.01f, Mathf.Min(minorThreshold + ManosabaMod.Settings.severityIncreaseBias/100, 0.98f));
         // 减少阈值 (默认为 0.66, 最小 0.32, 最大 0.80)
-        var decreaseThreshold = Mathf.Max(0.02f, Mathf.Min(increaseThreshold + ManosabaMod.Settings.severityFlatBias/100, 0.99f)); 
+        var decreaseThreshold = Mathf.Max(0.02f, Mathf.Min(increaseThreshold + ManosabaMod.Settings.severityFlatBias/100, 0.99f));
         // 归一化范围内心情系数
         double factorRaw;
         if (mood > decreaseThreshold)

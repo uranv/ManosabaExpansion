@@ -13,7 +13,7 @@ public static class Patch_RecipeDef_AvailableNow
         {
             return;
         }
-            
+
         // 隐藏炙烤药瓶配方
         if (__instance?.defName == "Make_"+ModDefOf.UmThingAburibin.defName)
         {

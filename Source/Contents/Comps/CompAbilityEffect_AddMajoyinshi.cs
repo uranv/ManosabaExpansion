@@ -30,7 +30,7 @@ public class CompAbilityEffect_AddMajoyinshi : CompAbilityEffect
             p.health.AddHediff(h);
             HediffComp_HumanDummy.SetDummyShouldDisplay(p);
         }
-            
+
         var s = SoundDef.Named("PsychicSoothePulserCast");
         s?.PlayOneShot(new TargetInfo(pos, map));
 

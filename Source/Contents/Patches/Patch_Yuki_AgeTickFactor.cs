@@ -18,7 +18,7 @@ public static class Patch_GeneTracker_BiologicalAgeTickFactor
         if (yukiDummy == null)
         {
             Log.ErrorOnce("[Manosaba] HediffDef \"UmHediffYukiDummy\" not found (Patch_GeneTracker_BiologicalAgeTickFactor)",
-                Gen.HashCombine(pawn.thingIDNumber,"Patch_GeneTracker_BiologicalAgeTickFactor")); 
+                Gen.HashCombine(pawn.thingIDNumber,"Patch_GeneTracker_BiologicalAgeTickFactor"));
             return;
         }
         if (pawn.health?.hediffSet == null ||

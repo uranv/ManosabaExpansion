@@ -10,7 +10,7 @@ public class QuestNode_Root_MystCargoNarehate : QuestNode_Root_MysteriousCargo
 {
     public string inSignal;
     protected override bool RequiresPawn => false;
-    
+
     protected override void RunInt()
     {
         var vanillaDef = DefDatabase<QuestScriptDef>.GetNamed("MysteriousCargoUnnaturalCorpse", false);

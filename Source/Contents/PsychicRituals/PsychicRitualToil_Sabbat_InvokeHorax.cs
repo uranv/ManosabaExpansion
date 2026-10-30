@@ -10,7 +10,7 @@ namespace UranvManosaba.Contents.PsychicRituals;
 public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHorax
 {
     [CanBeNull] private Sustainer _musicSustainer;
-        
+
     public PsychicRitualToil_Sabbat_InvokeHorax(
         PsychicRitualRoleDef invokerRole, IEnumerable<IntVec3> invokerPositions,
         PsychicRitualRoleDef targetRole, IEnumerable<IntVec3> targetPositions,
@@ -52,7 +52,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
         }
         base.ConsumeRequiredOffering(psychicRitual);
     }
-        
+
     // 修复：.ToList()防止集合修改报错
     public override void HoldRequiredOfferings(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
@@ -80,7 +80,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
         base.Tick(psychicRitual, parent);
         return TicksLeft <= 0;
     }
-        
+
     private void TickVfx(Verse.AI.Group.PsychicRitual psychicRitual)
     {
         var percentage = TicksSinceStarted / (hoursUntilOutcome * 2500f);

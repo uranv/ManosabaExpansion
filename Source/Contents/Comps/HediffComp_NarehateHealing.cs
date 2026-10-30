@@ -20,7 +20,7 @@ public class HediffCompProperties_NarehateHealing : HediffCompProperties
 public class HediffComp_NarehateHealing : HediffComp
 {
     private HediffCompProperties_NarehateHealing Props => (HediffCompProperties_NarehateHealing)props;
-        
+
     private HediffComp_HumanDummy _cachedHumanDummy;
     private HediffComp_HumanDummy CachedHumanDummy => _cachedHumanDummy ??= parent.TryGetComp<HediffComp_HumanDummy>();
     private bool ApplyPostMultiplier
@@ -59,7 +59,7 @@ public class HediffComp_NarehateHealing : HediffComp
             return factor;
         }
     }
-    private float EffectiveBloodHealFactor 
+    private float EffectiveBloodHealFactor
     {
         get
         {
@@ -104,7 +104,7 @@ public class HediffComp_NarehateHealing : HediffComp
                 }
                 return chance;
             }
-            
+
             if (ApplyPostMultiplier)
             {
                 chance /= 10;
@@ -117,7 +117,7 @@ public class HediffComp_NarehateHealing : HediffComp
         }
     }
     private int TickInterval => (Props.isOverride || !ApplyPostMultiplier) ? 60 : 600;
-    
+
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
         base.CompPostTickInterval(ref severityAdjustment, delta);
@@ -128,9 +128,9 @@ public class HediffComp_NarehateHealing : HediffComp
         {
             if (Props.applyStatusSwitch && !CachedHumanDummy.CachedIsFinished) return;
             if (ApplyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return;
-            
+
             Utils.HealingUtils.TryHeal(Pawn, EffectiveHealFactor);
-            
+
             if (ManosabaMod.Settings.isNarehateBloodHeal)
             {
                 Utils.HealingUtils.TryBloodLoss(Pawn, EffectiveHealFactor);
@@ -142,7 +142,7 @@ public class HediffComp_NarehateHealing : HediffComp
             }
         }
     }
-    
+
     public override string CompDebugString()
     {
             var result = string.Empty;
@@ -162,7 +162,7 @@ public class HediffComp_NarehateHealing : HediffComp
             var stringBlood = "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(bloodHealPerDay));
             result += stringHeal;
             if (ManosabaMod.Settings.isNarehateBloodHeal) result += "\n" + stringBlood;
-            
+
             // 自愈部件说明
             var regenTickExpected = TickInterval / RegenChance;
             float regenCount;

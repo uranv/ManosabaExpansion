@@ -101,8 +101,8 @@ public class HediffComp_YukiDummy : HediffComp
         var gene = Pawn?.genes?.GetGene(ModDefOf.UmGeneFactor);
         if (gene != null) Pawn.genes.RemoveGene(gene);
     }
-    
-    
+
+
     private Comp_YukiVisitor _cachedComp;
     private Comp_YukiVisitor CachedComp
     {

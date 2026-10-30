@@ -15,7 +15,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
         base.ExposeData();
         Scribe_Values.Look(ref _wanderEndTick, "_wanderEndTick", -1);
     }
-        
+
     public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
         return true;
@@ -39,8 +39,8 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
         yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
 
         // 在聚会点等待随机时间
-        var waitToil = Toils_General.Wait(Rand.Range(120, 300)); 
-        waitToil.WithProgressBarToilDelay(TargetIndex.B); 
+        var waitToil = Toils_General.Wait(Rand.Range(120, 300));
+        waitToil.WithProgressBarToilDelay(TargetIndex.B);
         yield return waitToil;
 
         // 释放蓄力效果
@@ -53,7 +53,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             var progress = 1f - ((float)pawn.jobs.curDriver.ticksLeftThisToil / channelDuration);
             var currentScale = Mathf.Lerp(3.0f, 8.0f, progress);
             FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, currentScale);
-            // SoundDefOf.Psycast_CastLoop.PlayOneShot(pawn); 
+            // SoundDefOf.Psycast_CastLoop.PlayOneShot(pawn);
         };
         yield return channelToil;
 
@@ -79,10 +79,10 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             var invisibleHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(invisibleDef);
             if (invisibleHediff != null) pawn.health?.RemoveHediff(invisibleHediff);
         });
-            
+
         // 完成后闲逛随机时间
         var wanderDuration = Rand.Range(600, 1800);
-            
+
         var initWanderTimer = new Toil
         {
             initAction = delegate
@@ -92,13 +92,13 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             defaultCompleteMode = ToilCompleteMode.Instant
         };
         yield return initWanderTimer;
-            
+
         var wanderLoopStart = new Toil
         {
             defaultCompleteMode = ToilCompleteMode.Instant
         };
         yield return wanderLoopStart;
-            
+
         var wanderMove = new Toil
         {
             initAction = delegate
@@ -110,10 +110,10 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             defaultCompleteMode = ToilCompleteMode.PatherArrival
         };
         yield return wanderMove;
-            
+
         var wanderPause = Toils_General.Wait(Rand.Range(30, 60)); // 停顿 0.5~1秒
         yield return wanderPause;
-            
+
         var wanderCheck = new Toil
         {
             initAction = delegate
@@ -126,7 +126,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
             defaultCompleteMode = ToilCompleteMode.Instant
         };
         yield return wanderCheck;
-            
+
         // 然后瞬间离开
         yield return Toils_General.Do(delegate
         {

@@ -15,7 +15,7 @@ public class PawnRenderNode_Narehate : PawnRenderNode
     {
         _bodyPart = bodyPart;
     }
-        
+
     public override Graphic GraphicFor(Pawn pawn)
     {
         if (_bodyPart == BodyPart.Head && pawn.health.hediffSet is { HasHead: false }) return null;

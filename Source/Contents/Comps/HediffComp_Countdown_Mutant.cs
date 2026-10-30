@@ -11,7 +11,7 @@ public class HediffCompProperties_Countdown_Mutant : HediffCompProperties
         this.compClass = typeof(HediffComp_Countdown_Mutant);
     }
 }
-    
+
 public class HediffComp_Countdown_Mutant : HediffComp
 {
     private HediffCompProperties_Countdown_Mutant Props => (HediffCompProperties_Countdown_Mutant)props;
@@ -65,8 +65,8 @@ public class HediffComp_Countdown_Mutant : HediffComp
         if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate) return;
         // 尝试进入魔女残骸状态
         Pawn.mindState.mentalStateHandler.TryStartMentalState(
-            ModDefOf.UmMentalBreakNarehate, 
-            null, 
+            ModDefOf.UmMentalBreakNarehate,
+            null,
             true, // forced
             true, // forceWake
             false, //causedByMood

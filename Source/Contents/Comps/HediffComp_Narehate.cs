@@ -61,7 +61,7 @@ public class HediffComp_Narehate : HediffComp
         {
             Pawn.health.AddHediff(Props.curedHediffDef);
         }
-            
+
         // 强制结束敌对精神状态 (让小人恢复可控)
         if (Pawn.InMentalState)
         {

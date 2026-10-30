@@ -20,7 +20,7 @@ public class JobDriver_YukiVisitorCast : JobDriver
         yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 
         // 等待随机间隔
-        var waitToil = Toils_General.Wait(Rand.Range(300, 900)); 
+        var waitToil = Toils_General.Wait(Rand.Range(300, 900));
         //waitToil.WithProgressBarToilDelay(TargetIndex.A); // 可选: 显示进度条
         yield return waitToil;
 
@@ -35,7 +35,7 @@ public class JobDriver_YukiVisitorCast : JobDriver
                 var progress = 1f - ((float)pawn.jobs.curDriver.ticksLeftThisToil / channelDuration);
                 var currentScale = Mathf.Lerp(3.0f, 8.0f, progress);
                 FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, currentScale);
-                // SoundDefOf.Psycast_CastLoop.PlayOneShot(pawn); 
+                // SoundDefOf.Psycast_CastLoop.PlayOneShot(pawn);
             }
         };
         yield return channelToil;

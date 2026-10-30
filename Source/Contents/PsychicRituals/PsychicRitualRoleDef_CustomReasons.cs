@@ -17,7 +17,7 @@ public class PsychicRitualRoleDef_NarehateTarget : PsychicRitualRoleDef
         return base.PawnCannotDoReason(reason, context, pawn, target);
     }
 }
-    
+
 public class PsychicRitualRoleDef_SabbatInvoker : PsychicRitualRoleDef
 {
     // 允许寻路获得献祭物

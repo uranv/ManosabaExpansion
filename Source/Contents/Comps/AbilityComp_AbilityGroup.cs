@@ -13,12 +13,12 @@ public class CompProperties_AbilityGroup : AbilityCompProperties
         compClass = typeof(AbilityComp_AbilityGroup);
     }
 }
-    
+
 public class AbilityComp_AbilityGroup : AbilityComp
 {
     public CompProperties_AbilityGroup Props => (CompProperties_AbilityGroup)props;
     public bool isSelected = false;
-        
+
     public override void Initialize(AbilityCompProperties p)
     {
         base.Initialize(p);
@@ -27,7 +27,7 @@ public class AbilityComp_AbilityGroup : AbilityComp
             isSelected = true;
         }
     }
-        
+
     public override void PostExposeData()
     {
         base.PostExposeData();

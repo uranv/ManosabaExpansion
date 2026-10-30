@@ -15,6 +15,12 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         Scribe_Defs.Look(ref _targetRole, "_targetRole");
         Scribe_Deep.Look(ref _qualityCurve, "_qualityCurve");
     }
+
+    // 供 Scribe 读档时创建实例，字段由 ExposeData 恢复。
+    protected PsychicRitualToil_NarehateTrans()
+    {
+    }
+
     public PsychicRitualToil_NarehateTrans(PsychicRitualRoleDef targetRole, SimpleCurve qualityCurve)
     {
         _targetRole = targetRole;
@@ -26,9 +32,9 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         base.Start(psychicRitual, parent);
         var targetPawn = psychicRitual.assignments.FirstAssignedPawn(_targetRole);
         psychicRitual.ReleaseAllPawnsAndBuildings();
-            
+
         if (targetPawn?.health?.hediffSet == null) return;
-            
+
         var quality = psychicRitual.power; // 0.0 到 1.0
         var targetSeverity = _qualityCurve.Evaluate(quality);
         var narehateDef = ModDefOf.UmMutantNarehate;//DefDatabase<MutantDef>.GetNamed("UmMutantNarehate");
@@ -53,19 +59,19 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         // 调整 pawn 属性
         MutantStyleChanger(targetPawn);
         // 检查已有 hediffs
-        if (targetPawn.health?.hediffSet == null) return; 
+        if (targetPawn.health?.hediffSet == null) return;
         var dummyHumanDef = ModDefOf.UmHediffHumanDummy;
         var hanmajyoDef = ModDefOf.UmHediffNarehateHealed;
-        var visibleDef = ModDefOf.UmHediffHumanVisible; 
+        var visibleDef = ModDefOf.UmHediffHumanVisible;
         var dummyMutantDef = ModDefOf.UmHediffMutantDummy;
         if (targetPawn.health?.hediffSet != null)
         {
-            var hm = targetPawn.health.hediffSet.GetFirstHediffOfDef(hanmajyoDef); 
+            var hm = targetPawn.health.hediffSet.GetFirstHediffOfDef(hanmajyoDef);
             if (hm != null) targetPawn.health.RemoveHediff(hm);
-            var hv = targetPawn.health.hediffSet.GetFirstHediffOfDef(visibleDef); 
+            var hv = targetPawn.health.hediffSet.GetFirstHediffOfDef(visibleDef);
             if (hv != null) targetPawn.health.RemoveHediff(hv);
-            var hd = targetPawn.health.hediffSet.GetFirstHediffOfDef(dummyHumanDef); 
-            if (hd != null) targetPawn.health.RemoveHediff(hd); 
+            var hd = targetPawn.health.hediffSet.GetFirstHediffOfDef(dummyHumanDef);
+            if (hd != null) targetPawn.health.RemoveHediff(hd);
             if (!targetPawn.health.hediffSet.HasHediff(dummyMutantDef)) targetPawn.health.AddHediff(dummyMutantDef);
         }
         // 更新 UmHediffMutantCountdown 的严重度

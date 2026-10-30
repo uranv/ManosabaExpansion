@@ -18,12 +18,12 @@ public static class YukiGeneralUtils
         var faction = Faction.OfPlayer;
         if (!isColonist)
         {
-            faction = Find.FactionManager.FirstFactionOfDef(FactionDefOf.Ancients) 
+            faction = Find.FactionManager.FirstFactionOfDef(FactionDefOf.Ancients)
                       ?? Find.FactionManager.RandomNonHostileFaction(false, false, false);
         }
 
         var pawnKind = isColonist ? ModDefOf.UmPawnKindYukiColonist : ModDefOf.UmPawnKindYukiVisitor;
-        
+
         var request = new PawnGenerationRequest(
             kind: pawnKind,
             faction: faction,
@@ -49,11 +49,11 @@ public static class YukiGeneralUtils
             forceNoBackstory: true,
             forceNoGear: true
         );
-        
+
         var yuki = PawnGenerator.GeneratePawn(request);
-        
+
         ApplyCustomPawnSettings(yuki, isColonist, qualityEq);
-        
+
         return yuki;
     }
     private static void ApplyCustomPawnSettings(Pawn p, bool isColonist = true,  QualityCategory qualityEq = QualityCategory.Normal)
@@ -134,8 +134,8 @@ public static class YukiGeneralUtils
         //     var comps = AccessTools.FieldRefAccess<ThingWithComps, List<ThingComp>>("comps")(p);
         //     
         //     var newComp = new Comp_YukiVisitor();
-        //     newComp.parent = p; 
-        //     var props = new CompProperties_YukiVisitor(); 
+        //     newComp.parent = p;
+        //     var props = new CompProperties_YukiVisitor();
         //     newComp.Initialize(props);
         //     comps.Add(newComp);
         //     
@@ -144,7 +144,7 @@ public static class YukiGeneralUtils
         //         newComp.PostSpawnSetup(false);
         //     }
         // }
-        
+
     }
     // 检查 Name
     public static void CheckYukiName(Pawn p, bool forced = false)

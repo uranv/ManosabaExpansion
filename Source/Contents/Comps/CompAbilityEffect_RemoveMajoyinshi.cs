@@ -30,7 +30,7 @@ public class CompAbilityEffect_RemoveMajoyinshi : CompAbilityEffect
             var h = p.health.hediffSet.GetFirstHediffOfDef(hd);
             if (h != null) p.health.RemoveHediff(h);
         }
-            
+
         var s = SoundDef.Named("PsychicSoothePulserCast");
         s?.PlayOneShot(new TargetInfo(pos, map));
 

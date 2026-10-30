@@ -40,7 +40,7 @@ public class Comp_BreakOnAttack : ThingComp
             GenSpawn.Spawn(droppedItem, bearer.Position, bearer.Map);
         }
         // 播放一个破碎的声音或特效
-        SoundDefOf.MetalHitImportant.PlayOneShot(bearer); 
+        SoundDefOf.MetalHitImportant.PlayOneShot(bearer);
 
         // 销毁自身
         if (parent.stackCount > 1)

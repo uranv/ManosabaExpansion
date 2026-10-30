@@ -11,17 +11,17 @@ public class Corpse_NarehateCorpse : Corpse
         get
         {
             string label = "Manosaba_NarehateCorpse_Label".Translate();
-            return label; 
+            return label;
         }
     }
 
-    
+
     public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
         base.SpawnSetup(map, respawningAfterLoad);
         DefGenerator_NarehateCorpse.RefreshAllStorageSettings();  // 实例化尸体时刷新储存区域清单 v1.0.6
         if (respawningAfterLoad) return;
-        
+
         // 解锁图鉴: 魔女残骸的尸体
         var codexDef1 = DefDatabase<EntityCodexEntryDef>.GetNamed("UmEntryCorpse", false);
         if (codexDef1 is { Discovered: false })
@@ -35,13 +35,13 @@ public class Corpse_NarehateCorpse : Corpse
             Find.EntityCodex.SetDiscovered(codexDef2, def);
         }
     }
-    
+
     public override void Notify_Studied(Pawn studier, float amount, KnowledgeCategoryDef category = null)
     {
-        const float maxKnowledge = 20.0f;  
-            
+        const float maxKnowledge = 20.0f;
+
         var studiable = GetComp<CompStudiable>();
-        if (studiable == null) 
+        if (studiable == null)
         {
             base.Notify_Studied(studier, amount, category);
             return;
@@ -51,7 +51,7 @@ public class Corpse_NarehateCorpse : Corpse
 
         studiable.anomalyKnowledgeGained = currentProgress * maxKnowledge;
 
-        base.Notify_Studied(studier, amount, category);  
+        base.Notify_Studied(studier, amount, category);
 
         if (currentProgress >= 1.0f)
         {
@@ -62,9 +62,9 @@ public class Corpse_NarehateCorpse : Corpse
                 Log.Error(logNotification);
                 comp.isAburiBinUnlocked = true;
                 Find.LetterStack.ReceiveLetter(
-                    "RecipeAburiBinUnlocked_Label".Translate(), //"解锁制作: 炙烤药瓶", 
-                    "RecipeAburiBinUnlocked_Text".Translate(),//"魔女原来只靠一瓶药就能杀死吗……\n\n看着这个药瓶, 你似乎又有了一些其他想法。", 
-                    LetterDefOf.PositiveEvent, 
+                    "RecipeAburiBinUnlocked_Label".Translate(), //"解锁制作: 炙烤药瓶",
+                    "RecipeAburiBinUnlocked_Text".Translate(),//"魔女原来只靠一瓶药就能杀死吗……\n\n看着这个药瓶, 你似乎又有了一些其他想法。",
+                    LetterDefOf.PositiveEvent,
                     this
                 );
                 // 将当前的工作点数直接设置为 XML 中定义的完工总量
@@ -75,5 +75,5 @@ public class Corpse_NarehateCorpse : Corpse
             }
         }
     }
-        
+
 }

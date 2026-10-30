@@ -49,7 +49,7 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
         list.Add(new PsychicRitualToil_Wait(120));
         return list;
     }
-        
+
     // 禁止原因：已经存在小雪
     public override IEnumerable<string> BlockingIssues(PsychicRitualRoleAssignments assignments, Map map)
     {
@@ -66,7 +66,7 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
         if (exists)
             yield return "Manosaba_SabbatReason_YukiExists".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
     }
-        
+
     // 复制原版私有方法 RimWorld.PsychicRitualDef_InvocationCircle.GenerateRolePositions
     private IReadOnlyDictionary<PsychicRitualRoleDef, List<IntVec3>> GenerateRolePositions_Copy(PsychicRitualRoleAssignments assignments)
     {
@@ -133,5 +133,5 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
         }
         return _tmpParticipants;
     }
-        
+
 }

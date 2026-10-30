@@ -27,7 +27,7 @@ public static class Sabbat_Vfx
         
         GenSpawn.Spawn(mote, center.ToIntVec3(), map);
     }
-    
+
     public static void SpawnBloodFilth(Vector3 center, float widthFactor, Map map, float hardBoundary = 3f)
     {
         if (map == null) return;
@@ -48,9 +48,9 @@ public static class Sabbat_Vfx
             return;
         }
         var data = FleckMaker.GetDataStatic(
-            spawnPos, 
-            map, 
-            ModDefOf.UmFleckSabbatBlood, 
+            spawnPos,
+            map,
+            ModDefOf.UmFleckSabbatBlood,
             Rand.Range(0.8f, 1.2f)
         );
         data.rotation = Rand.Range(0f, 360f);

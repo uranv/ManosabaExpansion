@@ -36,33 +36,33 @@ public static class Patch_Pawn_Kill
 {
     public static bool Prefix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit)
     {
-            
+
         if (__instance?.health?.hediffSet == null) return true;
-            
+
         var hasHumanDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy);
         var hasMutantDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffMutantDummy);
         var hasYukiDummy = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffYukiDummy);
-        
+
         if (!hasHumanDummy && !hasMutantDummy && !hasYukiDummy) return true;
-        
+
         var hasNarehate = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate)||
                           __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehateHidden);
         var hasPotion = __instance.health.hediffSet.HasHediff(ModDefOf.UmHediffTredecim);
-        
+
         // 月代雪：判定死亡时不死直接离开地图
         if (hasYukiDummy)
         {
             OnKillYuki(__instance);
             return false;
         }
-            
+
         // 拥有 魔女残骸 Hediff, 且没有 B水 Hediff, 则阻止死亡指令
         if (hasNarehate && !hasPotion )
         {
             if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patch_Pawn_Kill)");
-            return false; 
+            return false;
         }
-            
+
         // 拥有 B水 Hediff 且拥有魔女因子, 则死亡判定时额外效果触发
         if (!hasPotion) return true;
         // 添加 晶体化眼 Hediff
@@ -98,7 +98,7 @@ public static class Patch_Pawn_Kill
         }
     }
 }
-    
+
 // Patch: 阻止魔女残骸倒地时持续起身的消息轰炸
 [HarmonyPatch(typeof(Messages), "Message", new[] { typeof(string), typeof(LookTargets), typeof(MessageTypeDef), typeof(bool) })]
 public static class Patch_SilenceUndownedMessage

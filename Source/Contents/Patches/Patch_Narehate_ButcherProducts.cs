@@ -21,19 +21,19 @@ public static class Patch_Corpse_ButcherProducts
         {
             yield break;
         }
-        
+
         var crystalEyeCount = Enumerable.Count(p.health.hediffSet.hediffs, h => h.def == ModDefOf.UmHediffCrystallized);
         if (crystalEyeCount <= 0)
         {
             yield break;
         }
-        
+
         var extraProductDef = ModDefOf.UmThingCrystallizedEye;  //DefDatabase<ThingDef>.GetNamed("UmThingCrystallizedEye", false);
         if (extraProductDef == null)
         {
             yield break;
         }
-        
+
         var stackLimit = extraProductDef.stackLimit;
         while (crystalEyeCount > 0)
         {

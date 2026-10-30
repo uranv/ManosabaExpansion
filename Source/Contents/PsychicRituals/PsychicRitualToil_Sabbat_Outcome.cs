@@ -23,11 +23,11 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         Scribe_Collections.Look(ref _chanterPositions,  "_chanterPositions");
         Scribe_Values.Look(ref _ticksLeft, "_ticksLeft", 0);
     }
-        
+
     private Sustainer _musicSustainer;
-        
+
     private readonly int _afterDuration = Rand.Range(450,550);
-        
+
     protected PsychicRitualToil_Sabbat_Outcome()
     {
     }
@@ -40,7 +40,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         _chanterRole = chanterRole;
         _chanterPositions = new List<IntVec3>(chanterPositions ?? Enumerable.Empty<IntVec3>());
     }
-        
+
 
     public override void Start(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
@@ -52,7 +52,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
             if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Sustainer get from comp (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.Start)");
         }
         else Log.Error("[Manosaba] comp has null Sustainer (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.Start)");
-            
+
         ApplyOutcome(psychicRitual);
         TickSound(psychicRitual);
         _ticksLeft = _afterDuration;
@@ -66,7 +66,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         // 等待 Invoke 产生的特效结束
         if (_ticksLeft > 0) return false;
         if (_musicSustainer != null) Sabbat_Sfx.StopSustainer(_musicSustainer);
-        psychicRitual.ReleaseAllPawnsAndBuildings(); 
+        psychicRitual.ReleaseAllPawnsAndBuildings();
         return true;
     }
 
@@ -134,7 +134,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
             comp.cachedQuality = 0;
             if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] qualityFromToil get {qualityFromToil} (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.ApplyOutcome)");
         }
-            
+
         var ritualPower = psychicRitual.power;
         var qualityOffset = -2 +
                             (ritualPower >= ManosabaMod.Settings.thresholdMinusOne/100f ? 1 : 0) +
@@ -154,7 +154,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         //innerExitOverlay.link.detachAfterTicks = 0;
         //_cachedYuki.Map.flecks.CreateFleck(innerExitOverlay);
     }
-        
+
     private void TickSound(Verse.AI.Group.PsychicRitual psychicRitual)
     {
         Find.MusicManagerPlay.ForceSilenceFor(1.0f);
@@ -170,5 +170,5 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
             _musicSustainer.externalParams["MusicVolume"] = Prefs.VolumeMusic;
         }
     }
-        
+
 }

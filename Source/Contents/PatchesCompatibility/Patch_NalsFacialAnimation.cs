@@ -14,7 +14,7 @@ public static class Patch_FacialAnimation
         if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] {(result?"Success":"Failed")} patch mod Nals.FacialAnimation (PatchesCompatibility.Patch_FacialAnimation.Prepare)");
         return result;
     }
-        
+
     static bool Prefix(object node, object parms, ref Material __result)
     {
         if (node is not PawnRenderNode renderNode) return true;

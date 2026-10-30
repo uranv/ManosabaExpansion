@@ -8,7 +8,7 @@ namespace UranvManosaba.Contents.Patches;
 public static class Patch_Building_GeneExtractor_Finish
 {
     private static int _originalArcValue = -1;
-    
+
     public static void Prefix()
     {
         var targetGene = ModDefOf.UmGeneFactor;

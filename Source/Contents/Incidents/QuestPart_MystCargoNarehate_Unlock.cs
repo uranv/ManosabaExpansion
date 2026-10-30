@@ -8,7 +8,7 @@ public class QuestPart_MystCargoNarehate_Unlock : QuestPart
 {
 
     public string inSignal;
-    
+
     public override void ExposeData()
     {
         base.ExposeData();

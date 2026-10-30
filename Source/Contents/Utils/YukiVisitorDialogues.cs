@@ -47,7 +47,7 @@ public class YukiVisitorDialogues
         Level11 = "Manosaba_CompYukiVisitor_level_11".Translate(visitor); // 会话 11【Yuki>>Colonist】:
         Level11Choice1 = "Manosaba_CompYukiVisitor_level_11_choice_1".Translate(); // 会话 11 - 选项 1【Colonist>>Yuki】
     }
-    
+
     // 通用退出选项
     public TaggedString LevelChoiceQuit { get; private set; }
     // 最终循环选项

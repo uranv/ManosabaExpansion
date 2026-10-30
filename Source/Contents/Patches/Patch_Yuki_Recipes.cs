@@ -108,5 +108,5 @@ public class Patch_Recipe_Surgery_AvailableOnNow
         }
         return true;
     }
-    
+
 }

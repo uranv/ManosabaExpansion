@@ -26,7 +26,7 @@ public static class GrammarUtils
         TaggedString rootStory = "Manosaba_Story_Root".Translate(visitor, negotiator);
         var storyPack = ModDefOf.UmRulePackStory;
         var utilsPack = ModDefOf.UmRulePackUtils;
-            
+
         var request = new GrammarRequest();
         request.Includes.Add(storyPack);
         request.Includes.Add(utilsPack);
@@ -41,9 +41,9 @@ public static class GrammarUtils
     public static TaggedString GenerateTale(Pawn visitor, Pawn negotiator = null)
     {
         if (ManosabaMod.Settings.disableTale) return "ERR: manually disabled generated from tales.";
-            
+
         var fallbackStory = GenerateStory(visitor, negotiator);
-            
+
         // 尝试使用存档 Tale 生成
         var rootTale = "Manosaba_Tale_Root".Translate(visitor, negotiator);
         var validTales = Find.TaleManager
@@ -60,11 +60,11 @@ public static class GrammarUtils
             var candidateTale = validTales.RandomElement();
             try
             {
-                if (!IsTaleSafe(candidateTale)) 
+                if (!IsTaleSafe(candidateTale))
                 {
-                    if(ManosabaMod.Settings.debugMode) 
+                    if(ManosabaMod.Settings.debugMode)
                         Log.Warning($"[Manosaba] Skipped unsafe tale: {candidateTale.def.defName}, ID:{candidateTale.id} (Utils.GrammarUtils.GenerateTale)");
-                    continue; 
+                    continue;
                 }
                 var request = new GrammarRequest();
                 request.Includes.Add(ModDefOf.UmRulePackTale);
@@ -87,13 +87,13 @@ public static class GrammarUtils
             {
                 var text =
                     $"[Manosaba] Failed to analysis tale {candidateTale.id}: {ex.Message}. ";
-                var text2 = i == 9 ? 
-                    "Falling back to standard story (Utils.GrammarUtils.GenerateTale)" : 
+                var text2 = i == 9 ?
+                    "Falling back to standard story (Utils.GrammarUtils.GenerateTale)" :
                     $"Next try after {i+1}th time(Utils.GrammarUtils.GenerateTale)";
                 Log.Warning(text + text2);
             }
         }
-            
+
         return fallbackStory;
     }
 

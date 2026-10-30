@@ -13,13 +13,13 @@ public static class NarehateCorpseGenerator
             PawnKindDefOf.Colonist, Faction.OfAncients, PawnGenerationContext.NonPlayer, -1,
             forceGenerateNewPawn: true, fixedBiologicalAge: 15, allowDead: false, allowDowned: false,
             fixedGender: Gender.Female, forceNoGear: true);
-        
+
         var pawn = PawnGenerator.GeneratePawn(request);
-            
+
         // 添加 Hediff
         pawn.health.AddHediff(ModDefOf.UmHediffNarehate);
         pawn.health.AddHediff(ModDefOf.UmHediffTredecim);
-            
+
         var hediff = HediffMaker.MakeHediff(ModDefOf.UmHediffHumanDummy, pawn);
         hediff.Severity = 1f;
         var compProgress = hediff.TryGetComp<Comps.HediffComp_Progress>();
@@ -40,7 +40,7 @@ public static class NarehateCorpseGenerator
         // 杀死为自定义尸体
         pawn.Kill(null, null);
         var standardCorpse = pawn.Corpse;
-        if (standardCorpse == null) 
+        if (standardCorpse == null)
         {
             Log.Error("[Manosaba] Narehate corpse generate failed: standardCorpse == null (Utils.NarehateCorpseGenerator.GenCorpse)");
             return null;

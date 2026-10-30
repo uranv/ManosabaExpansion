@@ -30,7 +30,7 @@ public static class Patch_Bill_PawnAllowedToStartAnew
         __result = true;
     }
 }
-    
+
 // Patch: 允许残骸互动工作台 (炉灶、锻造台等)
 // 拦截对 pawn.IsMutant 的调用,把 pawn.IsMutant 替换为 IsMutantButNotNarehate(pawn)
 [HarmonyPatch(typeof(FloatMenuOptionProvider), "SelectedPawnValid")]

@@ -624,7 +624,7 @@ public static class YukiVisitorDialogUtils
             return levelInf1;
         }
     }
-    
+
     private static void YukiVisitorCast(Comp_YukiVisitor comp)
     {
         if (comp.parent is not Pawn p)
@@ -642,7 +642,7 @@ public static class YukiVisitorDialogUtils
         if (p.Map.gatherSpotLister.activeSpots.Count > 0)
         {
             var spot = p.Map.gatherSpotLister.activeSpots.RandomElement();
-            targetCell = spot.parent.InteractionCell; 
+            targetCell = spot.parent.InteractionCell;
         }
         else
         {
@@ -655,9 +655,9 @@ public static class YukiVisitorDialogUtils
         var job = JobMaker.MakeJob(ModDefOf.UmJobYukiVisitorCast, targetCell);
         job.playerForced = true;
         p.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-        comp.isWorking = true; 
+        comp.isWorking = true;
     }
-    
+
     private static void YukiVisitorCastHidden(Comp_YukiVisitor comp)
     {
         if (comp.parent is not Pawn p)
@@ -677,7 +677,7 @@ public static class YukiVisitorDialogUtils
         if (map.gatherSpotLister.activeSpots.Count > 0)
         {
             var spot = map.gatherSpotLister.activeSpots.RandomElement();
-            centerDest = spot.parent.InteractionCell; 
+            centerDest = spot.parent.InteractionCell;
         }
         else
         {

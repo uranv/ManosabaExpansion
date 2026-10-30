@@ -9,14 +9,14 @@ public class ManosabaModSettings : ModSettings
 {
     // 一般设置
     public bool isShowProgress = true;  // HediffComp_ShowSeverity & HediffComp_Progress
-    public bool debugMode = false; 
+    public bool debugMode = false;
 
     public float previewMood = 50;  // do not save
     public float previewMinorThres = 35;  // do not save
     public float previewSeverity = 50f;  // do not save
 
 
-    // 魔女化设置页 
+    // 魔女化设置页
     public float severityIncreaseFactor = 16.0f;  // HediffComp_Progress
     public float severityDecreaseFactor = 8.0f;  // HediffComp_Progress
     public float severityIncreaseBias = 23.0f;  // HediffComp_Progress
@@ -36,7 +36,7 @@ public class ManosabaModSettings : ModSettings
     // 后处理系数作用于: 半魔女奖励, 小雪；使用tick为600, 即默认为 narehateHealFactor / 10 * narehateBloodHealFactor
     public float postHealMultiplier = 0.22f;
     public bool postAllowHeal = true;
-        
+
 
     // 魔女变种人控制时间
     public float mutantFullCircle = 100.0f;  // HediffComp_Countdown_Mutant
@@ -52,7 +52,7 @@ public class ManosabaModSettings : ModSettings
     public bool disableTale = false;  // Grammar_Utils
     public bool useUniqueBodyType = false; // YukiGeneralUtils
 
-        
+
     public override void ExposeData()
     {
         Scribe_Values.Look(ref debugMode, "debugMode", false);
@@ -285,7 +285,7 @@ public class ManosabaMod : Mod
         var changePerDayPreview = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange(Settings.previewMood / 100f,  Settings.previewMinorThres / 100f);
         string leftTextValOutput = "ManosabaSettings_changePerDayPreview".Translate(changePerDayPreview.ToString("F4"));
         // 预览输出右
-        var mtbDaysPreview = Settings.baseMtbDays 
+        var mtbDaysPreview = Settings.baseMtbDays
                              * Mathf.Pow(4f, Mathf.Lerp(1.0f, -1.0f, Settings.previewSeverity / 100f))
                              * Mathf.Pow(2f, Mathf.Lerp(-1.0f, 1.0f, Settings.previewMood / 100f));
         string rightTextValOutput = "ManosabaSettings_mtbDaysPreview".Translate(mtbDaysPreview.ToString("F1"));
@@ -591,10 +591,10 @@ public class ManosabaMod : Mod
         var bottomMargin = 10f;
         //Rect rowRect = list.GetRect(rowHeight);
         var buttonRect = new Rect(
-            (container.width - buttonWidth) / 2f, 
-            container.height - rowHeight - bottomMargin, 
-            buttonWidth, 
-            rowHeight-1f            
+            (container.width - buttonWidth) / 2f,
+            container.height - rowHeight - bottomMargin,
+            buttonWidth,
+            rowHeight-1f
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
@@ -698,10 +698,10 @@ public class ManosabaMod : Mod
         var rowHeight = Mathf.Max(labelHeight, 30f);  // 行高度, 至少30f以适应按钮高度
         var bottomMargin = 10f;
         var buttonRect = new Rect(
-            (container.width - buttonWidth) / 2f, 
-            container.height - rowHeight - bottomMargin, 
-            buttonWidth, 
-            rowHeight-1f            
+            (container.width - buttonWidth) / 2f,
+            container.height - rowHeight - bottomMargin,
+            buttonWidth,
+            rowHeight-1f
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
@@ -792,10 +792,10 @@ public class ManosabaMod : Mod
         var rowHeight = Mathf.Max(labelHeight, 30f);  // 行高度, 至少30f以适应按钮高度
         var bottomMargin = 10f;
         var buttonRect = new Rect(
-            (container.width - buttonWidth) / 2f, 
-            container.height - rowHeight - bottomMargin, 
-            buttonWidth, 
-            rowHeight-1f            
+            (container.width - buttonWidth) / 2f,
+            container.height - rowHeight - bottomMargin,
+            buttonWidth,
+            rowHeight-1f
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
@@ -803,7 +803,7 @@ public class ManosabaMod : Mod
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
     }
-        
+
 
 
 
@@ -865,7 +865,7 @@ public class ManosabaMod : Mod
         // 颜色设置
         var originalColor = GUI.color;
         GUI.color = _lightGray;
-        Color LineColor(float x) => 
+        Color LineColor(float x) =>
             ( x <= xThresIncrease+1f )? Color.red:
             ( x >= xThresDecrease )? Color.green:
             Color.yellow;
@@ -896,14 +896,14 @@ public class ManosabaMod : Mod
             var guiY = rect.y + yDrawLength * (yEdgePercent + normalizedY);
             var circSize = 8f;
             var circRect = new Rect(
-                guiX - circSize / 2f, 
-                guiY - circSize / 2f, 
-                circSize, 
+                guiX - circSize / 2f,
+                guiY - circSize / 2f,
+                circSize,
                 circSize
             );
             var oldColor = GUI.color;
             GUI.color = Color.cyan;
-            GUI.DrawTexture(circRect, BaseContent.WhiteTex); 
+            GUI.DrawTexture(circRect, BaseContent.WhiteTex);
             GUI.color = oldColor;
         }
         // --- 绘制y轴 ---

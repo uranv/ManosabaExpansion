@@ -14,7 +14,7 @@ public class ManosabaGameComponent : GameComponent
     public bool isYukiVisited;
     // 尸体空投
     public bool isCorpseDropped;
-        
+
     // 仪式缓存
     public int cachedQuality;
 

@@ -18,7 +18,7 @@ public static class Patch_CanDrawTryRomance_Prefix
         {
             return true;
         }
-        
+
         var thisIsYuki = pawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
                          pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
         if (!thisIsYuki)

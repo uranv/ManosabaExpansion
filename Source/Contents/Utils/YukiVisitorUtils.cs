@@ -8,7 +8,7 @@ namespace UranvManosaba.Contents.Utils;
 
 public static class YukiVisitorUtils
 {
-    private static readonly AccessTools.FieldRef<ResearchManager, ResearchProjectDef> CurrentProjRef = 
+    private static readonly AccessTools.FieldRef<ResearchManager, ResearchProjectDef> CurrentProjRef =
         AccessTools.FieldRefAccess<ResearchManager, ResearchProjectDef>("currentProj");
 
     // 奖励: 解锁科技
@@ -90,7 +90,7 @@ public static class YukiVisitorUtils
         string letterRewards="";
         foreach (var pair in rewardsToSpawn)
         {
-                
+
             var def = pair.Key;
             if (pair.Value !=0) letterRewards += $"{pair.Key.LabelCap} x{pair.Value}, ";
             int totalCount = pair.Value;

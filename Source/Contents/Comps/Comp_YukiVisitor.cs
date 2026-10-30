@@ -28,9 +28,9 @@ public class Comp_YukiVisitor : ThingComp
         Scribe_Values.Look(ref isWorking, "isWorking", false);
         Scribe_Values.Look(ref isTale, "isTale", false);
         Scribe_Values.Look(ref isInfLevel, "isInfLevel", false);
-        
+
     }
-    
+
     // 受伤时离开
     public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
     {
@@ -143,7 +143,7 @@ public class Comp_YukiVisitor : ThingComp
             yield break;
         }
         if (parent is Pawn { IsColonist: true }) yield break;  // 玩家阵营时跳过撤离 v1.0.6
-        
+
         var visitor = (Pawn)parent;
         if (!selPawn.CanReach(visitor, PathEndMode.Touch, Danger.Deadly))
         {
@@ -169,7 +169,7 @@ public class Comp_YukiVisitor : ThingComp
         }), selPawn, visitor);
     }
 
-    
+
     // 发信文本
     private TaggedString LetterLabelHurt => "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterLabel".Translate(parent.LabelShort);
     private TaggedString LetterTextHurt => "Manosaba_CompYukiVisitor_teleportLeaveHurt_letterText".Translate(parent.LabelShort);

@@ -10,7 +10,7 @@ public class Gene_Factor : Gene
         base.PostAdd();
         EnsureDummyExists();
     }
-        
+
     // 低频率检查 manager Hediff
     // public override void Tick()
     // {

@@ -35,7 +35,7 @@ public static class DefGenerator_NarehateCorpse
         {
             Log.Warning("[Manosaba] UI Icon load failed: " + narehateDef.uiIconPath + " (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
         }
-        
+
         narehateDef.thingClass = typeof(Corpse_NarehateCorpse); // 绑定到自定义尸体类
         narehateDef.race = humanDef.race; // 借用人类种族数据, 防止 StatWorker 崩溃
         narehateDef.category = ThingCategory.Item;
@@ -61,7 +61,7 @@ public static class DefGenerator_NarehateCorpse
         {
             narehateDef.inspectorTabs.Add(typeof(ITab_StudyNotes));
         }
-            
+
         // 复制分类
         narehateDef.thingCategories = new List<ThingCategoryDef> { ThingCategoryDefOf.CorpsesHumanlike };
 
@@ -89,11 +89,11 @@ public static class DefGenerator_NarehateCorpse
             ?.SetValue(studyComp, KnowledgeCategoryDefOf.Basic);
         // 设置异象研究等级
         AccessTools.Field(typeof(CompProperties_Studiable), "minMonolithLevelForStudy")
-            ?.SetValue(studyComp,1); 
+            ?.SetValue(studyComp,1);
 
 
         narehateDef.comps.Add(studyComp);
-        
+
         // 研究日志comp
         var unlocksComp = new CompProperties_StudyUnlocks
         {
@@ -159,7 +159,7 @@ public static class DefGenerator_NarehateCorpse
         {
             if (recipe.fixedIngredientFilter == null ||
                 !recipe.fixedIngredientFilter.AllowedThingDefs.Contains(humanCorpseDef)) continue;
-            
+
             recipe.fixedIngredientFilter.SetAllow(narehateDef, true);
 
             // 更新默认过滤器
@@ -173,7 +173,7 @@ public static class DefGenerator_NarehateCorpse
             if (recipe.ingredients == null) continue;
             foreach (var ingredient in recipe.ingredients)
             {
-                if (ingredient.filter != null && 
+                if (ingredient.filter != null &&
                     ingredient.filter.AllowedThingDefs.Contains(humanCorpseDef))
                 {
                     ingredient.filter.SetAllow(narehateDef, true);
@@ -182,7 +182,7 @@ public static class DefGenerator_NarehateCorpse
             }
         }
     }
-    
+
     public static void RefreshAllStorageSettings()
     {
         foreach (var map in Find.Maps)
@@ -200,7 +200,7 @@ public static class DefGenerator_NarehateCorpse
                 var settings = storage.GetStoreSettings();
                 settings?.filter?.RecalculateDisplayRootCategory();
             }
-            
+
         }
     }
 }

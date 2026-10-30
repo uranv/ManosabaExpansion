@@ -40,7 +40,7 @@ public static class Patch_SurgicalInspection
         ResearchUtils.UnlockResearchPrereqs();
         // 设置魔女因子为可见
         Comps.HediffComp_HumanDummy.SetDummyShouldDisplay(pawn);
-        
+
         var visibleHediff = pawn.health?.hediffSet?.HasHediff(ModDefOf.UmHediffHumanVisible);
         if (visibleHediff is null or false)
         {
@@ -52,7 +52,7 @@ public static class Patch_SurgicalInspection
     {
         var label = "Manosaba_SurgicalInspection_Label".Translate();
         var text = "Manosaba_SurgicalInspection_Text".Translate(
-            patient.Named("PATIENT"), 
+            patient.Named("PATIENT"),
             doctor.Named("DOCTOR")
         );
         Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NeutralEvent, patient);

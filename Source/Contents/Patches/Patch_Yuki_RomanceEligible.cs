@@ -17,7 +17,7 @@ public static class Patch_RomanceEligible_Prefix
         __result = RomanceEligible(pawn, initiator, forOpinionExplanation );
         return false;
     }
-        
+
     public static AcceptanceReport RomanceEligible(Pawn pawn, bool initiator, bool forOpinionExplanation)
     {
         var state = !initiator || forOpinionExplanation;
@@ -33,7 +33,7 @@ public static class Patch_RomanceEligible_Prefix
         {
             return !forOpinionExplanation ? "CantRomanceInitiateMessageSlave".Translate(pawn).CapitalizeFirst() : AcceptanceReport.WasRejected;
         }
-        
+
         var story = pawn.story;
         if (story != null && story.traits?.HasTrait(TraitDefOf.Asexual) == true)
         {

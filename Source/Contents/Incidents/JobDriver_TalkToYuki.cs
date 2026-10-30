@@ -29,11 +29,11 @@ public class JobDriver_TalkToYuki : JobDriver
                 _notified = true;
                 // 让殖民者看着访客
                 pawn.rotationTracker.FaceTarget(Visitor);
-                    
+
                 // 获取组件并触发对话
                 var comp = Visitor.GetComp<Comp_YukiVisitor>();
                 comp?.Notify_SpokenTo(pawn);
-                    
+
                 // 通知 Lord 发生过交互, 类似原版 ReceiveMemo("SpokenTo")
                 Visitor.GetLord()?.ReceiveMemo("SpokenTo");
             }

@@ -35,7 +35,7 @@ public static class MiscUtils
             }
         }
     }
-        
+
     /// <summary>
     /// 将 HediffDef 添加到所有原生的眼睛部位
     /// </summary>
@@ -46,8 +46,8 @@ public static class MiscUtils
         var eyes = currentParts.Where(p => p.def == BodyPartDefOf.Eye);
         foreach (var eye in eyes)
         {
-            var isBionic = pawn.health.hediffSet.hediffs.Any(h => 
-                h.Part == eye && 
+            var isBionic = pawn.health.hediffSet.hediffs.Any(h =>
+                h.Part == eye &&
                 h is Hediff_AddedPart
             );
             if (!isBionic)
@@ -62,12 +62,12 @@ public static class MiscUtils
     /// </summary>
     public static void SanityCheckPawnData(Pawn p, string debugRole = "Pawn")
     {
-        if (p == null) 
+        if (p == null)
         {
-            Log.Error($"[Manosaba] Error: {debugRole} is Null (Utils.MiscUtils.SanityCheckPawnData)"); 
-            return; 
+            Log.Error($"[Manosaba] Error: {debugRole} is Null (Utils.MiscUtils.SanityCheckPawnData)");
+            return;
         }
-            
+
         if (p.Name == null)
         {
             Log.Warning($"[Manosaba] FIXING CRASH: {debugRole} has Null NAME (Utils.MiscUtils.SanityCheckPawnData)");
@@ -76,7 +76,7 @@ public static class MiscUtils
             else
                 p.Name = new NameSingle(p.LabelShort ?? "ERR");
         }
-            
+
         if (p.kindDef == null)
         {
             Log.Warning($"[Manosaba] FIXING CRASH: {debugRole} (ID:{p.ThingID}) has Null KindDef (Utils.MiscUtils.SanityCheckPawnData)");
@@ -92,13 +92,13 @@ public static class MiscUtils
                 AgeChronologicalTicks = 3600000L * 18
             };
         }
-            
+
         if (p.relations == null)
         {
             Log.Warning($"[Manosaba] FIXING CRASH: {debugRole} (ID:{p.ThingID}) has Null RelationsTracker (Utils.MiscUtils.SanityCheckPawnData)");
             p.relations = new Pawn_RelationsTracker(p);
         }
-            
+
         if (p.RaceProps.Humanlike && p.story == null)
         {
             Log.Warning($"[Manosaba] FIXING CRASH: {debugRole} (ID:{p.ThingID}) has Null StoryTracker (Utils.MiscUtils.SanityCheckPawnData)");

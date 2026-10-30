@@ -79,7 +79,7 @@ public class Comp_NarehateVisuals : ThingComp
             drawSize = Vector2.one,
             debugLabel = "Narehate_Head",
         };
-            
+
         // 添加节点
         list.Add(new PawnRenderNode_Narehate(Pawn, _bodyProps, Pawn.Drawer.renderer.renderTree, PawnRenderNode_Narehate.BodyPart.Body));
         list.Add(new PawnRenderNode_Narehate(Pawn, _headProps, Pawn.Drawer.renderer.renderTree, PawnRenderNode_Narehate.BodyPart.Head));

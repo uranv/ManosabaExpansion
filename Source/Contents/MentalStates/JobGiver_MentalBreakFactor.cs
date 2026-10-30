@@ -10,9 +10,9 @@ public class JobGiver_MentalBreakFactor : ThinkNode_JobGiver
     {
         // 调用下面的静态方法获取目标
         var target = FindHatedTarget(pawn);
-            
+
         if (target == null) return null;
-            
+
         var job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
         job.maxNumMeleeAttacks = 1;
         job.expiryInterval = 120;
@@ -38,9 +38,9 @@ public class JobGiver_MentalBreakFactor : ThinkNode_JobGiver
         foreach (var target in potentialTargets)
         {
             if (pawn.relations == null) continue;
-                
+
             var opinion = pawn.relations.OpinionOf(target);
-                
+
             if (opinion < lowestOpinion)
             {
                 lowestOpinion = opinion;

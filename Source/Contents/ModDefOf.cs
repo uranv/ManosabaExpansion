@@ -32,7 +32,7 @@ public static class ModDefOf
     public static ResearchProjectDef UmResearchProjectControl;
     public static ResearchProjectDef UmResearchProjectGene;
     public static ResearchProjectDef UmResearchProjectSabbat;
-    
+
     // ThingDefs
     public static ThingDef UmThingAburibin;
     public static ThingDef UmThingCrystallizedEye;
@@ -45,7 +45,7 @@ public static class ModDefOf
     public static FleckDef UmFleckSabbatBlood;
     public static SoundDef UmSound_gDie_Divil_JIO;
     public static BodyTypeDef UmBodyTypeYuki;
-    
+
     // MutantDefs
     public static MutantDef UmMutantNarehate;
 
@@ -54,27 +54,27 @@ public static class ModDefOf
 
     // HeadTypeDefs
     public static HeadTypeDef UmHeadTypeYuki;
-    
+
     // BackStoryDefs
     public static BackstoryDef UmBackstoryYukiChild;
     public static BackstoryDef UmBackstoryYukiAdult;
-    
+
     // PawnKindDefs
     public static PawnKindDef UmPawnKindYukiVisitor;
     public static PawnKindDef UmPawnKindYukiColonist;
-    
+
     // ThoughtDefs
     public static ThoughtDef UmThoughtYukiLeaveInstantly;
-    
+
     // RulePackDefs
     public static RulePackDef UmRulePackStory;
     public static RulePackDef UmRulePackTale;
     public static RulePackDef UmRulePackUtils;
-    
+
     // JobDefs
     public static JobDef UmJobYukiVisitorCast;
     public static JobDef UmJobYukiVisitorCastHidden;
-    
+
     // MentalStateDefs
     public static MentalStateDef UmMentalBreakFactor;
     public static MentalStateDef UmMentalBreakNarehate;
@@ -85,7 +85,7 @@ public static class ModDefOf
 
     // EffecterDefs
     public static EffecterDef UmEffecterActivated;
-    
+
     static ModDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(ModDefOf));

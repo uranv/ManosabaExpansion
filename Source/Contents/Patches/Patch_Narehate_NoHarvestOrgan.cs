@@ -22,7 +22,7 @@ public static class Patch_MedicalRecipesUtility_IsCleanAndDroppable
         {
             return true;
         }
-        
+
         __result = false;
         return false;
 

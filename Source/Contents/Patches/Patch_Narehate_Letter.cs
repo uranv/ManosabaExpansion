@@ -57,9 +57,9 @@ public static class Patch_MajyoinshiLetter
             .AdjustedFor(pawn);
 
         Find.LetterStack.ReceiveLetter(
-            finalLabel, 
-            text, 
-            stateDef.beginLetterDef ?? LetterDefOf.ThreatSmall, 
+            finalLabel,
+            text,
+            stateDef.beginLetterDef ?? LetterDefOf.ThreatSmall,
             pawn
         );
     }

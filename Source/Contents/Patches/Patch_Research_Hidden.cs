@@ -37,10 +37,10 @@ public static class Patch_ResearchVisibility
             __result = (ModDefOf.UmResearchProjectKill == null || !ModDefOf.UmResearchProjectKill.IsFinished) &&
                        (ModDefOf.UmResearchProjectControl == null || !ModDefOf.UmResearchProjectControl.IsFinished);
         }
-        
+
         // 隐藏【魔女安息仪式】
         //bool unlockE = __instance == Anomaly.ModDefOf.UmResearchProjectSabbat && !__instance.PrerequisitesCompleted;
-            
+
         //if (finishPre || unlockA || unlockB || unlockC || unlockD || unlockE) __result = true;
         // if (finishPre || unlockA || unlockD)
         // {

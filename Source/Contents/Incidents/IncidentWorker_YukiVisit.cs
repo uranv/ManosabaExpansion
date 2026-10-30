@@ -31,7 +31,7 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
         }
         return postFactor * base.ChanceFactorNow(target);
     }
-    
+
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
         if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Try Excute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
@@ -44,9 +44,9 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
         }
 
         // 确定派系
-        var faction = Find.FactionManager.FirstFactionOfDef(FactionDefOf.PlayerColony) 
+        var faction = Find.FactionManager.FirstFactionOfDef(FactionDefOf.PlayerColony)
                       ?? Find.FactionManager.RandomNonHostileFaction(false, false, false);
-            
+
         // 生成月代雪 Pawn
         var yuki = YukiGeneralUtils.GenerateYukiPawn();
 

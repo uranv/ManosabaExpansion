@@ -39,7 +39,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {
         base.Apply(target, dest);
-        
+
         var p = parent.pawn;
         var h = p?.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown);
         if (h != null) h.Severity = Mathf.Max(0.0001f, h.Severity - Props.SeverityCost);

@@ -86,7 +86,7 @@ public static class Patch_RomanceEligiblePair_Prefix
 
         return true;
     }
-        
+
     private static bool IsIncestuous(Pawn one, Pawn two)
     {
         foreach (var relation in one.GetRelations(two))

@@ -19,7 +19,7 @@ public class HediffCompProperties_NarehateHealingReveal : HediffCompProperties
 public class HediffComp_NarehateHealingReveal : HediffComp
 {
     private HediffCompProperties_NarehateHealingReveal Props => (HediffCompProperties_NarehateHealingReveal)props;
-    
+
     private float EffectiveHealPerDay
     {
         get
@@ -40,7 +40,7 @@ public class HediffComp_NarehateHealingReveal : HediffComp
             return factor;
         }
     }
-    private float EffectiveBloodHealPerDay 
+    private float EffectiveBloodHealPerDay
     {
         get
         {
@@ -60,7 +60,7 @@ public class HediffComp_NarehateHealingReveal : HediffComp
             return factor;
         }
     }
-    
+
     private float RegenTickExpected
     {
         get
@@ -129,7 +129,7 @@ public class HediffComp_NarehateHealingReveal : HediffComp
             return stringRegen;
         }
     }
-    
+
     public override string CompTipStringExtra
     {
         get

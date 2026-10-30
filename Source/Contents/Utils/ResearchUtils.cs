@@ -29,8 +29,8 @@ public static class ResearchUtils
             Log.Error(logNotification);
             comp.isSimpleSpearUnlocked = true;
             Find.LetterStack.ReceiveLetter(
-                "RecipeSimpleSpearUnlocked_Label".Translate(), //"解锁制作: 简易长矛", 
-                "RecipeSimpleSpearUnlocked_Text".Translate(),//"你现在可以制作简易长矛了。", 
+                "RecipeSimpleSpearUnlocked_Label".Translate(), //"解锁制作: 简易长矛",
+                "RecipeSimpleSpearUnlocked_Text".Translate(),//"你现在可以制作简易长矛了。",
                 LetterDefOf.PositiveEvent
             );
         }
@@ -47,13 +47,13 @@ public static class ResearchUtils
             // 获取私有字段引用
             var hiddenEntriesDict = AccessTools.Field(typeof(EntityCodex), "hiddenEntries")
                 .GetValue(codex) as Dictionary<EntityCodexEntryDef, bool>;
-                    
+
             var hiddenCategoriesDict = AccessTools.Field(typeof(EntityCodex), "hiddenCategories")
                 .GetValue(codex) as Dictionary<EntityCategoryDef, bool>;
-                
+
             var discoveredEntitiesSet = AccessTools.Field(typeof(EntityCodex), "discoveredEntities")
                 .GetValue(codex) as HashSet<ThingDef>;
-                
+
             // 解锁条目
             if (hiddenEntriesDict != null) hiddenEntriesDict[codexDef] = false;
             // 解锁分类 (防止分类本身还未显示)
@@ -67,7 +67,7 @@ public static class ResearchUtils
 
             // 发送信号
             Find.SignalManager.SendSignal(new Signal(EntityCodex.EntityDiscoveredSignal, global: true));
-                
+
             // 调试日志
             if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Unlock <EntityCodexEntryDef> {codexDef.defName} silently (Utils.ResearchUtils.UnlockCodexEntrySilent)");
         }

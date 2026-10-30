@@ -50,16 +50,16 @@ public class CompAbilityEffect_SelfTeleport : CompAbilityEffect
         {
             return;
         }
-            
+
         var destCell = target.Cell;
         var pawn = parent.pawn;
         var map = pawn.Map;
         // 若可唤醒，则唤醒 pawn
         pawn.TryGetComp<CompCanBeDormant>()?.WakeUp();
-            
+
         pawn.Position = destCell;
         pawn.health?.AddHediff(ModDefOf.UmHediffYukiSkipDebuff);
-            
+
         // 移除目标附近迷雾
         if ((pawn.Faction == Faction.OfPlayer || pawn.IsPlayerControlled) && pawn.Position.Fogged(map))
         {
@@ -74,7 +74,7 @@ public class CompAbilityEffect_SelfTeleport : CompAbilityEffect
             GenClamor.DoClamor(pawn, destCell, Props.destClamorRadius, Props.destClamorType);
         }
     }
-        
+
     public override bool Valid(LocalTargetInfo target, bool showMessages = false)
     {
         if (!target.Cell.Walkable(parent.pawn.Map))
@@ -85,7 +85,7 @@ public class CompAbilityEffect_SelfTeleport : CompAbilityEffect
         {
             return false;
         }
-        if (!target.Cell.Standable(parent.pawn.Map)) 
+        if (!target.Cell.Standable(parent.pawn.Map))
         {
             return false;
         }
