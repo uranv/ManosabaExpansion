@@ -1,3 +1,4 @@
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Comps;
@@ -14,27 +15,49 @@ public class HediffCompProperties_YukiDummy : HediffCompProperties
     }
 }
 
+public enum YukiForm
+{
+    unknow,
+    vis,
+    col
+}
+
 public class HediffComp_YukiDummy : HediffComp
 {
     private HediffCompProperties_YukiDummy Props => (HediffCompProperties_YukiDummy)props;
     private const int TickInterval = 1800;
-    private bool IsColonist => Pawn.kindDef == ModDefOf.UmPawnKindYukiColonist;
-    private bool IsVisitor => Pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+    public YukiForm form = YukiForm.unknow;
+
+    // 等待健康系统统一移除，让其他 Comp 的添加回调先执行完毕。
+    private bool _shouldRemove;
+    public override bool CompShouldRemove => _shouldRemove || !YukiGeneralUtils.IsYuki(Pawn) || base.CompShouldRemove;
+
+    public override void CompExposeData()
+    {
+        base.CompExposeData();
+        Scribe_Values.Look(ref form, "form", YukiForm.unknow);
+    }
+
+    public override void CopyFrom(HediffComp other)
+    {
+        base.CopyFrom(other);
+        form = ((HediffComp_YukiDummy)other).form;
+        _shouldRemove = false;
+        _cachedComp = null;
+    }
 
     // 维护循环
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
         if (!Pawn.IsHashIntervalTick(TickInterval)) return;
-        MaintainHediffs();
-        MaintainGene();
+        if (MaintainHediffs()) MaintainGene();
     }
     // 初始化
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
-        MaintainHediffs();
-        MaintainGene();
+        if (MaintainHediffs()) MaintainGene();
     }
     // 移除时清理关联 Hediff 和 Gene
     public override void CompPostPostRemoved()
@@ -49,7 +72,8 @@ public class HediffComp_YukiDummy : HediffComp
         if (colonistHediff != null) Pawn.health.RemoveHediff(colonistHediff);
         var colonistHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.colonistHiddenHediff);
         if (colonistHiddenHediff != null) Pawn.health.RemoveHediff(colonistHiddenHediff);
-        // 删除基因
+        // 错挂在其他种族上时，保留该宿主原有的魔女因子。
+        if (!YukiGeneralUtils.IsYuki(Pawn)) return;
         var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
         if (gene != null) Pawn.genes.RemoveGene(gene);
     }
@@ -58,25 +82,25 @@ public class HediffComp_YukiDummy : HediffComp
     {
         get
         {
-            var state = IsColonist ? "COL" :
-                IsVisitor ? "VIS" :
+            var state = form == YukiForm.col ? "COL" :
+                form == YukiForm.vis ? "VIS" :
                 "ERR";
             return state;
         }
     }
-    // 维护 Hediffs
-    private void MaintainHediffs()
+    // 返回是否完成维护；恢复旧类型或等待移除时，本轮不处理其他状态。
+    private bool MaintainHediffs()
     {
-        if (Pawn?.health?.hediffSet == null) return;
+        if (Pawn?.health?.hediffSet == null || CompShouldRemove) return false;
         // 维护 Yuki 的特殊 Hediff
-        if (IsColonist)
+        if (form == YukiForm.col)
         {
             var hasHediff = Pawn.health.hediffSet.HasHediff(Props.colonistHediff);
             var hasHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.colonistHiddenHediff);
             if (!hasHediff) Pawn.health.AddHediff(Props.colonistHediff);
             if (!hasHiddenHediff) Pawn.health.AddHediff(Props.colonistHiddenHediff);
         }
-        else if (IsVisitor)
+        else if (form == YukiForm.vis)
         {
             var hasVisitorHediff = Pawn.health.hediffSet.HasHediff(Props.visitorHediff);
             var hasVisitorHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.visitorHiddenHediff);
@@ -85,14 +109,19 @@ public class HediffComp_YukiDummy : HediffComp
         }
         else
         {
-            Pawn.health.RemoveAllHediffs();
-            return;
+            // 只在类型缺失时兼容旧存档；成功恢复后交由下次维护处理。
+            var kind = Pawn.kindDef;
+            form = kind == ModDefOf.UmPawnKindYukiColonist ? YukiForm.col :
+                kind == ModDefOf.UmPawnKindYukiVisitor ? YukiForm.vis : YukiForm.unknow;
+            _shouldRemove = form == YukiForm.unknow;
+            return false;
         }
         // 防止魔女因子
         var humanDummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
         if (humanDummyHediff != null) Pawn.health.RemoveHediff(humanDummyHediff);
         var mutantDummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffMutantDummy);
         if (mutantDummyHediff != null) Pawn.health.RemoveHediff(mutantDummyHediff);
+        return true;
     }
     // 维护基因: 小雪总是没有魔女因子的
     private void MaintainGene()

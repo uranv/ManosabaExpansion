@@ -10,6 +10,8 @@ namespace UranvManosaba.Contents.Utils;
 
 public static class YukiGeneralUtils
 {
+    public static bool IsYuki(Pawn p) => p != null && p.def == ModDefOf.UmThingRaceYuki;
+
     /// <summary>
     /// 从请求生成月代雪
     /// </summary>
@@ -125,8 +127,10 @@ public static class YukiGeneralUtils
         var compBiocodable = cloth.TryGetComp<CompBiocodable>();
         AccessTools.Method(typeof(CompBiocodable), "CodeFor").Invoke(compBiocodable, new object[] { p });
         p.apparel.Wear((Apparel)cloth, locked: true);
-        // 添加 Hediff
-        p.health.AddHediff(ModDefOf.UmHediffYukiDummy);
+        // 在添加回调维护状态前，明确指定生成类型。
+        var yukiDummy = HediffMaker.MakeHediff(ModDefOf.UmHediffYukiDummy, p);
+        yukiDummy.TryGetComp<HediffComp_YukiDummy>().form = isColonist ? YukiForm.col : YukiForm.vis;
+        p.health.AddHediff(yukiDummy);
 
         // 非殖民者添加对话组件
         // if (!isColonist && !p.HasComp<Comp_YukiVisitor>())

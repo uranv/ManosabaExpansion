@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Patches;
@@ -18,10 +19,8 @@ public static class Patch_LovinAgeFactor_Prefix
 		{
 			return true;
 		}
-		var thisIsYuki = pawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-		                 pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
-		var otherIsYuki = otherPawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-		                  otherPawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+		var thisIsYuki = YukiGeneralUtils.IsYuki(pawn);
+		var otherIsYuki = YukiGeneralUtils.IsYuki(otherPawn);
 		if (!thisIsYuki && !otherIsYuki)
 		{
 			return true;

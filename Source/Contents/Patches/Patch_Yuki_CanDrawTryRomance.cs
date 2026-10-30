@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Patches;
@@ -19,8 +20,7 @@ public static class Patch_CanDrawTryRomance_Prefix
             return true;
         }
 
-        var thisIsYuki = pawn.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                         pawn.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var thisIsYuki = YukiGeneralUtils.IsYuki(pawn);
         if (!thisIsYuki)
         {
             return true;

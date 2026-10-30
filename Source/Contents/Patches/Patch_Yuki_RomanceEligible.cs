@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Patches;
@@ -11,8 +12,7 @@ public static class Patch_RomanceEligible_Prefix
 {
     public static bool Prefix(Pawn pawn, bool initiator, bool forOpinionExplanation, ref AcceptanceReport __result)
     {
-        var isYuki = pawn?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                     pawn?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var isYuki = YukiGeneralUtils.IsYuki(pawn);
         if (!isYuki) return true;
         __result = RomanceEligible(pawn, initiator, forOpinionExplanation );
         return false;

@@ -1,6 +1,7 @@
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
+using UranvManosaba.Contents.Utils;
 using Verse;
 using Verse.AI;
 
@@ -13,10 +14,8 @@ public static class Patch_RomanceEligiblePair_Prefix
 {
     public static bool Prefix(Pawn initiator, Pawn target, bool forOpinionExplanation, ref AcceptanceReport __result)
     {
-        var initYuki = initiator?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                       initiator?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
-        var tarYuki = target?.kindDef == ModDefOf.UmPawnKindYukiColonist ||
-                      target?.kindDef == ModDefOf.UmPawnKindYukiVisitor;
+        var initYuki = YukiGeneralUtils.IsYuki(initiator);
+        var tarYuki = YukiGeneralUtils.IsYuki(target);
         if (!initYuki && !tarYuki) return true;
         __result = CustomRomanceEligiblePair(initiator, target, forOpinionExplanation);
         return false;

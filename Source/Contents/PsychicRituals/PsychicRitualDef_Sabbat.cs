@@ -1,4 +1,5 @@
 using RimWorld;
+using UranvManosaba.Contents.Utils;
 using Verse;
 using Verse.AI.Group;
 
@@ -58,11 +59,8 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
             yield return item;
         }
 
-        var yukiColonistKind = ModDefOf.UmPawnKindYukiColonist;
-        var yukiVisitorKind = ModDefOf.UmPawnKindYukiVisitor;
-        if (yukiColonistKind == null || yukiVisitorKind == null) yield break;
         var exists = map.mapPawns.AllPawnsSpawned.Any(p =>
-            (p.kindDef == yukiColonistKind || p.kindDef == yukiVisitorKind) && !p.Dead);
+            YukiGeneralUtils.IsYuki(p) && !p.Dead);
         if (exists)
             yield return "Manosaba_SabbatReason_YukiExists".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
     }
