@@ -17,7 +17,7 @@
         </thingCategories>
         <statBases>
             <Mass>2.0</Mass>
-            <MarketValue>146</MarketValue>
+            <MarketValue>0</MarketValue>
             <Flammability>0</Flammability>
             <EquipDelay>1</EquipDelay>
             <ArmorRating_Sharp>1.0</ArmorRating_Sharp>

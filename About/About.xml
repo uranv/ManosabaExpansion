@@ -5,6 +5,7 @@
 	<url>https://github.com/uranv/ManosabaExpansion</url>
 	<supportedVersions>
 		<li>1.6</li>
+		<li>1.7</li>
 	</supportedVersions>
 	<modDependencies>
 		<li>
