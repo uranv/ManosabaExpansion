@@ -7,7 +7,7 @@ using Verse.AI;
 
 namespace UranvManosaba.Contents.Patches;
 
-// 修改月代雪可以恋爱：pair筛选
+// 任一方为月代雪时，双方均豁免恋爱年龄限制。
 [HarmonyPatch(typeof(RelationsUtility))]
 [HarmonyPatch("RomanceEligiblePair")]
 public static class Patch_RomanceEligiblePair_Prefix
@@ -50,6 +50,11 @@ public static class Patch_RomanceEligiblePair_Prefix
             var genderSpecificLabel = directPawnRelation.def.GetGenderSpecificLabel(target);
             return "RomanceChanceExistingRelation".Translate(initiator.Named("PAWN"), genderSpecificLabel.Named("RELATION"));
         }
+        // 发起方资格检查：与目标方一样只豁免年龄，保留其他限制。
+        if (!Patch_RomanceEligible_Prefix.RomanceEligible(initiator, initiator: true, forOpinionExplanation))
+        {
+            return false;
+        }
         // 乱伦检查
         if (IsIncestuous(initiator, target))
         {
@@ -65,7 +70,7 @@ public static class Patch_RomanceEligiblePair_Prefix
         {
             return "CantRomanceTargetOpinion".Translate();
         }
-        // 单人资格检查
+        // 目标方资格检查：配对中已有月代雪，因此目标也豁免年龄。
         var targetReport = Patch_RomanceEligible_Prefix.RomanceEligible(target, initiator: false, forOpinionExplanation);
         if (!targetReport)
         {

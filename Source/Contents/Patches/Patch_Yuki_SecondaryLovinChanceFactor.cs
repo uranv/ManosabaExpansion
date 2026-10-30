@@ -34,25 +34,12 @@ public static class Patch_SecondaryLovinChanceFactor_Prefix
         {
             return 0f;
         }
-        //if (pawn.def != otherPawn.def) return 0f;
-        if (pawn.story is not { traits: not null })
-        {
-            return PrettinessFactor(otherPawn);
-        }
-        if (pawn.story.traits.HasTrait(TraitDefOf.Asexual))
+        if (pawn.story is { traits: not null } &&
+            !RelationsUtility.AttractedToGender(pawn, otherPawn.gender))
         {
             return 0f;
         }
-        if (pawn.story.traits.HasTrait(TraitDefOf.Bisexual))
-        {
-            return PrettinessFactor(otherPawn);
-        }
-        if (pawn.story.traits.HasTrait(TraitDefOf.Gay) &&
-            otherPawn.gender != pawn.gender)
-        {
-            return 0f;
-        }
-        return otherPawn.gender == pawn.gender ? 0f : PrettinessFactor(otherPawn);
+        return PrettinessFactor(otherPawn);
     }
     private static float PrettinessFactor(Pawn otherPawn)
     {

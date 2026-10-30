@@ -14,10 +14,11 @@ public static class Patch_RomanceEligible_Prefix
     {
         var isYuki = YukiGeneralUtils.IsYuki(pawn);
         if (!isYuki) return true;
-        __result = RomanceEligible(pawn, initiator, forOpinionExplanation );
+        __result = RomanceEligible(pawn, initiator, forOpinionExplanation);
         return false;
     }
 
+    // 无年龄限制的资格检查，仅用于月代雪本人或包含月代雪的配对双方。
     public static AcceptanceReport RomanceEligible(Pawn pawn, bool initiator, bool forOpinionExplanation)
     {
         var state = !initiator || forOpinionExplanation;
