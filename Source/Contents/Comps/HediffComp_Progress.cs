@@ -147,12 +147,12 @@ public class HediffComp_Progress : HediffComp
         if (mood > decreaseThreshold)
         {
             factorRaw = (mood - decreaseThreshold) / (1f - decreaseThreshold);
-            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityIncreaseExponent);
+            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityDecreaseExponent);
         }
         else if (mood < increaseThreshold)
         {
             factorRaw = (increaseThreshold - mood) / increaseThreshold;
-            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityDecreaseExponent);
+            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityIncreaseExponent);
         }
         else
         {

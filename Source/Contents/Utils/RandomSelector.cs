@@ -33,7 +33,7 @@ public static class RandomSelector
             if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Cannot select Pawn, input List<Pawn> is null or empty (Utils.RandomSelector.BoltzmannSelector)");
             return new List<Pawn>();
         }
-        if ( count <= 0 || invTemp <= 0f)
+        if (count <= 0)
         {
             if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Cannot select Pawn, input parameters are invalid (Utils.RandomSelector.BoltzmannSelector)");
             return new List<Pawn>();

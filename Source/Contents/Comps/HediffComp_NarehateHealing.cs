@@ -133,7 +133,7 @@ public class HediffComp_NarehateHealing : HediffComp
 
             if (ManosabaMod.Settings.isNarehateBloodHeal)
             {
-                Utils.HealingUtils.TryBloodLoss(Pawn, EffectiveHealFactor);
+                Utils.HealingUtils.TryBloodLoss(Pawn, EffectiveBloodHealFactor);
             }
 
             if (Rand.Value <= RegenChance)

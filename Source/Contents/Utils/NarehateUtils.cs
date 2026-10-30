@@ -78,14 +78,16 @@ public static class NarehateUtils
             }
         }
         // 武器放回背包
-        if (pawn.equipment == null || !pawn.equipment.HasAnything()) return;
-        var equipment = pawn.equipment.AllEquipmentListForReading.ListFullCopy();
-        foreach (var item in equipment)
+        if (pawn.equipment != null && pawn.equipment.HasAnything())
         {
-            pawn.equipment.Remove(item);
-            if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
+            var equipment = pawn.equipment.AllEquipmentListForReading.ListFullCopy();
+            foreach (var item in equipment)
             {
-                GenPlace.TryPlaceThing(item, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                pawn.equipment.Remove(item);
+                if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
+                {
+                    GenPlace.TryPlaceThing(item, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                }
             }
         }
         // 不放入背包则全部掉落周围，默认禁止物品
