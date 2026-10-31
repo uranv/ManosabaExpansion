@@ -46,6 +46,17 @@ public static class Patch_SurgicalInspection
         {
             pawn.health?.AddHediff(ModDefOf.UmHediffHumanVisible);
         }
+        // 保留原版成功检查的手术收尾，继续跳过失败判定和其他异常检查。
+        if (billDoer != null)
+        {
+            TaleRecorder.RecordTale(TaleDefOf.DidSurgery, billDoer, pawn);
+        }
+        pawn.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, 4f));
+        var anesthetic = pawn.health
+            .AddHediff(HediffDefOf.Anesthetic)
+            .TryGetComp<HediffComp_Disappears>();
+        anesthetic.disappearsAfterTicks = 60000;
+        anesthetic.ticksToDisappear = 60000;
         return false;
     }
     private static void SendInspectionLetter(Pawn patient, Pawn doctor)
