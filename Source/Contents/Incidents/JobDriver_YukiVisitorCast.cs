@@ -16,6 +16,8 @@ public class JobDriver_YukiVisitorCast : JobDriver
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
+        AddFinishAction(_ => pawn.GetComp<Comp_YukiVisitor>()?.RefreshCastState());
+
         // 前往指定地点
         yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 

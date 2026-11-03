@@ -36,6 +36,9 @@
     <Manosaba_Tale_Root>{0_nameDef} quickly touched {1_nameDef}'s</Manosaba_Tale_Root>
     <!-- <Manosaba_CompYukiVisitor_level_choice_quit>离开对话</Manosaba_CompYukiVisitor_level_choice_quit> -->
     <Manosaba_CompYukiVisitor_level_choice_quit>Leave conversation</Manosaba_CompYukiVisitor_level_choice_quit>
+    <!-- 施法重试 -->
+    <Manosaba_CompYukiVisitor_level_retry>{0_nameDef} did not finish her spell. You can ask her to try again.</Manosaba_CompYukiVisitor_level_retry>
+    <Manosaba_CompYukiVisitor_level_retry_choice>Try again.</Manosaba_CompYukiVisitor_level_retry_choice>
     <!-- 对话层级 1 -->
     <!-- <Manosaba_CompYukiVisitor_level_1>{0_nameDef}自称受到帝国雇佣，需要来到你的殖民地中释放某种魔法，以获得需要的勘探数据。{0_nameDef}承诺在完成她的工作后会给予你一些奖励。\n\n值得怀疑的是，当你问她雇主的姓名时，她露出了一丝困惑的表情，随后拒绝回答。</Manosaba_CompYukiVisitor_level_1> -->
     <Manosaba_CompYukiVisitor_level_1>{0_nameDef} claims to be hired by the Empire and needs to cast a certain magic within your colony to obtain necessary survey data. {0_nameDef} promises to give you a reward after completing her work.\n\nSuspiciously, when you asked for her employer's information, she showed a trace of confusion and then refused to answer.</Manosaba_CompYukiVisitor_level_1>

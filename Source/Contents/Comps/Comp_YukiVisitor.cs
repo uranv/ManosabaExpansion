@@ -14,7 +14,7 @@ public class CompProperties_YukiVisitor : CompProperties
 }
 public class Comp_YukiVisitor : ThingComp
 {
-    // 对话进度状态
+    // 对话进度：0 隐藏施法及离场，10 施法后领奖，11 已选奖励及后续对话。
     public int interactionSteps = 1;
     public bool isTale;
     public bool isCasted;
@@ -29,6 +29,49 @@ public class Comp_YukiVisitor : ThingComp
         Scribe_Values.Look(ref isTale, "isTale", false);
         Scribe_Values.Look(ref isInfLevel, "isInfLevel", false);
 
+    }
+
+    private bool HasCastJob
+    {
+        get
+        {
+            var pawn = (Pawn)parent;
+            return (pawn.jobs.curDriver?.ended != true &&
+                    (pawn.CurJobDef == ModDefOf.UmJobYukiVisitorCast || pawn.CurJobDef == ModDefOf.UmJobYukiVisitorCastHidden)) ||
+                   pawn.jobs.jobQueue.Any(queued => queued.job.def == ModDefOf.UmJobYukiVisitorCast ||
+                                                    queued.job.def == ModDefOf.UmJobYukiVisitorCastHidden);
+        }
+    }
+
+    public void StartCast(Job job)
+    {
+        if (isCasted || HasCastJob)
+        {
+            RefreshCastState();
+            return;
+        }
+        job.playerForced = true;
+        isWorking = ((Pawn)parent).jobs.TryTakeOrderedJob(job, JobTag.Misc) && HasCastJob;
+    }
+
+    public void RefreshCastState()
+    {
+        isWorking = HasCastJob;
+        if (isWorking) return;
+
+        var pawn = (Pawn)parent;
+        var invisibleHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffYukiVisitorInvisibility);
+        if (invisibleHediff != null) pawn.health.RemoveHediff(invisibleHediff);
+    }
+
+    public override void CompTick()
+    {
+        base.CompTick();
+        if (parent is not Pawn { Spawned: true, IsColonist: false } pawn || !pawn.IsHashIntervalTick(60)) return;
+
+        RefreshCastState();
+        // 任务清理回调仍在 JobTracker 内部运行，离场留到后续 tick。
+        if (!isWorking && interactionSteps == 0) Notify_LeaveMap();
     }
 
     // 受伤时离开
@@ -83,6 +126,9 @@ public class Comp_YukiVisitor : ThingComp
     {
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
 
+        RefreshCastState();
+        if (isWorking || interactionSteps == 0) return;
+
         YukiGeneralUtils.CheckYukiName(speaker);
         var visitor = (Pawn)parent;
         MiscUtils.SanityCheckPawnData(visitor, "Visitor(CompYuki)");
@@ -95,6 +141,7 @@ public class Comp_YukiVisitor : ThingComp
     // JobDriver引用完成任务
     public void Notify_Finished(Pawn pawn, bool isHidden = false)
     {
+        if (isCasted) return;
         isCasted = true;
         // 完成任务时尝试向殖民地添加 1 个【魔女因子】
         RandomSelector.TryAddDummyToRandomPawnOnMap(parent.Map, inverseTemperature: ManosabaMod.Settings.inverseTemperature);
@@ -137,6 +184,7 @@ public class Comp_YukiVisitor : ThingComp
     // 右键菜单交互入口
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
     {
+        RefreshCastState();
         YukiGeneralUtils.CheckYukiName(selPawn);
         if (!selPawn.IsColonistPlayerControlled || interactionSteps == 0 || isWorking)
         {

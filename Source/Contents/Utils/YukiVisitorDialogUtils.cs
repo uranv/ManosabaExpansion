@@ -14,6 +14,19 @@ public static class YukiVisitorDialogUtils
             Log.Error("[Manosaba] comp.parent is not Pawn (YukiVisitorDialogUtils.CreateDialogTree)");
             return null;
         }
+        // 失败后保留奖励阶段，只提供重试，避免提前领奖或重复发奖。
+        if (!comp.isCasted && comp.interactionSteps is 10 or 11)
+        {
+            var retry = new DiaNode(dialog.LevelRetry);
+            retry.options.Add(new DiaOption(dialog.LevelRetryChoice)
+            {
+                action = () => YukiVisitorCast(comp),
+                resolveTree = true,
+            });
+            retry.options.Add(new DiaOption(dialog.LevelChoiceQuit) { resolveTree = true });
+            return retry;
+        }
+
         // ===================================
         // ============== Nodes ==============
         // ===================================
@@ -357,7 +370,6 @@ public static class YukiVisitorDialogUtils
             else if (!comp.isCasted)
             {
                 comp.interactionSteps = 11;
-                comp.isWorking = true;
                 level6Choice1.resolveTree = true;
                 YukiVisitorCast(comp);
             }
@@ -392,7 +404,6 @@ public static class YukiVisitorDialogUtils
             {
                 level5Choice2Copy.resolveTree = true;
                 comp.interactionSteps = 11;
-                comp.isWorking = true;
                 YukiVisitorCast(comp);
 
             }
@@ -431,7 +442,6 @@ public static class YukiVisitorDialogUtils
             {
                 level5Choice2.resolveTree = true;
                 comp.interactionSteps = 11;
-                comp.isWorking = true;
                 YukiVisitorCast(comp);
             }
             else
@@ -451,8 +461,8 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                YukiVisitorCastHidden(comp);
                 comp.interactionSteps = 0;
+                YukiVisitorCastHidden(comp);
             },
             resolveTree = true,
         };
@@ -470,9 +480,8 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.AddResearchPointsSafe(visitor, Rand.Range(350,650));
-                YukiVisitorCast(comp);
                 comp.interactionSteps = 11;
-                comp.isWorking = true;
+                YukiVisitorCast(comp);
             },
             resolveTree = true,
         };
@@ -481,9 +490,8 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.SpawnRandomRewards(visitor, Rand.Range(350,650));
-                YukiVisitorCast(comp);
                 comp.interactionSteps = 11;
-                comp.isWorking = true;
+                YukiVisitorCast(comp);
             },
             resolveTree = true,
         };
@@ -548,9 +556,8 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                YukiVisitorCast(comp);
                 comp.interactionSteps = 10;
-                comp.isWorking = true;
+                YukiVisitorCast(comp);
             },
             resolveTree = true,
         };
@@ -653,9 +660,7 @@ public static class YukiVisitorDialogUtils
             }
         }
         var job = JobMaker.MakeJob(ModDefOf.UmJobYukiVisitorCast, targetCell);
-        job.playerForced = true;
-        p.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-        comp.isWorking = true;
+        comp.StartCast(job);
     }
 
     private static void YukiVisitorCastHidden(Comp_YukiVisitor comp)
@@ -670,7 +675,6 @@ public static class YukiVisitorDialogUtils
             Log.Error("[Manosaba] Pawn.Map is null or Pawn is not spawned (Comps.Comp_YukiVisitor.YukiVisitorCastHidden)");
             return;
         }
-        comp.interactionSteps = 0;
         // 寻找目标点: 聚会点->地图中心->中心附近点
         var map = p.Map;
         IntVec3 centerDest;
@@ -698,8 +702,6 @@ public static class YukiVisitorDialogUtils
             edgeDest = CellFinder.RandomEdgeCell(map);
         }
         var job = JobMaker.MakeJob(ModDefOf.UmJobYukiVisitorCastHidden, edgeDest, centerDest);
-        job.playerForced = true;
-        p.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-        comp.isWorking = true;
+        comp.StartCast(job);
     }
 }

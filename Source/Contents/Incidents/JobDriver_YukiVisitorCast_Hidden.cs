@@ -23,6 +23,8 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
+        AddFinishAction(_ => pawn.GetComp<Comp_YukiVisitor>()?.RefreshCastState());
+
         // 前往地图边缘
         yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 

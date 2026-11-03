@@ -20,6 +20,9 @@
     <Manosaba_Story_Root>{0_nameDef}把手伸向{1_nameDef}的</Manosaba_Story_Root>
     <Manosaba_Tale_Root>{0_nameDef}快速觸摸了{1_nameDef}的</Manosaba_Tale_Root>
     <Manosaba_CompYukiVisitor_level_choice_quit>離開對話</Manosaba_CompYukiVisitor_level_choice_quit>
+    <!-- 施法重试 -->
+    <Manosaba_CompYukiVisitor_level_retry>{0_nameDef}的施法尚未完成。你可以讓她再試一次。</Manosaba_CompYukiVisitor_level_retry>
+    <Manosaba_CompYukiVisitor_level_retry_choice>再試一次。</Manosaba_CompYukiVisitor_level_retry_choice>
     <!-- 對話層級 1 -->
     <Manosaba_CompYukiVisitor_level_1>{0_nameDef}自稱受到帝國僱傭，需要來到你的殖民地中釋放某種魔法，以獲得需要的勘探數據。{0_nameDef}承諾在完成她的工作後會給予你一些獎勵。\n\n值得懷疑的是，當你問她僱主的姓名時，她露出了一絲困惑的表情，隨後拒絕回答。</Manosaba_CompYukiVisitor_level_1>
     <Manosaba_CompYukiVisitor_level_1_choice_1>雖然有些懷疑，但你還允許了她的行動。</Manosaba_CompYukiVisitor_level_1_choice_1>

@@ -33,6 +33,9 @@
     <Manosaba_Tale_Root>{0_nameDef}は{1_nameDef}の</Manosaba_Tale_Root><!--～に素早く触れ-->
     <!-- <Manosaba_CompYukiVisitor_level_choice_quit>离开对话</Manosaba_CompYukiVisitor_level_choice_quit> -->
     <Manosaba_CompYukiVisitor_level_choice_quit>会話を中止する</Manosaba_CompYukiVisitor_level_choice_quit>
+    <!-- 施法重试 -->
+    <Manosaba_CompYukiVisitor_level_retry>{0_nameDef}はまだ魔法を完了していません。もう一度試すように頼めます。</Manosaba_CompYukiVisitor_level_retry>
+    <Manosaba_CompYukiVisitor_level_retry_choice>もう一度試して。</Manosaba_CompYukiVisitor_level_retry_choice>
     <!-- 对话层级 1 -->
     <!-- <Manosaba_CompYukiVisitor_level_1>{0_nameDef}自称受到帝国雇佣，需要来到你的殖民地中释放某种魔法，以获得需要的勘探数据。{0_nameDef}承诺在完成她的工作后会给予你一些奖励。\n\n值得怀疑的是，当你问她雇主的姓名时，她露出了一丝困惑的表情，随后拒绝回答。</Manosaba_CompYukiVisitor_level_1> -->
     <Manosaba_CompYukiVisitor_level_1>{0_nameDef}は帝国の依頼を受け、必要な探査データを得るために、あなたのコロニーで何らかの魔法を行使する必要があると自称している。{0_nameDef}は仕事が終われば報酬を支払うと約束した。\n\n疑わしいことに、依頼主の名前を尋ねると、彼女は少し困惑した表情を浮かべ、回答を拒否した。</Manosaba_CompYukiVisitor_level_1>

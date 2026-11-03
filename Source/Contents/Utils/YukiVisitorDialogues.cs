@@ -8,6 +8,9 @@ public class YukiVisitorDialogues
     {
         // 通用退出选项
         LevelChoiceQuit = "Manosaba_CompYukiVisitor_level_choice_quit".Translate(); // 通用 - 选项 3【Colonist>>Yuki】:退出对话
+        // 施法中断后的重试
+        LevelRetry = "Manosaba_CompYukiVisitor_level_retry".Translate(visitor);
+        LevelRetryChoice = "Manosaba_CompYukiVisitor_level_retry_choice".Translate();
         // 末态分支
         LevelInf1 = "Manosaba_CompYukiVisitor_level_inf_1".Translate(visitor); // 会话 无限循环 1【Yuki>>Colonist】:
         LevelInf2 = "Manosaba_CompYukiVisitor_level_inf_2".Translate(visitor); // 会话 无限循环 2【Yuki>>Colonist】:
@@ -50,6 +53,8 @@ public class YukiVisitorDialogues
 
     // 通用退出选项
     public TaggedString LevelChoiceQuit { get; private set; }
+    public TaggedString LevelRetry { get; private set; }
+    public TaggedString LevelRetryChoice { get; private set; }
     // 最终循环选项
     public TaggedString LevelInf1 { get; private set; }
     public TaggedString LevelInf2 { get; private set; }
