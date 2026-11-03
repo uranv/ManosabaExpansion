@@ -66,7 +66,7 @@ public class Ability_MutantAbility : Ability
         {
             var allowedWhileDowned = false;
             var costComp = CompOfType<CompAbilityEffect_MutantCost>();
-            if (costComp != null && costComp.Props.allowedWhileDowned)
+            if (costComp != null && costComp.Props.AllowedWhileDowned)
             {
                 allowedWhileDowned = true;
             }

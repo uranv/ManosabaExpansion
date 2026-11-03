@@ -15,19 +15,19 @@ public class CompProperties_YukiVisitor : CompProperties
 public class Comp_YukiVisitor : ThingComp
 {
     // 对话进度：0 隐藏施法及离场，10 施法后领奖，11 已选奖励及后续对话。
-    public int interactionSteps = 1;
-    public bool isTale;
-    public bool isCasted;
-    public bool isWorking;
-    public bool isInfLevel;
+    public int InteractionSteps = 1;
+    public bool IsTale;
+    public bool IsCasted;
+    public bool IsWorking;
+    public bool IsInfLevel;
     public override void PostExposeData()
     {
         base.PostExposeData();
-        Scribe_Values.Look(ref interactionSteps, "interactionSteps", 1);
-        Scribe_Values.Look(ref isCasted, "isCasted", false);
-        Scribe_Values.Look(ref isWorking, "isWorking", false);
-        Scribe_Values.Look(ref isTale, "isTale", false);
-        Scribe_Values.Look(ref isInfLevel, "isInfLevel", false);
+        Scribe_Values.Look(ref InteractionSteps, "interactionSteps", 1);
+        Scribe_Values.Look(ref IsCasted, "isCasted", false);
+        Scribe_Values.Look(ref IsWorking, "isWorking", false);
+        Scribe_Values.Look(ref IsTale, "isTale", false);
+        Scribe_Values.Look(ref IsInfLevel, "isInfLevel", false);
 
     }
 
@@ -45,19 +45,19 @@ public class Comp_YukiVisitor : ThingComp
 
     public void StartCast(Job job)
     {
-        if (isCasted || HasCastJob)
+        if (IsCasted || HasCastJob)
         {
             RefreshCastState();
             return;
         }
         job.playerForced = true;
-        isWorking = ((Pawn)parent).jobs.TryTakeOrderedJob(job, JobTag.Misc) && HasCastJob;
+        IsWorking = ((Pawn)parent).jobs.TryTakeOrderedJob(job, JobTag.Misc) && HasCastJob;
     }
 
     public void RefreshCastState()
     {
-        isWorking = HasCastJob;
-        if (isWorking) return;
+        IsWorking = HasCastJob;
+        if (IsWorking) return;
 
         var pawn = (Pawn)parent;
         var invisibleHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffYukiVisitorInvisibility);
@@ -71,7 +71,7 @@ public class Comp_YukiVisitor : ThingComp
 
         RefreshCastState();
         // 任务清理回调仍在 JobTracker 内部运行，离场留到后续 tick。
-        if (!isWorking && interactionSteps == 0) Notify_LeaveMap();
+        if (!IsWorking && InteractionSteps == 0) Notify_LeaveMap();
     }
 
     // 受伤时离开
@@ -83,15 +83,15 @@ public class Comp_YukiVisitor : ThingComp
         // 离开逻辑
         if (dinfo.Def.ExternalViolenceFor(parent))
         {
-            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Yuki left due to violence: {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
-            var letterText = LetterTextHurt + (isCasted ? null : ("\n\n" + LetterTextAttach));
+            if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] Yuki left due to violence: {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
+            var letterText = LetterTextHurt + (IsCasted ? null : ("\n\n" + LetterTextAttach));
             Find.LetterStack.ReceiveLetter(LetterLabelHurt, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
             Notify_LeaveMap(true);
         }
         else
         {
-            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Yuki left due to: injury {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
-            var letterText = LetterTextNeutral + (isCasted ? null : ("\n\n" + LetterTextAttach));
+            if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] Yuki left due to: injury {dinfo.Def} (Comps.CompProperties_YukiVisitor.PostPostApplyDamage)");
+            var letterText = LetterTextNeutral + (IsCasted ? null : ("\n\n" + LetterTextAttach));
             Find.LetterStack.ReceiveLetter(LetterLabelNeutral, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
             Notify_LeaveMap();
         }
@@ -103,8 +103,8 @@ public class Comp_YukiVisitor : ThingComp
         if (parent.Destroyed || !parent.Spawned) return;
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         // 离开逻辑
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Yuki left due to: downed (Comps.CompProperties_YukiVisitor.PostNotify_Downed)");
-        var letterText = LetterTextHurt + (isCasted ? null : ("\n\n" + LetterTextAttach));
+        if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Yuki left due to: downed (Comps.CompProperties_YukiVisitor.PostNotify_Downed)");
+        var letterText = LetterTextHurt + (IsCasted ? null : ("\n\n" + LetterTextAttach));
         Find.LetterStack.ReceiveLetter(LetterLabelHurt, letterText, LetterDefOf.NeutralEvent, new TargetInfo(parent.Position, parent.Map));
         Notify_LeaveMap();
     }
@@ -115,8 +115,8 @@ public class Comp_YukiVisitor : ThingComp
         if (parent.Destroyed || !parent.Spawned) return;
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         // 离开逻辑
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Yuki left due to: arrested (Comps.CompProperties_YukiVisitor.Notify_Arrested");
-        var letterText = LetterTextNeutral + (isCasted ? null : ("\n\n" + LetterTextAttach));
+        if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Yuki left due to: arrested (Comps.CompProperties_YukiVisitor.Notify_Arrested");
+        var letterText = LetterTextNeutral + (IsCasted ? null : ("\n\n" + LetterTextAttach));
         Find.LetterStack.ReceiveLetter(LetterLabelNeutral, letterText, LetterDefOf.NeutralEvent,
             new TargetInfo(parent.Position, parent.Map));
         Notify_LeaveMap();
@@ -127,7 +127,7 @@ public class Comp_YukiVisitor : ThingComp
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
 
         RefreshCastState();
-        if (isWorking || interactionSteps == 0) return;
+        if (IsWorking || InteractionSteps == 0) return;
 
         YukiGeneralUtils.CheckYukiName(speaker);
         var visitor = (Pawn)parent;
@@ -141,17 +141,17 @@ public class Comp_YukiVisitor : ThingComp
     // JobDriver引用完成任务
     public void Notify_Finished(Pawn pawn, bool isHidden = false)
     {
-        if (isCasted) return;
-        isCasted = true;
+        if (IsCasted) return;
+        IsCasted = true;
         // 完成任务时尝试向殖民地添加 1 个【魔女因子】
-        RandomSelector.TryAddDummyToRandomPawnOnMap(parent.Map, inverseTemperature: ManosabaMod.Settings.inverseTemperature);
+        RandomSelector.TryAddDummyToRandomPawnOnMap(parent.Map, inverseTemperature: ManosabaMod.Settings.InverseTemperature);
         // 全局标记 Yuki 已来访过殖民地并散播魔女因子
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-        if (comp != null ) comp.isYukiVisited = true;
+        if (comp != null ) comp.IsYukiVisited = true;
         if (!isHidden)
         {
-            isWorking = false;
-            if (interactionSteps == 10)
+            IsWorking = false;
+            if (InteractionSteps == 10)
             {
                 var letterLabel = "Manosaba_CompYukiVisitor_castBefore_letterLabel".Translate(pawn.LabelShort);
                 var letterText = "Manosaba_CompYukiVisitor_castBefore_letterText".Translate(pawn.LabelShort);
@@ -166,7 +166,7 @@ public class Comp_YukiVisitor : ThingComp
         }
         else
         {
-            isWorking = true;
+            IsWorking = true;
             var letterLabel = "Manosaba_CompYukiVisitor_castHidden_letterLabel".Translate(pawn.LabelShort);
             var letterText = "Manosaba_CompYukiVisitor_castHidden_letterText".Translate(pawn.LabelShort);
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NegativeEvent, pawn);
@@ -178,15 +178,15 @@ public class Comp_YukiVisitor : ThingComp
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         YukiGeneralUtils.LeaveMapInstantly((Pawn)parent, applyMood: applyMood);
         // 状态重置
-        interactionSteps = 0;
-        isWorking = false;
+        InteractionSteps = 0;
+        IsWorking = false;
     }
     // 右键菜单交互入口
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
     {
         RefreshCastState();
         YukiGeneralUtils.CheckYukiName(selPawn);
-        if (!selPawn.IsColonistPlayerControlled || interactionSteps == 0 || isWorking)
+        if (!selPawn.IsColonistPlayerControlled || InteractionSteps == 0 || IsWorking)
         {
             yield break;
         }

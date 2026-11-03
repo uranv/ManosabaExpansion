@@ -46,13 +46,13 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_MutantDummy">
-                <narehateHediffDef>UmHediffNarehate</narehateHediffDef>
-                <narehateHiddenHediffDef>UmHediffNarehateHidden</narehateHiddenHediffDef>
-                <countdownHediffDef>UmHediffMutantCountdown</countdownHediffDef>
+                <NarehateHediffDef>UmHediffNarehate</NarehateHediffDef>
+                <NarehateHiddenHediffDef>UmHediffNarehateHidden</NarehateHiddenHediffDef>
+                <CountdownHediffDef>UmHediffMutantCountdown</CountdownHediffDef>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <applyPostMultiplier>false</applyPostMultiplier>
-                <applyStatusSwitch>false</applyStatusSwitch>
+                <ApplyPostMultiplier>false</ApplyPostMultiplier>
+                <ApplyStatusSwitch>false</ApplyStatusSwitch>
             </li>
             <li Class="HediffCompProperties_GiveAbility">
                 <abilityDefs>
@@ -78,7 +78,7 @@
         <maxSeverity>1.0</maxSeverity>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Countdown_Mutant">
-                <draftFactor>1.5</draftFactor>
+                <DraftFactor>1.5</DraftFactor>
             </li>
         </comps>
     </HediffDef>
@@ -129,16 +129,16 @@
                 <showRemainingTime>true</showRemainingTime>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <isOverride>true</isOverride>
-                <overrideHealFactor>2222</overrideHealFactor>
-                <overrideBloodFactor>2222</overrideBloodFactor>
-                <overrideRegenFactor>1</overrideRegenFactor>
+                <IsOverride>true</IsOverride>
+                <OverrideHealFactor>2222</OverrideHealFactor>
+                <OverrideBloodFactor>2222</OverrideBloodFactor>
+                <OverrideRegenFactor>1</OverrideRegenFactor>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <isOverride>true</isOverride>
-                <overrideHealFactor>2222</overrideHealFactor>
-                <overrideBloodFactor>2222</overrideBloodFactor>
-                <overrideRegenFactor>1</overrideRegenFactor>
+                <IsOverride>true</IsOverride>
+                <OverrideHealFactor>2222</OverrideHealFactor>
+                <OverrideBloodFactor>2222</OverrideBloodFactor>
+                <OverrideRegenFactor>1</OverrideRegenFactor>
             </li>
         </comps>
     </HediffDef>

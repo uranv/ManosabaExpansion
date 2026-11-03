@@ -27,7 +27,7 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         _qualityCurve = qualityCurve;
     }
 
-    public override void Start(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override void Start(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         base.Start(psychicRitual, parent);
         var targetPawn = psychicRitual.assignments.FirstAssignedPawn(_targetRole);

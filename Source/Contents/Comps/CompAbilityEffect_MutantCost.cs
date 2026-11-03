@@ -6,11 +6,11 @@ namespace UranvManosaba.Contents.Comps;
 
 public class CompProperties_MutantAbilityCost : CompProperties_AbilityEffect
 {
-    public float controlTimeCost = 0f;
+    public float ControlTimeCost = 0f;
 
-    public bool allowedWhileDowned = false;
+    public bool AllowedWhileDowned = false;
 
-    public float SeverityCost => controlTimeCost/ManosabaMod.Settings.mutantFullCircle;
+    public float SeverityCost => ControlTimeCost/ManosabaMod.Settings.MutantFullCircle;
 
     public CompProperties_MutantAbilityCost()
     {
@@ -19,7 +19,7 @@ public class CompProperties_MutantAbilityCost : CompProperties_AbilityEffect
 
     public override IEnumerable<string> ExtraStatSummary()
     {
-        yield return string.Concat("Manosaba_MutantAbility_Cost".Translate(controlTimeCost.ToString("F1")));//, (100f*SeverityCost).ToString("F1") ));
+        yield return string.Concat("Manosaba_MutantAbility_Cost".Translate(ControlTimeCost.ToString("F1")));//, (100f*SeverityCost).ToString("F1") ));
     }
 }
 

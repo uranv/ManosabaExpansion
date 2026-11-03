@@ -21,7 +21,7 @@ public static class Patch_JobDriver_Resurrect_Manual
         {
             return true;
         }
-        if (ManosabaMod.Settings.debugMode)
+        if (ManosabaMod.Settings.DebugMode)
         {
             Log.Warning($"[Manosaba] Block resurrection for {corpse.InnerPawn.LabelShort} (Patch_JobDriver_Resurrect_Manual)");
         }

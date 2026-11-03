@@ -12,7 +12,7 @@ public class Ability_SwitchableAbility : Ability
     public override IEnumerable<Command> GetGizmos()
     {
         var groupComp = CompOfType<AbilityComp_AbilityGroup>();
-        if (groupComp is { isSelected: false })
+        if (groupComp is { IsSelected: false })
             yield break;
         foreach (var cmd in base.GetGizmos())
         {

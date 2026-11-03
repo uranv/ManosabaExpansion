@@ -1,6 +1,5 @@
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using UranvManosaba.Contents.Items;
 using Verse;
 
@@ -31,7 +30,7 @@ public static class DefGenerator_NarehateCorpse
         };
 
         // narehateDef.uiIcon = ContentFinder<Texture2D>.Get(narehateDef.uiIconPath);  // 手动唤起加载资源
-        if (narehateDef.uiIcon == null && ManosabaMod.Settings.debugMode)
+        if (narehateDef.uiIcon == null && ManosabaMod.Settings.DebugMode)
         {
             Log.Warning("[Manosaba] UI Icon load failed: " + narehateDef.uiIconPath + " (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
         }
@@ -128,7 +127,7 @@ public static class DefGenerator_NarehateCorpse
         // 注册到数据库
         DefDatabase<ThingDef>.Add(narehateDef);
         narehateDef.ResolveReferences();
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] <ThingDef> UmThingCorpseNarehate created (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
+        if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] <ThingDef> UmThingCorpseNarehate created (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
 
         // 添加到储存列表
         foreach (var category in narehateDef.thingCategories)
@@ -146,7 +145,7 @@ public static class DefGenerator_NarehateCorpse
             if (!codexEntry.linkedThings.Contains(narehateDef))
             {
                 codexEntry.linkedThings.Add(narehateDef);
-                if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] <ThingDef> UmThingCorpseNarehate linked to <EntityCodexEntryDef> UmEntryCorpse (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
+                if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] <ThingDef> UmThingCorpseNarehate linked to <EntityCodexEntryDef> UmEntryCorpse (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
             }
         }
         else
@@ -177,7 +176,7 @@ public static class DefGenerator_NarehateCorpse
                     ingredient.filter.AllowedThingDefs.Contains(humanCorpseDef))
                 {
                     ingredient.filter.SetAllow(narehateDef, true);
-                    if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] <ThingDef> UmThingCorpseNarehate linked to <RecipeDef> {recipe} (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
+                    if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] <ThingDef> UmThingCorpseNarehate linked to <RecipeDef> {recipe} (Utils.DefGenerator_NarehateCorpse.CorpseDef_NarehateCorpse)");
                 }
             }
         }

@@ -31,7 +31,7 @@
         <jobDef>CastJump</jobDef>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.CompProperties_MutantAbilityCost">
-                <controlTimeCost>0.1</controlTimeCost>
+                <ControlTimeCost>0.1</ControlTimeCost>
             </li>
         </comps>
     </AbilityDef>
@@ -73,8 +73,8 @@
                 <replaceExisting>true</replaceExisting>
             </li>
             <li Class="UranvManosaba.Contents.Comps.CompProperties_MutantAbilityCost">
-                <controlTimeCost>1.0</controlTimeCost>
-                <allowedWhileDowned>true</allowedWhileDowned>
+                <ControlTimeCost>1.0</ControlTimeCost>
+                <AllowedWhileDowned>true</AllowedWhileDowned>
             </li>
         </comps>
     </AbilityDef>

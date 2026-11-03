@@ -63,7 +63,7 @@ public class JobDriver_YukiVisitorCast_Hidden : JobDriver
         yield return Toils_General.Do(delegate
         {
             var map = pawn.Map;
-            var pos = pawn.Position;
+            // var pos = pawn.Position;
             if (map != null)
             {
                 // 中心波动

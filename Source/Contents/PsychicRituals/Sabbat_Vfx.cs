@@ -9,22 +9,22 @@ public static class Sabbat_Vfx
     public static void SpawnParticle(Vector3 center, Map map)
     {
         if (map == null) return;
-        
+
         var moteDef = ModDefOf.UmThingMoteSabbat;
         if (ThingMaker.MakeThing(moteDef) is not MoteThrown_Sabbat mote) return;
-        
+
         mote.Scale = Rand.Range(0.8f, 1.2f);
         mote.instanceColor = new Color(0.9f, 0.1f, 0.1f, 1);
-        
+
         var spawnPos = center + Vector3Utility.RandomHorizontalOffset(0.5f);
         mote.exactPosition = spawnPos;
-        
+
         var velocityX = Rand.Range(-0.25f, 0.25f);
         var velocityZ = Rand.Range(0.03f, 0.33f);
         var velocity = Mathf.Sqrt(velocityX * velocityX + velocityZ * velocityZ);
         var angle = Mathf.Asin(velocityX/velocity) * Mathf.Rad2Deg;
         mote.SetVelocity(angle, velocity);
-        
+
         GenSpawn.Spawn(mote, center.ToIntVec3(), map);
     }
 

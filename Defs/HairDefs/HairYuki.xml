@@ -8,7 +8,7 @@
             <li>UmHairYuki</li>
         </styleTags>
         <texPath>things/pawn/humanlike/yuki/hair_front/hair</texPath>
-        <overrideShaderTypeDef>Cutout</overrideShaderTypeDef>
+        <OverrideShaderTypeDef>Cutout</OverrideShaderTypeDef>
         <modExtensions>
             <li Class="UranvManosaba.Contents.Visuals.ModExtension_HairExtra">
                 <texPathBack>things/pawn/humanlike/yuki/hair_back/hair</texPathBack>

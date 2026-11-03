@@ -34,8 +34,8 @@
         <comps>
             <li Class="UranvManosaba.Contents.Comps.CompProperties_AddMajoyinshi" />
             <li Class="UranvManosaba.Contents.Comps.CompProperties_AbilityGroup">
-                <groupId>UmAbilityGroupSwitchableYuki</groupId>
-                <isDefault>true</isDefault>
+                <GroupId>UmAbilityGroupSwitchableYuki</GroupId>
+                <IsDefault>true</IsDefault>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDef>PsycastPsychicEffect</fleckDef>
@@ -76,8 +76,8 @@
         <comps>
             <li Class="UranvManosaba.Contents.Comps.CompProperties_RemoveMajoyinshi" />
             <li Class="UranvManosaba.Contents.Comps.CompProperties_AbilityGroup">
-                <groupId>UmAbilityGroupSwitchableYuki</groupId>
-                <isDefault>false</isDefault>
+                <GroupId>UmAbilityGroupSwitchableYuki</GroupId>
+                <IsDefault>false</IsDefault>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDef>PsycastPsychicEffect</fleckDef>

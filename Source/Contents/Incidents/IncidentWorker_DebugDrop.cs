@@ -40,7 +40,7 @@ public class IncidentWorker_DebugDrop : IncidentWorker
         SendStandardLetter(parms, new TargetInfo(dropSpot, map));
 
         // 5. 遍历当前地图殖民者, 选取一个添加魔女因子 UmHediffHumanDummy
-        RandomSelector.TryAddDummyToRandomPawnOnMap(map, inverseTemperature: ManosabaMod.Settings.inverseTemperature);
+        RandomSelector.TryAddDummyToRandomPawnOnMap(map, inverseTemperature: ManosabaMod.Settings.InverseTemperature);
         return true;
     }
 

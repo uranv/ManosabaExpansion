@@ -19,12 +19,12 @@ public static class Patch_NarehateVisuals
                 continue;
             }
             // 仅匹配 GraphicFor(Pawn p)的方法 (v1.0.6 26-02-13)
-            var method = AccessTools.Method(type, "GraphicFor", new Type[] { typeof(Pawn) });
+            var method = AccessTools.Method(type, "GraphicFor", new[] { typeof(Pawn) });
             if (method == null || method.DeclaringType != type)
             {
                 continue;
             }
-            if (ManosabaMod.Settings.debugMode)
+            if (ManosabaMod.Settings.DebugMode)
             {
                 Log.Message($"[Manosaba] Patch Success: {type.Name} (Patch_NarehateVisuals.TargetMethods)");
             }

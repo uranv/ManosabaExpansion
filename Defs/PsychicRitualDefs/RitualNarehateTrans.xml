@@ -20,7 +20,7 @@
             </filter>
             <count>1</count>
         </requiredOffering>
-        <severityFromQualityCurve>
+        <SeverityFromQualityCurve>
             <points>
                 <li>(0, 10)</li>
                 <!-- 最低控制 10% 即 10 天 -->
@@ -29,7 +29,7 @@
                 <li>(1, 75)</li>
                 <!-- 最高控制 75% 即 75 天 -->
             </points>
-        </severityFromQualityCurve>
+        </SeverityFromQualityCurve>
     </PsychicRitualDef>
     <!-- 仪式角色定义 -->
     <PsychicRitualRoleDef Class="UranvManosaba.Contents.PsychicRituals.PsychicRitualRoleDef_NarehateTarget">

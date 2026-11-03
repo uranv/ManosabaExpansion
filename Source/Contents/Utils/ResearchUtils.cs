@@ -23,11 +23,11 @@ public static class ResearchUtils
         if (codexDef is { Discovered: false }) UnlockCodexEntrySilent("UmEntryFactor");
         // 解简易长矛配方
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-        if (comp is { isSimpleSpearUnlocked: false })
+        if (comp is { IsSimpleSpearUnlocked: false })
         {
             string logNotification = "RecipeSimpleSpearUnlocked_Log".Translate();
             Log.Error(logNotification);
-            comp.isSimpleSpearUnlocked = true;
+            comp.IsSimpleSpearUnlocked = true;
             Find.LetterStack.ReceiveLetter(
                 "RecipeSimpleSpearUnlocked_Label".Translate(), //"解锁制作: 简易长矛",
                 "RecipeSimpleSpearUnlocked_Text".Translate(),//"你现在可以制作简易长矛了。",
@@ -69,7 +69,7 @@ public static class ResearchUtils
             Find.SignalManager.SendSignal(new Signal(EntityCodex.EntityDiscoveredSignal, global: true));
 
             // 调试日志
-            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Unlock <EntityCodexEntryDef> {codexDef.defName} silently (Utils.ResearchUtils.UnlockCodexEntrySilent)");
+            if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] Unlock <EntityCodexEntryDef> {codexDef.defName} silently (Utils.ResearchUtils.UnlockCodexEntrySilent)");
         }
     }
 

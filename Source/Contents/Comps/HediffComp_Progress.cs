@@ -15,15 +15,24 @@ public class HediffCompProperties_Progress : HediffCompProperties
 public class HediffComp_Progress : HediffComp
 {
     // 保存状态
-    public bool isFinished;
-    public bool isDisplay;
+    public bool IsFinished;
+    public bool IsDisplay;
     public override void CompExposeData()
     {
         base.CompExposeData();
-        Scribe_Values.Look(ref isFinished, "isFinished", false);
-        Scribe_Values.Look(ref isDisplay, "isDisplay", false);
+        Scribe_Values.Look(ref IsFinished, "isFinished", false);
+        Scribe_Values.Look(ref IsDisplay, "isDisplay", false);
     }
 
+
+    public override void CopyFrom(HediffComp other)
+    {
+        base.CopyFrom(other);
+        var source = (HediffComp_Progress)other;
+        IsFinished = source.IsFinished;
+        IsDisplay = source.IsDisplay;
+        _severityChange = source._severityChange;
+    }
 
     private float _severityChange;
     private const int TickInterval = 500;
@@ -38,7 +47,7 @@ public class HediffComp_Progress : HediffComp
 
         if (Pawn.IsHashIntervalTick(TickInterval, delta))
         {
-            if (isFinished) return;
+            if (IsFinished) return;
 
             UpdateSeverityBasedOnMood(); // 计算隐藏进度
             TryTurnIntoNarehate(); // 转化魔女残骸
@@ -72,7 +81,7 @@ public class HediffComp_Progress : HediffComp
         _severityChange = GetSeverityChange(mood, minorThreshold);
         // 应用变化
         parent.Severity = Mathf.Max(MinUpdatePerCall, Mathf.Min(parent.Severity + _severityChange, 1f));
-        if (!isDisplay && parent.Severity >= 0.5f) isDisplay = true;
+        if (!IsDisplay && parent.Severity >= 0.5f) IsDisplay = true;
     }
     // 转化为魔女残骸
     private void TryTurnIntoNarehate()
@@ -100,8 +109,8 @@ public class HediffComp_Progress : HediffComp
             Find.EntityCodex.SetDiscovered(codexDef);
         }
         // 修改状态
-        isFinished  = true;
-        isDisplay = true;
+        IsFinished  = true;
+        IsDisplay = true;
         HediffComp_HumanDummy.SetDummyShouldDisplay(Pawn); // 顺便刷新状态
         // 精神状态
         if (Pawn.Dead || Pawn.Downed) return;
@@ -124,13 +133,13 @@ public class HediffComp_Progress : HediffComp
         var severity = parent.Severity; // 0.0 - 1.0
         if (severity <= 0.05f) return;
         var mood = Pawn.needs?.mood?.CurLevel ?? 1.0f; // 0.0 - 1.0
-        var baseMtbDays = ManosabaMod.Settings.baseMtbDays; // 基础天数
+        var baseMtbDays = ManosabaMod.Settings.BaseMtbDays; // 基础天数
         var severityFactor = Mathf.Lerp(-1.0f, 1.0f, severity); // 严重度越高, 期望天数越低
         var moodFactor = Mathf.Lerp(-1.0f, 1.0f, mood); // 心情越低, 期望天数越高
         var adjustedMtbDays = (float) (baseMtbDays * Math.Pow(4f, - severityFactor) * Math.Pow(2f, moodFactor));
 
         if (!Rand.MTBEventOccurs(adjustedMtbDays, 60000f, TickInterval)) return;
-        isDisplay = true;
+        IsDisplay = true;
         ResearchUtils.UnlockResearchPrereqs();
         Pawn.mindState.mentalStateHandler.TryStartMentalState(ModDefOf.UmMentalBreakFactor);
     }
@@ -139,20 +148,20 @@ public class HediffComp_Progress : HediffComp
     public static float GetSeverityChange(float mood, float minorThreshold)
     {
         // 增加阈值 (默认为 0.58, 最小 0.24, 最大 0.72)
-        var increaseThreshold = Mathf.Max(0.01f, Mathf.Min(minorThreshold + ManosabaMod.Settings.severityIncreaseBias/100, 0.98f));
+        var increaseThreshold = Mathf.Max(0.01f, Mathf.Min(minorThreshold + ManosabaMod.Settings.SeverityIncreaseBias/100, 0.98f));
         // 减少阈值 (默认为 0.66, 最小 0.32, 最大 0.80)
-        var decreaseThreshold = Mathf.Max(0.02f, Mathf.Min(increaseThreshold + ManosabaMod.Settings.severityFlatBias/100, 0.99f));
+        var decreaseThreshold = Mathf.Max(0.02f, Mathf.Min(increaseThreshold + ManosabaMod.Settings.SeverityFlatBias/100, 0.99f));
         // 归一化范围内心情系数
         double factorRaw;
         if (mood > decreaseThreshold)
         {
             factorRaw = (mood - decreaseThreshold) / (1f - decreaseThreshold);
-            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityDecreaseExponent);
+            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.SeverityDecreaseExponent);
         }
         else if (mood < increaseThreshold)
         {
             factorRaw = (increaseThreshold - mood) / increaseThreshold;
-            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.severityIncreaseExponent);
+            factorRaw = Math.Pow(factorRaw, ManosabaMod.Settings.SeverityIncreaseExponent);
         }
         else
         {
@@ -163,12 +172,12 @@ public class HediffComp_Progress : HediffComp
         // 实际调整
         if (mood > decreaseThreshold)  // 减少逻辑
         {
-            var changeRaw = ManosabaMod.Settings.severityDecreaseFactor/100 * factorCurved / UpdatesPerDay;
+            var changeRaw = ManosabaMod.Settings.SeverityDecreaseFactor/100 * factorCurved / UpdatesPerDay;
             effectiveChange = -(float)Math.Max(changeRaw, MinUpdatePerCall);
         }
         else if (mood < increaseThreshold) // 增加逻辑
         {
-            var changeRaw = ManosabaMod.Settings.severityIncreaseFactor/100 * factorCurved / UpdatesPerDay;
+            var changeRaw = ManosabaMod.Settings.SeverityIncreaseFactor/100 * factorCurved / UpdatesPerDay;
             effectiveChange = (float)Math.Max(changeRaw, MinUpdatePerCall);
         }
         return effectiveChange;

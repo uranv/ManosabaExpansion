@@ -6,19 +6,19 @@ namespace UranvManosaba.Contents.PsychicRituals;
 
 public class PsychicRitualDef_NarehateTrans : PsychicRitualDef_InvocationCircle
 {
-    public SimpleCurve severityFromQualityCurve;
+    public SimpleCurve SeverityFromQualityCurve;
 
-    public override List<PsychicRitualToil> CreateToils(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph graph)
+    public override List<PsychicRitualToil> CreateToils(PsychicRitual psychicRitual, PsychicRitualGraph graph)
     {
         List<PsychicRitualToil> list = base.CreateToils(psychicRitual, graph);
-        list.Add(new PsychicRitualToil_NarehateTrans(TargetRole, severityFromQualityCurve));
+        list.Add(new PsychicRitualToil_NarehateTrans(TargetRole, SeverityFromQualityCurve));
         return list;
     }
     // 结果描述预览
     public override TaggedString OutcomeDescription(FloatRange qualityRange, string qualityNumber, PsychicRitualRoleAssignments assignments)
     {
-        float minSev = severityFromQualityCurve.Evaluate(qualityRange.min);
-        float maxSev = severityFromQualityCurve.Evaluate(qualityRange.max);
+        float minSev = SeverityFromQualityCurve.Evaluate(qualityRange.min);
+        float maxSev = SeverityFromQualityCurve.Evaluate(qualityRange.max);
         return outcomeDescription.Formatted(minSev.ToString("0.##"), maxSev.ToString("0.##"));
     }
     // 重写候选人池：添加魔女残骸 mutant

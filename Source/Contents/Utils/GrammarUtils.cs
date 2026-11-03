@@ -40,7 +40,7 @@ public static class GrammarUtils
     // 生成 Tale 相关文本
     public static TaggedString GenerateTale(Pawn visitor, Pawn negotiator = null)
     {
-        if (ManosabaMod.Settings.disableTale) return "ERR: manually disabled generated from tales.";
+        if (ManosabaMod.Settings.DisableTale) return "ERR: manually disabled generated from tales.";
 
         var fallbackStory = GenerateStory(visitor, negotiator);
 
@@ -51,7 +51,7 @@ public static class GrammarUtils
 
         if (!validTales.Any())
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning("[Manosaba] no available tales for generation (Utils.GrammarUtils.GenerateTale)");
+            if (ManosabaMod.Settings.DebugMode) Log.Warning("[Manosaba] no available tales for generation (Utils.GrammarUtils.GenerateTale)");
             return fallbackStory;
         }
 
@@ -62,7 +62,7 @@ public static class GrammarUtils
             {
                 if (!IsTaleSafe(candidateTale))
                 {
-                    if(ManosabaMod.Settings.debugMode)
+                    if(ManosabaMod.Settings.DebugMode)
                         Log.Warning($"[Manosaba] Skipped unsafe tale: {candidateTale.def.defName}, ID:{candidateTale.id} (Utils.GrammarUtils.GenerateTale)");
                     continue;
                 }
@@ -156,7 +156,7 @@ public static class GrammarUtils
     {
         if (_ruleStringOutputField == null)
         {
-            if(ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Failed to get reflection info for Rule_String.output (Utils.GrammarUtils.ReplaceNameFullWithDef)");
+            if(ManosabaMod.Settings.DebugMode) Log.Error("[Manosaba] Failed to get reflection info for Rule_String.output (Utils.GrammarUtils.ReplaceNameFullWithDef)");
             return;
         }
 
@@ -191,7 +191,7 @@ public static class GrammarUtils
     private static bool IsTaleSafe(Tale tale)
     {
         if (tale == null) return false;
-            
+
         Pawn p1 = null;
         Pawn p2 = null;
 

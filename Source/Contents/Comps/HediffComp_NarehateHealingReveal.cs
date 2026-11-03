@@ -5,11 +5,11 @@ namespace UranvManosaba.Contents.Comps;
 
 public class HediffCompProperties_NarehateHealingReveal : HediffCompProperties
 {
-    public bool applyPostMultiplier = false;
-    public bool isOverride = false;
-    public float overrideHealFactor = 0;
-    public float overrideBloodFactor = 0;
-    public float overrideRegenFactor = 0;
+    public bool ApplyPostMultiplier = false;
+    public bool IsOverride = false;
+    public float OverrideHealFactor = 0;
+    public float OverrideBloodFactor = 0;
+    public float OverrideRegenFactor = 0;
     public HediffCompProperties_NarehateHealingReveal()
     {
         compClass = typeof(HediffComp_NarehateHealingReveal);
@@ -24,18 +24,18 @@ public class HediffComp_NarehateHealingReveal : HediffComp
     {
         get
         {
-            if (Props.isOverride)
+            if (Props.IsOverride)
             {
-                return Props.overrideHealFactor;
+                return Props.OverrideHealFactor;
             }
-            var factor = ManosabaMod.Settings.narehateHealFactor;
-            if (Props.applyPostMultiplier)
+            var factor = ManosabaMod.Settings.NarehateHealFactor;
+            if (Props.ApplyPostMultiplier)
             {
-                factor *= ManosabaMod.Settings.postHealMultiplier;
+                factor *= ManosabaMod.Settings.PostHealMultiplier;
             }
-            else if (ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed)
+            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
             {
-                factor /= ManosabaMod.Settings.narehateDownedDivisor;
+                factor /= ManosabaMod.Settings.NarehateDownedDivisor;
             }
             return factor;
         }
@@ -44,18 +44,18 @@ public class HediffComp_NarehateHealingReveal : HediffComp
     {
         get
         {
-            if (Props.isOverride)
+            if (Props.IsOverride)
             {
-                return Props.overrideBloodFactor;
+                return Props.OverrideBloodFactor;
             }
-            var factor = ManosabaMod.Settings.narehateBloodHealFactor;
-            if (Props.applyPostMultiplier)
+            var factor = ManosabaMod.Settings.NarehateBloodHealFactor;
+            if (Props.ApplyPostMultiplier)
             {
-                factor *= ManosabaMod.Settings.postHealMultiplier;
+                factor *= ManosabaMod.Settings.PostHealMultiplier;
             }
-            else if (ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed)
+            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
             {
-                factor /= ManosabaMod.Settings.narehateDownedDivisor;
+                factor /= ManosabaMod.Settings.NarehateDownedDivisor;
             }
             return factor;
         }
@@ -65,18 +65,18 @@ public class HediffComp_NarehateHealingReveal : HediffComp
     {
         get
         {
-            if (Props.isOverride)
+            if (Props.IsOverride)
             {
-                return 60f / Props.overrideRegenFactor;
+                return 60f / Props.OverrideRegenFactor;
             }
             var tick = 600f;
-            if (Props.applyPostMultiplier)
+            if (Props.ApplyPostMultiplier)
             {
                 tick *= 100f;
             }
-            else if (ManosabaMod.Settings.isNarehateDownedDivisor && Pawn.Downed)
+            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
             {
-                tick *= ManosabaMod.Settings.narehateDownedDivisor;
+                tick *= ManosabaMod.Settings.NarehateDownedDivisor;
             }
             return tick;
         }
@@ -136,11 +136,11 @@ public class HediffComp_NarehateHealingReveal : HediffComp
         {
             var result = string.Empty;
             // 若使用后系数，若系数为 0 禁用不需要显示
-            if (Props.applyPostMultiplier && !ManosabaMod.Settings.postAllowHeal) return result;
+            if (Props.ApplyPostMultiplier && !ManosabaMod.Settings.PostAllowHeal) return result;
             // 生成说明
             string stringHeal;
             string stringBlood;
-            if (Props.isOverride)
+            if (Props.IsOverride)
             {
                 stringHeal = "HediffComp_NarehateHealing_TipHealOverride".Translate((EffectiveHealPerDay/1000).ToString("F1"));
                 stringBlood = "HediffComp_NarehateHealing_TipBloodOverride".Translate((EffectiveBloodHealPerDay/1000).ToString("F1"));
@@ -151,7 +151,7 @@ public class HediffComp_NarehateHealingReveal : HediffComp
                 stringBlood = "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(EffectiveBloodHealPerDay));
             }
             result += stringHeal;
-            if (ManosabaMod.Settings.isNarehateBloodHeal) result += "\n" + stringBlood;
+            if (ManosabaMod.Settings.IsNarehateBloodHeal) result += "\n" + stringBlood;
             result += "\n" + RegenTip;
             return result;
         }

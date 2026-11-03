@@ -7,19 +7,19 @@ namespace UranvManosaba.Contents;
 public class ManosabaGameComponent : GameComponent
 {
     // 炙烤药瓶
-    public bool isAburiBinUnlocked;
+    public bool IsAburiBinUnlocked;
     // 简易长矛
-    public bool isSimpleSpearUnlocked;
+    public bool IsSimpleSpearUnlocked;
     // 小雪来访
-    public bool isYukiVisited;
+    public bool IsYukiVisited;
     // 尸体空投
-    public bool isCorpseDropped;
+    public bool IsCorpseDropped;
 
     // 仪式缓存
-    public int cachedQuality;
+    public int CachedQuality;
 
     // 运行时 Unity 音频引用，无需持久化
-    public Sustainer cachedSustainer;
+    public Sustainer CachedSustainer;
 
     public ManosabaGameComponent(Game game)
     {
@@ -28,10 +28,10 @@ public class ManosabaGameComponent : GameComponent
     // 存档读写
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref isAburiBinUnlocked, "isAburiBinUnlocked", false);
-        Scribe_Values.Look(ref isSimpleSpearUnlocked, "isSimpleSpearUnlocked", false);
-        Scribe_Values.Look(ref isYukiVisited, "isYukiVisited", false);
-        Scribe_Values.Look(ref isCorpseDropped, "isCorpseDropped", false);
-        Scribe_Values.Look(ref cachedQuality,"cachedQuality",0);
+        Scribe_Values.Look(ref IsAburiBinUnlocked, "IsAburiBinUnlocked", false);
+        Scribe_Values.Look(ref IsSimpleSpearUnlocked, "IsSimpleSpearUnlocked", false);
+        Scribe_Values.Look(ref IsYukiVisited, "IsYukiVisited", false);
+        Scribe_Values.Look(ref IsCorpseDropped, "IsCorpseDropped", false);
+        Scribe_Values.Look(ref CachedQuality,"CachedQuality",0);
     }
 }

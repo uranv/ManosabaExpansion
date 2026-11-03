@@ -4,8 +4,8 @@ namespace UranvManosaba.Contents.Comps;
 
 public class HediffCompProperties_Narehate : HediffCompProperties
 {
-    public HediffDef hiddenHediffDef;
-    public HediffDef curedHediffDef;
+    public HediffDef HiddenHediffDef;
+    public HediffDef CuredHediffDef;
     public HediffCompProperties_Narehate()
     {
         this.compClass = typeof(HediffComp_Narehate);
@@ -17,15 +17,40 @@ public class HediffComp_Narehate : HediffComp
 {
     private HediffCompProperties_Narehate Props => (HediffCompProperties_Narehate)props;
 
+    private bool _copyPending;
+
+    public override void CompExposeData()
+    {
+        base.CompExposeData();
+        if (Scribe.mode == LoadSaveMode.PostLoadInit) _copyPending = true;
+    }
+
+    public override void CopyFrom(HediffComp other)
+    {
+        base.CopyFrom(other);
+        _copyPending = true;
+    }
+
+    public override void CompPostTick(ref float severityAdjustment)
+    {
+        base.CompPostTick(ref severityAdjustment);
+        if (!_copyPending) return;
+        _copyPending = false;
+        MaintainHiddenHediff();
+    }
+
     // 初始化
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
-        // 加入时同时添加 narehateHidden
-        var narehateHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.hiddenHediffDef);
-        if (!narehateHiddenHediff)
+        if (!_copyPending) MaintainHiddenHediff();
+    }
+
+    private void MaintainHiddenHediff()
+    {
+        if (!Pawn.health.hediffSet.HasHediff(Props.HiddenHediffDef))
         {
-            Pawn.health.AddHediff(Props.hiddenHediffDef);
+            Pawn.health.AddHediff(Props.HiddenHediffDef);
         }
     }
 
@@ -50,16 +75,16 @@ public class HediffComp_Narehate : HediffComp
         Utils.NarehateUtils.EffecterNarehateTrans(Pawn);
 
         // 添加替换 Hediff
-        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.hiddenHediffDef);
+        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.HiddenHediffDef);
         if (narehateHiddenHediff != null)
         {
             Pawn.health.RemoveHediff(narehateHiddenHediff);
         }
-        var hanmajyoHediff = Pawn.health.hediffSet.HasHediff(Props.curedHediffDef);
+        var hanmajyoHediff = Pawn.health.hediffSet.HasHediff(Props.CuredHediffDef);
         if (Pawn.Dead) return;
         if (!hanmajyoHediff)
         {
-            Pawn.health.AddHediff(Props.curedHediffDef);
+            Pawn.health.AddHediff(Props.CuredHediffDef);
         }
 
         // 强制结束敌对精神状态 (让小人恢复可控)

@@ -57,6 +57,7 @@ public static class Patch_SurgicalInspection
             .TryGetComp<HediffComp_Disappears>();
         anesthetic.disappearsAfterTicks = 60000;
         anesthetic.ticksToDisappear = 60000;
+
         return false;
     }
     private static void SendInspectionLetter(Pawn patient, Pawn doctor)

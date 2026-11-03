@@ -5,8 +5,8 @@
         <label>narehate of a witch</label>
         <description>The final destination of one cursed by the witch factor, reduced to a narehate of a witch driven solely by murderous intent.</description>
         <!--<hediff>UmHediffMutantDummy</hediff>-->
-        <overrideLabel>true</overrideLabel>
-        <overrideInspectString>true</overrideInspectString>
+        <OverrideLabel>true</OverrideLabel>
+        <OverrideInspectString>true</OverrideInspectString>
         <consideredSubhuman>false</consideredSubhuman>
         <thinkTree>UmThinkTreeHumanlikeNarehate</thinkTree>
         <thinkTreeConstant>UmThinkTreeHumanlikeConstantNarehate</thinkTreeConstant>

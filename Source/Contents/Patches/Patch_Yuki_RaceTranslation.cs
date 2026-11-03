@@ -14,7 +14,7 @@ public static class Patch_FixYukiTranslations
 
         if (myPawnDef == null || humanDef == null)
         {
-            if (ManosabaMod.Settings.debugMode)
+            if (ManosabaMod.Settings.DebugMode)
             {
                 Log.Warning("[Manosaba] Translation patch failed: Pawn or Human Def not found. (Patch_FixYukiTranslations)");
             }

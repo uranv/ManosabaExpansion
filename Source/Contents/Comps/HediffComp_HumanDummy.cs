@@ -19,6 +19,7 @@ public class HediffComp_HumanDummy : HediffComp
 {
     private HediffCompProperties_HumanDummy Props => (HediffCompProperties_HumanDummy)props;
     private HediffComp_Progress _cachedProgress;
+    private bool _copyPending;
     private HediffComp_Progress CachedProgress
     {
         get
@@ -43,6 +44,19 @@ public class HediffComp_HumanDummy : HediffComp
         Scribe_Values.Look(ref ShouldDisplay, "shouldDisplay", false);
     }
 
+    public override void CopyFrom(HediffComp other)
+    {
+        base.CopyFrom(other);
+        var source = (HediffComp_HumanDummy)other;
+        CachedIsFinished = source.CachedIsFinished;
+        CachedIsNarehate = source.CachedIsNarehate;
+        CachedIsCured = source.CachedIsCured;
+        CachedIsDisplay = source.CachedIsDisplay;
+        ShouldDisplay = source.ShouldDisplay;
+        _cachedProgress = null;
+        _copyPending = true;
+    }
+
     ///====================================
     /// 外部修改 Pawn Dummy State
     //=====================================
@@ -57,7 +71,7 @@ public class HediffComp_HumanDummy : HediffComp
         comp.MaintainHediffs();
         comp.MaintainGene();
         comp.MaintainMentalState();
-        if (ManosabaMod.Settings.debugMode)  Log.Message($"[Manosaba] SetCured:\ncachedIsCured={comp.CachedIsCured},\ncachedIsNarehate={comp.CachedIsNarehate},\ncachedIsDisplay={comp.CachedIsDisplay},\ncachedIsFinished={comp.CachedIsFinished},\nshouldDisplay={comp.ShouldDisplay} (Comps.HediffComp_HumanDummy.SetDummyCured)");
+        if (ManosabaMod.Settings.DebugMode)  Log.Message($"[Manosaba] SetCured:\ncachedIsCured={comp.CachedIsCured},\ncachedIsNarehate={comp.CachedIsNarehate},\ncachedIsDisplay={comp.CachedIsDisplay},\ncachedIsFinished={comp.CachedIsFinished},\nshouldDisplay={comp.ShouldDisplay} (Comps.HediffComp_HumanDummy.SetDummyCured)");
     }
     public static void SetDummyShouldDisplay(Pawn p)
     {
@@ -71,7 +85,7 @@ public class HediffComp_HumanDummy : HediffComp
         comp.MaintainHediffs();
         comp.MaintainGene();
         comp.MaintainMentalState();
-        if (ManosabaMod.Settings.debugMode)  Log.Message($"[Manosaba] SetDisplay:\ncachedIsCured={comp.CachedIsCured},\ncachedIsNarehate={comp.CachedIsNarehate},\ncachedIsDisplay={comp.CachedIsDisplay},\ncachedIsFinished={comp.CachedIsFinished},\nshouldDisplay={comp.ShouldDisplay} (Comps.HediffComp_HumanDummy.SetDummyShouldDisplay)");
+        if (ManosabaMod.Settings.DebugMode)  Log.Message($"[Manosaba] SetDisplay:\ncachedIsCured={comp.CachedIsCured},\ncachedIsNarehate={comp.CachedIsNarehate},\ncachedIsDisplay={comp.CachedIsDisplay},\ncachedIsFinished={comp.CachedIsFinished},\nshouldDisplay={comp.ShouldDisplay} (Comps.HediffComp_HumanDummy.SetDummyShouldDisplay)");
     }
     public static bool QueryIsDisplayed(Pawn p)
     {
@@ -91,14 +105,14 @@ public class HediffComp_HumanDummy : HediffComp
         if (Pawn.IsMutant)
         {
             if (!Pawn.IsHashIntervalTick(1000)) return;
-            if (ManosabaMod.Settings.debugMode) Log.Message(
+            if (ManosabaMod.Settings.DebugMode) Log.Message(
                 $"[Manosaba] Try to transfer [Majyoinshi] from Mutant {Pawn.Name.ToStringFull} to other colonists on the map (Comps.HediffComp_HumanDummy.CompPostTick)");
-            RandomSelector.TryAddDummyToRandomPawnOnMap(Pawn.Map, inverseTemperature: ManosabaMod.Settings.inverseTemperature);
+            RandomSelector.TryAddDummyToRandomPawnOnMap(Pawn.Map, inverseTemperature: ManosabaMod.Settings.InverseTemperature);
             Pawn.health.RemoveHediff(parent);
             return;
         }
         // 维护类人 Pawn 状态
-        if (Pawn.IsHashIntervalTick(1000))
+        if (_copyPending || Pawn.IsHashIntervalTick(1000))
         {
             MaintainFlags();
             MaintainHediffs();
@@ -107,17 +121,18 @@ public class HediffComp_HumanDummy : HediffComp
             if (CachedIsDisplay) ResearchUtils.UnlockResearchPrereqs();
         }
         // 较短间隔维护精神状态
-        if (Pawn.IsHashIntervalTick(300))
+        if (_copyPending || Pawn.IsHashIntervalTick(300))
         {
             MaintainMentalState();
         }
+        _copyPending = false;
     }
     // 初始化
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
-        // 加入时检测宿主，不是变种人
-        if (Pawn.IsMutant) return;
+        // 副本等整组 Hediff 加入后再维护，避免关联 Hediff 被重复添加并合并。
+        if (_copyPending || Pawn.IsMutant) return;
         MaintainFlags();
         MaintainHediffs();
         MaintainGene();
@@ -164,8 +179,8 @@ public class HediffComp_HumanDummy : HediffComp
     //=====================================
     private void MaintainFlags()
     {
-        var progressFinished = CachedProgress?.isFinished ?? false;
-        var progressDisplay = CachedProgress?.isDisplay ?? false;
+        var progressFinished = CachedProgress?.IsFinished ?? false;
+        var progressDisplay = CachedProgress?.IsDisplay ?? false;
         CachedIsFinished = progressFinished;
         CachedIsNarehate = progressFinished && !CachedIsCured;
         CachedIsDisplay = progressDisplay || ShouldDisplay;

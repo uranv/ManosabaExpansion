@@ -18,10 +18,10 @@ public static class RandomSelector
     // 使用 Boltzmann 分布进行加权随机选择
     private class PawnWeightData
     {
-        public Pawn pawn;
-        public float sumAllRelation;
-        public float normalizedRelation;
-        public float boltzmannWeight;
+        public Pawn Candidate;
+        public float SumAllRelation;
+        public float NormalizedRelation;
+        public float BoltzmannWeight;
     }
     // 获取所有候选人 (当前地图的自由殖民者), 或其他过滤条件
     // List<Pawn> candidates = map.mapPawns.FreeColonistsSpawned.ToList();
@@ -30,12 +30,12 @@ public static class RandomSelector
         // 检查输入
         if (candidates == null || candidates.Count == 0)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Cannot select Pawn, input List<Pawn> is null or empty (Utils.RandomSelector.BoltzmannSelector)");
+            if (ManosabaMod.Settings.DebugMode) Log.Error("[Manosaba] Cannot select Pawn, input List<Pawn> is null or empty (Utils.RandomSelector.BoltzmannSelector)");
             return new List<Pawn>();
         }
         if (count <= 0)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Cannot select Pawn, input parameters are invalid (Utils.RandomSelector.BoltzmannSelector)");
+            if (ManosabaMod.Settings.DebugMode) Log.Error("[Manosaba] Cannot select Pawn, input parameters are invalid (Utils.RandomSelector.BoltzmannSelector)");
             return new List<Pawn>();
         }
         // 如果候选人不足 m 人则选择所有人
@@ -55,45 +55,45 @@ public static class RandomSelector
             }
             dataList.Add(new PawnWeightData
             {
-                pawn = pawn,
-                sumAllRelation = sum
+                Candidate = pawn,
+                SumAllRelation = sum
             });
         }
         if (dataList.Count > 0)
         {
-            var minSum = dataList.Min(d => d.sumAllRelation);
-            var maxSum = dataList.Max(d => d.sumAllRelation);
+            var minSum = dataList.Min(d => d.SumAllRelation);
+            var maxSum = dataList.Max(d => d.SumAllRelation);
             var range = maxSum - minSum;
 
             foreach (var data in dataList)
             {
                 if (range <= float.Epsilon)
                 {
-                    data.normalizedRelation = 0f;
+                    data.NormalizedRelation = 0f;
                 }
                 else
                 {
-                    data.normalizedRelation = (data.sumAllRelation - minSum) / range * invTemp;
+                    data.NormalizedRelation = (data.SumAllRelation - minSum) / range * invTemp;
                 }
-                data.boltzmannWeight = Mathf.Exp(-data.normalizedRelation);
+                data.BoltzmannWeight = Mathf.Exp(-data.NormalizedRelation);
             }
         }
         var selectedPawns = new List<Pawn>();
         for (var i = 0; i < count; i++)
         {
-            if (dataList.TryRandomElementByWeight(d => d.boltzmannWeight, out var selected))
+            if (dataList.TryRandomElementByWeight(d => d.BoltzmannWeight, out var selected))
             {
-                selectedPawns.Add(selected.pawn);
+                selectedPawns.Add(selected.Candidate);
                 dataList.Remove(selected);
             }
             else
             {
-                if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Cannot select Pawn, as all weights are zero (Utils.RandomSelector.BoltzmannSelector)");
+                if (ManosabaMod.Settings.DebugMode) Log.Error("[Manosaba] Cannot select Pawn, as all weights are zero (Utils.RandomSelector.BoltzmannSelector)");
                 break;
             }
         }
 
-        if (ManosabaMod.Settings.debugMode)
+        if (ManosabaMod.Settings.DebugMode)
         {
             var debugMsg = selectedPawns.Aggregate("[Manosaba] Choose pawns: {", (current, p) => current + $"{p.LabelShort}, ");
             debugMsg += "} from candidates: {";
@@ -110,12 +110,12 @@ public static class RandomSelector
     {
         if (selectCount <= 0)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Error("[Manosaba] Invalid input parameter, random selection failed (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
+            if (ManosabaMod.Settings.DebugMode) Log.Error("[Manosaba] Invalid input parameter, random selection failed (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
             return;
         }
         if (map == null)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning("[Manosaba] Invalid map, random selection failed (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
+            if (ManosabaMod.Settings.DebugMode) Log.Warning("[Manosaba] Invalid map, random selection failed (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
             return;
         }
         var candidates = map.mapPawns.FreeColonistsSpawned
@@ -130,12 +130,12 @@ public static class RandomSelector
 
         switch (candidates.Count)
         {
-            case 0 when ManosabaMod.Settings.debugMode:
+            case 0 when ManosabaMod.Settings.DebugMode:
                 Log.Message($"[Manosaba] No qualified colonists on the current map (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
                 break;
             case > 0:
             {
-                if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Try to select {selectCount} colonists from {candidates.Count} candidates (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
+                if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] Try to select {selectCount} colonists from {candidates.Count} candidates (Utils.RandomSelector.TryAddDummyToRandomPawnOnMap)");
                 var selected = BoltzmannSelector(candidates, selectCount, inverseTemperature);
                 if (selected is { Count: > 0 })
                 {

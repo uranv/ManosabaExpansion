@@ -15,7 +15,7 @@ public static class YukiVisitorDialogUtils
             return null;
         }
         // 失败后保留奖励阶段，只提供重试，避免提前领奖或重复发奖。
-        if (!comp.isCasted && comp.interactionSteps is 10 or 11)
+        if (!comp.IsCasted && comp.InteractionSteps is 10 or 11)
         {
             var retry = new DiaNode(dialog.LevelRetry);
             retry.options.Add(new DiaOption(dialog.LevelRetryChoice)
@@ -30,7 +30,7 @@ public static class YukiVisitorDialogUtils
         // ===================================
         // ============== Nodes ==============
         // ===================================
-        
+
         var level1 = new DiaNode(dialog.Level1);
         var level2 = new DiaNode(dialog.Level2);
         var level3 = new DiaNode(dialog.Level3);
@@ -39,19 +39,19 @@ public static class YukiVisitorDialogUtils
         var level5Copy = new DiaNode(dialog.Level5+"\n\n"+GrammarUtils.GenerateTale(visitor, negotiator));
         var level6 = new DiaNode(dialog.Level6);
         var level10 = new DiaNode(dialog.Level10);
-        var level11 = new DiaNode(dialog.Level11);    
-        
+        var level11 = new DiaNode(dialog.Level11);
+
         var levelInf1 = new DiaNode(dialog.LevelInf1);
         var levelInf2 = new DiaNode(dialog.LevelInf2);
         var levelInf3 = new DiaNode(dialog.LevelInf3);
         var levelInf1Copy = new DiaNode(dialog.LevelInf1);
         var levelInf2Copy = new DiaNode(dialog.LevelInf2);
         var levelInf3Copy = new DiaNode(dialog.LevelInf3);
-        
+
         // ===================================
         // ======== Infinite Options =========
         // ===================================
-        
+
         // 无限选项故事
         var levelInfTale = new DiaOption(dialog.LevelInfChoiceTale)
         {
@@ -66,15 +66,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf1Choice1.link = levelInf1Copy;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 case > 0.45f:
                     levelInf1Choice1.link = levelInf2;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
                 default:
                     levelInf1Choice1.link = levelInf3;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
             }
         };
@@ -83,7 +83,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1001,
                     > 0.45f => 1002,
@@ -100,15 +100,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf1Choice1Copy.link = levelInf1;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 case > 0.45f:
                     levelInf1Choice1Copy.link = levelInf2;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
                 default:
                     levelInf1Choice1Copy.link = levelInf3;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
             }
         };
@@ -117,7 +117,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1001,
                     > 0.45f => 1002,
@@ -134,15 +134,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf2Choice1.link = levelInf2Copy;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
                 case > 0.45f:
                     levelInf2Choice1.link = levelInf1;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 default:
                     levelInf2Choice1.link = levelInf3;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
             }
         };
@@ -151,7 +151,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1002,
                     > 0.45f => 1001,
@@ -168,15 +168,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf2Choice1Copy.link = levelInf2;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
                 case > 0.45f:
                     levelInf2Choice1Copy.link = levelInf1;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 default:
                     levelInf2Choice1Copy.link = levelInf3;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
             }
         };
@@ -185,7 +185,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1002,
                     > 0.45f => 1001,
@@ -202,15 +202,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf3Choice1.link = levelInf3Copy;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
                 case > 0.45f:
                     levelInf3Choice1.link = levelInf1;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 default:
                     levelInf3Choice1.link = levelInf2;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
             }
         };
@@ -219,7 +219,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1003,
                     > 0.45f => 1001,
@@ -236,15 +236,15 @@ public static class YukiVisitorDialogUtils
             {
                 case > 0.9f:
                     levelInf3Choice1Copy.link = levelInf3;
-                    comp.interactionSteps = 1003;
+                    comp.InteractionSteps = 1003;
                     break;
                 case > 0.45f:
                     levelInf3Choice1Copy.link = levelInf1;
-                    comp.interactionSteps = 1001;
+                    comp.InteractionSteps = 1001;
                     break;
                 default:
                     levelInf3Choice1Copy.link = levelInf2;
-                    comp.interactionSteps = 1002;
+                    comp.InteractionSteps = 1002;
                     break;
             }
         };
@@ -253,7 +253,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = Rand.Value switch
+                comp.InteractionSteps = Rand.Value switch
                 {
                     > 0.9f => 1003,
                     > 0.45f => 1001,
@@ -262,39 +262,39 @@ public static class YukiVisitorDialogUtils
             },
             resolveTree = true,
         };
-        
+
         // ===================================
         // ====== Infinite Connections =======
         // ===================================
-        
+
         levelInf1.options.Add(levelInf1Choice1);
-        if (comp.isTale) levelInf1.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf1.options.Add(levelInfTale);
         levelInf1.options.Add(levelInf1Choice2);
-        
+
         levelInf1Copy.options.Add(levelInf1Choice1Copy);
-        if (comp.isTale) levelInf1Copy.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf1Copy.options.Add(levelInfTale);
         levelInf1Copy.options.Add(levelInf1Choice2Copy);
 
         levelInf2.options.Add(levelInf2Choice1);
-        if (comp.isTale) levelInf2.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf2.options.Add(levelInfTale);
         levelInf2.options.Add(levelInf2Choice2);
 
         levelInf2Copy.options.Add(levelInf2Choice1Copy);
-        if (comp.isTale) levelInf2Copy.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf2Copy.options.Add(levelInfTale);
         levelInf2Copy.options.Add(levelInf2Choice2Copy);
 
         levelInf3.options.Add(levelInf3Choice1);
-        if (comp.isTale) levelInf3.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf3.options.Add(levelInfTale);
         levelInf3.options.Add(levelInf3Choice2);
 
         levelInf3Copy.options.Add(levelInf3Choice1Copy);
-        if (comp.isTale) levelInf3Copy.options.Add(levelInfTale);
+        if (comp.IsTale) levelInf3Copy.options.Add(levelInfTale);
         levelInf3Copy.options.Add(levelInf3Choice2Copy);
 
         // ===================================
         // ========= Finite Layers ===========
         // ===================================
-        
+
         //---------------------------------------------
         // 对话层 11:
         // 雪: 完成任务分支；
@@ -304,16 +304,16 @@ public static class YukiVisitorDialogUtils
         var level11Choice1 = new DiaOption(dialog.Level11Choice1)
         {
             action = delegate {
-                comp.interactionSteps = 1001;
-                comp.isInfLevel = true;
+                comp.InteractionSteps = 1001;
+                comp.IsInfLevel = true;
             },
             link = levelInf1,
         };
         var level11Choice2 = new DiaOption(dialog.LevelChoiceQuit)
         {
             action = delegate {
-                comp.interactionSteps = 1001;
-                comp.isInfLevel = true;
+                comp.InteractionSteps = 1001;
+                comp.IsInfLevel = true;
             },
             resolveTree = true,
         };
@@ -331,7 +331,7 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.AddResearchPointsSafe(visitor, Rand.Range(800,1200));
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
             },
             link = level11,
         };
@@ -340,7 +340,7 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.SpawnRandomRewards(visitor, Rand.Range(800,1200));
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
             },
             link = level11,
         };
@@ -348,8 +348,8 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 5;
-                comp.isTale = true;
+                comp.InteractionSteps = 5;
+                comp.IsTale = true;
             },
             link = level5,
         };
@@ -363,20 +363,20 @@ public static class YukiVisitorDialogUtils
         //---------------------------------------------
         var level6Choice1 = new DiaOption(dialog.Level6Choice1){resolveTree = true,};
         level6Choice1.action = delegate {
-            if (comp.isInfLevel)
+            if (comp.IsInfLevel)
             {
                 level6Choice1.resolveTree = true;
             }
-            else if (!comp.isCasted)
+            else if (!comp.IsCasted)
             {
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
                 level6Choice1.resolveTree = true;
                 YukiVisitorCast(comp);
             }
             else
             {
                 level6Choice1.link = level11;
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
             }
         };
         level6.options.Add(level6Choice1);
@@ -390,27 +390,27 @@ public static class YukiVisitorDialogUtils
         //---------------------------------------------
         var level5Choice1Copy = new DiaOption(dialog.Level5Choice1);
         level5Choice1Copy.action = delegate {
-            comp.interactionSteps = comp.isInfLevel ? comp.interactionSteps : 5;
+            comp.InteractionSteps = comp.IsInfLevel ? comp.InteractionSteps : 5;
             level5.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negotiator) : GrammarUtils.GenerateTale(visitor, negotiator);
             level5Choice1Copy.link = Rand.Value > 0.05f ? level5 : level6;
         };
         var level5Choice2Copy = new DiaOption(dialog.Level5Choice2);
         level5Choice2Copy.action = delegate {
-            if (comp.isInfLevel)
+            if (comp.IsInfLevel)
             {
                 level5Choice2Copy.resolveTree = true;
             }
-            else if (!comp.isCasted)
+            else if (!comp.IsCasted)
             {
                 level5Choice2Copy.resolveTree = true;
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
                 YukiVisitorCast(comp);
 
             }
             else
             {
                 level5Choice2Copy.link = level11;
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
             }
         };
         level5Copy.options.Add(level5Choice1Copy);
@@ -425,7 +425,7 @@ public static class YukiVisitorDialogUtils
         //---------------------------------------------
         var level5Choice1 = new DiaOption(dialog.Level5Choice1);
         level5Choice1.action = delegate {
-            comp.interactionSteps = comp.isInfLevel ? comp.interactionSteps : 5;
+            comp.InteractionSteps = comp.IsInfLevel ? comp.InteractionSteps : 5;
             level5Copy.text = Rand.Value > 0.80f ? GrammarUtils.GenerateStory(visitor, negotiator) : GrammarUtils.GenerateTale(visitor, negotiator);
             level5Choice1.link = Rand.Value > 0.05f ? level5Copy : level6;
         };
@@ -434,20 +434,20 @@ public static class YukiVisitorDialogUtils
             resolveTree = true
         };
         level5Choice2.action = delegate {
-            if (comp.isInfLevel)
+            if (comp.IsInfLevel)
             {
                 level5Choice2.resolveTree = true;
             }
-            else if (!comp.isCasted)
+            else if (!comp.IsCasted)
             {
                 level5Choice2.resolveTree = true;
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
                 YukiVisitorCast(comp);
             }
             else
             {
                 level5Choice2.link = level11;
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
             }
         };
         level5.options.Add(level5Choice1);
@@ -461,7 +461,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 0;
+                comp.InteractionSteps = 0;
                 YukiVisitorCastHidden(comp);
             },
             resolveTree = true,
@@ -480,7 +480,7 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.AddResearchPointsSafe(visitor, Rand.Range(350,650));
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
                 YukiVisitorCast(comp);
             },
             resolveTree = true,
@@ -490,7 +490,7 @@ public static class YukiVisitorDialogUtils
             action = delegate
             {
                 YukiVisitorUtils.SpawnRandomRewards(visitor, Rand.Range(350,650));
-                comp.interactionSteps = 11;
+                comp.InteractionSteps = 11;
                 YukiVisitorCast(comp);
             },
             resolveTree = true,
@@ -499,14 +499,14 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 5;
-                comp.isTale = true;
+                comp.InteractionSteps = 5;
+                comp.IsTale = true;
             },
             link = level5,
         };
         var level3Choice4 = new DiaOption(dialog.Level3Choice4)
         {
-            action = delegate { comp.interactionSteps = 4; },
+            action = delegate { comp.InteractionSteps = 4; },
             link = level4,
         };
 
@@ -525,7 +525,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 3;
+                comp.InteractionSteps = 3;
             },
             link = level3,
         };
@@ -533,7 +533,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 4;
+                comp.InteractionSteps = 4;
             },
             link = level4,
         };
@@ -556,7 +556,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 10;
+                comp.InteractionSteps = 10;
                 YukiVisitorCast(comp);
             },
             resolveTree = true,
@@ -565,7 +565,7 @@ public static class YukiVisitorDialogUtils
         {
             action = delegate
             {
-                comp.interactionSteps = 2;
+                comp.InteractionSteps = 2;
             },
             link = level2,
         };
@@ -577,52 +577,52 @@ public static class YukiVisitorDialogUtils
         level1.options.Add(level1Choice1);
         level1.options.Add(level1Choice2);
         level1.options.Add(level1Choice3);
-        
+
         // ===================================
         // ========== Return Root ============
         // ===================================
-        
-        if (comp.interactionSteps == 1)
+
+        if (comp.InteractionSteps == 1)
         {
             return level1;
         }
-        else if (comp.interactionSteps == 2)
+        else if (comp.InteractionSteps == 2)
         {
             return level2;
         }
-        else if (comp.interactionSteps == 3)
+        else if (comp.InteractionSteps == 3)
         {
             return level3;
         }
-        else if (comp.interactionSteps == 4)
+        else if (comp.InteractionSteps == 4)
         {
             return level4;
         }
-        else if (comp.interactionSteps == 5)
+        else if (comp.InteractionSteps == 5)
         {
             return level5;
         }
-        else if (comp.interactionSteps == 6)
+        else if (comp.InteractionSteps == 6)
         {
             return level6;
         }
-        else if (comp.interactionSteps == 10)
+        else if (comp.InteractionSteps == 10)
         {
             return level10;
         }
-        else if (comp.interactionSteps == 11)
+        else if (comp.InteractionSteps == 11)
         {
             return level11;
         }
-        else if (comp.interactionSteps == 1001)
+        else if (comp.InteractionSteps == 1001)
         {
             return levelInf1;
         }
-        else if (comp.interactionSteps == 1002)
+        else if (comp.InteractionSteps == 1002)
         {
             return levelInf2;
         }
-        else if (comp.interactionSteps == 1003)
+        else if (comp.InteractionSteps == 1003)
         {
             return levelInf3;
         }

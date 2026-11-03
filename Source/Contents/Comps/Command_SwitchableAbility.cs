@@ -40,7 +40,7 @@ public class Command_SwitchableAbility : Command_Ability
         var currentComp = currentAbility.CompOfType<AbilityComp_AbilityGroup>();
         if (currentComp == null) return;
 
-        string myGroupId = currentComp.Props.groupId;
+        string myGroupId = currentComp.Props.GroupId;
         var pawn = currentAbility.pawn;
 
         var allAbilities = pawn.abilities.abilities;
@@ -49,7 +49,7 @@ public class Command_SwitchableAbility : Command_Ability
         foreach (var ab in allAbilities)
         {
             var comp = ab.CompOfType<AbilityComp_AbilityGroup>();
-            if (comp != null && comp.Props.groupId == myGroupId)
+            if (comp != null && comp.Props.GroupId == myGroupId)
             {
                 groupAbilities.Add(ab);
             }
@@ -66,7 +66,7 @@ public class Command_SwitchableAbility : Command_Ability
         {
             var comp = ab.CompOfType<AbilityComp_AbilityGroup>();
             if (comp == null) continue;
-            comp.isSelected = ab == nextAbility;
+            comp.IsSelected = ab == nextAbility;
         }
 
     }

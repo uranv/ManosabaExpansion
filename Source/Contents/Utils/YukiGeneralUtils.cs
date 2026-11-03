@@ -81,7 +81,7 @@ public static class YukiGeneralUtils
         p.story.hairDef = ModDefOf.UmHairYuki;
         p.story.HairColor = Color.white;// Color(233/255f,236/255f,254/255f);
         // p.story.bodyType = BodyTypeDefOf.Thin;
-        p.story.bodyType = ManosabaMod.Settings.useUniqueBodyType? ModDefOf.UmBodyTypeYuki : BodyTypeDefOf.Thin;  // 默认直接使用Thin体型，兼容选项使用独立体型 v1.0.6
+        p.story.bodyType = ManosabaMod.Settings.UseUniqueBodyType? ModDefOf.UmBodyTypeYuki : BodyTypeDefOf.Thin;  // 默认直接使用Thin体型，兼容选项使用独立体型 v1.0.6
         p.story.skinColorOverride = Color.white;//new Color(251/255f,254/255f,255/255f);
         p.story.headType = ModDefOf.UmHeadTypeYuki;
         if (p.style != null)
@@ -129,7 +129,7 @@ public static class YukiGeneralUtils
         p.apparel.Wear((Apparel)cloth, locked: true);
         // 在添加回调维护状态前，明确指定生成类型。
         var yukiDummy = HediffMaker.MakeHediff(ModDefOf.UmHediffYukiDummy, p);
-        yukiDummy.TryGetComp<HediffComp_YukiDummy>().form = isColonist ? YukiForm.col : YukiForm.vis;
+        yukiDummy.TryGetComp<HediffComp_YukiDummy>().Form = isColonist ? YukiForm.Col : YukiForm.Vis;
         p.health.AddHediff(yukiDummy);
 
         // 非殖民者添加对话组件
@@ -154,7 +154,7 @@ public static class YukiGeneralUtils
     public static void CheckYukiName(Pawn p, bool forced = false)
     {
         if (!forced && p.Name != null) return;
-        if (ManosabaMod.Settings.debugMode && p.Name == null) Log.Error($"[Manosaba] {p.def} has null Name (Utils.YukiGeneralUtils.CheckYukiName)");
+        if (ManosabaMod.Settings.DebugMode && p.Name == null) Log.Error($"[Manosaba] {p.def} has null Name (Utils.YukiGeneralUtils.CheckYukiName)");
         var firstName = "YukiGenerator_firstName".CanTranslate() ? "YukiGenerator_firstName".Translate().ToString() : "Yuki";
         var nickName = "YukiGenerator_nickName".CanTranslate() ?  "YukiGenerator_nickName".Translate().ToString() : "Yuki";
         var lastName = "YukiGenerator_lastName".CanTranslate() ? "YukiGenerator_lastName".Translate().ToString() : "Tsukishiro";
@@ -202,12 +202,12 @@ public static class YukiGeneralUtils
     {
         if (map == null || thoughtDef == null)
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning("[Manosaba] Map or ThoughtDef is null. (Utils.YukiGeneralUtils.AddThoughtToAllColonists)");
+            if (ManosabaMod.Settings.DebugMode) Log.Warning("[Manosaba] Map or ThoughtDef is null. (Utils.YukiGeneralUtils.AddThoughtToAllColonists)");
             return;
         }
         var colonists = map.mapPawns.FreeColonists;
         if (colonists is null || colonists.Count <= 0) return;
-            
+
         foreach (var p in colonists)
         {
             if (p.needs is { mood: not null })

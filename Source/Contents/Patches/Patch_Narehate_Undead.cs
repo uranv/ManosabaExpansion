@@ -59,7 +59,7 @@ public static class Patch_Pawn_Kill
         // 拥有 魔女残骸 Hediff, 且没有 B水 Hediff, 则阻止死亡指令
         if (hasNarehate && !hasPotion )
         {
-            if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patch_Pawn_Kill)");
+            if (ManosabaMod.Settings.DebugMode) Log.Warning($"[Manosaba] Blocked Kill() command for {__instance.LabelShort} (Patch_Pawn_Kill)");
             return false;
         }
 
@@ -71,14 +71,14 @@ public static class Patch_Pawn_Kill
             Utils.MiscUtils.AddHediffToNaturalEyes(__instance, ModDefOf.UmHediffCrystallized);
         }
         // 并尝试转移 dummy Hediff 到殖民者之一
-        Utils.RandomSelector.TryAddDummyToRandomPawnOnMap(__instance.Map, 1, ManosabaMod.Settings.inverseTemperature);
+        Utils.RandomSelector.TryAddDummyToRandomPawnOnMap(__instance.Map, 1, ManosabaMod.Settings.InverseTemperature);
         return true;
     }
 
     private static void OnKillYuki(Pawn pawn)
     {
         // 发信
-        if (ManosabaMod.Settings.debugMode) Log.Warning($"[Manosaba] {pawn.LabelShort} left due to: lethal damage (Patch_Pawn_Kill)");
+        if (ManosabaMod.Settings.DebugMode) Log.Warning($"[Manosaba] {pawn.LabelShort} left due to: lethal damage (Patch_Pawn_Kill)");
         var letterLabel = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
         var letterText = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterText".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
         // 无地图时直接离开

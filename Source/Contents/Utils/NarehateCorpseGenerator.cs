@@ -25,8 +25,8 @@ public static class NarehateCorpseGenerator
         var compProgress = hediff.TryGetComp<Comps.HediffComp_Progress>();
         if (compProgress != null)
         {
-            compProgress.isFinished = true;
-            compProgress.isDisplay = false;
+            compProgress.IsFinished = true;
+            compProgress.IsDisplay = false;
         }
         pawn.health.AddHediff(hediff);
 

@@ -10,13 +10,13 @@ public static class Sabbat_Sfx
         if (ritual == null)  return null;
         var musicDef = ModDefOf.UmSound_gDie_Divil_JIO;
         var musicSustainer = musicDef.TrySpawnSustainer(ritual.assignments.Target);
-        
+
         if (musicSustainer != null)
         {
             musicSustainer.externalParams["MusicVolume"] = Prefs.VolumeMusic;
         }
         return musicSustainer;
-        
+
     }
     public static void StopSustainer(Sustainer musicSustainer)
     {

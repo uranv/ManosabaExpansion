@@ -15,14 +15,14 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_YukiDummy">
-                <visitorHediff>UmHediffYukiVisitor</visitorHediff>
-                <visitorHiddenHediff>UmHediffYukiVisitorHidden</visitorHiddenHediff>
-                <colonistHediff>UmHediffYukiColonist</colonistHediff>
-                <colonistHiddenHediff>UmHediffYukiColonistHidden</colonistHiddenHediff>
+                <VisitorHediff>UmHediffYukiVisitor</VisitorHediff>
+                <VisitorHiddenHediff>UmHediffYukiVisitorHidden</VisitorHiddenHediff>
+                <ColonistHediff>UmHediffYukiColonist</ColonistHediff>
+                <ColonistHiddenHediff>UmHediffYukiColonistHidden</ColonistHiddenHediff>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealing">
-                <applyPostMultiplier>true</applyPostMultiplier>
-                <applyStatusSwitch>false</applyStatusSwitch>
+                <ApplyPostMultiplier>true</ApplyPostMultiplier>
+                <ApplyStatusSwitch>false</ApplyStatusSwitch>
             </li>
             <li Class="HediffCompProperties_GiveAbility">
                 <abilityDefs>
@@ -55,7 +55,7 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostMultiplier>true</applyPostMultiplier>
+                <ApplyPostMultiplier>true</ApplyPostMultiplier>
             </li>
         </comps>
     </HediffDef>
@@ -107,7 +107,7 @@
         </stages>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
-                <applyPostMultiplier>true</applyPostMultiplier>
+                <ApplyPostMultiplier>true</ApplyPostMultiplier>
             </li>
         </comps>
     </HediffDef>

@@ -26,15 +26,15 @@ public class IncidentWorker_YukiVisitor : IncidentWorker
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
         if (comp != null)
         {
-            if (!comp.isYukiVisited && comp.isCorpseDropped) postFactor = 64f;
-            else if (comp.isYukiVisited)postFactor = 1f;
+            if (!comp.IsYukiVisited && comp.IsCorpseDropped) postFactor = 64f;
+            else if (comp.IsYukiVisited)postFactor = 1f;
         }
         return postFactor * base.ChanceFactorNow(target);
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Try Excute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
+        if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Try Execute Incident YukiVisitor (Incidents.IncidentWorker_YukiVisitor.TryExecuteWorker)");
         var map = (Map)parms.target;
 
         // 寻找生成点 (地图边缘)

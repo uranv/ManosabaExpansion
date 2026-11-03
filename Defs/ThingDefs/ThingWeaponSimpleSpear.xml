@@ -68,9 +68,9 @@
         </tradeTags>
         <comps>
             <li Class="UranvManosaba.Contents.Comps.CompProperties_BreakOnAttack">
-                <dropSwordDef>MeleeWeapon_Gladius</dropSwordDef>
-                <dropWoodDef>WoodLog</dropWoodDef>
-                <dropClothDef>Cloth</dropClothDef>
+                <DropSwordDef>MeleeWeapon_Gladius</DropSwordDef>
+                <DropWoodDef>WoodLog</DropWoodDef>
+                <DropClothDef>Cloth</DropClothDef>
             </li>
         </comps>
     </ThingDef>

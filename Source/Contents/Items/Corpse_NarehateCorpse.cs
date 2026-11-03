@@ -56,11 +56,11 @@ public class Corpse_NarehateCorpse : Corpse
         if (currentProgress >= 1.0f)
         {
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp is { isAburiBinUnlocked: false })
+            if (comp is { IsAburiBinUnlocked: false })
             {
                 string logNotification = "RecipeAburiBinUnlocked_Log".Translate();
                 Log.Error(logNotification);
-                comp.isAburiBinUnlocked = true;
+                comp.IsAburiBinUnlocked = true;
                 Find.LetterStack.ReceiveLetter(
                     "RecipeAburiBinUnlocked_Label".Translate(), //"解锁制作: 炙烤药瓶",
                     "RecipeAburiBinUnlocked_Text".Translate(),//"魔女原来只靠一瓶药就能杀死吗……\n\n看着这个药瓶, 你似乎又有了一些其他想法。",

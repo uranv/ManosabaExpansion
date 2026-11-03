@@ -6,7 +6,7 @@ namespace UranvManosaba.Contents.Items;
 public class Gene_Factor : Gene
 {
     // 基因被添加时初始化
-    private bool _initialized = false;
+    private bool _initialized;
     public override void PostAdd()
     {
         base.PostAdd();
@@ -41,7 +41,7 @@ public class Gene_Factor : Gene
         // 维护人类 dummy Hediff
         else if (!pawn.IsMutant && !pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffHumanDummy))
         {
-            var h = pawn.health.AddHediff(ModDefOf.UmHediffHumanDummy);
+            pawn.health.AddHediff(ModDefOf.UmHediffHumanDummy);
             Comps.HediffComp_HumanDummy.SetDummyShouldDisplay(pawn);
         }
     }

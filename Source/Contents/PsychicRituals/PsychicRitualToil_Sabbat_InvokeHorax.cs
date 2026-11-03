@@ -26,7 +26,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
     }
 
     // ConsumeRequiredOffering 消耗祭品环节额外保存祭品品质
-    public override void ConsumeRequiredOffering(Verse.AI.Group.PsychicRitual psychicRitual)
+    public override void ConsumeRequiredOffering(PsychicRitual psychicRitual)
     {
         if (requiredOffering != null)
         {
@@ -39,8 +39,8 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
                     var comp = Current.Game.GetComponent<ManosabaGameComponent>();
                     if (comp != null)
                     {
-                        comp.cachedQuality = (int)qc;
-                        if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] Captured quality: {qc} (PsychicRituals.PsychicRitualToil_Sabbat_InvokeHorax.ConsumeRequiredOffering)");
+                        comp.CachedQuality = (int)qc;
+                        if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] Captured quality: {qc} (PsychicRituals.PsychicRitualToil_Sabbat_InvokeHorax.ConsumeRequiredOffering)");
                     }
                     else
                     {
@@ -54,7 +54,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
     }
 
     // 修复：.ToList()防止集合修改报错
-    public override void HoldRequiredOfferings(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override void HoldRequiredOfferings(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         if (requiredOffering == null) return;
         foreach (var item in psychicRitual.assignments.AssignedPawns(invokerRole))
@@ -73,7 +73,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
         }
     }
 
-    public override bool Tick(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override bool Tick(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         TickVfx(psychicRitual);
         TickSound(psychicRitual);
@@ -81,7 +81,7 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
         return TicksLeft <= 0;
     }
 
-    private void TickVfx(Verse.AI.Group.PsychicRitual psychicRitual)
+    private void TickVfx(PsychicRitual psychicRitual)
     {
         var percentage = TicksSinceStarted / (hoursUntilOutcome * 2500f);
         if (Rand.Chance(ChanceParticle(percentage)))
@@ -98,14 +98,14 @@ public class PsychicRitualToil_Sabbat_InvokeHorax : PsychicRitualToil_InvokeHora
         float ChanceParticle (float p)=> 1f/(int)(60 - 59 * Math.Pow(p,3));
     }
 
-    private void TickSound(Verse.AI.Group.PsychicRitual psychicRitual)
+    private void TickSound(PsychicRitual psychicRitual)
     {
         Find.MusicManagerPlay.ForceSilenceFor(1.0f);
         if (_musicSustainer == null || _musicSustainer.Ended)
         {
             _musicSustainer = Sabbat_Sfx.CreateSustainer(psychicRitual);
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp != null) comp.cachedSustainer = _musicSustainer;
+            if (comp != null) comp.CachedSustainer = _musicSustainer;
         }
         else
         {

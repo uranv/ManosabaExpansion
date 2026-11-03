@@ -4,9 +4,9 @@ namespace UranvManosaba.Contents.Comps;
 
 public class HediffCompProperties_MutantDummy : HediffCompProperties
 {
-    public HediffDef narehateHediffDef;
-    public HediffDef narehateHiddenHediffDef;
-    public HediffDef countdownHediffDef;
+    public HediffDef NarehateHediffDef;
+    public HediffDef NarehateHiddenHediffDef;
+    public HediffDef CountdownHediffDef;
     public HediffCompProperties_MutantDummy()
     {
         compClass = typeof(HediffComp_MutantDummy);
@@ -30,27 +30,32 @@ public class HediffComp_MutantDummy : HediffComp
 
     private const int TickInterval = 1000;
 
-    // 只在添加及读档后校验；交由健康系统统一移除，避免后续 GiveAbility
+    // 宿主按当前身份校验；交由健康系统统一移除，避免后续 GiveAbility
     // 的添加回调在提前移除之后继续执行，留下孤立能力。
-    private bool _invalidHost;
-    public override bool CompShouldRemove => _invalidHost || base.CompShouldRemove;
+    private bool InvalidHost => Pawn.mutant?.Def != ModDefOf.UmMutantNarehate;
+    public override bool CompShouldRemove => InvalidHost || base.CompShouldRemove;
+    private bool _copyPending;
 
     private float _countdownSeverity = 0.0001f;
     public override void CompExposeData()
     {
         base.CompExposeData();
         Scribe_Values.Look(ref _countdownSeverity, "temporalSeverity", 0.0001f);
-        if (Scribe.mode == LoadSaveMode.PostLoadInit)
-        {
-            _invalidHost = Pawn.mutant?.Def != ModDefOf.UmMutantNarehate;
-        }
+    }
+
+    public override void CopyFrom(HediffComp other)
+    {
+        base.CopyFrom(other);
+        _countdownSeverity = ((HediffComp_MutantDummy)other)._countdownSeverity;
+        _copyPending = true;
     }
 
     // 维护循环
     public override void CompPostTick(ref float severityAdjustment)
     {
         base.CompPostTick(ref severityAdjustment);
-        if (_invalidHost || !Pawn.IsHashIntervalTick(TickInterval)) return;
+        if (InvalidHost || (!_copyPending && !Pawn.IsHashIntervalTick(TickInterval))) return;
+        _copyPending = false;
         MaintainHediffs();
         MaintainGene();
     }
@@ -58,8 +63,7 @@ public class HediffComp_MutantDummy : HediffComp
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
-        _invalidHost = Pawn.mutant?.Def != ModDefOf.UmMutantNarehate;
-        if (_invalidHost) return;
+        if (_copyPending || InvalidHost) return;
         MaintainHediffs();
         MaintainGene();
     }
@@ -68,11 +72,11 @@ public class HediffComp_MutantDummy : HediffComp
     {
         base.CompPostPostRemoved();
         // 删除关联 Hediff
-        var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.narehateHediffDef);
+        var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHediffDef);
         if (narehateHediff != null) Pawn.health.RemoveHediff(narehateHediff);
-        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.narehateHiddenHediffDef);
+        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHiddenHediffDef);
         if (narehateHiddenHediff != null) Pawn.health.RemoveHediff(narehateHiddenHediff);
-        var temporalHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.countdownHediffDef);
+        var temporalHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.CountdownHediffDef);
         if (temporalHediff != null) Pawn.health.RemoveHediff(temporalHediff);
         // 删除基因
         var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
@@ -90,15 +94,15 @@ public class HediffComp_MutantDummy : HediffComp
         // 防空检查
         if (Pawn?.health?.hediffSet == null) return;
         // 维护残骸 Hediff
-        var hasNarehate = Pawn.health.hediffSet.HasHediff(Props.narehateHediffDef);
-        if (!hasNarehate) Pawn.health.AddHediff(Props.narehateHediffDef);
-        var hasNarehateHidden = Pawn.health.hediffSet.HasHediff(Props.narehateHiddenHediffDef);
-        if (!hasNarehateHidden) Pawn.health.AddHediff(Props.narehateHiddenHediffDef);
+        var hasNarehate = Pawn.health.hediffSet.HasHediff(Props.NarehateHediffDef);
+        if (!hasNarehate) Pawn.health.AddHediff(Props.NarehateHediffDef);
+        var hasNarehateHidden = Pawn.health.hediffSet.HasHediff(Props.NarehateHiddenHediffDef);
+        if (!hasNarehateHidden) Pawn.health.AddHediff(Props.NarehateHiddenHediffDef);
         // 维护失控倒计时 Hediff
-        var countdownHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.countdownHediffDef);
+        var countdownHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.CountdownHediffDef);
         if (countdownHediff == null)
         {
-            Pawn.health.AddHediff(Props.countdownHediffDef).Severity = _countdownSeverity;
+            Pawn.health.AddHediff(Props.CountdownHediffDef).Severity = _countdownSeverity;
         }
         else
         {

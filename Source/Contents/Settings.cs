@@ -8,85 +8,85 @@ namespace UranvManosaba.Contents;
 public class ManosabaModSettings : ModSettings
 {
     // 一般设置
-    public bool isShowProgress = true;  // HediffComp_ShowSeverity & HediffComp_Progress
-    public bool debugMode = false;
+    public bool IsShowProgress = true;  // HediffComp_ShowSeverity & HediffComp_Progress
+    public bool DebugMode;
 
-    public float previewMood = 50;  // do not save
-    public float previewMinorThres = 35;  // do not save
-    public float previewSeverity = 50f;  // do not save
+    public float PreviewMood = 50;  // do not save
+    public float PreviewMinorThres = 35;  // do not save
+    public float PreviewSeverity = 50f;  // do not save
 
 
     // 魔女化设置页
-    public float severityIncreaseFactor = 16.0f;  // HediffComp_Progress
-    public float severityDecreaseFactor = 8.0f;  // HediffComp_Progress
-    public float severityIncreaseBias = 23.0f;  // HediffComp_Progress
-    public float severityFlatBias = 8.0f;  // HediffComp_Progress
-    public float severityIncreaseExponent = 1.0f;  // HediffComp_Progress
-    public float severityDecreaseExponent = 1.0f;  // HediffComp_Progress
-    public float baseMtbDays = 60;  // HediffComp_Progress
+    public float SeverityIncreaseFactor = 16.0f;  // HediffComp_Progress
+    public float SeverityDecreaseFactor = 8.0f;  // HediffComp_Progress
+    public float SeverityIncreaseBias = 23.0f;  // HediffComp_Progress
+    public float SeverityFlatBias = 8.0f;  // HediffComp_Progress
+    public float SeverityIncreaseExponent = 1.0f;  // HediffComp_Progress
+    public float SeverityDecreaseExponent = 1.0f;  // HediffComp_Progress
+    public float BaseMtbDays = 60;  // HediffComp_Progress
 
 
 
     // 魔女残骸治疗设置
-    public float narehateHealFactor = 500f;
-    public float narehateBloodHealFactor = 67f;
-    public bool isNarehateBloodHeal = true;
-    public float narehateDownedDivisor = 3f;
-    public bool isNarehateDownedDivisor = true;
+    public float NarehateHealFactor = 500f;
+    public float NarehateBloodHealFactor = 67f;
+    public bool IsNarehateBloodHeal = true;
+    public float NarehateDownedDivisor = 3f;
+    public bool IsNarehateDownedDivisor = true;
     // 后处理系数作用于: 半魔女奖励, 小雪；使用tick为600, 即默认为 narehateHealFactor / 10 * narehateBloodHealFactor
-    public float postHealMultiplier = 0.22f;
-    public bool postAllowHeal = true;
+    public float PostHealMultiplier = 0.22f;
+    public bool PostAllowHeal = true;
 
 
     // 魔女变种人控制时间
-    public float mutantFullCircle = 100.0f;  // HediffComp_Countdown_Mutant
+    public float MutantFullCircle = 100.0f;  // HediffComp_Countdown_Mutant
     // 魔女安息仪式设置
-    public float thresholdMinusOne = 25;  // PsychicRitualDef_Sabbat
-    public float thresholdZero = 55;  // PsychicRitualDef_Sabbat
-    public float thresholdPlusOne = 85;  // PsychicRitualDef_Sabbat
+    public float ThresholdMinusOne = 25;  // PsychicRitualDef_Sabbat
+    public float ThresholdZero = 55;  // PsychicRitualDef_Sabbat
+    public float ThresholdPlusOne = 85;  // PsychicRitualDef_Sabbat
 
 
     // 其他设置
-    public float inverseTemperature = 5f;  // Manosaba_Utils
-    public bool allowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
-    public bool disableTale = false;  // Grammar_Utils
-    public bool useUniqueBodyType = false; // YukiGeneralUtils
+    public float InverseTemperature = 5f;  // Manosaba_Utils
+    public bool AllowMutantAssignTab;  // Patch_MainTabWindow_Assign_Pawns
+    public bool DisableTale;  // Grammar_Utils
+    public bool UseUniqueBodyType; // YukiGeneralUtils
 
 
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref debugMode, "debugMode", false);
+        Scribe_Values.Look(ref DebugMode, "debugMode", false);
 
 
-        Scribe_Values.Look(ref isShowProgress, "isShowProgress", true);
-        Scribe_Values.Look(ref severityIncreaseFactor, "severityIncreaseFactor", 16.0f);
-        Scribe_Values.Look(ref severityDecreaseFactor, "severityDecreaseFactor", 8.0f);
-        Scribe_Values.Look(ref severityIncreaseBias, "severityIncreaseBias", 23.0f);
-        Scribe_Values.Look(ref severityFlatBias, "severityFlatBias", 8.0f);
-        Scribe_Values.Look(ref severityIncreaseExponent, "severityIncreaseExponent", 1.0f);
-        Scribe_Values.Look(ref severityDecreaseExponent, "severityDecreaseExponent", 1.0f);
-        Scribe_Values.Look(ref baseMtbDays, "baseMtbDays", 60);
+        Scribe_Values.Look(ref IsShowProgress, "isShowProgress", true);
+        Scribe_Values.Look(ref SeverityIncreaseFactor, "severityIncreaseFactor", 16.0f);
+        Scribe_Values.Look(ref SeverityDecreaseFactor, "severityDecreaseFactor", 8.0f);
+        Scribe_Values.Look(ref SeverityIncreaseBias, "severityIncreaseBias", 23.0f);
+        Scribe_Values.Look(ref SeverityFlatBias, "severityFlatBias", 8.0f);
+        Scribe_Values.Look(ref SeverityIncreaseExponent, "severityIncreaseExponent", 1.0f);
+        Scribe_Values.Look(ref SeverityDecreaseExponent, "severityDecreaseExponent", 1.0f);
+        Scribe_Values.Look(ref BaseMtbDays, "baseMtbDays", 60);
 
 
-        Scribe_Values.Look(ref narehateHealFactor, "narehateHealFactor", 500f);
-        Scribe_Values.Look(ref narehateBloodHealFactor, "narehateBloodHealFactor", 67f);
-        Scribe_Values.Look(ref isNarehateBloodHeal, "isNarehateBloodHeal", true);
-        Scribe_Values.Look(ref narehateDownedDivisor, "narehateDownedDivisor", 3f);
-        Scribe_Values.Look(ref isNarehateDownedDivisor, "isNarehateDownedDivisor", true);
-        Scribe_Values.Look(ref postHealMultiplier, "postHealMultiplier", 0.22f);
-        Scribe_Values.Look(ref postAllowHeal, "postAllowHeal", true);
+        Scribe_Values.Look(ref NarehateHealFactor, "narehateHealFactor", 500f);
+        Scribe_Values.Look(ref NarehateBloodHealFactor, "narehateBloodHealFactor", 67f);
+        Scribe_Values.Look(ref IsNarehateBloodHeal, "isNarehateBloodHeal", true);
+        Scribe_Values.Look(ref NarehateDownedDivisor, "narehateDownedDivisor", 3f);
+        Scribe_Values.Look(ref IsNarehateDownedDivisor, "isNarehateDownedDivisor", true);
+        Scribe_Values.Look(ref PostHealMultiplier, "postHealMultiplier", 0.22f);
+        Scribe_Values.Look(ref PostAllowHeal, "postAllowHeal", true);
 
 
-        Scribe_Values.Look(ref mutantFullCircle, "mutantFullCircle", 100.0f);
-        Scribe_Values.Look(ref thresholdMinusOne, "thresholdMinusOne", 25);
-        Scribe_Values.Look(ref thresholdZero, "thresholdZero", 55);
-        Scribe_Values.Look(ref thresholdPlusOne, "thresholdPlusOne", 85);
-            
+        Scribe_Values.Look(ref MutantFullCircle, "mutantFullCircle", 100.0f);
+        Scribe_Values.Look(ref ThresholdMinusOne, "thresholdMinusOne", 25);
+        Scribe_Values.Look(ref ThresholdZero, "thresholdZero", 55);
+        Scribe_Values.Look(ref ThresholdPlusOne, "thresholdPlusOne", 85);
 
-        Scribe_Values.Look(ref inverseTemperature, "inverseTemperature", 5f);
-        Scribe_Values.Look(ref allowMutantAssignTab, "allowMutantAssignTab", false);
-        Scribe_Values.Look(ref disableTale, "disableTale", false);
-        Scribe_Values.Look(ref useUniqueBodyType, "useUniqueBodyType", false);
+
+        Scribe_Values.Look(ref InverseTemperature, "inverseTemperature", 5f);
+        Scribe_Values.Look(ref AllowMutantAssignTab, "allowMutantAssignTab", false);
+        Scribe_Values.Look(ref DisableTale, "disableTale", false);
+        Scribe_Values.Look(ref UseUniqueBodyType, "useUniqueBodyType", false);
         // 临时设置
         base.ExposeData();
     }
@@ -129,7 +129,7 @@ public class ManosabaMod : Mod
     {
         // 顶部留空
         var contentRect = inRect;
-        contentRect.yMin += 32f; 
+        contentRect.yMin += 32f;
         // 绘制标签栏
         var tabs = new List<TabRecord>
         {
@@ -192,11 +192,11 @@ public class ManosabaMod : Mod
         // 选项: 显示数值
         list.CheckboxLabeled(
             "ManosabaSettings_isShowProgress".Translate(),
-            ref Settings.isShowProgress
+            ref Settings.IsShowProgress
         );
         list.Indent(20f);
         GUI.color = _lightGray;
-        var isShowProgressDesc1 = Settings.isShowProgress ?
+        var isShowProgressDesc1 = Settings.IsShowProgress ?
             "• " + EnabledChoice + ", " + "ManosabaSettings_isShowProgress_Desc_1".Translate():
             "• " + DisabledChoice + ", " + "ManosabaSettings_isShowProgress_Desc_1_disable".Translate();
         list.Label(isShowProgressDesc1);
@@ -209,7 +209,7 @@ public class ManosabaMod : Mod
         //===================================================================
         // 调试面板
         //===================================================================
-        string panelTitle = "ManosabaSettings_GeneralPanelTitle".Translate(); 
+        string panelTitle = "ManosabaSettings_GeneralPanelTitle".Translate();
         var listWidth = list.ColumnWidth;
         var panelWidth = 0.382f * listWidth;
         var titleHeight = Text.CalcHeight(panelTitle, panelWidth);
@@ -227,30 +227,30 @@ public class ManosabaMod : Mod
 
         //绘制右侧滑条
         var rectRightSlider1 = new Rect(rowRectTitle.xMax - panelWidth, rowRectTitle.y, panelWidth, lineHeight);
-        var valRightSlider1 = Settings.previewMood;
+        var valRightSlider1 = Settings.PreviewMood;
         var newValRightSlider1 = Widgets.HorizontalSlider(rectRightSlider1, valRightSlider1, 0f, 100f, false, null, null, null, 1f);
         if (!Mathf.Approximately(newValRightSlider1, valRightSlider1))
         {
-            Settings.previewMood = newValRightSlider1;
+            Settings.PreviewMood = newValRightSlider1;
         }
         var rectRightSlider2 = new Rect(rowRectTitle.xMax - panelWidth, rowRectTitle.y + lineHeight, panelWidth, lineHeight);
-        var valRightSlider2 = Settings.previewMinorThres;
+        var valRightSlider2 = Settings.PreviewMinorThres;
         var newValRightSlider2 = Widgets.HorizontalSlider(rectRightSlider2, valRightSlider2, 1f, 49f, false, null, null, null, 1f);
         if (!Mathf.Approximately(newValRightSlider2, valRightSlider2))
         {
-            Settings.previewMinorThres = newValRightSlider2;
+            Settings.PreviewMinorThres = newValRightSlider2;
         }
         var rectRightSlider3 = new Rect(rowRectTitle.xMax - panelWidth, rowRectTitle.y + 2 * lineHeight, panelWidth, lineHeight);
-        var valRightSlider3 = Settings.previewSeverity;
+        var valRightSlider3 = Settings.PreviewSeverity;
         var newValRightSlider3 = Widgets.HorizontalSlider(rectRightSlider3, valRightSlider3, 0f, 100f, false, null, null, null, 1f);
         if (!Mathf.Approximately(newValRightSlider3, valRightSlider3))
         {
-            Settings.previewSeverity = newValRightSlider3;
+            Settings.PreviewSeverity = newValRightSlider3;
         }
         //绘制右侧文本
-        string rightText1 = "ManosabaSettings_GeneralPreviewMood".Translate(Settings.previewMood.ToString("F0"));
-        string rightText2 = "ManosabaSettings_GeneralPreviewMinorThres".Translate(Settings.previewMinorThres.ToString("F0"));
-        string rightText3 = "ManosabaSettings_GeneralPreviewSeverity".Translate(Settings.previewSeverity.ToString("F0"));
+        string rightText1 = "ManosabaSettings_GeneralPreviewMood".Translate(Settings.PreviewMood.ToString("F0"));
+        string rightText2 = "ManosabaSettings_GeneralPreviewMinorThres".Translate(Settings.PreviewMinorThres.ToString("F0"));
+        string rightText3 = "ManosabaSettings_GeneralPreviewSeverity".Translate(Settings.PreviewSeverity.ToString("F0"));
         var rightTextWidth = Mathf.Max(
             Mathf.Max(
                 listWidth * 0.236f - 20f,
@@ -282,12 +282,12 @@ public class ManosabaMod : Mod
         var leftRectValOutput = new Rect(rowRectValOutput.x, rowRectValOutput.y, colWidthValOutput, rowRectValOutput.height);
         var rightRectValOutput = new Rect(rowRectValOutput.x + (colWidthValOutput + 50f), rowRectValOutput.y, colWidthValOutput, rowRectValOutput.height);
         // 预览输出左
-        var changePerDayPreview = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange(Settings.previewMood / 100f,  Settings.previewMinorThres / 100f);
+        var changePerDayPreview = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange(Settings.PreviewMood / 100f,  Settings.PreviewMinorThres / 100f);
         string leftTextValOutput = "ManosabaSettings_changePerDayPreview".Translate(changePerDayPreview.ToString("F4"));
         // 预览输出右
-        var mtbDaysPreview = Settings.baseMtbDays
-                             * Mathf.Pow(4f, Mathf.Lerp(1.0f, -1.0f, Settings.previewSeverity / 100f))
-                             * Mathf.Pow(2f, Mathf.Lerp(-1.0f, 1.0f, Settings.previewMood / 100f));
+        var mtbDaysPreview = Settings.BaseMtbDays
+                             * Mathf.Pow(4f, Mathf.Lerp(1.0f, -1.0f, Settings.PreviewSeverity / 100f))
+                             * Mathf.Pow(2f, Mathf.Lerp(-1.0f, 1.0f, Settings.PreviewMood / 100f));
         string rightTextValOutput = "ManosabaSettings_mtbDaysPreview".Translate(mtbDaysPreview.ToString("F1"));
 
         Widgets.Label(leftRectValOutput, leftTextValOutput);
@@ -301,13 +301,13 @@ public class ManosabaMod : Mod
         // 开发者模式
         list.CheckboxLabeled(
             "ManosabaSettings_debugMode".Translate(),
-            ref Settings.debugMode
+            ref Settings.DebugMode
         );
         list.Indent(20f);
         GUI.color = _lightGray;
         // var buildDate = " (last compiled at " + DateTime.Now.ToString("yyyy-MM-dd") + ")";
         string buildDate = BuildConstants.BuildDate;
-        string debugModeDesc = Settings.debugMode ?
+        string debugModeDesc = Settings.DebugMode ?
             "ManosabaSettings_debugMode_Desc".Translate() + buildDate :
             "ManosabaSettings_debugMode_Desc".Translate();
         list.Label(debugModeDesc);
@@ -325,7 +325,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityIncreaseFactor",
-            value: ref Settings.severityIncreaseFactor,
+            value: ref Settings.SeverityIncreaseFactor,
             slideMin: 1f,
             slideMax: 100f,
             roundTo: 1f,
@@ -342,7 +342,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityDecreaseFactor",
-            value: ref Settings.severityDecreaseFactor,
+            value: ref Settings.SeverityDecreaseFactor,
             slideMin: 1f,
             slideMax: 100f,
             roundTo: 1f,
@@ -361,7 +361,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityIncreaseBias",
-            value: ref Settings.severityIncreaseBias,
+            value: ref Settings.SeverityIncreaseBias,
             slideMin: 1f,
             slideMax: 97f,
             roundTo: 1f,
@@ -378,7 +378,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityFlatBias",
-            value: ref Settings.severityFlatBias,
+            value: ref Settings.SeverityFlatBias,
             slideMin: 0f,
             slideMax: 97f,
             roundTo: 1f,
@@ -397,7 +397,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityIncreaseExponent",
-            value: ref Settings.severityIncreaseExponent,
+            value: ref Settings.SeverityIncreaseExponent,
             slideMin: 0.10f,
             slideMax: 2.00f,
             roundTo: 0.01f,
@@ -414,7 +414,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_severityDecreaseExponent",
-            value: ref Settings.severityDecreaseExponent,
+            value: ref Settings.SeverityDecreaseExponent,
             slideMin: 0.10f,
             slideMax: 2.00f,
             roundTo: 0.01f,
@@ -433,7 +433,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_baseMtbDays",
-            value: ref Settings.baseMtbDays,
+            value: ref Settings.BaseMtbDays,
             slideMin: 8f,
             slideMax: 120f,
             roundTo: 1f,
@@ -450,7 +450,7 @@ public class ManosabaMod : Mod
         //list.Gap(listGapline);
 
         // 重置本页
-        string resetDesc = "ManosabaSettings_ProgressTabDesc".Translate(); 
+        string resetDesc = "ManosabaSettings_ProgressTabDesc".Translate();
         string buttonLabel = "ManosabaSettings_ResetProgressTab".Translate();
         // 申请区域
         var labelWidth = Text.CalcSize(buttonLabel).x + 20f; // 按钮标签宽度 + 内边距
@@ -475,13 +475,13 @@ public class ManosabaMod : Mod
         Widgets.Label(textRect, resetDesc);
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
-            Settings.severityIncreaseFactor = 16.0f;
-            Settings.severityDecreaseFactor = 8.0f;
-            Settings.severityIncreaseBias = 23.0f;
-            Settings.severityFlatBias = 8.0f;
-            Settings.severityIncreaseExponent = 1.0f;
-            Settings.severityDecreaseExponent = 1.0f;
-            Settings.baseMtbDays = 60;
+            Settings.SeverityIncreaseFactor = 16.0f;
+            Settings.SeverityDecreaseFactor = 8.0f;
+            Settings.SeverityIncreaseBias = 23.0f;
+            Settings.SeverityFlatBias = 8.0f;
+            Settings.SeverityIncreaseExponent = 1.0f;
+            Settings.SeverityDecreaseExponent = 1.0f;
+            Settings.BaseMtbDays = 60;
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
 
@@ -495,7 +495,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_narehateHealFactor",
-            value: ref Settings.narehateHealFactor,
+            value: ref Settings.NarehateHealFactor,
             slideMin: 100f,
             slideMax: 1000f,
             roundTo: 50f,
@@ -504,7 +504,7 @@ public class ManosabaMod : Mod
         list.Indent(20f);
         GUI.color = _lightGray;
         list.Label("ManosabaSettings_narehateHealFactor_Desc_1".Translate());
-        list.Label("ManosabaSettings_narehateHealFactor_Desc_2".Translate(Settings.narehateHealFactor.ToString("F0")));
+        list.Label("ManosabaSettings_narehateHealFactor_Desc_2".Translate(Settings.NarehateHealFactor.ToString("F0")));
         GUI.color = Color.white;
         list.Outdent(20f);
         list.Gap(listGap);
@@ -512,17 +512,17 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_narehateBloodHealFactor",
-            value: ref Settings.narehateBloodHealFactor,
+            value: ref Settings.NarehateBloodHealFactor,
             slideMin: 0f,
             slideMax: 100f,
             roundTo: 1f,
             valueFormat: "F0"
         );
-        Settings.isNarehateBloodHeal = !Mathf.Approximately(Settings.narehateBloodHealFactor,0f);
+        Settings.IsNarehateBloodHeal = !Mathf.Approximately(Settings.NarehateBloodHealFactor,0f);
         list.Indent(20f);
         GUI.color = _lightGray;
-        var bloodHealingDesc1 = Settings.isNarehateBloodHeal ?
-            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateBloodHealFactor_Desc_1".Translate(Settings.narehateBloodHealFactor.ToString("F0")) :
+        var bloodHealingDesc1 = Settings.IsNarehateBloodHeal ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateBloodHealFactor_Desc_1".Translate(Settings.NarehateBloodHealFactor.ToString("F0")) :
             "• " + DisabledChoice + ", " + "ManosabaSettings_narehateBloodHealFactor_Desc_1_Disable".Translate();
         list.Label(bloodHealingDesc1);
         list.Label("ManosabaSettings_narehateBloodHealFactor_Desc_2".Translate());
@@ -534,17 +534,17 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_narehateDownedDivisor",
-            value: ref Settings.narehateDownedDivisor,
+            value: ref Settings.NarehateDownedDivisor,
             slideMin: 1f,
             slideMax: 10f,
             roundTo: 0.1f,
             valueFormat: "F1"
         );
-        Settings.isNarehateDownedDivisor = !Mathf.Approximately(Settings.narehateDownedDivisor, 1f);
+        Settings.IsNarehateDownedDivisor = !Mathf.Approximately(Settings.NarehateDownedDivisor, 1f);
         list.Indent(20f);
         GUI.color = _lightGray;
-        var downedDevisorDesc1 = Settings.isNarehateDownedDivisor ?
-            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateDownedDivisor_Desc_1".Translate((1f/Settings.narehateDownedDivisor).ToString("P0")) :
+        var downedDevisorDesc1 = Settings.IsNarehateDownedDivisor ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_narehateDownedDivisor_Desc_1".Translate((1f/Settings.NarehateDownedDivisor).ToString("P0")) :
             "• " + DisabledChoice + ", " + "ManosabaSettings_narehateDownedDivisor_Desc_1_Disable".Translate();
         list.Label(downedDevisorDesc1);
         list.Label("ManosabaSettings_narehateDownedDivisor_Desc_2".Translate());
@@ -557,21 +557,21 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_postHealMultiplier",
-            value: ref Settings.postHealMultiplier,
+            value: ref Settings.PostHealMultiplier,
             slideMin: 0f,
             slideMax: 1f,
             roundTo: 0.01f,
             valueFormat: "F2"
         );
-        Settings.postAllowHeal = Settings.postHealMultiplier != 0f;
-        var postHealingEffective = (Settings.postHealMultiplier * Settings.narehateHealFactor).ToString("F2");
-        var postBloodHealingEffective = (Settings.postHealMultiplier * Settings.narehateBloodHealFactor).ToString("P0");
+        Settings.PostAllowHeal = Settings.PostHealMultiplier != 0f;
+        var postHealingEffective = (Settings.PostHealMultiplier * Settings.NarehateHealFactor).ToString("F2");
+        var postBloodHealingEffective = (Settings.PostHealMultiplier * Settings.NarehateBloodHealFactor).ToString("P0");
         list.Indent(20f);
         GUI.color = _lightGray;
-        var postHealingDesc1 = Settings.postAllowHeal ?
-            "• " + EnabledChoice + ", " + "ManosabaSettings_postHealMultiplier_Desc_1".Translate(Settings.postHealMultiplier.ToString("F2"),YukiNameDef.Named("YUKI")) :
+        var postHealingDesc1 = Settings.PostAllowHeal ?
+            "• " + EnabledChoice + ", " + "ManosabaSettings_postHealMultiplier_Desc_1".Translate(Settings.PostHealMultiplier.ToString("F2"),YukiNameDef.Named("YUKI")) :
             "• " + DisabledChoice + ", " + "ManosabaSettings_postHealMultiplier_Desc_1_Disable".Translate(YukiNameDef.Named("YUKI"));
-        var postHealingDesc2 = Settings.postAllowHeal ?
+        var postHealingDesc2 = Settings.PostAllowHeal ?
             "ManosabaSettings_postHealMultiplier_Desc_2".Translate(postHealingEffective, postBloodHealingEffective,YukiNameDef.Named("YUKI")) :
             "ManosabaSettings_postHealMultiplier_Desc_2_Disable".Translate(YukiNameDef.Named("YUKI"));
         list.Label(postHealingDesc1);
@@ -598,12 +598,12 @@ public class ManosabaMod : Mod
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
-            Settings.narehateHealFactor = 500f;
-            Settings.narehateBloodHealFactor = 67f;
-            Settings.isNarehateBloodHeal = true;
-            Settings.narehateDownedDivisor = 3f;
-            Settings.isNarehateDownedDivisor = true;
-            Settings.postHealMultiplier = 0.22f;
+            Settings.NarehateHealFactor = 500f;
+            Settings.NarehateBloodHealFactor = 67f;
+            Settings.IsNarehateBloodHeal = true;
+            Settings.NarehateDownedDivisor = 3f;
+            Settings.IsNarehateDownedDivisor = true;
+            Settings.PostHealMultiplier = 0.22f;
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
 
@@ -620,7 +620,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_NBw_mutantFullCircle",
-            value: ref Settings.mutantFullCircle,
+            value: ref Settings.MutantFullCircle,
             slideMin: 15f,
             slideMax: 150f,
             roundTo: 1f,
@@ -645,7 +645,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_Sabbat_thresholdMinusOne",
-            value: ref Settings.thresholdMinusOne,
+            value: ref Settings.ThresholdMinusOne,
             slideMin: 0f,
             slideMax: 98f,
             roundTo: 1f,
@@ -657,13 +657,13 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_Sabbat_thresholdZero",
-            value: ref Settings.thresholdZero,
+            value: ref Settings.ThresholdZero,
             slideMin: 1f,
             slideMax: 99f,
             roundTo: 1f,
             valueFormat: "F0",
             isConstrained: true,
-            minAllowedValue: Settings.thresholdMinusOne + 1f,
+            minAllowedValue: Settings.ThresholdMinusOne + 1f,
             indent: 20
         );
         list.Gap(listGap);
@@ -671,13 +671,13 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_Sabbat_thresholdPlusOne",
-            value: ref Settings.thresholdPlusOne,
+            value: ref Settings.ThresholdPlusOne,
             slideMin: 2f,
             slideMax: 100f,
             roundTo: 1f,
             valueFormat: "F0",
             isConstrained: true,
-            minAllowedValue: Settings.thresholdZero + 1f,
+            minAllowedValue: Settings.ThresholdZero + 1f,
             indent: 20
         );
         list.Indent(20f);
@@ -705,10 +705,10 @@ public class ManosabaMod : Mod
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
-            Settings.mutantFullCircle = 100f;
-            Settings.thresholdMinusOne = 25f;
-            Settings.thresholdZero = 55f;
-            Settings.thresholdPlusOne = 85f;
+            Settings.MutantFullCircle = 100f;
+            Settings.ThresholdMinusOne = 25f;
+            Settings.ThresholdZero = 55f;
+            Settings.ThresholdPlusOne = 85f;
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
 
@@ -723,7 +723,7 @@ public class ManosabaMod : Mod
         DrawSliderPanels(
             list,
             labelTextTranslateString: "ManosabaSettings_inverseTemperature",
-            value: ref Settings.inverseTemperature,
+            value: ref Settings.InverseTemperature,
             slideMin: -10f,
             slideMax: 10f,
             roundTo: 0.1f,
@@ -733,7 +733,7 @@ public class ManosabaMod : Mod
         GUI.color = _lightGray;
         list.Label("ManosabaSettings_inverseTemperature_Desc_1".Translate());
         list.Label("ManosabaSettings_inverseTemperature_Desc_2".Translate());
-        if (Settings.debugMode)
+        if (Settings.DebugMode)
         {
             list.Label("ManosabaSettings_inverseTemperature_Desc_3".Translate());
             list.Label("ManosabaSettings_inverseTemperature_Desc_4".Translate());
@@ -743,11 +743,11 @@ public class ManosabaMod : Mod
         list.Gap(listGap);
         list.GapLine();
         list.Gap(listGapline);
-        
+
         // 启用魔女残骸的方案管理
         list.CheckboxLabeled(
             "ManosabaSettings_allowMutantAssignTab".Translate(),
-            ref Settings.allowMutantAssignTab
+            ref Settings.AllowMutantAssignTab
         );
         list.Indent(20f);
         GUI.color = _lightGray;
@@ -758,11 +758,11 @@ public class ManosabaMod : Mod
         list.Gap(listGap);
         list.GapLine();
         list.Gap(listGapline);
-        
+
         // 禁用调用故事生成
         list.CheckboxLabeled(
             "ManosabaSettings_disableTale".Translate(),
-            ref Settings.disableTale
+            ref Settings.DisableTale
         );
         list.Indent(20f);
         GUI.color = _lightGray;
@@ -770,11 +770,11 @@ public class ManosabaMod : Mod
         GUI.color = Color.white;
         list.Outdent(20f);
         list.Gap(listGap);
-        
+
         // 月代雪使用独立体型
         list.CheckboxLabeled(
             "ManosabaSettings_useUniqueBodyType".Translate(),
-            ref Settings.useUniqueBodyType
+            ref Settings.UseUniqueBodyType
         );
         list.Indent(20f);
         GUI.color = _lightGray;
@@ -799,7 +799,7 @@ public class ManosabaMod : Mod
         );
         if (Widgets.ButtonText(buttonRect, buttonLabel))
         {
-            Settings.inverseTemperature = 5f;
+            Settings.InverseTemperature = 5f;
             SoundDefOf.Click.PlayOneShotOnCamera();
         }
     }
@@ -858,9 +858,9 @@ public class ManosabaMod : Mod
         // 采样函数
         const float xMax = 100f;
         const float xMin = 0f;
-        var xThresIncrease = Mathf.Max(1, Mathf.Min(Settings.previewMinorThres + Settings.severityIncreaseBias, 98));
-        var xThresDecrease = Mathf.Max(2, Mathf.Min(xThresIncrease + Settings.severityFlatBias, 99));
-        var yValRange = Settings.severityIncreaseFactor + Settings.severityDecreaseFactor;
+        var xThresIncrease = Mathf.Max(1, Mathf.Min(Settings.PreviewMinorThres + Settings.SeverityIncreaseBias, 98));
+        var xThresDecrease = Mathf.Max(2, Mathf.Min(xThresIncrease + Settings.SeverityFlatBias, 99));
+        var yValRange = Settings.SeverityIncreaseFactor + Settings.SeverityDecreaseFactor;
         var yDrawLength = rect.height / (1 + 2* yEdgePercent);
         // 颜色设置
         var originalColor = GUI.color;
@@ -874,9 +874,9 @@ public class ManosabaMod : Mod
         {
             var t = (float)i / segments;
             var mathX = Mathf.Lerp(xMin, xMax, t); // X 轴取值范围 [xMin, xMax]
-            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
+            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.PreviewMinorThres / 100f);
             var guiX = rect.x + t * rect.width;
-            var normalizedY = (Settings.severityIncreaseFactor - mathY) / yValRange; // 函数值 -[-sDF,sIF] 映射为 [0,1]
+            var normalizedY = (Settings.SeverityIncreaseFactor - mathY) / yValRange; // 函数值 -[-sDF,sIF] 映射为 [0,1]
             var guiY = rect.y + yDrawLength * (yEdgePercent + normalizedY);
             var currentPoint = new Vector2(guiX, guiY);
             if (lastPoint.HasValue)
@@ -886,13 +886,13 @@ public class ManosabaMod : Mod
             lastPoint = currentPoint;
         }
         // --- 当前点 ---
-        if (Settings.previewMood is >= xMin and <= xMax)
+        if (Settings.PreviewMood is >= xMin and <= xMax)
         {
-            var mathX = Settings.previewMood;
-            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.previewMinorThres / 100f);
+            var mathX = Settings.PreviewMood;
+            var mathY = DailyUpdateCount*Comps.HediffComp_Progress.GetSeverityChange( mathX/100f,  Settings.PreviewMinorThres / 100f);
             var t = (mathX - xMin) / (xMax - xMin);
             var guiX = rect.x + t * rect.width;
-            var normalizedY = (Settings.severityIncreaseFactor - mathY) / yValRange;
+            var normalizedY = (Settings.SeverityIncreaseFactor - mathY) / yValRange;
             var guiY = rect.y + yDrawLength * (yEdgePercent + normalizedY);
             var circSize = 8f;
             var circRect = new Rect(
@@ -908,18 +908,18 @@ public class ManosabaMod : Mod
         }
         // --- 绘制y轴 ---
         GUI.color = new Color(0.5f, 0.5f, 0.5f, 0.3f);
-        var guiYZero = rect.y + yDrawLength * (yEdgePercent + Settings.severityIncreaseFactor / yValRange);
+        var guiYZero = rect.y + yDrawLength * (yEdgePercent + Settings.SeverityIncreaseFactor / yValRange);
         Widgets.DrawLine(new Vector2(rect.x, guiYZero), new Vector2(rect.xMax, guiYZero), GUI.color, 1f);
         // --- 文字标签 ---
         GUI.color = originalColor;
         Text.Font = GameFont.Tiny;
         GUI.color = _lightGray;
         // y轴最大值
-        Widgets.Label(new Rect(rect.x + 4, rect.y, 100, 20), $"Max: {Settings.severityIncreaseFactor}");
+        Widgets.Label(new Rect(rect.x + 4, rect.y, 100, 20), $"Max: {Settings.SeverityIncreaseFactor}");
         // 原点
         Widgets.Label(new Rect(rect.x + 4, guiYZero - 20, 100, 20), "0");
         // y轴最小值
-        Widgets.Label(new Rect(rect.x + 4, rect.yMax -20, 100, 20), $"Min: {-Settings.severityDecreaseFactor}");
+        Widgets.Label(new Rect(rect.x + 4, rect.yMax -20, 100, 20), $"Min: {-Settings.SeverityDecreaseFactor}");
         // x轴最大值
         Widgets.Label(new Rect(rect.xMax - 30, rect.yMax - 20, 30, 20), $"{xMax}%");
         // --- 数据标记 ---

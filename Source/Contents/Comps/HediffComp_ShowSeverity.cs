@@ -11,5 +11,5 @@ public class HediffCompProperties_ShowSeverity : HediffCompProperties
 }
 public class HediffComp_ShowSeverity : HediffComp
 {
-    public override string CompLabelInBracketsExtra => ManosabaMod.Settings.isShowProgress ? parent.Severity.ToString("P1") : base.CompLabelInBracketsExtra;
+    public override string CompLabelInBracketsExtra => ManosabaMod.Settings.IsShowProgress ? parent.Severity.ToString("P1") : base.CompLabelInBracketsExtra;
 }

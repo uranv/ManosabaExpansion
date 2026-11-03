@@ -16,21 +16,21 @@ public class PsychicRitualDef_Sabbat : PsychicRitualDef_InvocationCircle
     {
         float minSev = qualityRange.min;
         int qualityOffset = -2 +
-                            (minSev >= ManosabaMod.Settings.thresholdMinusOne / 100f ? 1 : 0) +
-                            (minSev >= ManosabaMod.Settings.thresholdZero / 100f ? 1 : 0) +
-                            (minSev >= ManosabaMod.Settings.thresholdPlusOne / 100f ? 1 : 0);
+                            (minSev >= ManosabaMod.Settings.ThresholdMinusOne / 100f ? 1 : 0) +
+                            (minSev >= ManosabaMod.Settings.ThresholdZero / 100f ? 1 : 0) +
+                            (minSev >= ManosabaMod.Settings.ThresholdPlusOne / 100f ? 1 : 0);
         return outcomeDescription.Formatted($"{(qualityOffset > 0 ? "+" : "")}{qualityOffset}");
     }
 
     // 手动构建部分原版 Toils
-    public override List<PsychicRitualToil> CreateToils(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override List<PsychicRitualToil> CreateToils(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         // pawn 站位信息
         var rolePositions = GenerateRolePositions_Copy(psychicRitual.assignments);
 
-        var list = new List<PsychicRitualToil>();
-        // （原版）仪式集合
-        list.Add(new PsychicRitualToil_GatherForInvocation(psychicRitual, this, rolePositions));
+        var list = new List<PsychicRitualToil> {
+            // （原版）仪式集合
+            new PsychicRitualToil_GatherForInvocation(psychicRitual, this, rolePositions) };
         // （修改）仪式引导和销毁祭品
         var invokeToil = new PsychicRitualToil_Sabbat_InvokeHorax(
             InvokerRole, rolePositions.TryGetValue(InvokerRole),

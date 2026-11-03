@@ -6,9 +6,9 @@ namespace UranvManosaba.Contents.Comps;
 
 public class CompProperties_BreakOnAttack : CompProperties
 {
-    public ThingDef dropSwordDef;
-    public ThingDef dropWoodDef;
-    public ThingDef dropClothDef;
+    public ThingDef DropSwordDef;
+    public ThingDef DropWoodDef;
+    public ThingDef DropClothDef;
     public CompProperties_BreakOnAttack()
     {
         compClass = typeof(Comp_BreakOnAttack);
@@ -21,21 +21,21 @@ public class Comp_BreakOnAttack : ThingComp
     public void BreakAndDrop(Pawn bearer)
     {
         // 生成掉落物
-        if (Props.dropSwordDef != null)
+        if (Props.DropSwordDef != null)
         {
-            var droppedItem = ThingMaker.MakeThing(Props.dropSwordDef, ThingDefOf.Steel);
+            var droppedItem = ThingMaker.MakeThing(Props.DropSwordDef, ThingDefOf.Steel);
             droppedItem.stackCount = 1;
             GenSpawn.Spawn(droppedItem, bearer.Position, bearer.Map);
         }
-        if (Props.dropWoodDef != null)
+        if (Props.DropWoodDef != null)
         {
-            var droppedItem = ThingMaker.MakeThing(Props.dropWoodDef);
+            var droppedItem = ThingMaker.MakeThing(Props.DropWoodDef);
             droppedItem.stackCount = 1;
             GenSpawn.Spawn(droppedItem, bearer.Position, bearer.Map);
         }
-        if (Props.dropClothDef != null)
+        if (Props.DropClothDef != null)
         {
-            var droppedItem = ThingMaker.MakeThing(Props.dropClothDef);
+            var droppedItem = ThingMaker.MakeThing(Props.DropClothDef);
             droppedItem.stackCount = 2;
             GenSpawn.Spawn(droppedItem, bearer.Position, bearer.Map);
         }

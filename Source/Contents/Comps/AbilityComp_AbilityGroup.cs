@@ -5,8 +5,8 @@ namespace UranvManosaba.Contents.Comps;
 
 public class CompProperties_AbilityGroup : AbilityCompProperties
 {
-    public string groupId = "DefaultGroup";
-    public bool isDefault = false;
+    public string GroupId = "DefaultGroup";
+    public bool IsDefault = false;
 
     public CompProperties_AbilityGroup()
     {
@@ -17,20 +17,20 @@ public class CompProperties_AbilityGroup : AbilityCompProperties
 public class AbilityComp_AbilityGroup : AbilityComp
 {
     public CompProperties_AbilityGroup Props => (CompProperties_AbilityGroup)props;
-    public bool isSelected = false;
+    public bool IsSelected;
 
     public override void Initialize(AbilityCompProperties p)
     {
         base.Initialize(p);
-        if (Scribe.mode == LoadSaveMode.Inactive && Props.isDefault)
+        if (Scribe.mode == LoadSaveMode.Inactive && Props.IsDefault)
         {
-            isSelected = true;
+            IsSelected = true;
         }
     }
 
     public override void PostExposeData()
     {
         base.PostExposeData();
-        Scribe_Values.Look(ref isSelected, "isSelected", Props.isDefault);
+        Scribe_Values.Look(ref IsSelected, "IsSelected", Props.IsDefault);
     }
 }

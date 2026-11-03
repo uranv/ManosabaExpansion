@@ -42,14 +42,14 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
     }
 
 
-    public override void Start(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override void Start(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         base.Start(psychicRitual, parent);
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-        if (comp is not { cachedSustainer: null })
+        if (comp is not { CachedSustainer: null })
         {
-            _musicSustainer = comp.cachedSustainer;
-            if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Sustainer get from comp (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.Start)");
+            _musicSustainer = comp.CachedSustainer;
+            if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Sustainer get from comp (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.Start)");
         }
         else Log.Error("[Manosaba] comp has null Sustainer (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.Start)");
 
@@ -58,7 +58,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         _ticksLeft = _afterDuration;
     }
 
-    public override bool Tick(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override bool Tick(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         base.Tick(psychicRitual, parent);
         _ticksLeft--;
@@ -71,7 +71,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
     }
 
 
-    public override void UpdateAllDuties(Verse.AI.Group.PsychicRitual psychicRitual, PsychicRitualGraph parent)
+    public override void UpdateAllDuties(PsychicRitual psychicRitual, PsychicRitualGraph parent)
     {
         if (_ticksLeft <= 0) return;
 
@@ -120,7 +120,7 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
     }
 
 
-    private static void ApplyOutcome(Verse.AI.Group.PsychicRitual psychicRitual)
+    private static void ApplyOutcome(PsychicRitual psychicRitual)
     {
         if  (psychicRitual?.Map == null) return;
         var map = psychicRitual.Map;
@@ -130,18 +130,18 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         var comp = Current.Game.GetComponent<ManosabaGameComponent>();
         if (comp != null)
         {
-            qualityFromToil = comp.cachedQuality;
-            comp.cachedQuality = 0;
-            if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] qualityFromToil get {qualityFromToil} (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.ApplyOutcome)");
+            qualityFromToil = comp.CachedQuality;
+            comp.CachedQuality = 0;
+            if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] qualityFromToil get {qualityFromToil} (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.ApplyOutcome)");
         }
 
         var ritualPower = psychicRitual.power;
         var qualityOffset = -2 +
-                            (ritualPower >= ManosabaMod.Settings.thresholdMinusOne/100f ? 1 : 0) +
-                            (ritualPower >= ManosabaMod.Settings.thresholdZero/100f ? 1 : 0) +
-                            (ritualPower >= ManosabaMod.Settings.thresholdPlusOne/100f ? 1 : 0);
+                            (ritualPower >= ManosabaMod.Settings.ThresholdMinusOne/100f ? 1 : 0) +
+                            (ritualPower >= ManosabaMod.Settings.ThresholdZero/100f ? 1 : 0) +
+                            (ritualPower >= ManosabaMod.Settings.ThresholdPlusOne/100f ? 1 : 0);
         var finalQuality = (QualityCategory)Mathf.Clamp(qualityFromToil + qualityOffset, (int)QualityCategory.Awful, (int)QualityCategory.Legendary);
-        if (ManosabaMod.Settings.debugMode) Log.Message($"[Manosaba] finial quality is: {finalQuality} {(int)finalQuality} = {qualityFromToil} + {qualityOffset} (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.ApplyOutcome)");
+        if (ManosabaMod.Settings.DebugMode) Log.Message($"[Manosaba] finial quality is: {finalQuality} {(int)finalQuality} = {qualityFromToil} + {qualityOffset} (PsychicRituals.PsychicRitualToil_Sabbat_Outcome.ApplyOutcome)");
         // 生成 Yuki, 默认征召状态
         var yuki = YukiGeneralUtils.GenerateYukiPawn(true, finalQuality);
         GenSpawn.Spawn(yuki, pos, map);
@@ -155,14 +155,14 @@ public class PsychicRitualToil_Sabbat_Outcome : PsychicRitualToil
         //_cachedYuki.Map.flecks.CreateFleck(innerExitOverlay);
     }
 
-    private void TickSound(Verse.AI.Group.PsychicRitual psychicRitual)
+    private void TickSound(PsychicRitual psychicRitual)
     {
         Find.MusicManagerPlay.ForceSilenceFor(1.0f);
         if (_musicSustainer == null || _musicSustainer.Ended)
         {
             _musicSustainer = Sabbat_Sfx.CreateSustainer(psychicRitual);
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp != null) comp.cachedSustainer = _musicSustainer;
+            if (comp != null) comp.CachedSustainer = _musicSustainer;
         }
         else
         {

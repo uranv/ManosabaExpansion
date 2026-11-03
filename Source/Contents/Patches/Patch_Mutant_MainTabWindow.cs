@@ -8,7 +8,7 @@ namespace UranvManosaba.Contents.Patches;
 [HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
 public static class Patch_MainTabWindow_Assign_Pawns
 {
-    private static bool Prepare() => !ManosabaMod.Settings.allowMutantAssignTab;
+    private static bool Prepare() => !ManosabaMod.Settings.AllowMutantAssignTab;
 
     public static void Postfix(ref IEnumerable<Pawn> __result)
     {

@@ -18,7 +18,7 @@ public static class Patch_RecipeDef_AvailableNow
         if (__instance?.defName == "Make_"+ModDefOf.UmThingAburibin.defName)
         {
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp is { isAburiBinUnlocked: false })
+            if (comp is { IsAburiBinUnlocked: false })
             {
                 __result = false;
             }
@@ -28,7 +28,7 @@ public static class Patch_RecipeDef_AvailableNow
         if (__instance?.defName == "Make_"+ModDefOf.UmThingWeaponSimpleSpear.defName)
         {
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp is { isSimpleSpearUnlocked: false })
+            if (comp is { IsSimpleSpearUnlocked: false })
             {
                 __result = false;
             }

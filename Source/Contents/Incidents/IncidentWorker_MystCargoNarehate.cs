@@ -14,7 +14,7 @@ public class IncidentWorker_MystCargoNarehate:IncidentWorker_GiveQuest
         {
             // var lastFireTicks = target.StoryState.lastFireTicks;
             // var isEverFired= lastFireTicks.TryGetValue(def, out var ticks);
-            if (comp.isYukiVisited && !comp.isCorpseDropped) postFactor = 32f;
+            if (comp.IsYukiVisited && !comp.IsCorpseDropped) postFactor = 32f;
             // Log.Warning($"[Manosaba] lastFireTicks={ticks} and pF={postFactor} (IncidentWorker_MystCargoNarehate)");
         }
         return postFactor * base.ChanceFactorNow(target);
@@ -22,13 +22,13 @@ public class IncidentWorker_MystCargoNarehate:IncidentWorker_GiveQuest
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        if (ManosabaMod.Settings.debugMode) Log.Message("[Manosaba] Try Excute Incident MystCargoNare (Incidents.IncidentWorker_MystCargoNarehate.TryExecuteWorker)");
+        if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Try Execute Incident MystCargoNare (Incidents.IncidentWorker_MystCargoNarehate.TryExecuteWorker)");
         var result = base.TryExecuteWorker(parms);
         if (result)
         {
             var comp = Current.Game.GetComponent<ManosabaGameComponent>();
-            if (comp != null) comp.isCorpseDropped = true;
-            //Log.Message("[Manosaba] excuted IncidentWorker_MystCargoNarehate");
+            if (comp != null) comp.IsCorpseDropped = true;
+            //Log.Message("[Manosaba] executed IncidentWorker_MystCargoNarehate");
         }
         return result;
     }

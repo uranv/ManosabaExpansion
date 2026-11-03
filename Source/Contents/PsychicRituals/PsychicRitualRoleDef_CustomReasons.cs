@@ -9,12 +9,10 @@ public class PsychicRitualRoleDef_NarehateTarget : PsychicRitualRoleDef
     public override bool CanHandleOfferings => true;
     public override TaggedString PawnCannotDoReason(AnyEnum reason, Context context, Pawn pawn, TargetInfo target)
     {
-        ManosabaRitualCondition? myReason = reason.As<ManosabaRitualCondition>();
-        if (myReason is ManosabaRitualCondition.NotNarehate)
-        {
-            return "Manosaba_NarehateTargetInvalid".Translate(pawn.LabelShort);
-        }
-        return base.PawnCannotDoReason(reason, context, pawn, target);
+        var myReason = reason.As<ManosabaRitualCondition>();
+        return myReason is ManosabaRitualCondition.NotNarehate
+            ? "Manosaba_NarehateTargetInvalid".Translate(pawn.LabelShort)
+            : base.PawnCannotDoReason(reason, context, pawn, target);
     }
 }
 
