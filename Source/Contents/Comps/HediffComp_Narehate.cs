@@ -17,37 +17,10 @@ public class HediffComp_Narehate : HediffComp
 {
     private HediffCompProperties_Narehate Props => (HediffCompProperties_Narehate)props;
 
-    private bool _copyPending;
-
-    public override void CompExposeData()
-    {
-        base.CompExposeData();
-        if (Scribe.mode == LoadSaveMode.PostLoadInit) _copyPending = true;
-    }
-
-    public override void CopyFrom(HediffComp other)
-    {
-        base.CopyFrom(other);
-        _copyPending = true;
-    }
-
-    public override void CompPostTick(ref float severityAdjustment)
-    {
-        base.CompPostTick(ref severityAdjustment);
-        if (!_copyPending) return;
-        _copyPending = false;
-        MaintainHiddenHediff();
-    }
-
     // 初始化
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
         base.CompPostPostAdd(dinfo);
-        if (!_copyPending) MaintainHiddenHediff();
-    }
-
-    private void MaintainHiddenHediff()
-    {
         if (!Pawn.health.hediffSet.HasHediff(Props.HiddenHediffDef))
         {
             Pawn.health.AddHediff(Props.HiddenHediffDef);
