@@ -1,4 +1,3 @@
-using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -8,15 +7,13 @@ namespace UranvManosaba.Contents.Utils;
 
 public static class YukiVisitorUtils
 {
-    private static readonly AccessTools.FieldRef<ResearchManager, ResearchProjectDef> CurrentProjRef =
-        AccessTools.FieldRefAccess<ResearchManager, ResearchProjectDef>("currentProj");
-
-    // 奖励: 解锁科技
+    // 奖励：按研究界面显示的进度添加普通研究工作量。
     public static void AddResearchPointsSafe(Pawn pawn, float amount = 1000f)
     {
+        if (amount <= 0f) return;
         var manager = Find.ResearchManager;
         var allUnfinished = DefDatabase<ResearchProjectDef>.AllDefsListForReading
-            .Where(def => !def.IsFinished && def.CanStartNow)
+            .Where(def => def.knowledgeCategory == null && def.baseCost > 0f && !def.IsFinished && def.CanStartNow)
             .ToList();
 
         if (allUnfinished.NullOrEmpty())
@@ -24,7 +21,7 @@ public static class YukiVisitorUtils
             return;
         }
         var safeCandidates = allUnfinished
-            .Where(def => (def.baseCost - manager.GetProgress(def)) > amount)
+            .Where(def => (def.CostApparent - def.ProgressApparent) > amount)
             .ToList();
         ResearchProjectDef targetProject;
         if (!safeCandidates.NullOrEmpty())
@@ -34,22 +31,17 @@ public static class YukiVisitorUtils
         else
         {
             targetProject = allUnfinished
-                .OrderByDescending(def => def.baseCost - manager.GetProgress(def))
+                .OrderByDescending(def => def.CostApparent - def.ProgressApparent)
                 .FirstOrDefault();
         }
         if (targetProject == null) return;
-        // 修正实际加点量
-        var techFactor = targetProject.CostFactor(pawn.Faction.def.techLevel);
-        var researchSpeedFactor = Find.Storyteller.difficulty.researchSpeedFactor;
-        var performedAmount = amount / (techFactor * researchSpeedFactor * 0.00825f);
-        // 执行加点
-        var originalProj = CurrentProjRef(manager);
-        CurrentProjRef(manager) = targetProject;
-        manager.ResearchPerformed(performedAmount, pawn);
-        CurrentProjRef(manager) = originalProj;
-        // 提示信息
-        var letterLabel = "Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel".Translate(targetProject.LabelCap);
-        var letterText = "Manosaba_CompYukiVisitor_ResearchPoints_LetterText".Translate(targetProject.LabelCap, amount);
+        // AddProgress 使用内部进度；按玩家科技系数换算为界面上的奖励点数。
+        var progressBefore = targetProject.ProgressApparent;
+        manager.AddProgress(targetProject, amount / targetProject.CostFactor(Faction.OfPlayer.def.techLevel), pawn);
+        // 完成项目时原版会截断进度，通知使用实际增加的界面点数。
+        var addedProgressText = (targetProject.ProgressApparent - progressBefore).ToString("F0");
+        var letterLabel = "Manosaba_CompYukiVisitor_ResearchPoints_LetterLabel".Translate(addedProgressText);
+        var letterText = "Manosaba_CompYukiVisitor_ResearchPoints_LetterText".Translate(targetProject.LabelCap, addedProgressText);
         Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.PositiveEvent);
     }
 

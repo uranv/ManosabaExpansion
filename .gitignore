@@ -267,3 +267,4 @@ AGENTS.md
 .codex
 .claude
 dev.*
+/.dsh-progress
