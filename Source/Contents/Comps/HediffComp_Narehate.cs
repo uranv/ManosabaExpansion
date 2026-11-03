@@ -5,7 +5,6 @@ namespace UranvManosaba.Contents.Comps;
 public class HediffCompProperties_Narehate : HediffCompProperties
 {
     public HediffDef HiddenHediffDef;
-    public HediffDef CuredHediffDef;
     public HediffCompProperties_Narehate()
     {
         this.compClass = typeof(HediffComp_Narehate);
@@ -38,32 +37,30 @@ public class HediffComp_Narehate : HediffComp
         // 清理错误 dummy 时也要刷新外观，但不能触发治愈副作用。
         Utils.NarehateUtils.RefreshPawnGraphics(Pawn);
 
+        // 有效 mutant 管理组件仍需要这些共享状态，移除显示项不触发治愈。
+        if ((Pawn.mutant?.Def == ModDefOf.UmMutantNarehate &&
+             Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffMutantDummy)) ||
+            Pawn.health.hediffSet.HasHediff(parent.def)) return;
+
+        var hidden = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.HiddenHediffDef);
+        if (hidden != null) Pawn.health.RemoveHediff(hidden);
+
         var dummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
-        if (Pawn.IsMutant || dummyHediff == null) return;
+        var humanOwner = dummyHediff?.TryGetComp<HediffComp_HumanDummy>();
+        if (Pawn.IsMutant || humanOwner == null || Pawn.Dead)
+        {
+            if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate &&
+                Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown)
+                    ?.TryGetComp<HediffComp_Countdown_Mutant>()?.RequiresNarehateMentalState != true)
+            {
+                Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+            }
+            return;
+        }
 
-        // 修改 HumanDummy cured state；UmMutantNarehate 仍由 MutantDummy 维护残骸。
+        // 治愈状态、治愈 Hediff 和相关精神状态统一由 HumanDummy 维护。
+        var wasCured = humanOwner.CachedIsCured;
         HediffComp_HumanDummy.SetDummyCured(dummyHediff);
-
-        // 播放特效
-        Utils.NarehateUtils.EffecterNarehateTrans(Pawn);
-
-        // 添加替换 Hediff
-        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.HiddenHediffDef);
-        if (narehateHiddenHediff != null)
-        {
-            Pawn.health.RemoveHediff(narehateHiddenHediff);
-        }
-        var hanmajyoHediff = Pawn.health.hediffSet.HasHediff(Props.CuredHediffDef);
-        if (Pawn.Dead) return;
-        if (!hanmajyoHediff)
-        {
-            Pawn.health.AddHediff(Props.CuredHediffDef);
-        }
-
-        // 强制结束敌对精神状态 (让小人恢复可控)
-        if (Pawn.InMentalState)
-        {
-            Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
-        }
+        if (!wasCured) Utils.NarehateUtils.EffecterNarehateTrans(Pawn);
     }
 }

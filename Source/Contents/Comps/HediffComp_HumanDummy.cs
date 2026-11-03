@@ -34,6 +34,10 @@ public class HediffComp_HumanDummy : HediffComp
     public bool CachedIsCured;
     public bool CachedIsDisplay;
     public bool ShouldDisplay;
+    public bool RequiresNarehateMentalState => !Pawn.IsMutant && !CachedIsCured && CachedProgress?.IsFinished == true;
+    private bool CountdownRequiresNarehateMentalState => Pawn.health.hediffSet
+        .GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown)?.TryGetComp<HediffComp_Countdown_Mutant>()
+        ?.RequiresNarehateMentalState == true;
     public override void CompExposeData()
     {
         base.CompExposeData();
@@ -142,20 +146,31 @@ public class HediffComp_HumanDummy : HediffComp
     public override void CompPostPostRemoved()
     {
         base.CompPostPostRemoved();
-        // 删除进度 Hediff
         var visibleHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.VisibleHediffDef);
         if (visibleHediff != null) Pawn.health.RemoveHediff(visibleHediff);
-        var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHediffDef);
-        if (narehateHediff != null) Pawn.health.RemoveHediff(narehateHediff);
-        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHiddenHediffDef);
-        if (narehateHiddenHediff != null) Pawn.health.RemoveHediff(narehateHiddenHediff);
         var hanmajyoHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.HanmajyoHediffDef);
         if (hanmajyoHediff != null) Pawn.health.RemoveHediff(hanmajyoHediff);
-        // 删除基因
-        var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
-        if (gene != null) Pawn.genes.RemoveGene(gene);
-        // 停止精神状态
-        if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+
+        // 共享状态交给仍然有效的 MutantDummy，避免旧控制器清理新控制器。
+        var hasMutantOwner = Pawn.mutant?.Def == ModDefOf.UmMutantNarehate &&
+                             Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffMutantDummy);
+        if (!hasMutantOwner)
+        {
+            var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHediffDef);
+            if (narehateHediff != null) Pawn.health.RemoveHediff(narehateHediff);
+            // Narehate 自己清理 Hidden；缺少主体时清理孤立标记。
+            if (!Pawn.health.hediffSet.HasHediff(Props.NarehateHediffDef))
+            {
+                var hidden = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHiddenHediffDef);
+                if (hidden != null) Pawn.health.RemoveHediff(hidden);
+            }
+            var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
+            if (gene != null) Pawn.genes.RemoveGene(gene);
+        }
+
+        if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakFactor ||
+            (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate &&
+             !hasMutantOwner && !CountdownRequiresNarehateMentalState))
         {
             Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
         }
@@ -196,7 +211,7 @@ public class HediffComp_HumanDummy : HediffComp
         //Log.Warning($"[Manosaba] humandummy maintain hediff:\n hasNarehate={hasNarehate},hasNarehateHidden={hasNarehateHidden},hasHanmajyo={hasHanmajyo},hasVisible={hasVisible};\ncachedIsCured={cachedIsCured},cachedIsNarehate={cachedIsNarehate},cachedIsDisplay={cachedIsDisplay},cachedIsFinished={cachedIsFinished},shouldDisplay={shouldDisplay};");
         if (CachedIsCured)
         {
-            if (!hasHanmajyo) Pawn.health.AddHediff(ModDefOf.UmHediffNarehateHealed);
+            if (!hasHanmajyo) Pawn.health.AddHediff(Props.HanmajyoHediffDef);
         }
         if (CachedIsNarehate)
         {
@@ -269,9 +284,10 @@ public class HediffComp_HumanDummy : HediffComp
     {
         //if (ManosabaMod.Settings.debugMode)  Log.Message($"[Manosaba] Current State:\n cachedIsCured={cachedIsCured},\ncachedIsNarehate={cachedIsNarehate},\ncachedIsDisplay={cachedIsDisplay},\ncachedIsFinished={cachedIsFinished},\nshouldDisplay={shouldDisplay}\n(Comps.HediffComp_HumanDummy.MaintainMentalState)");
 
-        if (!CachedIsNarehate)
+        if (!RequiresNarehateMentalState)
         {
-            if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+            if ((Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate && !CountdownRequiresNarehateMentalState) ||
+                (CachedIsCured && Pawn.MentalStateDef == ModDefOf.UmMentalBreakFactor))
             {
                 Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
             }

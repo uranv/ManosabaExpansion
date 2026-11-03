@@ -15,6 +15,19 @@ public class HediffCompProperties_Countdown_Mutant : HediffCompProperties
 public class HediffComp_Countdown_Mutant : HediffComp
 {
     private HediffCompProperties_Countdown_Mutant Props => (HediffCompProperties_Countdown_Mutant)props;
+    public bool RequiresNarehateMentalState => parent.Severity <= 0.001f;
+    private bool HumanRequiresNarehateMentalState => Pawn.health.hediffSet
+        .GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy)?.TryGetComp<HediffComp_HumanDummy>()
+        ?.RequiresNarehateMentalState == true;
+
+    public override void CompPostPostRemoved()
+    {
+        base.CompPostPostRemoved();
+        if (!HumanRequiresNarehateMentalState && Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+        {
+            Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+        }
+    }
 
     // 更新逻辑
     private const int TickInterval = 600; // 基础 Tick 间隔
@@ -38,7 +51,8 @@ public class HediffComp_Countdown_Mutant : HediffComp
         {
             switch (parent.Severity)
             {
-                case > 0.001f when Pawn.InMentalState:
+                case > 0.001f when Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate &&
+                                  !HumanRequiresNarehateMentalState:
                     Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
                     break;
                 case <= 0.001f:

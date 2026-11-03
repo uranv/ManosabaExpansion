@@ -71,20 +71,28 @@ public class HediffComp_MutantDummy : HediffComp
     public override void CompPostPostRemoved()
     {
         base.CompPostPostRemoved();
-        // 删除关联 Hediff
-        var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHediffDef);
-        if (narehateHediff != null) Pawn.health.RemoveHediff(narehateHediff);
-        var narehateHiddenHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHiddenHediffDef);
-        if (narehateHiddenHediff != null) Pawn.health.RemoveHediff(narehateHiddenHediff);
-        var temporalHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.CountdownHediffDef);
-        if (temporalHediff != null) Pawn.health.RemoveHediff(temporalHediff);
-        // 删除基因
-        var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
-        if (gene != null) Pawn.genes.RemoveGene(gene);
-        // 倒计时已移除，不再保留由它维持的残骸暴走。
-        if (Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
+        var humanOwner = Pawn.IsMutant ? null : Pawn.health.hediffSet
+            .GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy)?.TryGetComp<HediffComp_HumanDummy>();
+        // 先移除倒计时，由它结束自己的暴走；缺失时才由管理组件补清理。
+        var countdown = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.CountdownHediffDef);
+        if (countdown != null) Pawn.health.RemoveHediff(countdown);
+        else if (humanOwner?.RequiresNarehateMentalState != true &&
+                 Pawn.MentalStateDef == ModDefOf.UmMentalBreakNarehate)
         {
             Pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+        }
+
+        if (humanOwner == null)
+        {
+            var narehateHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHediffDef);
+            if (narehateHediff != null) Pawn.health.RemoveHediff(narehateHediff);
+            if (!Pawn.health.hediffSet.HasHediff(Props.NarehateHediffDef))
+            {
+                var hidden = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.NarehateHiddenHediffDef);
+                if (hidden != null) Pawn.health.RemoveHediff(hidden);
+            }
+            var gene = Pawn.genes?.GetGene(ModDefOf.UmGeneFactor);
+            if (gene != null) Pawn.genes.RemoveGene(gene);
         }
     }
 

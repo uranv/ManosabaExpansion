@@ -151,7 +151,6 @@
         <comps>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_Narehate">
                 <HiddenHediffDef>UmHediffNarehateHidden</HiddenHediffDef>
-                <CuredHediffDef>UmHediffNarehateHealed</CuredHediffDef>
             </li>
             <li Class="UranvManosaba.Contents.Comps.HediffCompProperties_NarehateHealingReveal">
                 <ApplyPostMultiplier>false</ApplyPostMultiplier>
