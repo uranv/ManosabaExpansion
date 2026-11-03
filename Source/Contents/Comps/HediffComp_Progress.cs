@@ -20,8 +20,8 @@ public class HediffComp_Progress : HediffComp
     public override void CompExposeData()
     {
         base.CompExposeData();
-        Scribe_Values.Look(ref IsFinished, "isFinished", false);
-        Scribe_Values.Look(ref IsDisplay, "isDisplay", false);
+        Scribe_Values.Look(ref IsFinished, "IsFinished", false);
+        Scribe_Values.Look(ref IsDisplay, "IsDisplay", false);
     }
 
 
@@ -45,14 +45,12 @@ public class HediffComp_Progress : HediffComp
         // HumanDummy 的宿主清理前，不再推进 mutant 的魔女化。
         if (Pawn.IsMutant) return;
 
-        if (Pawn.IsHashIntervalTick(TickInterval, delta))
-        {
-            if (IsFinished) return;
+        if (!Pawn.IsHashIntervalTick(TickInterval, delta)) return;
+        if (IsFinished) return;
 
-            UpdateSeverityBasedOnMood(); // 计算隐藏进度
-            TryTurnIntoNarehate(); // 转化魔女残骸
-            TryMentalBreak(); // 触发魔女因子杀意
-        }
+        UpdateSeverityBasedOnMood(); // 计算隐藏进度
+        TryTurnIntoNarehate(); // 转化魔女残骸
+        TryMentalBreak(); // 触发魔女因子杀意
     }
 
     // 显示当前数值 #.#E-#,#.#E-# 形式分别输出当前Severity和上一次更新变化量

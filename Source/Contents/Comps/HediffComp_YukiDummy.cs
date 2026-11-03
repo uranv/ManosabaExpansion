@@ -96,29 +96,35 @@ public class HediffComp_YukiDummy : HediffComp
     private bool MaintainHediffs()
     {
         if (Pawn?.health?.hediffSet == null || CompShouldRemove) return false;
-        // 维护 Yuki 的特殊 Hediff
-        if (Form == YukiForm.Col)
+        switch (Form)
         {
-            var hasHediff = Pawn.health.hediffSet.HasHediff(Props.ColonistHediff);
-            var hasHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.ColonistHiddenHediff);
-            if (!hasHediff) Pawn.health.AddHediff(Props.ColonistHediff);
-            if (!hasHiddenHediff) Pawn.health.AddHediff(Props.ColonistHiddenHediff);
-        }
-        else if (Form == YukiForm.Vis)
-        {
-            var hasVisitorHediff = Pawn.health.hediffSet.HasHediff(Props.VisitorHediff);
-            var hasVisitorHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.VisitorHiddenHediff);
-            if (!hasVisitorHediff) Pawn.health.AddHediff(Props.VisitorHediff);
-            if (!hasVisitorHiddenHediff) Pawn.health.AddHediff(Props.VisitorHiddenHediff);
-        }
-        else
-        {
-            // 只在类型缺失时兼容旧存档；成功恢复后交由下次维护处理。
-            var kind = Pawn.kindDef;
-            Form = kind == ModDefOf.UmPawnKindYukiColonist ? YukiForm.Col :
-                kind == ModDefOf.UmPawnKindYukiVisitor ? YukiForm.Vis : YukiForm.Unknow;
-            _shouldRemove = Form == YukiForm.Unknow;
-            return false;
+            // 维护 Yuki 的特殊 Hediff
+            case YukiForm.Col:
+            {
+                var hasHediff = Pawn.health.hediffSet.HasHediff(Props.ColonistHediff);
+                var hasHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.ColonistHiddenHediff);
+                if (!hasHediff) Pawn.health.AddHediff(Props.ColonistHediff);
+                if (!hasHiddenHediff) Pawn.health.AddHediff(Props.ColonistHiddenHediff);
+                break;
+            }
+            case YukiForm.Vis:
+            {
+                var hasVisitorHediff = Pawn.health.hediffSet.HasHediff(Props.VisitorHediff);
+                var hasVisitorHiddenHediff = Pawn.health.hediffSet.HasHediff(Props.VisitorHiddenHediff);
+                if (!hasVisitorHediff) Pawn.health.AddHediff(Props.VisitorHediff);
+                if (!hasVisitorHiddenHediff) Pawn.health.AddHediff(Props.VisitorHiddenHediff);
+                break;
+            }
+            case YukiForm.Unknow:
+            default:
+            {
+                // 只在类型缺失时兼容旧存档；成功恢复后交由下次维护处理。
+                var kind = Pawn.kindDef;
+                Form = kind == ModDefOf.UmPawnKindYukiColonist ? YukiForm.Col :
+                    kind == ModDefOf.UmPawnKindYukiVisitor ? YukiForm.Vis : YukiForm.Unknow;
+                _shouldRemove = Form == YukiForm.Unknow;
+                return false;
+            }
         }
         // 防止魔女因子
         var humanDummyHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(ModDefOf.UmHediffHumanDummy);
