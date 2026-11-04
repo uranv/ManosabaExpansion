@@ -31,92 +31,15 @@ public class HediffComp_NarehateHealing : HediffComp
             return !CachedHumanDummy.CachedIsNarehate;
         }
     }
-    private float EffectiveHealFactor
-    {
-        get
-        {
-            if (Props.IsOverride)
-            {
-                if (Props.OverrideHealFactor <= 0)
-                {
-                    var log = "[Manosaba] HediffComp_NarehateHealing has {OverrideHealFactor: " +
-                              $"{Props.OverrideHealFactor}" +
-                              "} but {IsOverride: true}";
-                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.EffectiveHealFactor"));
-                    return 1f;
-                }
-                return Props.OverrideHealFactor;
-            }
-            var factor = ManosabaMod.Settings.NarehateHealFactor;
-            if (ApplyPostMultiplier)
-            {
-                factor *= ManosabaMod.Settings.PostHealMultiplier * 10;
-            }
-            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
-            {
-                factor /= ManosabaMod.Settings.NarehateDownedDivisor;
-            }
-            return factor;
-        }
-    }
-    private float EffectiveBloodHealFactor
-    {
-        get
-        {
-            if (Props.IsOverride)
-            {
-                if (Props.OverrideBloodFactor <= 0)
-                {
-                    var log = "[Manosaba] HediffComp_NarehateHealing has {OverrideBloodFactor: " +
-                              $"{Props.OverrideBloodFactor}" +
-                              "} but {IsOverride: true}";
-                    Log.WarningOnce(log,Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.EffectiveBloodHealFactor"));
-                    return 1f;
-                }
-                return Props.OverrideBloodFactor;
-            }
-            var factor = ManosabaMod.Settings.NarehateBloodHealFactor;
-            if (ApplyPostMultiplier)
-            {
-                factor *= ManosabaMod.Settings.PostHealMultiplier * 10;
-            }
-            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
-            {
-                factor /= ManosabaMod.Settings.NarehateDownedDivisor;
-            }
-            return factor;
-        }
-    }
-    private float RegenChance
-    {
-        get
-        {
-            var chance = 0.1f;
-            if (Props.IsOverride)
-            {
-                chance = Mathf.Max(0f,Mathf.Min(Props.OverrideRegenFactor,1f));
-                if (Props.OverrideRegenFactor is <= 0 or > 1)
-                {
-                    var log = "[Manosaba] HediffComp_NarehateHealing has invalid {OverrideRegenFactor: " +
-                              $"{Props.OverrideRegenFactor}" +
-                              "} but {IsOverride: true}. This will not cause any error but also not take any effect.";
-                    Log.WarningOnce(log, Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.RegenChance"));
-                }
-                return chance;
-            }
-
-            if (ApplyPostMultiplier)
-            {
-                chance /= 10;
-            }
-            else if (ManosabaMod.Settings.IsNarehateDownedDivisor && Pawn.Downed)
-            {
-                chance /= ManosabaMod.Settings.NarehateDownedDivisor;
-            }
-            return chance;
-        }
-    }
-    private int TickInterval => (Props.IsOverride || !ApplyPostMultiplier) ? 60 : 600;
+    private float EffectiveHealFactor => Utils.HealingUtils.GetNarehateRecoveryFactor(
+        Pawn, ManosabaMod.Settings.NarehateHealFactor, ApplyPostMultiplier,
+        Props.IsOverride, Props.OverrideHealFactor, nameof(Props.OverrideHealFactor));
+    private float EffectiveBloodHealFactor => Utils.HealingUtils.GetNarehateRecoveryFactor(
+        Pawn, ManosabaMod.Settings.NarehateBloodHealFactor, ApplyPostMultiplier,
+        Props.IsOverride, Props.OverrideBloodFactor, nameof(Props.OverrideBloodFactor));
+    private float RegenChance => Utils.HealingUtils.GetNarehateRegenChance(
+        Pawn, ApplyPostMultiplier, Props.IsOverride, Props.OverrideRegenFactor);
+    private int TickInterval => Utils.HealingUtils.GetNarehateTickInterval(Props.IsOverride, ApplyPostMultiplier);
 
     public override void CopyFrom(HediffComp other)
     {
@@ -151,69 +74,16 @@ public class HediffComp_NarehateHealing : HediffComp
 
     public override string CompDebugString()
     {
-            var result = string.Empty;
-            // 若检查进度，魔女化前不恢复不需要显示
-            if (Props.ApplyStatusSwitch && !CachedHumanDummy.CachedIsFinished) return result;
-            // 若使用后系数，若系数为 0 禁用不需要显示
-            if (ApplyPostMultiplier && !ManosabaMod.Settings.PostAllowHeal) return result;
-            // 生成说明
-            var healPerDay = EffectiveHealFactor;
-            var bloodHealPerDay = EffectiveBloodHealFactor;
-            if (ApplyPostMultiplier)
-            {
-                healPerDay /= 10f;
-                bloodHealPerDay /= 10f;
-            }
-            var stringHeal = "HediffComp_NarehateHealing_TipHeal".Translate(Mathf.Round(healPerDay));
-            var stringBlood = "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(bloodHealPerDay));
-            result += stringHeal;
-            if (ManosabaMod.Settings.IsNarehateBloodHeal) result += "\n" + stringBlood;
+        if (Props.ApplyStatusSwitch && !CachedHumanDummy.CachedIsFinished) return string.Empty;
+        if (ApplyPostMultiplier && !ManosabaMod.Settings.PostAllowHeal) return string.Empty;
 
-            // 自愈部件说明
-            var regenTickExpected = TickInterval / RegenChance;
-            float regenCount;
-            string tipRegenNumber;
-            var regenTipUnit1 = "HediffComp_NarehateHealing_TipRegenUnit1".Translate();
-            var regenTipUnit2 = "HediffComp_NarehateHealing_TipRegenUnit2".Translate();
-            var regenTipUnit3 = "HediffComp_NarehateHealing_TipRegenUnit3".Translate();
-            var regenTipUnit4 = "HediffComp_NarehateHealing_TipRegenUnit4".Translate();
-            var regenTipUnit5 = "HediffComp_NarehateHealing_TipRegenUnit5".Translate();
-            switch(regenTickExpected)
-            {
-                // 显示器官自愈：x日/处
-                case >60000:
-                    regenCount = Mathf.Round(regenTickExpected / 60000);
-                    tipRegenNumber = regenCount.ToString("F0") + regenTipUnit1;
-                    break;
-                // 显示器官自愈：x处/日
-                case >2500:
-                    regenCount = Mathf.Round(60000 / regenTickExpected);
-                    tipRegenNumber = regenCount.ToString("F0") + regenTipUnit2;
-                    break;
-                // 显示器官自愈：x处/小时
-                case >600:
-                    regenCount = Mathf.Round(2500 / regenTickExpected);
-                    tipRegenNumber = regenCount.ToString("F0") + regenTipUnit3;
-                    break;
-                // 显示器官自愈：x秒/处
-                case >60:
-                    regenCount = Mathf.Round(regenTickExpected / 60);
-                    tipRegenNumber = regenCount.ToString("F0") + regenTipUnit4;
-                    break;
-                // 显示器官自愈：x处/秒
-                case >0:
-                    regenCount = Mathf.Round(60 / regenTickExpected);
-                    tipRegenNumber = regenCount.ToString("F0") + regenTipUnit5;
-                    break;
-                // 错误
-                default:
-                    Log.ErrorOnce("[Manosaba] HediffComp_NarehateHealing has {regenExpectTick: 0}",
-                        Gen.HashCombine(Pawn.thingIDNumber, "HediffComp_NarehateHealing.CompDebugString"));
-                    tipRegenNumber = "ERR";
-                    break;
-            }
-            var stringRegen = "HediffComp_NarehateHealing_TipRegen".Translate() + tipRegenNumber;
-            result += "\n" + stringRegen;
-            return result;
+        var result = "HediffComp_NarehateHealing_TipHeal".Translate(Mathf.Round(
+            Utils.HealingUtils.GetNarehateDailyRate(EffectiveHealFactor, TickInterval))).ToString();
+        if (ManosabaMod.Settings.IsNarehateBloodHeal)
+        {
+            result += "\n" + "HediffComp_NarehateHealing_TipBlood".Translate(Mathf.Round(
+                Utils.HealingUtils.GetNarehateDailyRate(EffectiveBloodHealFactor, TickInterval)));
         }
+        return result + "\n" + Utils.HealingUtils.GetNarehateRegenTip(Pawn, RegenChance, TickInterval);
     }
+}

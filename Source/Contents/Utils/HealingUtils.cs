@@ -8,6 +8,84 @@ namespace UranvManosaba.Contents.Utils;
 /// </summary>
 public static class HealingUtils
 {
+    public static float GetNarehateRecoveryFactor(Pawn pawn, float configuredFactor,
+        bool applyPostMultiplier, bool isOverride, float overrideFactor, string overrideName)
+    {
+        if (isOverride)
+        {
+            if (overrideFactor <= 0f)
+            {
+                Log.WarningOnce($"[Manosaba] {overrideName} must be positive. Using a recovery factor of 1.",
+                    Gen.HashCombine(pawn.thingIDNumber, "HealingUtils.RecoveryFactor." + overrideName));
+                return 1f;
+            }
+            return overrideFactor;
+        }
+        if (applyPostMultiplier) return configuredFactor * (ManosabaMod.Settings.PostHealMultiplier * 10f);
+        if (ManosabaMod.Settings.IsNarehateDownedDivisor && pawn.Downed)
+            return configuredFactor / ManosabaMod.Settings.NarehateDownedDivisor;
+        return configuredFactor;
+    }
+
+    public static float GetNarehateRegenChance(Pawn pawn, bool applyPostMultiplier,
+        bool isOverride, float overrideFactor)
+    {
+        if (isOverride)
+        {
+            if (overrideFactor is <= 0f or > 1f)
+            {
+                Log.WarningOnce($"[Manosaba] OverrideRegenFactor is {overrideFactor}. Regeneration probability is clamped to [0, 1].",
+                    Gen.HashCombine(pawn.thingIDNumber, "HealingUtils.RegenChance"));
+            }
+            return Mathf.Max(0f, Mathf.Min(overrideFactor, 1f));
+        }
+        if (applyPostMultiplier) return 0.1f / 10f;
+        if (ManosabaMod.Settings.IsNarehateDownedDivisor && pawn.Downed)
+            return 0.1f / ManosabaMod.Settings.NarehateDownedDivisor;
+        return 0.1f;
+    }
+
+    public static int GetNarehateTickInterval(bool isOverride, bool applyPostMultiplier) =>
+        isOverride || !applyPostMultiplier ? 60 : 600;
+
+    public static float GetNarehateDailyRate(float factor, int tickInterval) => factor / (tickInterval / 60f);
+
+    public static string GetNarehateRegenTip(Pawn pawn, float chance, int tickInterval)
+    {
+        var expectedTicks = tickInterval / chance;
+        float count;
+        string unit;
+        switch (expectedTicks)
+        {
+            case > 60000f:
+                count = expectedTicks / 60000f;
+                unit = "HediffComp_NarehateHealing_TipRegenUnit1";
+                break;
+            case > 2500f:
+                count = 60000f / expectedTicks;
+                unit = "HediffComp_NarehateHealing_TipRegenUnit2";
+                break;
+            case > 600f:
+                count = 2500f / expectedTicks;
+                unit = "HediffComp_NarehateHealing_TipRegenUnit3";
+                break;
+            case > 60f:
+                count = expectedTicks / 60f;
+                unit = "HediffComp_NarehateHealing_TipRegenUnit4";
+                break;
+            case > 0f:
+                count = 60f / expectedTicks;
+                unit = "HediffComp_NarehateHealing_TipRegenUnit5";
+                break;
+            default:
+                Log.ErrorOnce("[Manosaba] Expected regeneration interval must be positive.",
+                    Gen.HashCombine(pawn.thingIDNumber, "HealingUtils.RegenTip"));
+                return "HediffComp_NarehateHealing_TipRegen".Translate() + "ERR";
+        }
+        return "HediffComp_NarehateHealing_TipRegen".Translate() +
+               Mathf.Round(count).ToString("F0") + unit.Translate();
+    }
+
     /// <summary>
     /// Try to regenerate {count} number of missing part per call
     /// </summary>
