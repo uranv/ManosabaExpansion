@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- <UmThingCorpseNarehate.label>魔女残骸的尸体</UmThingCorpseNarehate.label> -->
+    <UmThingCorpseNarehate.label>Corpse of a narehate of a witch</UmThingCorpseNarehate.label>
+    <!-- <UmThingCorpseNarehate.description>一具原本属于人类的遗体，受魔女因子的诅咒转化为了魔女的残骸。等等，魔女的残骸不是无法死亡的吗……</UmThingCorpseNarehate.description> -->
+    <UmThingCorpseNarehate.description>The remains of what was once a human, transformed into a narehate of a witch by the curse of the witch factor. Wait, aren't narehates of witches immortal...?</UmThingCorpseNarehate.description>
+    <!-- <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label>初步调查</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label> -->
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label>Preliminary investigation</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label>
+    <!-- <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text>过初步调查，在这具魔女的残骸的尸体上你发现了明显的异常之处。她的眼睛不知为何变成了结晶化的无机物宝石形态。</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text> -->
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text>Through a preliminary investigation, you found obvious anomalies on this corpse of a narehate of a witch. For some reason, her eyes have turned into crystallized inorganic gemstone forms.</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text>
+    <!-- <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label>调查完成</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label> -->
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label>Investigation complete</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label>
+    <!-- <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text>你已经完全解析了杀死这个魔女的残骸的秘密。利用一种被称为特雷德基姆的特殊药剂，你可以无效化魔女因子带来的不死性，并且彻底杀死它的携带者。</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text> -->
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text>You have completely analyzed the secret to killing this narehate of a witch. By using a special potion called Trēdecim, you can nullify the immortality granted by the witch factor and thoroughly kill its carrier.</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text>
+</LanguageData>

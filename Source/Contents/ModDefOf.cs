@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 
 namespace UranvManosaba.Contents;
@@ -34,6 +34,7 @@ public static class ModDefOf
     public static ResearchProjectDef UmResearchProjectSabbat;
 
     // ThingDefs
+    public static ThingDef UmThingCorpseNarehate;
     public static ThingDef UmThingAburibin;
     public static ThingDef UmThingCrystallizedEye;
     public static ThingDef UmThingRaceYuki;

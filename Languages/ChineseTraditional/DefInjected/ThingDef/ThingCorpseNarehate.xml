@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <UmThingCorpseNarehate.label>魔女殘骸的屍體</UmThingCorpseNarehate.label>
+    <UmThingCorpseNarehate.description>一具原本屬於人類的遺體，受魔女因子的詛咒轉化為了魔女的殘骸。等等，魔女的殘骸不是無法死亡的嗎……</UmThingCorpseNarehate.description>
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label>初步調查</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.label>
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text>過初步調查，在這具魔女的殘骸的屍體上你發現了明顯的異常之處。她的眼睛不知為何變成了結晶化的無機物寶石形態。</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.0.text>
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label>調查完成</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.label>
+    <UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text>你已經完全解析了殺死這個魔女的殘骸的秘密。利用一種被稱為特雷德基姆的特殊藥劑，你可以無效化魔女因子帶來的不死性，並且徹底殺死它的攜帶者。</UmThingCorpseNarehate.comps.CompStudyUnlocks.studyNotes.1.text>
+</LanguageData>

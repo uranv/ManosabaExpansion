@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Class="UranvManosaba.Contents.Items.ThingDef_NarehateCorpse">
+        <defName>UmThingCorpseNarehate</defName>
+        <label>Corpse of a narehate of a witch</label>
+        <description>The remains of what was once a human, transformed into a narehate of a witch by the curse of the witch factor. Wait, aren't narehates of witches immortal...?</description>
+        <thingClass>UranvManosaba.Contents.Items.Corpse_NarehateCorpse</thingClass>
+        <category>Item</category>
+        <tickerType>Rare</tickerType>
+        <altitudeLayer>ItemImportant</altitudeLayer>
+        <selectable>true</selectable>
+        <alwaysHaulable>true</alwaysHaulable>
+        <soundDrop>Corpse_Drop</soundDrop>
+        <pathCost>14</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <Flammability>1</Flammability>
+            <DeteriorationRate>2</DeteriorationRate>
+            <Mass>60</Mass>
+            <!-- Native corpses use this nutrition value. Ingestible configuration checks require a nonzero value with DesperateOnly. -->
+            <Nutrition>5.2</Nutrition>
+        </statBases>
+        <inspectorTabs>
+            <li>RimWorld.ITab_StudyNotes</li>
+        </inspectorTabs>
+        <thingCategories>
+            <li>CorpsesHumanlike</li>
+        </thingCategories>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Studiable">
+                <frequencyTicks>60000</frequencyTicks>
+                <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+                <showToggleGizmo>true</showToggleGizmo>
+                <studyAmountToComplete>20</studyAmountToComplete>
+                <anomalyKnowledge>2</anomalyKnowledge>
+                <knowledgeCategory>Basic</knowledgeCategory>
+            </li>
+            <li Class="CompProperties_StudyUnlocks">
+                <studyNotes>
+                    <li>
+                        <threshold>8</threshold>
+                        <label>Preliminary investigation</label>
+                        <text>Through a preliminary investigation, you found obvious anomalies on this corpse of a narehate of a witch. For some reason, her eyes have turned into crystallized inorganic gemstone forms.</text>
+                    </li>
+                    <li>
+                        <threshold>20</threshold>
+                        <label>Investigation complete</label>
+                        <text>You have completely analyzed the secret to killing this narehate of a witch. By using a special potion called Trēdecim, you can nullify the immortality granted by the witch factor and thoroughly kill its carrier.</text>
+                    </li>
+                </studyNotes>
+            </li>
+        </comps>
+        <ingestible>
+            <foodType>Corpse</foodType>
+            <sourceDef>Human</sourceDef>
+            <preferability>DesperateOnly</preferability>
+        </ingestible>
+    </ThingDef>
+</Defs>

@@ -21,7 +21,9 @@
         <description>This corpse was once a humanoid cursed by the witch's factor, eventually becoming a narehate of a witch.\n\nWhile narehates of witches possess a form of immortality, there are still specific methods capable of killing them.</description>
         <uiIconPath>ui/codexentries/narehate_corpse</uiIconPath>
         <category>Advanced</category>
-        <!--<linkedThings><li>UmThingCorpseNarehate</li></linkedThings>-->
+        <linkedThings>
+            <li>UmThingCorpseNarehate</li>
+        </linkedThings>
         <discoveredResearchProjects>
             <li>UmResearchProjectKill</li>
         </discoveredResearchProjects>

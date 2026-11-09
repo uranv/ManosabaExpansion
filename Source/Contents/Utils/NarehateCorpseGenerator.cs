@@ -46,9 +46,8 @@ public static class NarehateCorpseGenerator
             return null;
         }
 
-        // 创建定义 NarehateCorpse
-        var myDef = DefDatabase<ThingDef>.GetNamed("UmThingCorpseNarehate");
-        var specialCorpse = (Corpse_NarehateCorpse)ThingMaker.MakeThing(myDef);
+        // 使用已注册的定义创建尸体实例
+        var specialCorpse = (Corpse_NarehateCorpse)ThingMaker.MakeThing(ModDefOf.UmThingCorpseNarehate);
 
         // 将 Pawn 从原尸体转移到新尸体
         var oldOwner = standardCorpse.GetDirectlyHeldThings();
