@@ -78,7 +78,8 @@ public class Comp_YukiVisitor : ThingComp
     public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
     {
         base.PostPostApplyDamage(dinfo, totalDamageDealt);
-        if (parent.Destroyed || !parent.Spawned) return;
+        // 离场推迟到 tick 结束，已登记时不再重复发信
+        if (parent.Destroyed || !parent.Spawned || YukiGeneralUtils.IsLeaving((Pawn)parent)) return;
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         // 离开逻辑
         if (dinfo.Def.ExternalViolenceFor(parent))
@@ -100,7 +101,7 @@ public class Comp_YukiVisitor : ThingComp
     public override void Notify_Downed()
     {
         base.Notify_Downed();
-        if (parent.Destroyed || !parent.Spawned) return;
+        if (parent.Destroyed || !parent.Spawned || YukiGeneralUtils.IsLeaving((Pawn)parent)) return;
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         // 离开逻辑
         if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Yuki left due to: downed (Comps.CompProperties_YukiVisitor.PostNotify_Downed)");
@@ -112,7 +113,7 @@ public class Comp_YukiVisitor : ThingComp
     public override void Notify_Arrested(bool succeeded)
     {
         base.Notify_Arrested(succeeded);
-        if (parent.Destroyed || !parent.Spawned) return;
+        if (parent.Destroyed || !parent.Spawned || YukiGeneralUtils.IsLeaving((Pawn)parent)) return;
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6
         // 离开逻辑
         if (ManosabaMod.Settings.DebugMode) Log.Message("[Manosaba] Yuki left due to: arrested (Comps.CompProperties_YukiVisitor.Notify_Arrested");
@@ -172,7 +173,7 @@ public class Comp_YukiVisitor : ThingComp
             Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NegativeEvent, pawn);
         }
     }
-    // JobDriver及本地引用立刻离开地图
+    // JobDriver及本地引用登记离场，当前 tick 结束后撤离
     public void Notify_LeaveMap(bool applyMood = false)
     {
         if (parent is Pawn { IsColonist: true }) return;  // 玩家阵营时跳过撤离 v1.0.6

@@ -1,7 +1,6 @@
 using HarmonyLib;
 using RimWorld;
 using Verse;
-using Verse.AI.Group;
 
 namespace UranvManosaba.Contents.Patches;
 
@@ -77,25 +76,13 @@ public static class Patch_Pawn_Kill
 
     private static void OnKillYuki(Pawn pawn)
     {
+        // 离场已登记时，忽略撤离前重复的死亡判定
+        if (!Utils.YukiGeneralUtils.LeaveMapInstantly(pawn)) return;
         // 发信
         if (ManosabaMod.Settings.DebugMode) Log.Warning($"[Manosaba] {pawn.LabelShort} left due to: lethal damage (Patch_Pawn_Kill)");
         var letterLabel = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterLabel".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
         var letterText = "Manosaba_PatchUndead_teleportLeaveOnDeath_letterText".Translate(ManosabaMod.YukiNameDef.Named("YUKI"));
-        // 无地图时直接离开
-        if (pawn is { Map: null })
-        {
-            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent);
-            pawn.GetLord()?.Notify_PawnLost(pawn, PawnLostCondition.LeftVoluntarily, null);
-            pawn.DeSpawn();
-        }
-        // 有地图时放下全部装备，播放特效并离开
-        else
-        {
-            Find.LetterStack.ReceiveLetter(letterLabel, letterText, LetterDefOf.NeutralEvent, new TargetInfo(pawn.Position, pawn.Map));
-            if (pawn.IsColonist) Utils.NarehateUtils.UnequipAll(pawn, false);
-            // var mode = __instance.IsColonist ? DestroyMode.KillFinalize : DestroyMode.Vanish;
-            Utils.YukiGeneralUtils.LeaveMapInstantly(pawn);
-        }
+        Utils.YukiGeneralUtils.SendLeaveLetter(pawn, letterLabel, letterText, LetterDefOf.NeutralEvent);
     }
 }
 

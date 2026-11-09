@@ -1,5 +1,6 @@
 using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using UranvManosaba.Contents.Comps;
 using Verse;
@@ -160,27 +161,39 @@ public static class YukiGeneralUtils
         var lastName = "YukiGenerator_lastName".CanTranslate() ? "YukiGenerator_lastName".Translate().ToString() : "Tsukishiro";
         p.Name = new NameTriple(firstName, nickName, lastName);
     }
-    // 瞬移离开地图
-    public static void LeaveMapInstantly(Pawn p, DestroyMode mode = DestroyMode.Vanish, bool applyMood = false)
+    // 是否已登记离场
+    public static bool IsLeaving(Pawn p) => Current.Game.GetComponent<ManosabaGameComponent>().IsDepartureQueued(p);
+
+    // 登记瞬移离场，已登记时返回 false；撤离在当前 tick 结束后执行，避开伤害、健康和 Job 回调栈
+    public static bool LeaveMapInstantly(Pawn p, bool applyMood = false) =>
+        Current.Game.GetComponent<ManosabaGameComponent>().TryQueueDeparture(p, applyMood);
+
+    // 离场发信：有所属地图时关联离场位置；远行队或世界容器内照常发信，不关联地图
+    public static void SendLeaveLetter(Pawn p, TaggedString label, TaggedString text, LetterDef letterDef)
     {
-        if (p is not { Spawned: true }) return;
-        var map = p.Map;
-        if (map == null) return;
-        var pos = p.Position;
-        // vfx
+        var target = p.MapHeld != null ? new TargetInfo(p.PositionHeld, p.MapHeld) : LookTargets.Invalid;
+        Find.LetterStack.ReceiveLetter(label, text, letterDef, target);
+    }
+
+    // 执行离场：特效和掉落取 MapHeld 位置，地图内容器按所属容器追溯；Lord、远行队及销毁实例与有无地图无关
+    public static void Depart(Pawn p, bool applyMood)
+    {
+        var map = p.MapHeld;
+        var pos = p.PositionHeld;
+        var caravan = p.GetCaravan();
+        if (map != null) PlayLeaveEffects(p, map, pos, applyMood);
+        if (p.IsColonist) HandOverPossessions(p, map, pos, caravan);
+        LeaveLord(p);
+        if (caravan != null) LeaveCaravan(p, caravan);
+        DestroyInstance(p);
+    }
+
+    // 地图表现：特效、喧哗及访客离场心情
+    private static void PlayLeaveEffects(Pawn p, Map map, IntVec3 pos, bool applyMood)
+    {
         EffecterDefOf.MeatExplosion.Spawn(pos, map).Cleanup();
         GenClamor.DoClamor(p, pos, 10, ClamorDefOf.Ability);
-        // 心情减益
         if (applyMood && !p.IsColonist) AddThoughtToAllColonists(map, ModDefOf.UmThoughtYukiLeaveInstantly);
-        // 移除 Pawn 并通知 Group
-        p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.LeftVoluntarily, null);
-        // 推迟到当前 tick 结束执行，规避一些日志记录 pawn def 问题
-        LongEventHandler.ExecuteWhenFinished(() =>
-        {
-            if (p.Spawned) p.DeSpawn(mode);
-        });
-
-        //p.Destroy();
         // 音效
         //SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(pos, map));
         // // 视觉闪光 (FlashEntry)
@@ -198,6 +211,41 @@ public static class YukiGeneralUtils
         // outerRingExitOverlay.link.detachAfterTicks = 0;
         // map.flecks.CreateFleck(outerRingExitOverlay);
     }
+
+    // 物资：殖民者全部装备收入背包后，有地图时在所属位置掉落并禁用，否则转交远行队或所在世界容器
+    private static void HandOverPossessions(Pawn p, Map map, IntVec3 pos, Caravan caravan)
+    {
+        NarehateUtils.UnequipAll(p);
+        if (map != null)
+        {
+            p.inventory.DropAllNearPawn(pos, forbid: true);
+        }
+        else if (caravan != null)
+        {
+            CaravanInventoryUtility.MoveAllInventoryToSomeoneElse(p, caravan.PawnsListForReading);
+        }
+        else if (p.holdingOwner != null)
+        {
+            p.inventory.innerContainer.TryTransferAllToContainer(p.holdingOwner);
+        }
+    }
+
+    // Lord：按主动离开结算，避免销毁时按 Vanished 结算
+    private static void LeaveLord(Pawn p) => p.GetLord()?.Notify_PawnLost(p, PawnLostCondition.LeftVoluntarily);
+
+    // 远行队：沿用原版成员损失处理；仍有殖民者时只移出成员，最后一名殖民者离开时放弃物资并解散远行队
+    private static void LeaveCaravan(Pawn p, Caravan caravan) => caravan.Notify_MemberDied(p);
+
+    // 销毁实例：未生成时先退出容器，部分容器销毁内容物时不会自动移除；已生成时 holdingOwner 是地图，由 DeSpawn 处理
+    private static void DestroyInstance(Pawn p)
+    {
+        if (!p.Spawned) p.holdingOwner?.Remove(p);
+        p.Destroy();
+        if (p.Faction != Faction.OfPlayer) return;
+        BillUtility.Notify_ColonistUnavailable(p);
+        Find.ColonistBar.MarkColonistsDirty();
+    }
+
     private static void AddThoughtToAllColonists(Map map, ThoughtDef thoughtDef)
     {
         if (map == null || thoughtDef == null)

@@ -21,8 +21,36 @@ public class ManosabaGameComponent : GameComponent
     // 运行时 Unity 音频引用，无需持久化
     public Sustainer CachedSustainer;
 
+    // 待离场月代雪及是否施加心情；每 tick 末及每帧清空，存档时不会残留
+    private readonly Dictionary<Pawn, bool> _pendingDepartures = new();
+
     public ManosabaGameComponent(Game game)
     {
+    }
+
+    public bool IsDepartureQueued(Pawn p) => _pendingDepartures.ContainsKey(p);
+
+    public bool TryQueueDeparture(Pawn p, bool applyMood)
+    {
+        if (_pendingDepartures.ContainsKey(p)) return false;
+        _pendingDepartures.Add(p, applyMood);
+        return true;
+    }
+
+    // 地图及世界 tick 之后执行；Update 处理暂停时登记的离场
+    public override void GameComponentTick() => ProcessDepartures();
+
+    public override void GameComponentUpdate() => ProcessDepartures();
+
+    private void ProcessDepartures()
+    {
+        if (_pendingDepartures.Count == 0) return;
+        var departures = _pendingDepartures.ToList();
+        _pendingDepartures.Clear();
+        foreach (var departure in departures)
+        {
+            if (!departure.Key.Destroyed) Utils.YukiGeneralUtils.Depart(departure.Key, departure.Value);
+        }
     }
 
     // 存档读写

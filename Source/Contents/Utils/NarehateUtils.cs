@@ -72,7 +72,7 @@ public static class NarehateUtils
                 pawn.apparel.Remove(item);
                 if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
                 {
-                    GenPlace.TryPlaceThing(item, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                    GenPlace.TryPlaceThing(item, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near);
                 }
             }
         }
@@ -85,12 +85,12 @@ public static class NarehateUtils
                 pawn.equipment.Remove(item);
                 if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
                 {
-                    GenPlace.TryPlaceThing(item, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                    GenPlace.TryPlaceThing(item, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near);
                 }
             }
         }
         // 不放入背包则全部掉落周围，默认禁止物品
         if (putInInventory) return;
-        pawn.inventory?.DropAllNearPawn(pawn.Position, forbid: true);
+        pawn.inventory?.DropAllNearPawn(pawn.PositionHeld, forbid: true);
     }
 }
