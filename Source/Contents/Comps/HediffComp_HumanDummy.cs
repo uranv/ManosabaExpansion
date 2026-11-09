@@ -141,6 +141,8 @@ public class HediffComp_HumanDummy : HediffComp
         MaintainHediffs();
         MaintainGene();
         MaintainMentalState();
+        // 已有 B水 Hediff 时获得因子立即死亡
+        TredecimUtils.KillIfFactorAndTredecim(Pawn);
     }
     // 同时删除所有关联特性
     public override void CompPostPostRemoved()

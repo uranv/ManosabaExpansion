@@ -18,7 +18,6 @@ public static class NarehateCorpseGenerator
 
         // 添加 Hediff
         pawn.health.AddHediff(ModDefOf.UmHediffNarehate);
-        pawn.health.AddHediff(ModDefOf.UmHediffTredecim);
 
         var hediff = HediffMaker.MakeHediff(ModDefOf.UmHediffHumanDummy, pawn);
         hediff.Severity = 1f;
@@ -29,6 +28,8 @@ public static class NarehateCorpseGenerator
             compProgress.IsDisplay = false;
         }
         pawn.health.AddHediff(hediff);
+        // B水在 Dummy 之后添加，由下方统一杀死为尸体
+        pawn.health.AddHediff(ModDefOf.UmHediffTredecim);
 
         // 添加绘制comp
         if (pawn.GetComp<Comps.Comp_NarehateVisuals>() == null)

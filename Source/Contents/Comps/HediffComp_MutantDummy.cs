@@ -66,6 +66,8 @@ public class HediffComp_MutantDummy : HediffComp
         if (_copyPending || InvalidHost) return;
         MaintainHediffs();
         MaintainGene();
+        // 已有 B水 Hediff 时获得因子立即死亡
+        Utils.TredecimUtils.KillIfFactorAndTredecim(Pawn);
     }
 
     public override void CompPostPostRemoved()
