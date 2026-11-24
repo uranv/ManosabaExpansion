@@ -6,91 +6,56 @@ namespace UranvManosaba.Contents.Utils;
 
 public static class NarehateUtils
 {
-    /// <summary>
-    /// 绘制工具：刷新全部 Render Nodes
-    /// </summary>
-    public static void RefreshPawnGraphics(Pawn pawn)
+    public static void PlayTransformationEffect(Pawn pawn)
     {
-        if (pawn == null || pawn.Drawer == null || pawn.Drawer.renderer == null) return;
-        pawn.Drawer.renderer.SetAllGraphicsDirty();
-        pawn.Drawer.renderer.renderTree.SetDirty();
-        PortraitsCache.SetDirty(pawn);
-    }
+        if (!pawn.Spawned) return;
 
-    /// <summary>
-    /// 魔女残骸变身特效
-    /// !!!needfix!!!
-    /// 特效需要修改
-    /// </summary>
-    public static void EffecterNarehateTrans(Pawn pawn)
-    {
-        if (pawn is not { Spawned: true } || pawn.Map == null) return;
-
-        var pos = pawn.DrawPos;
         var map = pawn.Map;
+        EffecterDefOf.HarbingerTreeConsume.SpawnMaintained(pawn, map);
 
-        // 血肉特效
-        EffecterDefOf.MeatExplosion.Spawn(pos.ToIntVec3(), pawn.Map);
+        var position = pawn.DrawPos;
+        if (!position.ShouldSpawnMotesAt(map)) return;
 
-        // // 中心闪光 (瞬间高亮)
-        // FleckMaker.ThrowLightningGlow(pos, map, 3.0f);
-        // 爆发烟雾 (产生气浪感)
-        for (var i = 0; i < 6; i++)
+        ThrowBlackSmoke(position, map, 1.75f, 0f, 0.12f);
+        var angle = Rand.Range(0f, 45f);
+        for (var i = 0; i < 8; i++)
         {
-            Vector3 offset = Rand.InsideUnitCircle * 0.5f;
-            FleckMaker.ThrowAirPuffUp(pos + offset, map);
+            ThrowBlackSmoke(position, map, Rand.Range(0.8f, 1.15f),
+                angle + i * 45f, Rand.Range(0.85f, 1.45f));
         }
-        // 能量粒子 (向四周飞溅)
-        // for (var i = 0; i < 12; i++)
-        // {
-        //     var data = FleckMaker.GetDataStatic(
-        //         pos,
-        //         map,
-        //         FleckDefOf.MicroSparks,
-        //         Rand.Range(1.2f, 2.5f)
-        //     );
-        //     data.velocityAngle = Rand.Range(0, 360);
-        //     data.velocitySpeed = Rand.Range(1f, 4f);
-        //     map.flecks.CreateFleck(data);
-        // }
-        // 音效
-        // SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(pawn);
     }
 
-    /// <summary>
-    /// 脱去所有装备
-    /// </summary>
-    public static void UnequipAll(Pawn pawn, bool putInInventory = true)
+    public static void ThrowBlackSmoke(Vector3 position, Map map, float size, float angle, float speed)
     {
-        if (pawn == null) return;
-        // 卸下装备
-        if (pawn.apparel is { WornApparelCount: > 0 })
+        var smoke = FleckMaker.GetDataStatic(position, map, ModDefOf.UmFleckNarehateSmoke, size);
+        smoke.instanceColor = new Color(0.04f, 0.035f, 0.055f);
+        smoke.rotationRate = Rand.Range(-24f, 24f);
+        smoke.velocityAngle = angle;
+        smoke.velocitySpeed = speed;
+        map.flecks.CreateFleck(smoke);
+    }
+
+    public static void UnequipAll(Pawn pawn)
+    {
+        if (pawn.inventory == null) return;
+
+        var inventory = pawn.inventory.innerContainer;
+        pawn.apparel?.GetDirectlyHeldThings().TryTransferAllToContainer(inventory);
+        pawn.equipment?.GetDirectlyHeldThings().TryTransferAllToContainer(inventory);
+    }
+
+    public static void UnloadTransformationGear(Pawn pawn)
+    {
+        if (pawn.inventory == null) return;
+
+        UnequipAll(pawn);
+        if (pawn.carryTracker?.CarriedThing is { } cargo && cargo is not Pawn)
         {
-            var wornApparel = pawn.apparel.WornApparel.ListFullCopy();
-            foreach (var item in wornApparel)
-            {
-                pawn.apparel.Remove(item);
-                if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
-                {
-                    GenPlace.TryPlaceThing(item, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near);
-                }
-            }
+            pawn.inventory.innerContainer.TryAddOrTransfer(cargo);
         }
-        // 武器放回背包
-        if (pawn.equipment != null && pawn.equipment.HasAnything())
-        {
-            var equipment = pawn.equipment.AllEquipmentListForReading.ListFullCopy();
-            foreach (var item in equipment)
-            {
-                pawn.equipment.Remove(item);
-                if (!pawn.inventory.innerContainer.TryAddOrTransfer(item))
-                {
-                    GenPlace.TryPlaceThing(item, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near);
-                }
-            }
-        }
-        // 不放入背包则全部掉落周围，默认禁止物品
-        if (putInInventory) return;
-        pawn.inventory?.DropAllNearPawn(pawn.PositionHeld, forbid: true);
+
+        var position = pawn.PositionHeld;
+        if (pawn.MapHeld is { } map && position.InBounds(map))
+            pawn.inventory.DropAllNearPawn(position, forbid: true);
     }
 }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ApparelLayerDef>
+        <defName>UmApparelLayerNarehateOverlay</defName>
+        <label>narehate overlay</label>
+        <drawOrder>600</drawOrder>
+    </ApparelLayerDef>
+
+    <BodyPartGroupDef>
+        <defName>UmBodyPartGroupNarehateFace</defName>
+        <label>face overlay</label>
+        <listOrder>100</listOrder>
+    </BodyPartGroupDef>
+
+    <BodyPartGroupDef>
+        <defName>UmBodyPartGroupNarehateBody</defName>
+        <label>body overlay</label>
+        <listOrder>80</listOrder>
+    </BodyPartGroupDef>
+
+    <ThingDef Name="UmApparelNarehateBase" ParentName="ApparelNoQualityBase" Abstract="True">
+        <useHitPoints>false</useHitPoints>
+        <smeltable>false</smeltable>
+        <techLevel>Ultra</techLevel>
+        <thingCategories>
+            <li>ApparelMisc</li>
+        </thingCategories>
+        <statBases>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Flammability>0</Flammability>
+            <EquipDelay>1</EquipDelay>
+        </statBases>
+        <apparel>
+            <layers>
+                <li>UmApparelLayerNarehateOverlay</li>
+            </layers>
+            <wearPerDay>0</wearPerDay>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+            <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+            <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+        </apparel>
+        <recipeMaker>
+            <researchPrerequisite>UmResearchProjectControl</researchPrerequisite>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <recipeUsers>
+                <li>CraftingSpot</li>
+                <li>BioferriteShaper</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="UmApparelNarehateBase">
+        <defName>UmThingApparelNarehateMask</defName>
+        <label>narehate mask</label>
+        <description>A bioferrite mask shaped like a witch's narehate. It conceals other headgear while worn. The mask offers no armor protection.</description>
+        <graphicData>
+            <texPath>things/pawn/humanlike/narehate/head_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <costList>
+            <Bioferrite>15</Bioferrite>
+        </costList>
+        <statBases>
+            <Mass>0.5</Mass>
+            <WorkToMake>1800</WorkToMake>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UmBodyPartGroupNarehateFace</li>
+            </bodyPartGroups>
+            <renderNodeProperties>
+                <li>
+                    <debugLabel>Narehate mask</debugLabel>
+                    <workerClass>PawnRenderNodeWorker_Apparel_Head</workerClass>
+                    <parentTagDef>ApparelHead</parentTagDef>
+                    <texPath>things/pawn/humanlike/narehate/head</texPath>
+                    <baseLayer>95</baseLayer>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="UmApparelNarehateBase">
+        <defName>UmThingApparelNarehateMantle</defName>
+        <label>narehate mantle</label>
+        <description>A bioferrite mantle shaped like a witch's narehate. It conceals other body apparel while worn. The mantle offers no armor protection.</description>
+        <graphicData>
+            <texPath>things/pawn/humanlike/narehate/body_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <costList>
+            <Bioferrite>30</Bioferrite>
+        </costList>
+        <statBases>
+            <Mass>1.5</Mass>
+            <WorkToMake>3000</WorkToMake>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UmBodyPartGroupNarehateBody</li>
+            </bodyPartGroups>
+            <renderNodeProperties>
+                <li>
+                    <debugLabel>Narehate mantle</debugLabel>
+                    <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateMantle</workerClass>
+                    <parentTagDef>ApparelBody</parentTagDef>
+                    <texPath>things/pawn/humanlike/narehate/body</texPath>
+                    <baseLayer>48</baseLayer>
+                </li>
+            </renderNodeProperties>
+        </apparel>
+    </ThingDef>
+</Defs>

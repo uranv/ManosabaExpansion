@@ -31,13 +31,6 @@ public static class NarehateCorpseGenerator
         // B水在 Dummy 之后添加，由下方统一杀死为尸体
         pawn.health.AddHediff(ModDefOf.UmHediffTredecim);
 
-        // 添加绘制comp
-        if (pawn.GetComp<Comps.Comp_NarehateVisuals>() == null)
-        {
-            var comp = new Comps.Comp_NarehateVisuals { parent = pawn };
-            pawn.AllComps.Add(comp);
-        }
-
         // 杀死为自定义尸体
         pawn.Kill(null, null);
         var standardCorpse = pawn.Corpse;

@@ -86,16 +86,13 @@ public class HediffComp_Progress : HediffComp
     {
         // 如果已经达到 1.0 (100%), 尝试转化魔女残骸
         if (parent.Severity < 1.0f) return;
-        // 所有装别放进背包
-        NarehateUtils.UnequipAll(Pawn);
+        NarehateUtils.UnloadTransformationGear(Pawn);
         // 添加 魔女残骸 Hediff
         if (!Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehate))
             Pawn.health.AddHediff(ModDefOf.UmHediffNarehate);
         if (!Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehateHidden))
             Pawn.health.AddHediff(ModDefOf.UmHediffNarehateHidden);
-        // 视觉效果
-        NarehateUtils.RefreshPawnGraphics(Pawn);
-        NarehateUtils.EffecterNarehateTrans(Pawn);
+        NarehateUtils.PlayTransformationEffect(Pawn);
         // 发送信件
         var label = "Manosaba_LetterLabel_TurnIntoNarehate".Translate();
         var text = "Manosaba_LetterText_TurnIntoNarehate".Translate(Pawn.Named("PAWN"));

@@ -1,3 +1,6 @@
+using RimWorld;
+using UnityEngine;
+using UranvManosaba.Contents.Utils;
 using Verse;
 
 namespace UranvManosaba.Contents.Comps;
@@ -24,6 +27,20 @@ public class HediffComp_Narehate : HediffComp
         {
             Pawn.health.AddHediff(Props.HiddenHediffDef);
         }
+        Pawn.Drawer.renderer.SetAllGraphicsDirty();
+    }
+
+    public override void CompPostTickInterval(ref float severityAdjustment, int delta)
+    {
+        base.CompPostTickInterval(ref severityAdjustment, delta);
+        if (!Pawn.Spawned || !Pawn.IsHashIntervalTick(36, delta)) return;
+
+        var position = Pawn.DrawPos + new Vector3(Rand.Range(-0.14f, 0.14f), 0f, Rand.Range(-0.08f, 0.24f));
+        if (position.ShouldSpawnMotesAt(Pawn.Map))
+        {
+            NarehateUtils.ThrowBlackSmoke(position, Pawn.Map, Rand.Range(0.48f, 0.68f),
+                Rand.Range(-18f, 18f), Rand.Range(0.25f, 0.45f));
+        }
     }
 
     // 只有仍持有 HumanDummy 的非 mutant 才将移除残骸视为治愈。
@@ -35,7 +52,7 @@ public class HediffComp_Narehate : HediffComp
         if (Pawn?.health == null) return;
 
         // 清理错误 dummy 时也要刷新外观，但不能触发治愈副作用。
-        Utils.NarehateUtils.RefreshPawnGraphics(Pawn);
+        Pawn.Drawer.renderer.SetAllGraphicsDirty();
 
         // 有效 mutant 管理组件仍需要这些共享状态，移除显示项不触发治愈。
         if ((Pawn.mutant?.Def == ModDefOf.UmMutantNarehate &&
@@ -61,6 +78,14 @@ public class HediffComp_Narehate : HediffComp
         // 治愈状态、治愈 Hediff 和相关精神状态统一由 HumanDummy 维护。
         var wasCured = humanOwner.CachedIsCured;
         HediffComp_HumanDummy.SetDummyCured(dummyHediff);
-        if (!wasCured) Utils.NarehateUtils.EffecterNarehateTrans(Pawn);
+        if (!wasCured && Pawn.Spawned)
+        {
+            EffecterDefOf.MeatExplosion.SpawnMaintained(Pawn, Pawn.Map);
+            for (var i = 0; i < 6; i++)
+            {
+                var offset = Rand.InsideUnitCircle * 0.5f;
+                FleckMaker.ThrowAirPuffUp(Pawn.DrawPos + new Vector3(offset.x, 0f, offset.y), Pawn.Map);
+            }
+        }
     }
 }

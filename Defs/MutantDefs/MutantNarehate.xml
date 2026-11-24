@@ -95,36 +95,6 @@
         <soundDeath>Pawn_Ghoul_Killed</soundDeath>
         <soundCall>Pawn_Ghoul_Call</soundCall>
         <soundAttack>Pawn_Ghoul_Attack</soundAttack>
-        <!-- Rendering -->
-        <renderNodeProperties>
-            <li>
-                <debugLabel>Narehate_Body</debugLabel>
-                <workerClass>PawnRenderNodeWorker_Body</workerClass>
-                <nodeClass>PawnRenderNode</nodeClass>
-                <tagDef>Body</tagDef>
-                <baseLayer>0</baseLayer>
-                <overlayLayer>Body</overlayLayer>
-                <texPath>things/pawn/humanlike/narehate/body</texPath>
-                <pawnType>Any</pawnType>
-                <useRottenColor>false</useRottenColor>
-                <useSkinShader>false</useSkinShader>
-                <colorType>Custom</colorType>
-            </li>
-            <li>
-                <debugLabel>Narehate_Head</debugLabel>
-                <workerClass>PawnRenderNodeWorker_Head</workerClass>
-                <nodeClass>PawnRenderNode</nodeClass>
-                <tagDef>Head</tagDef>
-                <parentTagDef>Body</parentTagDef>
-                <baseLayer>50</baseLayer>
-                <overlayLayer>Head</overlayLayer>
-                <texPath>things/pawn/humanlike/narehate/head</texPath>
-                <pawnType>Any</pawnType>
-                <useRottenColor>false</useRottenColor>
-                <useSkinShader>false</useSkinShader>
-                <colorType>Custom</colorType>
-            </li>
-        </renderNodeProperties>
         <!--whitelistedFloatMenuProviders-->
     </MutantDef>
 </Defs>

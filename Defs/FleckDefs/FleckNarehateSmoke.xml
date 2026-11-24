@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>UmFleckNarehateSmoke</defName>
+        <graphicData>
+            <texPath>Things/Mote/Smoke</texPath>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.08</fadeInTime>
+        <solidTime>0.25</solidTime>
+        <fadeOutTime>1.35</fadeOutTime>
+        <growthRate>0.28</growthRate>
+    </FleckDef>
+</Defs>

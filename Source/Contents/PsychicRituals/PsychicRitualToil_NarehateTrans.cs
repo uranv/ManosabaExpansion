@@ -43,7 +43,6 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         if (!alreadyMutant)
         {
             MutantUtility.SetPawnAsMutantInstantly(targetPawn, narehateDef);
-            Utils.NarehateUtils.RefreshPawnGraphics(targetPawn);
             // 卸下装备
             Utils.NarehateUtils.UnequipAll(targetPawn);
             // 初始化工作与思维
@@ -56,8 +55,6 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
                 targetPawn.SetFaction(Faction.OfPlayer);
             }
         }
-        // 调整 pawn 属性
-        MutantStyleChanger(targetPawn);
         // 检查已有 hediffs
         if (targetPawn.health?.hediffSet == null) return;
         var dummyHumanDef = ModDefOf.UmHediffHumanDummy;
@@ -78,27 +75,5 @@ public class PsychicRitualToil_NarehateTrans : PsychicRitualToil
         var countdownDef = ModDefOf.UmHediffMutantCountdown;
         var countdownHediff = targetPawn.health?.hediffSet.GetFirstHediffOfDef(countdownDef) ?? targetPawn.health?.AddHediff(countdownDef);
         if (countdownHediff != null) countdownHediff.Severity = Mathf.Min(countdownHediff.Severity + targetSeverity / 100f, 1f);
-    }
-
-
-    private static void MutantStyleChanger(Pawn p)
-    {
-        try
-        {
-            p.story.bodyType = BodyTypeDefOf.Thin;
-            p.story.hairDef = HairDefOf.Bald;
-            p.story.furDef = null;
-            p.story.skinColorOverride = new Color32(53, 54, 59, 255);
-            if (p.style != null)
-            {
-                p.style.FaceTattoo = TattooDefOf.NoTattoo_Face;
-                p.style.BodyTattoo = TattooDefOf.NoTattoo_Body;
-            }
-        }
-        catch (Exception ex)
-        {
-            Log.Error($"[Manosaba] Skipped unsafe pawn's style change:{ex} (PsychicRituals.PsychicRitualToil_NarehateTrans.MutantStyleChanger)");
-        }
-        p.Drawer.renderer.SetAllGraphicsDirty();
     }
 }

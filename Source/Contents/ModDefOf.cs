@@ -39,13 +39,18 @@ public static class ModDefOf
     public static ThingDef UmThingCrystallizedEye;
     public static ThingDef UmThingRaceYuki;
     public static ThingDef UmThingApparelYukiDress;
+    public static ThingDef UmThingApparelNarehateMask;
+    public static ThingDef UmThingApparelNarehateMantle;
     public static ThingDef UmThingWeaponSimpleSpear;
     public static ThingDef UmThingWeaponRitualSword;
     public static ThingDef UmThingWeaponRitualSwordReplica;
     public static ThingDef UmThingMoteSabbat;
     public static FleckDef UmFleckSabbatBlood;
+    public static FleckDef UmFleckNarehateSmoke;
     public static SoundDef UmSound_gDie_Divil_JIO;
     public static BodyTypeDef UmBodyTypeYuki;
+
+    public static ApparelLayerDef UmApparelLayerNarehateOverlay;
 
     // MutantDefs
     public static MutantDef UmMutantNarehate;
