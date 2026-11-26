@@ -56,7 +56,7 @@
     <ThingDef ParentName="UmApparelNarehateBase">
         <defName>UmThingApparelNarehateMask</defName>
         <label>narehate mask</label>
-        <description>A bioferrite mask shaped like a witch's narehate. It conceals other headgear while worn. The mask offers no armor protection.</description>
+        <description>A bioferrite mask that conceals other headgear. A controlled narehate wearing it loses control time 25% more slowly and gains combat bonuses while drafted. The mask offers no armor protection.</description>
         <graphicData>
             <texPath>things/pawn/humanlike/narehate/head_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -68,6 +68,9 @@
             <Mass>0.5</Mass>
             <WorkToMake>1800</WorkToMake>
         </statBases>
+        <comps>
+            <li Class="UranvManosaba.Contents.Comps.CompProperties_NarehateMask" />
+        </comps>
         <apparel>
             <bodyPartGroups>
                 <li>UmBodyPartGroupNarehateFace</li>
@@ -87,7 +90,7 @@
     <ThingDef ParentName="UmApparelNarehateBase">
         <defName>UmThingApparelNarehateMantle</defName>
         <label>narehate mantle</label>
-        <description>A bioferrite mantle shaped like a witch's narehate. It conceals other body apparel while worn. The mantle offers no armor protection.</description>
+        <description>A bioferrite mantle that conceals other body apparel. It halves the control time a controlled narehate spends on abilities. The mantle offers no armor protection.</description>
         <graphicData>
             <texPath>things/pawn/humanlike/narehate/body_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>

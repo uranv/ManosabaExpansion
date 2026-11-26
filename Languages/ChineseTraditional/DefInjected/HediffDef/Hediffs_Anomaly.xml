@@ -13,7 +13,7 @@
     <UmHediffMutantCountdown.description>這只魔女的殘骸目前處於被洗腦的狀態，直到失控…</UmHediffMutantCountdown.description>
     
     <UmHediffMutantDraft.label>徵召指令</UmHediffMutantDraft.label>
-    <UmHediffMutantDraft.description>受控的殘骸處於徵召狀態。\n\n她的戰鬥能力顯著增強，但是失控倒計時加速 1.5 倍。</UmHediffMutantDraft.description>
+    <UmHediffMutantDraft.description>受控殘骸徵召時會顯示特效，佩戴殘骸面具時還會獲得戰鬥加成。徵召使控制時間的衰減速度加快 50%。</UmHediffMutantDraft.description>
 
     <UmHediffMutantHealingAbility.label>極速愈療</UmHediffMutantHealingAbility.label>
     <UmHediffMutantHealingAbility.description>體內的魔女因子被激發至極限，獲得了超乎想象的自愈能力。</UmHediffMutantHealingAbility.description>

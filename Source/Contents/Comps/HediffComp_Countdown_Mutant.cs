@@ -32,7 +32,9 @@ public class HediffComp_Countdown_Mutant : HediffComp
     // 更新逻辑
     private const int TickInterval = 600; // 基础 Tick 间隔
     private const float UpdatesPerDay = 60000f / TickInterval; // 每更新频率
-    private float TickChange => (Pawn.Drafted ? Props.DraftFactor : 1f) / (ManosabaMod.Settings.MutantFullCircle * UpdatesPerDay);
+    private float DecayFactor => (Pawn.Drafted ? Props.DraftFactor : 1f) *
+                                 (Comp_NarehateMask.IsWornBy(Pawn) ? 0.75f : 1f);
+    private float TickChange => DecayFactor / (ManosabaMod.Settings.MutantFullCircle * UpdatesPerDay);
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
         base.CompPostTickInterval(ref severityAdjustment, delta);
@@ -67,8 +69,8 @@ public class HediffComp_Countdown_Mutant : HediffComp
     {
         get
         {
-            var progress = parent.Severity * ManosabaMod.Settings.MutantFullCircle;
-            return progress.ToString("F1")+"HediffComp_Countdown_Mutant_Unit".Translate();
+            var daysRemaining = parent.Severity * ManosabaMod.Settings.MutantFullCircle / DecayFactor;
+            return daysRemaining.ToString("F1") + "HediffComp_Countdown_Mutant_Unit".Translate();
         }
     }
 

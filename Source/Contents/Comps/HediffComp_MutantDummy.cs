@@ -118,6 +118,7 @@ public class HediffComp_MutantDummy : HediffComp
         {
             _countdownSeverity = countdownHediff.Severity;
         }
+        if (Pawn.Drafted) HediffComp_MutantDraft.Sync(Pawn);
         // 防止错误治愈
         var hasHanmajyo = Pawn.health.hediffSet.HasHediff(ModDefOf.UmHediffNarehateHealed);
         if (!hasHanmajyo) return;

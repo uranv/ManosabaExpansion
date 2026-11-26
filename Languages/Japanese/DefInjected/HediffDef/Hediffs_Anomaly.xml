@@ -22,8 +22,8 @@
     
     <!-- <UmHediffMutantDraft.label>征召指令</UmHediffMutantDraft.label> -->
     <UmHediffMutantDraft.label>徴兵指令</UmHediffMutantDraft.label>
-    <!-- <UmHediffMutantDraft.description>受控的残骸处于征召状态。\n\n她的战斗能力显著增强，但是失控倒计时加速 1.5 倍。</UmHediffMutantDraft.description> -->
-    <UmHediffMutantDraft.description>制御下のなれはてが徴兵状態にある。\n\n戦闘能力は著しく強化されるが、暴走までのカウントダウンが1.5倍に加速する。</UmHediffMutantDraft.description>
+    <!-- <UmHediffMutantDraft.description>受控残骸征召时会显示特效，佩戴残骸面具时还会获得战斗加成。征召使控制时间的衰减速度加快 50%。</UmHediffMutantDraft.description> -->
+    <UmHediffMutantDraft.description>制御下のなれはては徴兵中に視覚効果が表示され、なれはての仮面を着用していれば戦闘能力も向上します。徴兵中は制御時間の減少が50%速くなります。</UmHediffMutantDraft.description>
 
     <!-- <UmHediffMutantHealingAbility.label>极速治疗</UmHediffMutantHealingAbility.label> -->
     <UmHediffMutantHealingAbility.label>急速治癒</UmHediffMutantHealingAbility.label>

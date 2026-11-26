@@ -22,8 +22,8 @@
     
     <!-- <UmHediffMutantDraft.label>征召指令</UmHediffMutantDraft.label> -->
     <!-- <UmHediffMutantDraft.label>Draft command</UmHediffMutantDraft.label> -->
-    <!-- <UmHediffMutantDraft.description>受控的残骸处于征召状态。\n\n她的战斗能力显著增强，但是失控倒计时加速 1.5 倍。</UmHediffMutantDraft.description> -->
-    <!-- <UmHediffMutantDraft.description>The controlled narehate is drafted.\n\nHer combat capabilities are significantly enhanced, but the countdown to loss of control accelerates by 1.5x.</UmHediffMutantDraft.description> -->
+    <!-- <UmHediffMutantDraft.description>受控残骸征召时会显示特效，佩戴残骸面具时还会获得战斗加成。征召使控制时间的衰减速度加快 50%。</UmHediffMutantDraft.description> -->
+    <!-- <UmHediffMutantDraft.description>A controlled narehate displays a visual effect while drafted and gains combat bonuses when wearing a narehate mask. Drafting makes control time run down 50% faster.</UmHediffMutantDraft.description> -->
 
     <!-- <UmHediffMutantHealingAbility.label>极速治疗</UmHediffMutantHealingAbility.label> -->
     <!-- <UmHediffMutantHealingAbility.label>Ultrafast healing</UmHediffMutantHealingAbility.label> -->

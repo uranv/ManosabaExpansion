@@ -6,20 +6,16 @@ namespace UranvManosaba.Contents.Comps;
 
 public class CompProperties_MutantAbilityCost : CompProperties_AbilityEffect
 {
-    public float ControlTimeCost = 0f;
+    public float BaseControlTimeCost = 0f;
 
     public bool AllowedWhileDowned = false;
 
-    public float SeverityCost => ControlTimeCost/ManosabaMod.Settings.MutantFullCircle;
+    public float ControlTimeCost(Pawn pawn) => BaseControlTimeCost *
+        (pawn.apparel?.GetDirectlyHeldThings().Contains(ModDefOf.UmThingApparelNarehateMantle) == true ? 0.5f : 1f);
 
     public CompProperties_MutantAbilityCost()
     {
         compClass = typeof(CompAbilityEffect_MutantCost);
-    }
-
-    public override IEnumerable<string> ExtraStatSummary()
-    {
-        yield return string.Concat("Manosaba_MutantAbility_Cost".Translate(ControlTimeCost.ToString("F1")));//, (100f*SeverityCost).ToString("F1") ));
     }
 }
 
@@ -27,12 +23,20 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
 {
     public new CompProperties_MutantAbilityCost Props => (CompProperties_MutantAbilityCost)props;
 
+    private float ControlTimeCost => Props.ControlTimeCost(parent.pawn);
+    private float SeverityCost => ControlTimeCost / ManosabaMod.Settings.MutantFullCircle;
+
+    public override string ExtraTooltipPart()
+    {
+        return "Manosaba_MutantAbility_Cost".Translate(ControlTimeCost.ToString("0.0#"));
+    }
+
     private bool MutantNarehateCanDoNow
     {
         get
         {
             var h = parent.pawn.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown);
-            return h != null && (h.Severity - Props.SeverityCost > 0.0001f );
+            return h != null && (h.Severity - SeverityCost > 0.0001f );
         }
     }
 
@@ -42,7 +46,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
 
         var p = parent.pawn;
         var h = p?.health?.hediffSet?.GetFirstHediffOfDef(ModDefOf.UmHediffMutantCountdown);
-        if (h != null) h.Severity = Mathf.Max(0.0001f, h.Severity - Props.SeverityCost);
+        if (h != null) h.Severity = Mathf.Max(0.0001f, h.Severity - SeverityCost);
     }
 
     public override bool GizmoDisabled(out string reason)
@@ -53,7 +57,7 @@ public class CompAbilityEffect_MutantCost : CompAbilityEffect
             reason = "Manosaba_MutantAbility_NotMutant".Translate(parent.pawn);
             return true;
         }
-        if (h.Severity - Props.SeverityCost <= 0.0001f )
+        if (h.Severity - SeverityCost <= 0.0001f )
         {
             reason = "Manosaba_MutantAbility_NotEnoughTime".Translate(parent.pawn);
             return true;

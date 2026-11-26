@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <UmThingApparelNarehateMask.label>なれはての仮面</UmThingApparelNarehateMask.label>
-    <UmThingApparelNarehateMask.description>魔女のなれはての顔を模したバイオフェライト製の仮面。着用中は、ほかの頭部装備が見えなくなります。防具としての効果はありません。</UmThingApparelNarehateMask.description>
+    <UmThingApparelNarehateMask.description>ほかの頭部装備を覆うバイオフェライト製の仮面。制御下のなれはてが着用すると、制御時間の減少が25%遅くなり、徴兵中は戦闘能力が向上します。防具としての効果はありません。</UmThingApparelNarehateMask.description>
     <UmThingApparelNarehateMantle.label>なれはての外套</UmThingApparelNarehateMantle.label>
-    <UmThingApparelNarehateMantle.description>魔女のなれはての姿を模したバイオフェライト製の外套。着用中は、ほかの胴体の衣服が見えなくなります。防具としての効果はありません。</UmThingApparelNarehateMantle.description>
+    <UmThingApparelNarehateMantle.description>ほかの胴体の衣服を覆うバイオフェライト製の外套。制御下のなれはてが着用すると、能力の使用で消費する制御時間が半分になります。防具としての効果はありません。</UmThingApparelNarehateMantle.description>
 </LanguageData>

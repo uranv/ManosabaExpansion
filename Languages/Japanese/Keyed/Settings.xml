@@ -150,14 +150,14 @@
     <!-- Ritual Tab -->
     <!-- <ManosabaSettings_NBw_title>魔女残骸洗脑仪式相关设置</ManosabaSettings_NBw_title> -->
     <ManosabaSettings_NBw_title>なれはて洗脳の儀式の設定</ManosabaSettings_NBw_title>
-    <!-- <ManosabaSettings_NBw_mutantFullCircle>• 魔女残骸控制时间上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle> -->
-    <ManosabaSettings_NBw_mutantFullCircle>• 魔女のなれはての制御時間上限：{0} 日</ManosabaSettings_NBw_mutantFullCircle>
-    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 此系数决定了魔女残骸的洗脑控制时间上限</ManosabaSettings_NBw_mutantFullCircle_Desc_1> -->
-    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 魔女のなれはての洗脳制御時間の上限を決定します。</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle>• 魔女残骸基础控制时长上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle> -->
+    <ManosabaSettings_NBw_mutantFullCircle>• 魔女のなれはての基礎制御時間上限：{0} 日</ManosabaSettings_NBw_mutantFullCircle>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 洗脑仪式最多可提供这么多基础控制时间。面具和征召会改变时间的衰减速度。</ManosabaSettings_NBw_mutantFullCircle_Desc_1> -->
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 洗脳の儀式で得られる基礎制御時間の上限です。仮面と徴兵状態によって、制御時間の減少速度が変わります。</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
     <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 拥有魔女残骸状态的生物可通过仪式"魔女残骸洗脑"在一定时间内转化为可受控的对象</ManosabaSettings_NBw_mutantFullCircle_Desc_2> -->
     <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 魔女のなれはて状態にある生物は、「なれはて洗脳の儀式」を通じて一定期間制御可能な対象に変換できます。</ManosabaSettings_NBw_mutantFullCircle_Desc_2>
-    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 对于处于控制状态的魔女残骸，其剩余控制时间可通过相同仪式延长至不超过此上限</ManosabaSettings_NBw_mutantFullCircle_Desc_3> -->
-    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 既に制御状態にあるなれはては、同じ儀式を行うことで、この上限を超えない範囲で制御時間を延長できます。</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
+    <!-- <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 再次举行仪式可补充基础控制时间，最高可补至这个上限。</ManosabaSettings_NBw_mutantFullCircle_Desc_3> -->
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 儀式を再び行うと、この上限まで基礎制御時間を補充できます。</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
 
     <!-- <ManosabaSettings_Sabbat_title>魔女安息仪式相关设置</ManosabaSettings_Sabbat_title> -->
     <ManosabaSettings_Sabbat_title>サバトの儀式の設定</ManosabaSettings_Sabbat_title>

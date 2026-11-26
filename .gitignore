@@ -268,3 +268,4 @@ AGENTS.md
 .claude
 dev.*
 /.dsh-progress
+/tmp

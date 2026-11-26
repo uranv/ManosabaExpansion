@@ -90,10 +90,10 @@
 
     <!-- Ritual Tab -->
     <ManosabaSettings_NBw_title>魔女殘骸洗腦儀式相關設置</ManosabaSettings_NBw_title>
-    <ManosabaSettings_NBw_mutantFullCircle>• 魔女殘骸控制時間上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle>
-    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 此系數決定了魔女殘骸的洗腦控制時間上限</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
+    <ManosabaSettings_NBw_mutantFullCircle>• 魔女殘骸基礎控制時長上限：{0} 天</ManosabaSettings_NBw_mutantFullCircle>
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_1>- 洗腦儀式最多可提供這麼多基礎控制時間。面具和徵召會改變時間的衰減速度。</ManosabaSettings_NBw_mutantFullCircle_Desc_1>
     <ManosabaSettings_NBw_mutantFullCircle_Desc_2>- 擁有魔女殘骸狀態的生物可通過儀式"魔女殘骸洗腦"在一定時間內轉化為可受控的對象</ManosabaSettings_NBw_mutantFullCircle_Desc_2>
-    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 對於處於控制狀態的魔女殘骸，其剩餘控制時間可通過相同儀式延長至不超過此上限</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
+    <ManosabaSettings_NBw_mutantFullCircle_Desc_3>- 再次舉行儀式可補充基礎控制時間，最高可補至這個上限。</ManosabaSettings_NBw_mutantFullCircle_Desc_3>
 
     <ManosabaSettings_Sabbat_title>魔女安息儀式相關設置</ManosabaSettings_Sabbat_title>
     <ManosabaSettings_Sabbat_thresholdMinusOne>• 品質偏移 -1 閾值：{0}%</ManosabaSettings_Sabbat_thresholdMinusOne>
