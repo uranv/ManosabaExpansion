@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <FacialAnimation.HeadTypeDef MayRequire="Nals.FacialAnimation">
+        <defName>UmFAHeadYuki</defName>
+        <raceName>UmThingRaceYuki</raceName>
+        <gender>Female</gender>
+        <texPath>things/pawn/humanlike/yuki/fa/Heads_Blank/Yuki</texPath>
+        <shader>Map/CutoutSkin</shader>
+        <shaderColorOverride>Map/CutoutSkinOverride</shaderColorOverride>
+    </FacialAnimation.HeadTypeDef>
+
+    <FacialAnimation.LidTypeDef MayRequire="Nals.FacialAnimation">
+        <defName>UmFALidYuki</defName>
+        <raceName>UmThingRaceYuki</raceName>
+        <gender>Female</gender>
+        <texPath>things/pawn/humanlike/yuki/fa/Lids/Yuki</texPath>
+        <shader>Map/Transparent</shader>
+    </FacialAnimation.LidTypeDef>
+
+    <FacialAnimation.EyeballTypeDef MayRequire="Nals.FacialAnimation">
+        <defName>UmFAEyeballYuki</defName>
+        <raceName>UmThingRaceYuki</raceName>
+        <gender>Female</gender>
+        <texPath>things/pawn/humanlike/yuki/fa/Eyes/Yuki</texPath>
+        <shader>Map/CutoutComplex</shader>
+        <colorMode>whiteColor</colorMode>
+    </FacialAnimation.EyeballTypeDef>
+</Defs>

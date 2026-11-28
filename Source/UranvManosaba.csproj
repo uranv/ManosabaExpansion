@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <AssemblyName>UranvManosaba</AssemblyName>
-        <AssemblyVersion>1.0.10</AssemblyVersion>
+        <AssemblyVersion>1.0.11</AssemblyVersion>
         <RootNamespace>UranvManosaba</RootNamespace>
         <LangVersion>10</LangVersion>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -25,20 +25,14 @@
             <HintPath>.reference\0Harmony.dll</HintPath>
             <Private>False</Private>
         </Reference>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>.reference\Assembly-CSharp.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="UnityEngine">
-            <HintPath>.reference\UnityEngine.CoreModule.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include=".reference\UnityEngine.IMGUIModule.dll" />
-        <Reference Include=".reference\UnityEngine.TextRenderingModule.dll" />
         <None Include="..\About\**" />
         <None Include="..\Common\Defs\**" />
         <None Include="..\Common\Languages\**" />
         <None Include="..\Common\Patches\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4871" />
     </ItemGroup>
     
     <ItemGroup>
@@ -47,7 +41,7 @@
         <Compile Remove="**\.DS_Store" />
         <Compile Remove="**\**\.DS_Store" />
     </ItemGroup>
-
+    
     <Target Name="GenerateBuildDate" BeforeTargets="BeforeCompile">
         <PropertyGroup>
             <BuildTime>$([System.DateTime]::Now.ToString('yyyy-MM-dd'))</BuildTime>

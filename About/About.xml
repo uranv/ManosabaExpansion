@@ -24,8 +24,11 @@
 		</li>
 	</modDependencies>
 	<loadAfter>
-        <li>brrainz.harmony</li>
-    </loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Nals.FacialAnimation</li>
+		<li>Nals.FacialAnimationExperimentals</li>
+		<li>UNAGI.FacialAnimation</li>
+	</loadAfter>
 	<modVersion IgnoreIfNoMatchingField="True">1.0.11</modVersion>
 	<description>
 <![CDATA[<b>模组名:</b>

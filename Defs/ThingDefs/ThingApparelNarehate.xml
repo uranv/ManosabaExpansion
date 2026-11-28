@@ -58,7 +58,7 @@
         <label>narehate mask</label>
         <description>A bioferrite mask that conceals other headgear. A controlled narehate wearing it loses control time 25% more slowly and gains combat bonuses while drafted. The mask offers no armor protection.</description>
         <graphicData>
-            <texPath>things/pawn/humanlike/narehate/head_south</texPath>
+            <texPath>things/pawn/humanlike/apparel/NarehateMask/NarehateMask_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <costList>
@@ -80,7 +80,7 @@
                     <debugLabel>Narehate mask</debugLabel>
                     <workerClass>PawnRenderNodeWorker_Apparel_Head</workerClass>
                     <parentTagDef>ApparelHead</parentTagDef>
-                    <texPath>things/pawn/humanlike/narehate/head</texPath>
+                    <texPath>things/pawn/humanlike/apparel/NarehateMask/NarehateMask</texPath>
                     <baseLayer>95</baseLayer>
                 </li>
             </renderNodeProperties>
@@ -92,7 +92,7 @@
         <label>narehate mantle</label>
         <description>A bioferrite mantle that conceals other body apparel. It halves the control time a controlled narehate spends on abilities. The mantle offers no armor protection.</description>
         <graphicData>
-            <texPath>things/pawn/humanlike/narehate/body_south</texPath>
+            <texPath>things/pawn/humanlike/apparel/NarehateMantle/NarehateMantle_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <costList>
@@ -111,7 +111,7 @@
                     <debugLabel>Narehate mantle</debugLabel>
                     <workerClass>UranvManosaba.Contents.Visuals.PawnRenderNodeWorker_NarehateMantle</workerClass>
                     <parentTagDef>ApparelBody</parentTagDef>
-                    <texPath>things/pawn/humanlike/narehate/body</texPath>
+                    <texPath>things/pawn/humanlike/apparel/NarehateMantle/NarehateMantle</texPath>
                     <baseLayer>48</baseLayer>
                 </li>
             </renderNodeProperties>

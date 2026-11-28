@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/FacialAnimation.EyeballTypeDef[altMaskPath="Things/Pawn/FA-Experimentals/Eyes/Common"]</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>/Defs/FacialAnimation.EyeballTypeDef[defName="UmFAEyeballYuki"]/shader</xpath>
+            <value>
+                <shader>Map/CutoutSkinOverlay</shader>
+                <altMaskPath>Things/Pawn/FA-Experimentals/Eyes/Common</altMaskPath>
+            </value>
+        </match>
+    </Operation>
+</Patch>
